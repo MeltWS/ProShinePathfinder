@@ -2,7 +2,7 @@
 local hoenn = {}
 
 hoenn["Lilycove City Harbor"] = {"Lilycove City=1"}
-hoenn["Lilycove City"] = {"Route 121=1", "Pokecenter Lilycove City=1", "Route 124=1"}
+hoenn["Lilycove City"] = {"Route 121=1", "Pokecenter Lilycove City=1", "Route 124=1", "Lilycove City Harbor=1"}
 hoenn["Route 121"] = {"Route 120=1", "Route 122=1", "Lilycove City=1"}
 hoenn["Route 120"] = {"Route 121=1", "Fortree City=1"}
 hoenn["Fortree City"] = {"Route 119A=1", "Route 120=1", "Pokecenter Fortree City=1", "Fortree Mart=1"}

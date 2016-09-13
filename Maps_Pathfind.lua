@@ -4,7 +4,7 @@ local DescMaps = MapExceptions.DescMaps
 local ExceRouteEdit = MapExceptions.ExceRouteEdit
 local GlobalMap = require "Maps/GlobalMap"
 local PathSolution = {}
-
+local PathDestStore = ""
 -----------------------------------
 --- DIJKSTRA CODE PATHFINDING   ---
 -----------------------------------
@@ -241,13 +241,8 @@ local function ResetDijMap()
 end
 
 -- RESET PATH ON STOP
-local PathDestStore = ""
 local function ResetPath()
 	PathDestStore = ""
-	ResetDijMap() -- Should reset.vis instead
-	-- for i=1,#Nodes,1 do
-	-- 	Nodes[i].vis = false
-	-- end
 end
 
 local function MovingApply(ToMap)
@@ -283,9 +278,7 @@ local function MoveWithCalcPath()
 end
 
 local function moveToDestination(currentPosition, finalPosition)
-	--local path = getShortestPath(KantoMap, currentPosition, finalPosition, {})
 	return initDij(currentPosition, finalPosition, GlobalMap)
-	-- local path = initDij(currentPosition, finalPosition, KantoMap)
 end
 
 ---------------------------

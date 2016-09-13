@@ -12,7 +12,7 @@ function onStart()
 end
 
 function onPathAction()
-	pathFinder.MoveTo("Dark Cave North")
+	pathFinder.MoveTo("Route 102")
 end
 
 function onBattleAction()
