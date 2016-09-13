@@ -7,8 +7,8 @@ local PQ = {}
 PQ.new = function ()
     local queue = {
         n      = 0,
-        pop    = PriorityQueue.pop,
-        insert = PriorityQueue.insert
+        pop    = PQ.pop,
+        insert = PQ.insert
     }
     return queue
 end

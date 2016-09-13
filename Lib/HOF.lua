@@ -42,3 +42,5 @@ function curry(f)
     return docurry({}, info.nparams, ...)
   end
 end
+
+return {curry = curry}

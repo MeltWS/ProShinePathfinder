@@ -1,5 +1,17 @@
-local PQ = require "PriorityQueue"
-local HOF = require "HOF"
+local thispath = "aStar/" -- select('1', ...):match(".+%.") or ""
+
+local PQ = require (thispath .. "PQ")
+local HOF = require (thispath .. "HOF")
+
+local function backtrack(last, cameFrom)
+    local current = last
+	local path = {}
+    while current ~= nil do
+        table.insert(path, 1, current)
+        current = cameFrom[current]
+	end
+	return path
+end
 
 local aStar = HOF.curry(function(expand, cost, heuristic, goal, start)
 	local open = PQ.new()
@@ -10,12 +22,12 @@ local aStar = HOF.curry(function(expand, cost, heuristic, goal, start)
 	open:insert(0, start)
 	cameFrom[start] = nil
 	tCost[start] = 0
-	for current in pop, open do
+	for current in PQ.pop, open do
 		if goal(current) then
-			backtrack(cameFrom, current)
+			return backtrack(current, cameFrom)
 		else
 			closed[current] = true
-			for neighbor in expand(current) do
+			for _, neighbor in pairs(expand(current)) do
 				if not closed[neighbor] then
 					local tmpCost = tCost[current] + cost(current, neighbor)
 					if tCost[neighbor] == nil or tmpCost < tCost[neighbor] then
@@ -30,14 +42,4 @@ local aStar = HOF.curry(function(expand, cost, heuristic, goal, start)
 	return nil
 end)
 
-local function backtrack(last, cameFrom)
-    local current = last
-	local path = {}
-    while current ~= nil do
-        table.insert(path, 1, current)
-        current = cameFrom[current]
-	end
-	return path
-end
-
-return {aStar = aStar}
+return aStar
