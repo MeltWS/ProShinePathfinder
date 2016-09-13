@@ -19,7 +19,7 @@ To do:
 
 +Add the Auto-Harvest (Berry - Hidden Items - Items) can be Disable with [AutoHarvest = False] 25% done
 
-+Fix 999 uncrossable path algo breaking.
++fix dijkstra searching every path possible....
 
 Done:
 

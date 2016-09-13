@@ -42,7 +42,7 @@ local function SetStartNode(name)
 end
 
 local function EdgeConnectsNodes(E,N1,N2)
-	return E.N1 == N1 and E.N2 == N2 or E.N1 == N2 and E.N2 == N1
+	return E.N1 == N1 and E.N2 == N2
 end
 
 local function GetDistance(N1,N2)
@@ -68,8 +68,6 @@ local function GetAllAdjcentNodes(N,AdjNodes)
 	for i=1,#Edges,1 do
 		if Edges[i].N1 == N and not Nodes[NodesIndex[Edges[i].N2]].vis then
 			push(AdjNodes,Edges[i].N2)
-		elseif Edges[i].N2 == N and not Nodes[NodesIndex[Edges[i].N1]].vis then
-			push(AdjNodes,Edges[i].N1)
 		end
 	end
 end
@@ -90,6 +88,9 @@ local function VisitClosestNode()
 			index = i
 		end
 	end
+	if not Nodes[index] then
+		error("Could not find ClosestNode node, probably a map error")
+	end
 	Nodes[index].vis = true
 	return index
 end
@@ -100,7 +101,7 @@ local function Dijkstras()
 		local MyAdjNodes = {}
 		GetAllAdjcentNodes(ClosetsNode.name,MyAdjNodes)
 		if #MyAdjNodes ~= 0 then
-		for i=1,#MyAdjNodes,1  do
+		for i=1,#MyAdjNodes,1  do	
 			local Distance = ClosetsNode.Dist + GetDistance(ClosetsNode.name,MyAdjNodes[i])
 			local AdjNode = Nodes[NodesIndex[MyAdjNodes[i]]]
 			if AdjNode.Dist >= 0 then
@@ -133,6 +134,9 @@ local function initNodes(path)
 		NewNode(k)
 		for l, m in pairs(v) do
 			res = lib.splitstring(m,"=")
+			if not k or not res[1] or not res[2] then
+				error("Map is invalid")
+			end
 			NewEdge(k, res[1], res[2]) --fixed distance for heuristic	
 			--NewEdge(k, m, v[m]) --fixed distance for heuristic
 		end
@@ -240,7 +244,10 @@ end
 local PathDestStore = ""
 local function ResetPath()
 	PathDestStore = ""
-	ResetDijMap()
+	ResetDijMap() -- Should reset.vis instead
+	-- for i=1,#Nodes,1 do
+	-- 	Nodes[i].vis = false
+	-- end
 end
 
 local function MovingApply(ToMap)
@@ -299,8 +306,8 @@ local function ApplySettings()
 	if Settings.dig then
 		MapExceptions.EnableDigPath()
 		-- Kanto
-		GlobalMap["Route 11"] = {"Vermilion City=1","Route 11 Stop House=1", "Route 2=1"}
-		GlobalMap["Route 2"] = {"Route 2 Stop2=1","Route 2 Stop3=1","Viridian City=1","Digletts Cave Entrance 1=1","Pewter City=1", "Route 11=1"}
+		GlobalMap["Route 11"] = {"Vermilion City=1","Route 11 Stop House=1",  "Digletts Cave Entrance 2=1", "Route 2=1"}
+		GlobalMap["Route 2"] = {"Route 2 Stop2=1", "Route 2 Stop3=1","Viridian City=1", "Digletts Cave Entrance 1=1", "Pewter City=1", "Route 2 Stop=1", "Route 11=1"}
 		GlobalMap["Route 4"] = {"Mt. Moon Exit=1", "Cerulean City=1", "Route 3=1"}
 		GlobalMap["Route 3"] = {"Pewter City=1", "Mt. Moon 1F=1", "Pokecenter Route 3=1", "Route 4=1"}		
 		-- Johto
@@ -313,8 +320,8 @@ local function ApplySettings()
 	else
 		MapExceptions.DisableDigPath()
 		-- Kanto
-		GlobalMap["Route 11"] = {"Vermilion City=1","Route 11 Stop House=1"}
-		GlobalMap["Route 2"] = {"Route 2 Stop2=1","Route 2 Stop3=1","Viridian City=1","Digletts Cave Entrance 1=1","Pewter City=1"}		
+		GlobalMap["Route 11"] = {"Vermilion City=1","Route 11 Stop House=1", "Digletts Cave Entrance 2=1"}
+		GlobalMap["Route 2"] = {"Route 2 Stop2=1","Route 2 Stop3=1","Viridian City=1","Digletts Cave Entrance 1=1","Pewter City=1", "Route 2 Stop=1"}		
 		-- Johto
 		GlobalMap["Route 31"] = {"Route 30=1", "Dark Cave South=1", "Violet City Stop House=1"}
 		GlobalMap["Route 45"] = {"Blackthorn City=1", "Route 46=1", "Dark Cave North=1"}

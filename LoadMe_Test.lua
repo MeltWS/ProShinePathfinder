@@ -12,7 +12,7 @@ function onStart()
 end
 
 function onPathAction()
-	pathFinder.MoveTo("Lilycove City")
+	pathFinder.MoveTo("Dark Cave North")
 end
 
 function onBattleAction()

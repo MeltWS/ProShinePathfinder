@@ -35,13 +35,13 @@ kanto["Mt. Moon Exit"] = {"Mt. Moon B2F=1", "Route 4=1"}
 kanto["Route 4"] = {"Mt. Moon Exit=1", "Cerulean City=1"}
 kanto["Cerulean City"] = {"Route 5=1", "Route 24=1", "Route 4=1", "Route 9=1","Pokecenter Cerulean=1"}
 kanto["Pokecenter Cerulean"] = {"Cerulean City=1"}
-kanto["Route 2"] = {"Route 2 Stop2=1","Route 2 Stop3=1","Viridian City=1","Digletts Cave Entrance 1=1","Pewter City=1"}
+kanto["Route 2"] = {"Route 2 Stop2=1","Route 2 Stop3=1","Viridian City=1","Digletts Cave Entrance 1=1","Pewter City=1", "Route 2 Stop=1"}
 kanto["Route 2 Stop"] = {"Route 2=1", "Viridian Forest=1"}
 kanto["Route 2 Stop2"] = {"Route 2=1", "Viridian Forest=1"}
 kanto["Route 2 Stop3"] = {"Pewter City=1","Viridian City=1","Digletts Cave Entrance 1=1"}
 kanto["Viridian Forest"] = {"Route 2 Stop2=1","Route 2 Stop=1","Viridian Maze=1"}
 kanto["Viridian Maze"] = {"Viridian Forest=1"}
-kanto["Route 11"] = {"Vermilion City=1","Route 11 Stop House=1"}
+kanto["Route 11"] = {"Vermilion City=1","Route 11 Stop House=1", "Digletts Cave Entrance 2=1"}
 kanto["Vermilion City"] = {"Route 11=1", "Route 6=1","Vermilion Pokemart=1","Pokecenter Vermilion=1"}
 kanto["Pokecenter Vermilion"] = {"Vermilion City=1"}
 kanto["Vermilion Pokemart"] = {"Vermilion City=1"}
@@ -73,7 +73,7 @@ kanto["Lavender Town"] = {"Route 12=1", "Route 8=1","Route 10=1","Pokemon Tower 
 kanto["Pokecenter Lavender"] = {"Lavender Town=1"}
 kanto["Rock Tunnel 1"] = {"Route 10=2","Rock Tunnel 2=1","Lavender Town=1"}
 kanto["Rock Tunnel 2"] = {"Route 9=1","Rock Tunnel 1=1"}
-kanto["Route 10"] = {"Rock Tunnel 1=2", "Lavender Town=1","Pokecenter Route 10=1","Route 9=1"}
+kanto["Route 10"] = {"Rock Tunnel 1=2", "Lavender Town=1","Pokecenter Route 10=1","Route 9=1", "Power Plant=1"}
 kanto["Pokecenter Route 10"] = {"Route 10=1"}
 kanto["Route 13"] = {"Route 12=1", "Route 14=1", "Berry Tower Kanto=1"}
 kanto["Berry Tower Kanto"] = {"Route 13=1"}

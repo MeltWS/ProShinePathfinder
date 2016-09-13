@@ -4,18 +4,18 @@ local hoenn = {}
 hoenn["Lilycove City Harbor"] = {"Lilycove City=1"}
 hoenn["Lilycove City"] = {"Route 121=1", "Pokecenter Lilycove City=1", "Route 124=1"}
 hoenn["Route 121"] = {"Route 120=1", "Route 122=1", "Lilycove City=1"}
-hoenn["Route 120"] = {"Route 121", "Fortree City=1"}
+hoenn["Route 120"] = {"Route 121=1", "Fortree City=1"}
 hoenn["Fortree City"] = {"Route 119A=1", "Route 120=1", "Pokecenter Fortree City=1", "Fortree Mart=1"}
 hoenn["Route 119A"] = {"Fortree City=1", "Route 119B=1"}
 hoenn["Route 119B"] = {"Route 119A=1", "Route 118=1"}
 hoenn["Route 118"] = {"Route 119B=1", "Route 123=1", "Mauville City Stop House 4=1"}
-hoenn["Route 123"] = {"Route 122=999", "Route 118=1"} -- path blocked to 122
+hoenn["Route 123"] = {"Route 118=1"} -- path blocked to 122
 hoenn["Route 122"] = {"Route 123=1", "Route 121=1"} -- missing mt.pyre
 hoenn["Mauville City Stop House 4"] = {"Route 118=1", "Mauville City=1"}
 hoenn["Mauville City"] = {"Pokecenter Mauville City=1", "Mart Mauville City=1", "Mauville City Stop House 4=1", "Mauville City Stop House 3=1", "Mauville City Stop House 2=1", "Mauville City Stop House 1=1"} -- unfinished paths
 hoenn["Mauville City Stop House 1"] = {"Mauville City=1", "Route 110=1"}
 hoenn["Route 110"] = {"Mauville City Stop House 1=1", "Slateport City=1", "Route 103=1"}
-hoenn["Slateport City"] = {"Route 110=1", "Pokecenter Slateport=1", "Mart Slateport=1", "Route 109=1", "Route 134=999"}
+hoenn["Slateport City"] = {"Route 110=1", "Pokecenter Slateport=1", "Mart Slateport=1", "Route 109=1"} -- Cannot go back to route 134
 hoenn["Route 109"] = {"Slateport City=1", "Route 108=1"} -- boat shortcut
 hoenn["Route 108"] = {"Route 109=1", "Route 107=1"}
 hoenn["Route 107"] = {"Route 108=1", "Dewford Town=1"}
@@ -33,7 +33,7 @@ hoenn["Littleroot Town"] = {"Route 101=1"}
 hoenn["Rustboro City"] = {"Route 104=1", "Mart Rustboro City=1", "Pokecenter Rustboro City=1", "Route 115=1", "Route 116=1"}
 hoenn["Route 116"] = {"Rustboro City=1", "Rusturf Tunnel=1"} -- digway
 hoenn["Rusturf Tunnel"] = {"Route 116=1", "Verdanturf Town=1"}
-hoenn["Verdanturf Town"] = {"Rusturf Tunnel=1", "Verdanturf Mart=1", "Route 117=1"}
+hoenn["Verdanturf Town"] = {"Rusturf Tunnel=1", "Verdanturf Mart=1", "Route 117=1", "Pokecenter Verdanturf=1"}
 hoenn["Route 117"] = {"Verdanturf Town=1", "Mauville City Stop House 2=1"}
 hoenn["Mauville City Stop House 2"] = {"Mauville City=1", "Route 117=1"}
 hoenn["Mauville City Stop House 3"] = {"Mauville City=1", "Route 111 South=1"}
@@ -48,7 +48,7 @@ hoenn["Fiery Path"] = {"Route 112=1"}
 hoenn["Route 111 North"] = {"Route 112=1", "Route 111 Desert=1", "Route 113=1"}
 hoenn["Route 111 Desert"] = {"Route 111 North=1", "Route 111 South=1"}
 hoenn["Route 113"] = {"Route 111 North=1", "Fallabor Town=1"}
-hoenn["Fallabor Town"] = {"Route 113=1", "Pokecenter Fallabor Town=1", "Route 114=1"}
+hoenn["Fallabor Town"] = {"Route 113=1", "Pokecenter Fallabor Town=1", "Route 114=1", "Mart Fallabor Town=1"}
 hoenn["Route 114"] = {"Fallabor Town=1", "Meteor falls 1F 1R=1"}
 hoenn["Meteor falls 1F 1R"] = {"Route 114=1", "Route 115=1"}
 hoenn["Route 115"] = {"Meteor falls 1F 1R=1", "Rustboro City=1"}

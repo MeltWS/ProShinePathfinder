@@ -4,13 +4,13 @@ local johto = {}
 johto["New Bark Town"] =  {"Route 29=1"} -- link kanto
 johto["Route 29"] = {"Cherrygrove City=1", "Route 29 Stop House=1", "New Bark Town=1"}
 johto["Route 29 Stop House"] = {"Route 29=1", "Route 46=1"}
-johto["Route 46"] = {"Route 29 Stop House=1", "Route 45=999"} -- Cannot go up to route 45
+johto["Route 46"] = {"Route 29 Stop House=1"} -- Cannot go up to route 45
 johto["Cherrygrove City"] = {"Route 29=1", "Pokecenter Cherrygrove City=1", "Mart Cherrygrove City=1", "Route 30=1"}
 johto["Pokecenter Cherrygrove City"] = {"Cherrygrove City=1"}
 johto["Mart Cherrygrove City"] = {"Cherrygrove City=1"}
 johto["Route 30"] = {"Cherrygrove City=1", "Route 31=1"}
 johto["Route 31"] = {"Route 30=1", "Dark Cave South=1", "Violet City Stop House=1"}
-johto["Dark Cave South"] = {"Route 31=1", "Dark Cave North=999"} -- Cannot go up in Dark Cave North
+johto["Dark Cave South"] = {"Route 31=1"} -- Cannot go up in Dark Cave North
 johto["Dark Cave North"] = {"Dark Cave South=1", "Route 45=1"}
 johto["Violet City Stop House"] = {"Route 31=1", "Violet City=1"}
 johto["Violet City Pokemart"] = {"Violet City=1"}
@@ -64,7 +64,7 @@ johto["Cianwood City"] = {"Route 41=1", "Pokecenter Cianwood=1", "Cliff Edge Gat
 johto["Pokecenter Cianwood"] = {"Cianwood City=1"}
 johto["Cliff Edge Gate"] = {"Cianwood City=1", "Route 47=1"}
 johto["Route 47"] = {"Cliff Edge Gate=1", "Cliff Cave 1F=1", "Cliff Cave 2F=1", "Cliff Cave B1F=1", "Route 48=1"}
-johto["Cliff Cave 1F"] = {"Route 47", "Cliff Cave B1F=1", "Cliff Cave 2F=1"}
+johto["Cliff Cave 1F"] = {"Route 47=1", "Cliff Cave B1F=1", "Cliff Cave 2F=1"}
 johto["Cliff Cave B1F"] = {"Cliff Cave 1F=1", "Route 47=1"}
 johto["Cliff Cave 2F"] = {"Cliff Cave 1F=1", "Route 47=1"}
 johto["Route 48"] = {"Route 47=1", "Pokecenter Route 48=1", "Johto Safari Zone Lobby=1"}
