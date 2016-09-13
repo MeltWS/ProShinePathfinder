@@ -21,6 +21,7 @@ To do:
 
 +fix dijkstra searching every path possible....
 
++fix dijkstra useless for
 Done:
 
 +Add the MemoryPath (Store in memory path already calc, for speedup the process) 100% done <Testing>

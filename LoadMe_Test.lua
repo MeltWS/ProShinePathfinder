@@ -4,6 +4,7 @@ author = "https://github.com/Rympex"
 description = [[EDITED PATH FIND, WITH EXCEPTION MAPs]]
 
 local pathFinder = require "Maps_Pathfind"
+local a = 1
 
 function onStart()
 	-- pathFinder.initSettings() -- reset settings on start, optional
@@ -12,7 +13,8 @@ function onStart()
 end
 
 function onPathAction()
-	pathFinder.MoveTo("Route 102")
+	pathFinder.MoveTo("Petalburg City")
+	end
 end
 
 function onBattleAction()

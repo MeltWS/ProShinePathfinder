@@ -18,7 +18,7 @@ local StartNode = nil
 local push = table.insert
 
 local function NewNode(name)
-	node = {}
+	local node = {}
 	node.name = name
 	node.Pre = nil
 	node.Dist = -1
@@ -28,7 +28,7 @@ local function NewNode(name)
 end
 
 local function NewEdge(Node1,Node2,EdgeVal)
-	edge = {}
+	local edge = {}
 	edge.N1 = Node1
 	edge.N2 = Node2
 	edge.Dist = EdgeVal
@@ -130,6 +130,7 @@ local function GetPathTo(N,Path)
 end
 
 local function initNodes(path)
+	local res
 	for k, v in pairs(path) do
 		NewNode(k)
 		for l, m in pairs(v) do
@@ -189,7 +190,7 @@ end
 
 -- FUNCTION NO BULTIN FOR ADD VALUE ON A TABLE
 local function replacepath(startpos, endpos, namexc)
-	temppath = {}
+	local temppath = {}
 	for posS=1,(startpos-1) do	
 		table.insert(temppath,PathSolution[posS])
 	end
@@ -205,24 +206,22 @@ end
 
 -- EDIT PATH FOR NO EDIT BASIC MAP TABLE
 local function EditPathGenerated()
+	local found = false
 	for val, zone in pairs(PathSolution) do -- for every val in array path 
 		for valx, exce in pairs(ExceRouteEdit) do -- for every val in exception, based on path, compare
 			if zone == ExceRouteEdit[valx][1][1] then -- if 1 of element is a start of exception- get table length exception
-				finded = true
+				found = true
 				for stat, element in pairs(ExceRouteEdit[valx][1]) do
-					posp = val - 1
-					if element == PathSolution[(posp + stat)] then
-					else
-						finded = false
+					local posp = val - 1
+					if not (element == PathSolution[(posp + stat)]) then
+						found = false
 					end
 				end
-				if finded == true then
-					exclng = tonumber(val - 1 + lib.tablelength(ExceRouteEdit[valx][1]))
+				if found == true then
+					local exclng = tonumber(val - 1 + lib.tablelength(ExceRouteEdit[valx][1]))
 					--print("need replace path pos:" .. val .. "  to pos:" .. exclng)
 					replacepath(val, exclng, valx)
 					return
-				else
-					
 				end
 			end
 		end
@@ -349,9 +348,9 @@ local function MoveTo(Destination)
 			return fatal("Path Not Found ERROR")
 		end		
 		PathDestStore = Destination
-		for i=0,15 do
+		-- for i=0,15 do
 		EditPathGenerated()
-		end
+		-- end
 		log("Percorso: " .. table.concat(PathSolution,"->"))
 		MoveWithCalcPath()	
 	end
