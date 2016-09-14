@@ -19,7 +19,7 @@ local function backtrack(last, cameFrom)
 end
 -- aStar:
 --      - expand:   function that takes a node and return its neighbors as array/table
---                  neighbors must be value, not keys, as they are discarded
+--                  neighbors must be values, not keys, as they are discarded
 --      - cost:     function that take two nodes, `from` and `to`, and return the cost
 --                  to go from `from` to `to`
 --      - heuristic:function that takes a node and return the estimated cost to reach
