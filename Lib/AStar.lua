@@ -1,7 +1,12 @@
-local thispath = "aStar/" -- select('1', ...):match(".+%.") or ""
+local modpath = ""
+for i = 1, select('#', ...) do
+	if modpath == "" then
+		modpath = select(i, ...):match(".+/")
+	end
+end
 
-local PQ = require (thispath .. "PQ")
-local HOF = require (thispath .. "HOF")
+local PQ = require (modpath .. "PQ")
+local HOF = require (modpath .. "HOF")
 
 local function backtrack(last, cameFrom)
     local current = last
