@@ -17,7 +17,18 @@ local function backtrack(last, cameFrom)
 	end
 	return path
 end
-
+-- aStar:
+--      - expand:   function that takes a node and return its neighbors as array/table
+--                  neighbors must be value, not as keys are discarded
+--      - cost:     function that take two nodes, `from` and `to`, and return the cost
+--                  to go from `from` to `to`
+--      - heuristic:function that takes a node and return the estimated cost to reach
+--                  the goal
+--      - goal:     function that takes a node and return whether the goal has been
+--                  reached or not
+--      - start:    the starting node
+-- return nil in case of failure
+--        the ordered path in case of success
 local aStar = HOF.curry(function(expand, cost, heuristic, goal, start)
 	local open = PQ.new()
 	local closed = {}
