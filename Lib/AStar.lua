@@ -28,7 +28,7 @@ end
 --                  reached or not
 --      - start:    the starting node
 -- return nil in case of failure
---        the ordered path in case of success
+--        the ordered path in case of success, as an array
 local aStar = HOF.curry(function(expand, cost, heuristic, goal, start)
 	local open = PQ.new()
 	local closed = {}
