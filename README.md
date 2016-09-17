@@ -1,6 +1,6 @@
 This allows you to use simple, MoveTo ("MapName") instead of using 1000 elseif.
 
-All 3 Main regions 99% Supported, dig path for 2 regions
+All 3 Main regions 99% Supported, dig path supported
 
 There is a setting system for dig and bike path.
 
@@ -12,15 +12,7 @@ To do:
 
 +Add failsafe if bot cannot go to a path because of Cut or Surf.
 
-+Add Subway support and hoenn digs
-
-Done:
-
-+Add Digways Hoenn
-
 +Add Subway support
-
-+Add dynamic settings change on onstart() or in script
 
 # Contributors:
 
