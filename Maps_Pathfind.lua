@@ -38,7 +38,11 @@ end
 -- return true if destination is reached
 local function goal(dest)
 	return function(node)
-		return node == dest
+		if dest == "Pokecenter" then
+			return string.match(node, dest)
+		else
+			return node == dest
+		end
 	end
 end
 
@@ -265,6 +269,11 @@ local function DisableDigPath()
 	ApplySettings()
 end
 
+-- move to nearest PC
+local function MoveToPC()
+	return MoveTo("Pokecenter")
+end
+
 -- RETURN TABLE FOR USER
 return {
 	MoveTo = MoveTo,
@@ -273,5 +282,6 @@ return {
 	EnableBikePath = EnableBikePath,
 	DisableBikePath = DisableBikePath,
 	EnableDigPath = EnableDigPath,
-	DisableDigPath = DisableDigPath
+	DisableDigPath = DisableDigPath,
+	MoveToPC = MoveToPC
  }
