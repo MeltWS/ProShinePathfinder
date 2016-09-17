@@ -2,8 +2,8 @@ local lib = {}
 
 -- IN RECTANGLE --
 function lib.inRectangle(UpperX, UpperY, LowerX, LowerY)
-	ActX = getPlayerX()
-	ActY = getPlayerY()
+	local ActX = getPlayerX()
+	local ActY = getPlayerY()
 	if (ActX >= UpperX and ActX <= LowerX) and (ActY >= UpperY and ActY <= LowerY) then
 		return true
 	else

@@ -4,21 +4,21 @@ local DescMaps = MapExceptions.DescMaps
 local ExceRouteEdit = MapExceptions.ExceRouteEdit
 local GlobalMap = require "Maps/GlobalMap"
 local PathSolution = {}
-
+local PathDestStore = ""
 -----------------------------------
 --- DIJKSTRA CODE PATHFINDING   ---
 -----------------------------------
 
 local Settings = nil
-local Nodes = nil
 local NodesIndex = nil
+local Nodes = nil
 local Edges = nil
 local StartNode = nil
 
 local push = table.insert
 
 local function NewNode(name)
-	node = {}
+	local node = {}
 	node.name = name
 	node.Pre = nil
 	node.Dist = -1
@@ -28,11 +28,30 @@ local function NewNode(name)
 end
 
 local function NewEdge(Node1,Node2,EdgeVal)
-	edge = {}
+	local edge = {}
 	edge.N1 = Node1
 	edge.N2 = Node2
 	edge.Dist = EdgeVal
 	push(Edges,edge)
+end
+
+function setEdge(n1, n2, dist)
+	for k, edge in ipairs(Edges) do
+		if edge.N1 == n1 and edge.N2 == n2 then
+			edge.Dist = dist
+			return
+		end
+	end
+	NewEdge(n1, n2, dist)
+end
+
+function unsetEdge(n1, n2, dist)
+	for k, edge in ipairs(Edges) do
+		if edge.N1 == n1 and edge.N2 == n2 then
+			table.remove(Edges, k)
+			return
+		end
+	end
 end
 
 local function SetStartNode(name)
@@ -42,7 +61,7 @@ local function SetStartNode(name)
 end
 
 local function EdgeConnectsNodes(E,N1,N2)
-	return E.N1 == N1 and E.N2 == N2 or E.N1 == N2 and E.N2 == N1
+	return E.N1 == N1 and E.N2 == N2
 end
 
 local function GetDistance(N1,N2)
@@ -68,8 +87,6 @@ local function GetAllAdjcentNodes(N,AdjNodes)
 	for i=1,#Edges,1 do
 		if Edges[i].N1 == N and not Nodes[NodesIndex[Edges[i].N2]].vis then
 			push(AdjNodes,Edges[i].N2)
-		elseif Edges[i].N2 == N and not Nodes[NodesIndex[Edges[i].N1]].vis then
-			push(AdjNodes,Edges[i].N1)
 		end
 	end
 end
@@ -90,6 +107,9 @@ local function VisitClosestNode()
 			index = i
 		end
 	end
+	if not Nodes[index] then
+		error("Could not find ClosestNode node, probably a map error")
+	end
 	Nodes[index].vis = true
 	return index
 end
@@ -100,7 +120,7 @@ local function Dijkstras()
 		local MyAdjNodes = {}
 		GetAllAdjcentNodes(ClosetsNode.name,MyAdjNodes)
 		if #MyAdjNodes ~= 0 then
-		for i=1,#MyAdjNodes,1  do
+		for i=1,#MyAdjNodes,1  do	
 			local Distance = ClosetsNode.Dist + GetDistance(ClosetsNode.name,MyAdjNodes[i])
 			local AdjNode = Nodes[NodesIndex[MyAdjNodes[i]]]
 			if AdjNode.Dist >= 0 then
@@ -128,29 +148,18 @@ local function GetPathTo(N,Path)
 	push(Path,1,StartNode)
 end
 
-local function initNodes(path)
-	for k, v in pairs(path) do
-		NewNode(k)
-		for l, m in pairs(v) do
-			res = lib.splitstring(m,"=")
-			NewEdge(k, res[1], res[2]) --fixed distance for heuristic	
-			--NewEdge(k, m, v[m]) --fixed distance for heuristic
+local function initNodes()
+	if Nodes then return end
+	Nodes = {}
+	Edges = {}
+	NodesIndex = {}
+	StartNode = {}
+	for node, links in pairs(GlobalMap) do
+		NewNode(node)
+		for dest, dist in pairs(links) do
+			NewEdge(node, dest, dist)
 		end
 	end
-end
-
-local function initDij(startPos, EndPos, path)
-	if not Edges or not Nodes or not NodesIndex then -- REDRAW NODE MAP
-		Edges = {}
-		Nodes = {}
-		NodesIndex = {}
-		initNodes(path)
-	end
-	SetStartNode(startPos)
-	local MyPath = {}
-	Dijkstras()
-	GetPathTo(EndPos, MyPath)
-	return MyPath
 end
 
 ---------------------------
@@ -185,7 +194,7 @@ end
 
 -- FUNCTION NO BULTIN FOR ADD VALUE ON A TABLE
 local function replacepath(startpos, endpos, namexc)
-	temppath = {}
+	local temppath = {}
 	for posS=1,(startpos-1) do	
 		table.insert(temppath,PathSolution[posS])
 	end
@@ -201,24 +210,22 @@ end
 
 -- EDIT PATH FOR NO EDIT BASIC MAP TABLE
 local function EditPathGenerated()
+	local found = false
 	for val, zone in pairs(PathSolution) do -- for every val in array path 
 		for valx, exce in pairs(ExceRouteEdit) do -- for every val in exception, based on path, compare
 			if zone == ExceRouteEdit[valx][1][1] then -- if 1 of element is a start of exception- get table length exception
-				finded = true
+				found = true
 				for stat, element in pairs(ExceRouteEdit[valx][1]) do
-					posp = val - 1
-					if element == PathSolution[(posp + stat)] then
-					else
-						finded = false
+					local posp = val - 1
+					if not (element == PathSolution[(posp + stat)]) then
+						found = false
 					end
 				end
-				if finded == true then
-					exclng = tonumber(val - 1 + lib.tablelength(ExceRouteEdit[valx][1]))
+				if found == true then
+					local exclng = tonumber(val - 1 + lib.tablelength(ExceRouteEdit[valx][1]))
 					--print("need replace path pos:" .. val .. "  to pos:" .. exclng)
 					replacepath(val, exclng, valx)
 					return
-				else
-					
 				end
 			end
 		end
@@ -229,18 +236,9 @@ end
 --- FUNCTION FOR MOVETO ---
 ---------------------------
 
--- RESET THE NODE MAP
-local function ResetDijMap()
-	Nodes = nil
-	NodesIndex = nil
-	Edges = nil
-end
-
 -- RESET PATH ON STOP
-local PathDestStore = ""
 local function ResetPath()
 	PathDestStore = ""
-	ResetDijMap()
 end
 
 local function MovingApply(ToMap)
@@ -275,83 +273,85 @@ local function MoveWithCalcPath()
 	end	
 end
 
-local function moveToDestination(currentPosition, finalPosition)
-	--local path = getShortestPath(KantoMap, currentPosition, finalPosition, {})
-	return initDij(currentPosition, finalPosition, GlobalMap)
-	-- local path = initDij(currentPosition, finalPosition, KantoMap)
-end
 
 ---------------------------
 -------- SETTINGS ---------
 ---------------------------
 
--- MODIF MAP ACCORDING TO SETTINGS
+-- MODIF NODEMAP ACCORDING TO SETTINGS
 local function ApplySettings()
 	-- BIKE PATHS
 	if Settings.bike then
-		GlobalMap["Route 17"] = {"Route 16=1","Route 18=1"}
-		GlobalMap["Route 18"] = {"Route 17=1","Fuchsia City=1"}
+		setEdge("Route 18", "Route 17", 1)		
+		setEdge("Route 17", "Route 18", 1)
 	else
-		GlobalMap["Route 17"] = {"Route 16=1","Route 18=999"}
-		GlobalMap["Route 18"] = {"Route 17=999","Fuchsia City=1"}
+		setEdge("Route 18", "Route 17", 999) -- to be safe and not cut nodes off the map
+		setEdge("Route 17", "Route 18", 999)
 	end
 	-- DIG PATHS
 	if Settings.dig then
 		MapExceptions.EnableDigPath()
 		-- Kanto
-		GlobalMap["Route 11"] = {"Vermilion City=1","Route 11 Stop House=1", "Route 2=1"}
-		GlobalMap["Route 2"] = {"Route 2 Stop2=1","Route 2 Stop3=1","Viridian City=1","Digletts Cave Entrance 1=1","Pewter City=1", "Route 11=1"}
-		GlobalMap["Route 4"] = {"Mt. Moon Exit=1", "Cerulean City=1", "Route 3=1"}
-		GlobalMap["Route 3"] = {"Pewter City=1", "Mt. Moon 1F=1", "Pokecenter Route 3=1", "Route 4=1"}		
+		setEdge("Route 11", "Route 2", 1)
+		setEdge("Route 2", "Route 11", 1)
+		setEdge("Route 4", "Route 3", 1)
+		setEdge("Route 3", "Route 4", 1)
 		-- Johto
-		GlobalMap["Route 31"] = {"Route 30=1", "Dark Cave South=1", "Violet City Stop House=1", "Route 45=1"}
-		GlobalMap["Route 45"] = {"Blackthorn City=1", "Route 46=1", "Dark Cave North=1", "Route 31=1"}
-		GlobalMap["Route 33"] = {"Union Cave 1F=1", "Azalea Town=1", "Route 32=1"}
-		GlobalMap["Route 32"] = {"Ruins Of Alph Stop House=1", "Pokecenter Route 32=1", "Union Cave 1F=1", "Violet City=1", "Route 33=1"}
-		GlobalMap["Blackthorn City"] = {"Ice Path 1F=1", "Route 45=1", "Blackthorn City Pokemart=1", "Pokecenter Blackthorn=1", "Dragons Den Entrance=1", "Route 44=1"}
-		GlobalMap["Route 44"] = {"Mahogany Town=1", "Ice Path 1F=1", "Blackthorn City=1"}
+		setEdge("Route 31", "Route 45", 1)
+		setEdge("Route 45", "Route 31", 1)
+		setEdge("Route 33", "Route 32", 1)
+		setEdge("Route 32", "Route 33", 1)		
+		setEdge("Blackthorn City", "Route 44", 1)
+		setEdge("Route 44", "Blackthorn City", 1)
 	else
 		MapExceptions.DisableDigPath()
 		-- Kanto
-		GlobalMap["Route 11"] = {"Vermilion City=1","Route 11 Stop House=1"}
-		GlobalMap["Route 2"] = {"Route 2 Stop2=1","Route 2 Stop3=1","Viridian City=1","Digletts Cave Entrance 1=1","Pewter City=1"}		
+		unsetEdge("Route 11", "Route 2")
+		unsetEdge("Route 2", "Route 11")
+		unsetEdge("Route 4", "Route 3")
+		unsetEdge("Route 3", "Route 4")
 		-- Johto
-		GlobalMap["Route 31"] = {"Route 30=1", "Dark Cave South=1", "Violet City Stop House=1"}
-		GlobalMap["Route 45"] = {"Blackthorn City=1", "Route 46=1", "Dark Cave North=1"}
-		GlobalMap["Route 33"] = {"Union Cave 1F=1", "Azalea Town=1"}
-		GlobalMap["Route 32"] = {"Ruins Of Alph Stop House=1", "Pokecenter Route 32=1", "Union Cave 1F=1", "Violet City=1"}
-		GlobalMap["Blackthorn City"] = {"Ice Path 1F=1", "Route 45=1", "Blackthorn City Pokemart=1", "Pokecenter Blackthorn=1", "Dragons Den Entrance=1"}
-		GlobalMap["Route 44"] = {"Mahogany Town=1", "Ice Path 1F=1"}
-		GlobalMap["Route 4"] = {"Mt. Moon Exit=1", "Cerulean City=1"}
-		GlobalMap["Route 3"] = {"Pewter City=1", "Mt. Moon 1F=1", "Pokecenter Route 3=1"}
+		unsetEdge("Route 31", "Route 45")
+		unsetEdge("Route 45", "Route 31")
+		unsetEdge("Route 33", "Route 32")
+		unsetEdge("Route 32", "Route 33")		
+		unsetEdge("Blackthorn City", "Route 44")
+		unsetEdge("Route 44", "Blackthorn City")
 	end
-	ResetDijMap()
 end
 
 -- INIT SETTINGS WITH CURRENT INVENTORY AND TEAM
 local function initSettings()
+	initNodes(GlobalMap)
+	if Settings then return end
 	Settings = {}
 	Settings.bike = hasItem("Bicycle")
 	Settings.dig = lib.hasPokemonWithMove("Dig")
 	ApplySettings()
 end
 
+local function initDij(startPos, EndPos)
+	initSettings()
+	SetStartNode(startPos)
+	local MyPath = {}
+	Dijkstras()
+	GetPathTo(EndPos, MyPath)
+	return MyPath
+end
+
 -- MOVETO DEST
 local function MoveTo(Destination)
-	if not Settings then
-		initSettings()
-	end
 	if PathDestStore == Destination then
 		MoveWithCalcPath()	
 	else
-		PathSolution = moveToDestination(getMapName(), Destination)
+		PathSolution = initDij(getMapName(), Destination)
 		if lib.tablelength(PathSolution) == 0 then
 			return fatal("Path Not Found ERROR")
 		end		
 		PathDestStore = Destination
-		for i=0,15 do
+		-- for i=0,15 do
 		EditPathGenerated()
-		end
+		-- end
 		log("Percorso: " .. table.concat(PathSolution,"->"))
 		MoveWithCalcPath()	
 	end
@@ -359,28 +359,28 @@ end
 
 -- SETTINGS CALLS
 local function EnableBikePath()
-	if not Settings then initSettings() end
+	initSettings()
 	Settings.bike = true
 	log("BIKE PATH ENABLED")
 	ApplySettings()
 end
 
 local function DisableBikePath()
-	if not Settings then initSettings() end
+	initSettings()
 	Settings.bike = false
 	log("BIKE PATH DISABLED")
 	ApplySettings()
 end
 
 local function EnableDigPath()
-	if not Settings then initSettings() end
+	initSettings()
 	Settings.dig = true
 	log("DIG PATH ENABLED")
 	ApplySettings()
 end
 
 local function DisableDigPath()
-	if not Settings then initSettings() end
+	initSettings()
 	Settings.dig = false
 	log("DIG PATH DISABLED")
 	ApplySettings()
