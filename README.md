@@ -13,15 +13,12 @@ To do:
 
 +Add failsafe if bot cannot go to a path because of Cut or Surf.
 
-+Add Hoenn
-
-+Add Boat and Subway support
++Add Subway support and hoenn digs
 
 +Add the Auto-Harvest (Berry - Hidden Items - Items) can be Disable with [AutoHarvest = False] 25% done
 
 +fix dijkstra searching every path possible....
 
-+fix dijkstra useless for
 Done:
 
 +Add the MemoryPath (Store in memory path already calc, for speedup the process) 100% done <Testing>
@@ -29,6 +26,8 @@ Done:
 +Add Digways and Bike support
 
 +Add dynamic settings change on onstart() or in script
+
++add Hoenn
 
 Contributors:
 

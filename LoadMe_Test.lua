@@ -3,18 +3,15 @@ author = "https://github.com/Rympex"
 
 description = [[EDITED PATH FIND, WITH EXCEPTION MAPs]]
 
-local pathFinder = require "Maps_Pathfind"
-local a = 1
+local pathFinder = require "Maps_Pathfind" -- requesting table with methods
 
 function onStart()
-	-- pathFinder.initSettings() -- reset settings on start, optional
-	-- pathFinder.EnableDigPath()
-	-- pathFinder.DisableDigPath()
+	pathFinder.DisableDigPath() -- example use of settings
+	pathFinder.DisableBikePath()
 end
 
 function onPathAction()
-	pathFinder.MoveTo("Petalburg City")
-	end
+	pathFinder.MoveTo("Route 32") -- example use of MoveTo
 end
 
 function onBattleAction()
