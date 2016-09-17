@@ -1,11 +1,10 @@
+This allows you to use simple, MoveTo ("MapName") instead of using 1000 elseif.
 
-This allows you to use simple, MoveTo ("MapName") instead of using 1000 elseif
+All 3 Main regions 99% Supported, dig path for 2 regions
 
-KantoMap: Most is done with exceptions
+There is a setting system for dig and bike path.
 
-JohtoMap: Most is done with exeptions
-
-HoeenMap: Done 0% 
+read the `LoadMe_Test.lua` for all infos on how to use.
 
 To do:
 
@@ -15,20 +14,23 @@ To do:
 
 +Add Subway support and hoenn digs
 
-+Add the Auto-Harvest (Berry - Hidden Items - Items) can be Disable with [AutoHarvest = False] 25% done
-
-+fix dijkstra searching every path possible....
-
 Done:
 
-+Add the MemoryPath (Store in memory path already calc, for speedup the process) 100% done <Testing>
++Add Digways Hoenn
 
-+Add Digways and Bike support
++Add Subway support
 
 +Add dynamic settings change on onstart() or in script
 
-+add Hoenn
-
 Contributors:
 
-@Thanks NyK for the Dijkstra code <3
+# lua-astar
+@https://github.com/Shakadak/lua-astar
+A simple implementation of the A* pathfinding algorithm
+
+# How to use
+The `aStar` function expect a few more arguments than most other implementations available anywhere.  
+I therefore invite you to read `example.lua`
+
+@https://github.com/Rympex/Pathfinding-Dijkstra
+Original project

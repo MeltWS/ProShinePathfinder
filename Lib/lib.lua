@@ -106,4 +106,10 @@ function lib.logTable(table, ...) -- logTable(table, name) with name as optional
 	end
 end
 
+function lib.ifNotThen(anything, call)
+	if not anything then
+		return call()
+	end
+end
+
 return lib
