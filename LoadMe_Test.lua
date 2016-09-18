@@ -24,8 +24,8 @@ function onStart()
 end
 
 function onPathAction()
-	-- PathFinder.MoveTo("Olivine City") -- example use of MoveTo
-	PathFinder.MoveToPC()
+	PathFinder.MoveTo("Lavender Town") -- example use of MoveTo
+	-- PathFinder.MoveToPC()
 end
 
 function onBattleAction()
@@ -33,7 +33,7 @@ function onBattleAction()
 end
 
 function onDialogMessage(message)
-	PathFinder.SolveDialog(message) -- this needs to be there
+	PathFinder.SolveDialog(message, PathFinder) -- this needs to be there
 end
 
 function onStop()

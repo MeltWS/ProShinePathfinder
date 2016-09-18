@@ -7,7 +7,7 @@ local DescMaps = MapExceptions.DescMaps
 local ExceRouteEdit = MapExceptions.ExceRouteEdit
 local PathSolution = {}
 local PathDestStore = ""
-local digToDisco = nil
+local Outlet = nil
 
 -----------------------------------
 ----- A* NECESSARY  FUNCTIONS -----
@@ -119,19 +119,42 @@ local function EditPathGenerated()
 	end
 end
 
--- function to discover dig path
-local function SetLastDigDest(dest)
-	digToDisco = dest
+-- DISCOVERING OUTLET
+
+--SET OUTLET
+local function SetOutlet(currentMap)
+	if not currentMap then
+		Outlet = nil
+		return
+	end
+	local outletMap = Digways[currentMap].outletMap
+	Outlet = {}
+	Outlet.map = outletMap
+	Outlet.found = false
+	if outletMap == currentMap then -- if the outlet is on the same map
+		if Digways[currentMap].inRectangle() then -- if the outlet is the other digway on the same map
+			lib.swap(Digways[currentMap], Digways[currentMap .. "_2"]) -- swap digways arround for currentMap
+		end
+		Outlet.inRectangle = Digways[currentMap].inRectangle
+	else
+		Outlet.inRectangle = function() return true end
+	end
 end
 
-local function GetLastDigDest(dest)
-	return digToDisco
+-- CHECK IF LOC MATCHING OUTLET / BOT
+local function OutletFound(current)
+	if Outlet then
+		return current == Outlet.map and Outlet.inRectangle()
+	else
+		return false
+	end
 end
 
--- If current map is digway location then discover it
-local function checkDigway(current)
-	if digToDisco == current then
-		talkToNpcOnCell(Digways[current]["x"], Digways[current]["y"])
+-- DISCOVER OUTLET IF POSSIBLE
+local function checkOutlet(current)
+	if OutletFound(current) then
+		talkToNpcOnCell(Digways[current].x, Digways[current].y)
+		-- Outlet.found = true
 		return true
 	end
 	return false
@@ -246,7 +269,7 @@ end
 -- MOVETO DEST
 local function MoveTo(Destination)
 	lib.ifNotThen(Settings, initSettings)
-	if digToDisco and checkDigway(getMapName()) then
+	if Outlet and checkOutlet(getMapName()) then
 		return
 	elseif PathDestStore == Destination then
 		MoveWithCalcPath()	
@@ -307,7 +330,7 @@ return {
 	EnableDigPath = EnableDigPath,
 	DisableDigPath = DisableDigPath,
 	MoveToPC = MoveToPC,
-	---------------
-	SetLastDigDest = SetLastDigDest,
-	GetLastDigDest = GetLastDigDest
+	-- used by Maps_exceptions
+	SetOutlet = SetOutlet,
+	OutletFound = OutletFound
  }

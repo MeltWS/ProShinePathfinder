@@ -3,10 +3,9 @@ local lib = require "Lib/lib"
 local ExceRouteEdit = {}
 local DescMaps = {}
 local PathSolution = nil
-local DialogCheck = ""
+local DialogCheck = nil
 local DialogChoose = {}
 local digUndiscovered = "I better not venture in"
--- local digwayDisco = "This must be the outlet to"
 
 local function SetPathSolution(Path)
 	PathSolution = Path
@@ -15,21 +14,20 @@ end
 -- FUNCTION FOR ADD DIALOG AND PUSHDIALOG
 
 local function SolveDialog(message, pf)
-	if message == DialogCheck then
+	if DialogCheck and message == DialogCheck then
 		for value, index in pairs(DialogChoose) do
 			pushDialogAnswer(index)
 			log("Pushing Dialog: " .. index)
 		end
-	elseif string.find(message, digUndiscovered) then -- outlet digway isn't discovered'
-		log("Digway is undiscovered")
-		DialogCheck = ""
+	elseif string.find(message, digUndiscovered) then -- outlet digway isn't discovered
+		DialogCheck = nil
 		pf.DisableDigPath()
-		pf.SetLastDigDest(PathSolution[1]) -- pathfinder will check the digway
+		pf.SetOutlet(getMapName()) -- pathfinder will check the outlet when possible.
 		pf.ResetPath()
-	elseif pf.GetLastDigDest() == getMapName() then -- digway discover
-		pf.SetLastDigDest(nil)
+	elseif pf.OutletFound(getMapName()) then -- outlet discovered
+		pf.SetOutlet(nil)
 		pf.EnableDigPath()
-		pushDialogAnswer(2)
+		pushDialogAnswer(2) -- not using digway
 	end
 end
 

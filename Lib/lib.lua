@@ -111,5 +111,10 @@ function lib.ifNotThen(anything, call)
 		return call()
 	end
 end
+function lib.swap(v1, v2) -- swap two var
+	local tmp = v1
+	v1 = v2
+	v2 = tmp
+end
 
 return lib
