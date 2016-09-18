@@ -5,6 +5,8 @@ local DescMaps = {}
 local PathSolution = nil
 local DialogCheck = ""
 local DialogChoose = {}
+local digUndiscovered = "I better not venture in"
+-- local digwayDisco = "This must be the outlet to"
 
 local function SetPathSolution(Path)
 	PathSolution = Path
@@ -12,12 +14,22 @@ end
 
 -- FUNCTION FOR ADD DIALOG AND PUSHDIALOG
 
-local function SolveDialog(message)
+local function SolveDialog(message, pf)
 	if message == DialogCheck then
 		for value, index in pairs(DialogChoose) do
 			pushDialogAnswer(index)
 			log("Pushing Dialog: " .. index)
 		end
+	elseif string.find(message, digUndiscovered) then -- outlet digway isn't discovered'
+		log("Digway is undiscovered")
+		DialogCheck = ""
+		pf.DisableDigPath()
+		pf.SetLastDigDest(PathSolution[1]) -- pathfinder will check the digway
+		pf.ResetPath()
+	elseif pf.GetLastDigDest() == getMapName() then -- digway discover
+		pf.SetLastDigDest(nil)
+		pf.EnableDigPath()
+		pushDialogAnswer(2)
 	end
 end
 
@@ -247,12 +259,12 @@ DescMaps["Ice Path B3F_to_Route 44"] = {function() Mode_MoveToCell("Ice Path B3F
 
 -- SPEAK WITH NPC --
 -- DIGWAYS
-DescMaps["Route 31_to_Route 45"] = {function() Mode_SpeakWithNPC("Route 31","Do you want to attempt to use it?",{1,lib.getPokemonNumberWithMove("Dig")},53,11,53,10) end}
-DescMaps["Route 45_to_Route 31"] = {function() Mode_SpeakWithNPC("Route 45","Do you want to attempt to use it?",{1,lib.getPokemonNumberWithMove("Dig")},14,6,14,5) end}
-DescMaps["Route 32_to_Route 33"] = {function() Mode_SpeakWithNPC("Route 32","Do you want to attempt to use it?",{1,lib.getPokemonNumberWithMove("Dig")},11,143,10,143) end}
-DescMaps["Route 33_to_Route 32"] = {function() Mode_SpeakWithNPC("Route 33","Do you want to attempt to use it?",{1,lib.getPokemonNumberWithMove("Dig")},14,14,14,13) end}
-DescMaps["Blackthorn City_to_Route 44"] = {function() Mode_SpeakWithNPC("Blackthorn City","Do you want to attempt to use it?",{1,lib.getPokemonNumberWithMove("Dig")},49,17,49,16) end}
-DescMaps["Route 44_to_Blackthorn City"] = {function() Mode_SpeakWithNPC("Route 44","Do you want to attempt to use it?",{1,lib.getPokemonNumberWithMove("Dig")},73,10,73,9) end}
+DescMaps["Route 31_to_Route 45"] = {function() Mode_DigWay("Route 31", 53,11,53,10) end}
+DescMaps["Route 45_to_Route 31"] = {function() Mode_DigWay("Route 45", 14,6,14,5) end}
+DescMaps["Route 32_to_Route 33"] = {function() Mode_DigWay("Route 32", 11,143,10,143) end}
+DescMaps["Route 33_to_Route 32"] = {function() Mode_DigWay("Route 33", 14,14,14,13) end}
+DescMaps["Blackthorn City_to_Route 44"] = {function() Mode_DigWay("Blackthorn City", 49,17,49,16) end}
+DescMaps["Route 44_to_Blackthorn City"] = {function() Mode_DigWay("Route 44", 73,10,73,9) end}
 
 -- DescMaps["Safari Effort Wald 1_to_Safari Stop"] = {function() Mode_SpeakWithNPC("Safari Effort Wald 1","Hello. How may I help you?",{3,1},6,22,6,21) end}
 

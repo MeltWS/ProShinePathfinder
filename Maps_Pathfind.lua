@@ -1,11 +1,13 @@
 local lib = require "Lib/lib"
 local aStar = require "Lib/lua-astar/AStar"
 local GlobalMap = require "Maps/GlobalMap"
+local Digways = require "Maps/DigwaysMap"
 local MapExceptions = require "Maps_Exceptions"
 local DescMaps = MapExceptions.DescMaps
 local ExceRouteEdit = MapExceptions.ExceRouteEdit
 local PathSolution = {}
 local PathDestStore = ""
+local digToDisco = nil
 
 -----------------------------------
 ----- A* NECESSARY  FUNCTIONS -----
@@ -117,6 +119,24 @@ local function EditPathGenerated()
 	end
 end
 
+-- function to discover dig path
+local function SetLastDigDest(dest)
+	digToDisco = dest
+end
+
+local function GetLastDigDest(dest)
+	return digToDisco
+end
+
+-- If current map is digway location then discover it
+local function checkDigway(current)
+	if digToDisco == current then
+		talkToNpcOnCell(Digways[current]["x"], Digways[current]["y"])
+		return true
+	end
+	return false
+end
+
 ---------------------------
 --- FUNCTION FOR MOVETO ---
 ---------------------------
@@ -226,7 +246,9 @@ end
 -- MOVETO DEST
 local function MoveTo(Destination)
 	lib.ifNotThen(Settings, initSettings)
-	if PathDestStore == Destination then
+	if digToDisco and checkDigway(getMapName()) then
+		return
+	elseif PathDestStore == Destination then
 		MoveWithCalcPath()	
 	else
 	 	PathSolution = simpleAStar(goal(Destination))(getMapName())
@@ -276,6 +298,7 @@ end
 
 -- RETURN TABLE FOR USER
 return {
+	-- user calls
 	MoveTo = MoveTo,
 	ResetPath = ResetPath,
 	SolveDialog = MapExceptions.SolveDialog,
@@ -283,5 +306,8 @@ return {
 	DisableBikePath = DisableBikePath,
 	EnableDigPath = EnableDigPath,
 	DisableDigPath = DisableDigPath,
-	MoveToPC = MoveToPC
+	MoveToPC = MoveToPC,
+	---------------
+	SetLastDigDest = SetLastDigDest,
+	GetLastDigDest = GetLastDigDest
  }
