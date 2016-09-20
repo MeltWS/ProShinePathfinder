@@ -111,10 +111,25 @@ function lib.ifNotThen(anything, call)
 		return call()
 	end
 end
+
 function lib.swap(v1, v2) -- swap two var
 	local tmp = v1
 	v1 = v2
 	v2 = tmp
+end
+
+function lib.pairsByKeys(t, f) -- sort table keys by alpha order or f as alternative order.
+	local a = {}
+	for n in pairs(t) do table.insert(a, n) end
+	table.sort(a, f)
+	local i = 0      -- iterator variable
+	local iter = function ()   -- iterator function
+		i = i + 1
+		if a[i] == nil then return nil
+		else return a[i], t[a[i]]
+    	end
+	end
+	return iter
 end
 
 return lib
