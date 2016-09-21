@@ -1,3 +1,5 @@
+local ss = require "static_Settings"
+
 
 local JohtoMap = {}
 

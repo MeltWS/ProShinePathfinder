@@ -5,7 +5,9 @@ local DescMaps = {}
 local PathSolution = nil
 local DialogCheck = nil
 local DialogChoose = {}
-local digUndiscovered = "I better not venture in"
+local DigUndiscovered = "I better not venture in"
+local TransmatDialogReached = "You are detectedly already in the lobby of Pokecenter"
+local TransmatReached = false
 
 local function SetPathSolution(Path)
 	PathSolution = Path
@@ -19,7 +21,7 @@ local function SolveDialog(message, pf)
 			pushDialogAnswer(index)
 			log("Pushing Dialog: " .. index)
 		end
-	elseif string.find(message, digUndiscovered) then -- outlet digway isn't discovered
+	elseif string.find(message, DigUndiscovered) then -- outlet digway isn't discovered
 		DialogCheck = nil
 		pf.DisableDigPath()
 		pf.SetOutlet(getMapName()) -- pathfinder will check the outlet when possible.
@@ -28,12 +30,15 @@ local function SolveDialog(message, pf)
 		pf.SetOutlet(nil)
 		pf.EnableDigPath()
 		pushDialogAnswer(2) -- not using digway
+	elseif string.find(message, TransmatDialogReached) then
+		TransmatReached = true
+		pushDialogAnswer(2)
 	end
 end
 
 -- RESOLUTION EXCEPTION FOR MOVE MAP1 TO MAP2 SPEAKING WITH NPC
 local function Mode_MoveToCell(MapName,Xh,Yh,Xl,Yl,Xc,Yc)
-	if lib.inRectangle(Xh,Yh,Xl,Yl) == true and MapName == getMapName() then
+	if lib.inRectangle(Xh,Yh,Xl,Yl) and MapName == getMapName() then
 	    lib.log1time("Exception Resolution:  [ " .. getMapName() .." To " .. PathSolution[1] .." ]  GoTo  X:".. Xc .." Y:" .. Yc)
 		moveToCell(Xc,Yc)
 	else
@@ -55,12 +60,12 @@ local function Mode_SpeakWithNPC(MapName,Check,Dialogs,cellX,cellY,npcX,npcY)
 	end	
 end
 
--- DIGS WAYS
+-- DIGS WAYS EXCEPTION
 local function Mode_DigWay(MapName,cellX,cellY,npcX,npcY)
 	Mode_SpeakWithNPC(MapName, "Do you want to attempt to use it?", {1,lib.getPokemonNumberWithMove("Dig", 155)}, cellX, cellY, npcX, npcY)
 end
 
--- DIVE
+-- DIVE EXCEPTION
 local function Mode_Dive(MapName, Dialog, cellX,cellY)
 	lib.log1time("Exception Resolution:  [ " .. getMapName() .." To " .. PathSolution[1] .." ]  Dive  X:".. cellX .." Y:" .. cellY)
 	diveId = lib.getPokemonNumberWithMove("Dive", 155)
@@ -71,6 +76,34 @@ local function Mode_Dive(MapName, Dialog, cellX,cellY)
 	DialogCheck = Dialog
 	DialogChoose = {1,diveId}
 		moveToCell(cellX, cellY)
+	end
+end
+
+-- TRANSMAT EXCEPTION
+local function Mode_Transmat(destPC, Dialogs)
+	local npcX = 4
+	local npcY = 4
+	local cellX = 4
+	local cellY = 5
+
+	if "Transmat Station" == getMapName()  then
+		if TransmatReached then
+			if getPlayerX() == 9 and getPlayerY() == 9 then
+				TransmatReached = false
+				return moveToCell(9,10)
+			else moveToCell(9,9)
+			end
+		else
+			lib.log1time("Exception Resolution:  [ Transmat Station To " .. PathSolution[1] .." ]  SpeakWithNPC  X:4 Y:4 ")
+			if (getPlayerX() == cellX) and (getPlayerY() == cellY) and isNpcOnCell(npcX, npcY) then
+				DialogCheck  = "What destination's Pokemon Center would you like to be transmitted to? It will cost $2,500 Pokedollars per travel."
+				DialogChoose = Dialogs
+				talkToNpcOnCell(npcX, npcY)
+			else moveToCell(cellX,cellY)
+			end
+		end
+	else
+		return false
 	end
 end
 
@@ -327,6 +360,40 @@ DescMaps["Route 126_to_Route 126 Underwater"] = {function() Mode_Dive("Route 126
 DescMaps["Route 126 Underwater_to_Route 126"] = {function() if getMapName() == "Route 126 Underwater" then moveToCell(15,71) end end}
 DescMaps["Sootopolis City_to_Sootopolis City Underwater"] = {function() Mode_Dive("Sootopolis City", "Do you want to Dive here?", 50,91) end}
 DescMaps["Sootopolis City Underwater_to_Sootopolis City"] = {function() Mode_Dive("Sootopolis City Underwater", "Do you want to go to the surface?", 17,11) end}
+
+-- PC TO TRANSMAT
+DescMaps["Pokecenter Verdanturf_to_Transmat Station"] = {function() Mode_SpeakWithNPC("Pokecenter Verdanturf","Can you present to me your registered",{1},8,5,8,4) end}
+DescMaps["Pokecenter Sootopolis_to_Transmat Station"] = {function() Mode_SpeakWithNPC("Pokecenter Sootopolis","Can you present to me your registered",{1},8,5,8,4) end}
+DescMaps["Pokecenter Slateport_to_Transmat Station"] = {function() Mode_SpeakWithNPC("Pokecenter Slateport","Can you present to me your registered",{1},8,5,8,4) end}
+DescMaps["Pokecenter Rustboro City_to_Transmat Station"] = {function() Mode_SpeakWithNPC("Pokecenter Rustboro City","Can you present to me your registered",{1},8,5,8,4) end}
+DescMaps["Pokecenter Petalburg City_to_Transmat Station"] = {function() Mode_SpeakWithNPC("Pokecenter Petalburg City","Can you present to me your registered",{1},8,5,8,4) end}
+DescMaps["Pokecenter Pacifidlog Town_to_Transmat Station"] = {function() Mode_SpeakWithNPC("Pokecenter Pacifidlog Town","Can you present to me your registered",{1},8,5,8,4) end}
+DescMaps["Pokecenter Oldale Town_to_Transmat Station"] = {function() Mode_SpeakWithNPC("Pokecenter Oldale Town","Can you present to me your registered",{1},8,5,8,4) end}
+DescMaps["Pokecenter Mossdeep City_to_Transmat Station"] = {function() Mode_SpeakWithNPC("Pokecenter Mossdeep City","Can you present to me your registered",{1},8,5,8,4) end}
+DescMaps["Pokecenter Mauville City_to_Transmat Station"] = {function() Mode_SpeakWithNPC("Pokecenter Mauville City","Can you present to me your registered",{1},8,5,8,4) end}
+DescMaps["Pokecenter Lilycove City_to_Transmat Station"] = {function() Mode_SpeakWithNPC("Pokecenter Lilycove City","Can you present to me your registered",{1},8,5,8,4) end}
+DescMaps["Pokecenter Lavaridge Town_to_Transmat Station"] = {function() Mode_SpeakWithNPC("Pokecenter Lavaridge Town","Can you present to me your registered",{1},8,5,8,4) end}
+DescMaps["Pokecenter Fortree City_to_Transmat Station"] = {function() Mode_SpeakWithNPC("Pokecenter Fortree City","Can you present to me your registered",{1},8,5,8,4) end}
+DescMaps["Pokecenter Fallabor Town_to_Transmat Station"] = {function() Mode_SpeakWithNPC("Pokecenter Fallabor Town","Can you present to me your registered",{1},8,5,8,4) end}
+DescMaps["Pokecenter Ever Grande City_to_Transmat Station"] = {function() Mode_SpeakWithNPC("Pokecenter Ever Grande City","Can you present to me your registered",{1},8,5,8,4) end}
+DescMaps["Pokecenter Dewford Town_to_Transmat Station"] = {function() Mode_SpeakWithNPC("Pokecenter Dewford Town","Can you present to me your registered",{1},8,5,8,4) end}
+
+--TRANSMAT TO PC
+DescMaps["Transmat Station_to_Pokecenter Verdanturf"] = {function() Mode_Transmat("Pokecenter Verdanturf", {6,2}) end}
+DescMaps["Transmat Station_to_Pokecenter Sootopolis"] = {function() Mode_Transmat("Pokecenter Sootopolis", {6,6,4}) end}
+DescMaps["Transmat Station_to_Pokecenter Slateport"] = {function() Mode_Transmat("Pokecenter Slateport", {5}) end}
+DescMaps["Transmat Station_to_Pokecenter Rustboro City"] = {function() Mode_Transmat("Pokecenter Rustboro City", {3}) end}
+DescMaps["Transmat Station_to_Pokecenter Petalburg City"] = {function() Mode_Transmat("Pokecenter Petalburg City", {2}) end}
+DescMaps["Transmat Station_to_Pokecenter Pacifidlog Town"] = {function() Mode_Transmat("Pokecenter Pacifidlog Town", {6,6,6,1}) end}
+DescMaps["Transmat Station_to_Pokecenter Oldale Town"] = {function() Mode_Transmat("Pokecenter Oldale Town", {1}) end}
+DescMaps["Transmat Station_to_Pokecenter Mossdeep City"] = {function() Mode_Transmat("Pokecenter Mossdeep City", {6,6,3}) end}
+DescMaps["Transmat Station_to_Pokecenter Mauville City"] = {function() Mode_Transmat("Pokecenter Mauville City", {6,1}) end}
+DescMaps["Transmat Station_to_Pokecenter Lilycove City"] = {function() Mode_Transmat("Pokecenter Lilycove City", {6,6,2}) end}
+DescMaps["Transmat Station_to_Pokecenter Lavaridge Town"] = {function() Mode_Transmat("Pokecenter Lavaridge Town", {6,4}) end}
+DescMaps["Transmat Station_to_Pokecenter Fortree City"] = {function() Mode_Transmat("Pokecenter Fortree City", {6,6,1}) end}
+DescMaps["Transmat Station_to_Pokecenter Fallabor Town"] = {function() Mode_Transmat("Pokecenter Fallabor Town", {6,3}) end}
+DescMaps["Transmat Station_to_Pokecenter Ever Grande City"] = {function() Mode_Transmat("Pokecenter Ever Grande City", {6,6,6,2}) end}
+DescMaps["Transmat Station_to_Pokecenter Dewford Town"] = {function() Mode_Transmat("Pokecenter Dewford Town", {4}) end}
 
 -- IN BETWEEN REGIONS --
 -- BOAT PATHS  --

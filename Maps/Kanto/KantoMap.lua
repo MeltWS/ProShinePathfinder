@@ -1,3 +1,4 @@
+local ss = require "static_Settings"
 
 local KantoMap = {}
 

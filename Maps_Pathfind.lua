@@ -196,8 +196,9 @@ local function MoveWithCalcPath()
 		else
 			MovingApply(PathSolution[1])
 		end
-	else
 		return true
+	else
+		return false
 	end	
 end
 
@@ -270,9 +271,9 @@ end
 local function MoveTo(Destination)
 	lib.ifNotThen(Settings, initSettings)
 	if Outlet and checkOutlet(getMapName()) then
-		return
+		return true
 	elseif PathDestStore == Destination then
-		MoveWithCalcPath()	
+		return MoveWithCalcPath()	
 	else
 	 	PathSolution = simpleAStar(goal(Destination))(getMapName())
 		if not PathSolution then
@@ -281,8 +282,9 @@ local function MoveTo(Destination)
 		PathDestStore = Destination
 		EditPathGenerated()
 		log("Path: " .. table.concat(PathSolution,"->"))
-		MoveWithCalcPath()	
+		return MoveWithCalcPath()	
 	end
+	return false
 end
 
 -- SETTINGS CALLS

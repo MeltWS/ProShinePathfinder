@@ -1,4 +1,5 @@
-
+local ss = require "static_Settings"
+local H_SUBWAY = ss.H_SUBWAY
 local HoennMap = {}
 
 HoennMap["Cable Car Station 1"] = {["Cable Car Station 2"] = 1, ["Route 112"] = 1}
@@ -34,21 +35,21 @@ HoennMap["Oldale Town"] = {["Mart Oldale Town"] = 1, ["Pokecenter Oldale Town"] 
 HoennMap["Pacifidlog Town"] = {["Pokecenter Pacifidlog Town"] = 1, ["Route 131"] = 1, ["Route 132"] = 1}
 HoennMap["Petalburg City"] = {["Mart Petalburg City"] = 1, ["Pokecenter Petalburg City"] = 1, ["Route 102"] = 1, ["Route 104"] = 1}
 HoennMap["Petalburg Woods"] = {["Route 104"] = 1}
-HoennMap["Pokecenter Dewford Town"] = {["Dewford Town"] = 1}
-HoennMap["Pokecenter Ever Grande City"] = {["Ever Grande City"] = 1}
-HoennMap["Pokecenter Fallabor Town"] = {["Fallabor Town"] = 1}
-HoennMap["Pokecenter Fortree City"] = {["Fortree City"] = 1}
-HoennMap["Pokecenter Lavaridge Town"] = {["Lavaridge Town"] = 1}
-HoennMap["Pokecenter Lilycove City"] = {["Lilycove City"] = 1}
-HoennMap["Pokecenter Mauville City"] = {["Mauville City"] = 1}
-HoennMap["Pokecenter Mossdeep City"] = {["Mossdeep City"] = 1}
-HoennMap["Pokecenter Oldale Town"] = {["Oldale Town"] = 1}
-HoennMap["Pokecenter Pacifidlog Town"] = {["Pacifidlog Town"] = 1}
-HoennMap["Pokecenter Petalburg City"] = {["Petalburg City"] = 1}
-HoennMap["Pokecenter Rustboro City"] = {["Rustboro City"] = 1}
-HoennMap["Pokecenter Slateport"] = {["Slateport City"] = 1}
-HoennMap["Pokecenter Sootopolis City"] = {["Sootopolis City"] = 1}
-HoennMap["Pokecenter Verdanturf"] = {["Verdanturf Town"] = 1}
+HoennMap["Pokecenter Dewford Town"] = {["Dewford Town"] = 1, ["Transmat Station"] = 1}
+HoennMap["Pokecenter Ever Grande City"] = {["Ever Grande City"] = 1, ["Transmat Station"] = 1}
+HoennMap["Pokecenter Fallabor Town"] = {["Fallabor Town"] = 1, ["Transmat Station"] = 1}
+HoennMap["Pokecenter Fortree City"] = {["Fortree City"] = 1, ["Transmat Station"] = 1}
+HoennMap["Pokecenter Lavaridge Town"] = {["Lavaridge Town"] = 1, ["Transmat Station"] = 1}
+HoennMap["Pokecenter Lilycove City"] = {["Lilycove City"] = 1, ["Transmat Station"] = 1}
+HoennMap["Pokecenter Mauville City"] = {["Mauville City"] = 1, ["Transmat Station"] = 1}
+HoennMap["Pokecenter Mossdeep City"] = {["Mossdeep City"] = 1, ["Transmat Station"] = 1}
+HoennMap["Pokecenter Oldale Town"] = {["Oldale Town"] = 1, ["Transmat Station"] = 1}
+HoennMap["Pokecenter Pacifidlog Town"] = {["Pacifidlog Town"] = 1, ["Transmat Station"] = 1}
+HoennMap["Pokecenter Petalburg City"] = {["Petalburg City"] = 1, ["Transmat Station"] = 1}
+HoennMap["Pokecenter Rustboro City"] = {["Rustboro City"] = 1, ["Transmat Station"] = 1}
+HoennMap["Pokecenter Slateport"] = {["Slateport City"] = 1, ["Transmat Station"] = 1}
+HoennMap["Pokecenter Sootopolis City"] = {["Sootopolis City"] = 1, ["Transmat Station"] = 1}
+HoennMap["Pokecenter Verdanturf"] = {["Verdanturf Town"] = 1, ["Transmat Station"] = 1}
 HoennMap["Pokemon League Hoenn"] = {["Ever Grande City"] = 1}
 HoennMap["Route 101"] = {["Littleroot Town"] = 1, ["Oldale Town"] = 1}
 HoennMap["Route 102"] = {["Oldale Town"] = 1, ["Petalburg City"] = 1}
@@ -95,6 +96,7 @@ HoennMap["Slateport City"] = {["Mart Slateport"] = 1, ["Pokecenter Slateport"] =
 HoennMap["Sootopolis City"] = {["Pokecenter Sootopolis City"] = 1, ["Sootopolis City Underwater"] = 1, ["Sootopolis Mart"] = 1}
 HoennMap["Sootopolis City Underwater"] = {["Route 126 Underwater"] = 1, ["Sootopolis City"] = 1}
 HoennMap["Sootopolis Mart"] = {["Sootopolis City"] = 1}
+HoennMap["Transmat Station"] = {["Pokecenter Verdanturf"] = H_SUBWAY, ["Pokecenter Sootopolis City"] = H_SUBWAY, ["Pokecenter Slateport"] = H_SUBWAY, ["Pokecenter Rustboro City"] = H_SUBWAY, ["Pokecenter Petalburg City"] = H_SUBWAY, ["Pokecenter Pacifidlog Town"] = H_SUBWAY, ["Pokecenter Oldale Town"] = H_SUBWAY, ["Pokecenter Mossdeep City"] = H_SUBWAY, ["Pokecenter Mauville City"] = H_SUBWAY, ["Pokecenter Lilycove City"] = H_SUBWAY, ["Pokecenter Lavaridge Town"] = H_SUBWAY, ["Pokecenter Fortree City"] = H_SUBWAY, ["Pokecenter Fallabor Town"] = H_SUBWAY, ["Pokecenter Ever Grande City"] = H_SUBWAY, ["Pokecenter Dewford Town"] = H_SUBWAY}
 HoennMap["Verdanturf Mart"] = {["Verdanturf Town"] = 1}
 HoennMap["Verdanturf Town"] = {["Pokecenter Verdanturf"] = 1, ["Route 117"] = 1, ["Rusturf Tunnel"] = 1, ["Verdanturf Mart"] = 1}
 HoennMap["Victory Road Hoenn 1F"] = {["Ever Grande City"] = 1, ["Victory Road Hoenn B1F"] = 1}

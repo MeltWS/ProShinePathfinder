@@ -1,4 +1,4 @@
-name = "Pathfinder"
+name = "PathFinder"
 author = "https://github.com/MeltWS"
 
 description = [[This allows you to move simply arround the map]]
@@ -6,11 +6,12 @@ description = [[This allows you to move simply arround the map]]
 local PathFinder = require "Maps_Pathfind" -- requesting table with methods
 
 --[[
+----- Check out settings in static_settings.lua -------------------------------
 ------------------
-MoveTo(dest) --> Main function for moving to dest
+MoveTo(dest) --> Main function for moving to dest. return false when done. true if destination is not reached. Need to be called multiple times.
 MoveToPC()   --> Move to nearest Pokecenter
 ResetPath() --> reseting the current Path, used in onStop()
-SolveDialog --> allow the bot interact with NPC maps
+SolveDialog(message, PathFinder) --> allow the bot interact with NPC maps
 
 --> Possible Setting Calls (Bike and Dig are set depending of Bot item/pokemons)
 	EnableBikePath()
@@ -20,11 +21,11 @@ SolveDialog --> allow the bot interact with NPC maps
 ------------------]]
 
 function onStart()
-	PathFinder.EnableDigPath() -- example use of settings
+	 PathFinder.DisableDigPath() -- example use of settings
 end
 
 function onPathAction()
-	PathFinder.MoveTo("Lavender Town") -- example use of MoveTo
+	PathFinder.MoveTo("Pokecenter Lavender Town") -- example use of MoveTo(dest)
 	-- PathFinder.MoveToPC()
 end
 
