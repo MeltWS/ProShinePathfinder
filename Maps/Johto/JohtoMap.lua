@@ -23,7 +23,9 @@ JohtoMap["Ecruteak City"] = {["Ecruteak Pokemart"] = 1, ["Ecruteak Stop House 1"
 JohtoMap["Ecruteak Pokemart"] = {["Ecruteak City"] = 1}
 JohtoMap["Ecruteak Stop House 1"] = {["Ecruteak City"] = 1, ["Route 38"] = 1}
 JohtoMap["Ecruteak Stop House 2"] = {["Ecruteak City"] = 1, ["Route 42"] = 1}
-JohtoMap["Goldenrod City"] = {["Goldenrod Mart 1"] = 1, ["Pokecenter Goldenrod"] = 1, ["Route 34"] = 1, ["Route 35 Stop House"] = 1}
+JohtoMap["Goldenrod City"] = {["Goldenrod Mart 1"] = 1, ["Pokecenter Goldenrod"] = 1, ["Route 34"] = 1, ["Route 35 Stop House"] = 1, ["Goldenrod City Station"] = 1}
+JohtoMap["Goldenrod City Station"] = {["Goldenrod City"] = 1, ["Goldenrod City Station Floor 2"] = 1}
+JohtoMap["Goldenrod City Station Floor 2"] = {["Goldenrod City Station"] = 1}
 JohtoMap["Goldenrod Mart 1"] = {["Goldenrod City"] = 1, ["Goldenrod Mart 2"] = 1}
 JohtoMap["Goldenrod Mart 2"] = {["Goldenrod Mart 1"] = 1}
 JohtoMap["Ice Path 1F"] = {["Blackthorn City"] = 1, ["Ice Path B1F"] = 1, ["Route 44"] = 1}

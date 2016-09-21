@@ -25,7 +25,7 @@ function onStart()
 end
 
 function onPathAction()
-	PathFinder.MoveTo("Pokecenter Lavender Town") -- example use of MoveTo(dest)
+	PathFinder.MoveTo("Saffron City") -- example use of MoveTo(dest)
 	-- PathFinder.MoveToPC()
 end
 

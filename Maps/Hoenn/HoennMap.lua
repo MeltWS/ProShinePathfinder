@@ -55,11 +55,11 @@ HoennMap["Route 101"] = {["Littleroot Town"] = 1, ["Oldale Town"] = 1}
 HoennMap["Route 102"] = {["Oldale Town"] = 1, ["Petalburg City"] = 1}
 HoennMap["Route 103"] = {["Oldale Town"] = 1, ["Route 110"] = 1}
 HoennMap["Route 104"] = {["Petalburg City"] = 2, ["Petalburg Woods"] = 1, ["Route 105"] = 1, ["Rustboro City"] = 2}
-HoennMap["Route 105"] = {["Route 104"] = 1, ["Route 106"] = 1}
-HoennMap["Route 106"] = {["Dewford Town"] = 1, ["Route 105"] = 1}
-HoennMap["Route 107"] = {["Dewford Town"] = 1, ["Route 108"] = 1}
-HoennMap["Route 108"] = {["Route 107"] = 1, ["Route 109"] = 1}
-HoennMap["Route 109"] = {["Route 108"] = 1, ["Slateport City"] = 1}
+HoennMap["Route 105"] = {["Route 104"] = 2, ["Route 106"] = 2}
+HoennMap["Route 106"] = {["Dewford Town"] = 2, ["Route 105"] = 2}
+HoennMap["Route 107"] = {["Dewford Town"] = 2, ["Route 108"] = 2}
+HoennMap["Route 108"] = {["Route 107"] = 2, ["Route 109"] = 2}
+HoennMap["Route 109"] = {["Route 108"] = 2, ["Slateport City"] = 1}
 HoennMap["Route 110"] = {["Mauville City Stop House 1"] = 1, ["Route 103"] = 1, ["Slateport City"] = 1}
 HoennMap["Route 111 Desert"] = {["Route 111 North"] = 1, ["Route 111 South"] = 1}
 HoennMap["Route 111 North"] = {["Route 111 Desert"] = 1, ["Route 112"] = 1, ["Route 113"] = 1}
@@ -77,14 +77,14 @@ HoennMap["Route 120"] = {["Fortree City"] = 1, ["Route 121"] = 1}
 HoennMap["Route 121"] = {["Lilycove City"] = 1, ["Route 120"] = 1, ["Route 122"] = 1}
 HoennMap["Route 122"] = {["Route 121"] = 1, ["Route 123"] = 1}
 HoennMap["Route 123"] = {["Route 118"] = 1}
-HoennMap["Route 124"] = {["Lilycove City"] = 1, ["Mossdeep City"] = 1, ["Route 126"] = 1}
-HoennMap["Route 125"] = {["Mossdeep City"] = 1}
-HoennMap["Route 126"] = {["Route 124"] = 1, ["Route 126 Underwater"] = 1, ["Route 127"] = 1}
-HoennMap["Route 126 Underwater"] = {["Route 126"] = 1, ["Sootopolis City Underwater"] = 1}
-HoennMap["Route 127"] = {["Mossdeep City"] = 1, ["Route 126"] = 1, ["Route 128"] = 1}
-HoennMap["Route 128"] = {["Ever Grande City"] = 1, ["Route 127"] = 1, ["Route 129"] = 1}
-HoennMap["Route 129"] = {["Route 128"] = 1, ["Route 130"] = 1}
-HoennMap["Route 130"] = {["Route 129"] = 1, ["Route 131"] = 1}
+HoennMap["Route 124"] = {["Lilycove City"] = 2, ["Mossdeep City"] = 2, ["Route 126"] = 2}
+HoennMap["Route 125"] = {["Mossdeep City"] = 2}
+HoennMap["Route 126"] = {["Route 124"] = 2, ["Route 126 Underwater"] = 1, ["Route 127"] = 2}
+HoennMap["Route 126 Underwater"] = {["Route 126"] = 2, ["Sootopolis City Underwater"] = 2}
+HoennMap["Route 127"] = {["Mossdeep City"] = 2, ["Route 126"] = 2, ["Route 128"] = 2}
+HoennMap["Route 128"] = {["Ever Grande City"] = 2, ["Route 127"] = 2, ["Route 129"] = 2}
+HoennMap["Route 129"] = {["Route 128"] = 2, ["Route 130"] = 2}
+HoennMap["Route 130"] = {["Route 129"] = 2, ["Route 131"] = 2}
 HoennMap["Route 131"] = {["Pacifidlog Town"] = 1, ["Route 130"] = 1, ["Sky Pillar Entrance"] = 1}
 HoennMap["Route 132"] = {["Pacifidlog Town"] = 1, ["Route 133"] = 1}
 HoennMap["Route 133"] = {["Route 132"] = 1, ["Route 134"] = 1}

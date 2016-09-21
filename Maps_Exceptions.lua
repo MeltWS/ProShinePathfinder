@@ -234,6 +234,11 @@ DescMaps["Route 11_to_Route 2"] = {function() Mode_DigWay("Route 11",12,13,12,12
 DescMaps["Route 4_to_Route 3"] = {function() Mode_DigWay("Route 4",10,20,9,20) end}
 DescMaps["Route 3_to_Route 4"] = {function() Mode_DigWay("Route 3",74,17,74,16) end}
 
+-- TRAIN STATION TO JOHTO
+DescMaps["Saffron City Station_to_Saffron City"] = {function() if lib.inRectangle(0,0,13,7) then Mode_SpeakWithNPC("Saffron City Station","Would you like to return",{1},9,6,9,7) else moveToMap("Saffron City") end end}
+DescMaps["Saffron City Station_to_Saffron City Station Floor 2"] = {function() if lib.inRectangle(0,0,13,7) then moveToMap("Saffron City Station Floor 2") else Mode_SpeakWithNPC("Saffron City Station","Would you like to take the train?",{1},9,10,9,9) end end}
+DescMaps["Saffron City Station Floor 2_to_Goldenrod City Station Floor 2"] = {function() Mode_SpeakWithNPC("Saffron City Station Floor 2","Where do you want to go?",{1},14,11,14,10) end}
+
 -- JOHTO --
 
 -- TABLE- PATHEDIT FORCE
@@ -296,6 +301,12 @@ DescMaps["Route 32_to_Route 33"] = {function() Mode_DigWay("Route 32", 11,143,10
 DescMaps["Route 33_to_Route 32"] = {function() Mode_DigWay("Route 33", 14,14,14,13) end}
 DescMaps["Blackthorn City_to_Route 44"] = {function() Mode_DigWay("Blackthorn City", 49,17,49,16) end}
 DescMaps["Route 44_to_Blackthorn City"] = {function() Mode_DigWay("Route 44", 73,10,73,9) end}
+
+-- TRAIN STATION TO KANTO
+DescMaps["Goldenrod City Station_to_Goldenrod City"] = {function() if lib.inRectangle(0,0,13,7) then Mode_SpeakWithNPC("Goldenrod City Station","Would you like to return",{1},9,6,9,7) else moveToMap("Goldenrod City") end end}
+DescMaps["Goldenrod City Station_to_Goldenrod City Station Floor 2"] = {function() if lib.inRectangle(0,0,13,7) then moveToMap("Goldenrod City Station Floor 2") else Mode_SpeakWithNPC("Goldenrod City Station","Would you like to take the train?",{1},9,10,9,9) end end}
+DescMaps["Goldenrod City Station Floor 2_to_Saffron City Station Floor 2"] = {function() Mode_SpeakWithNPC("Goldenrod City Station Floor 2","Where do you want to go?",{1},14,11,14,10) end}
+
 
 -- DescMaps["Safari Effort Wald 1_to_Safari Stop"] = {function() Mode_SpeakWithNPC("Safari Effort Wald 1","Hello. How may I help you?",{3,1},6,22,6,21) end}
 

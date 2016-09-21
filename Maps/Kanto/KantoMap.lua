@@ -119,7 +119,9 @@ KantoMap["Safari Effort Wald 2"] = {["Safari Effort Wald 1"] = 1, ["Safari Stop"
 KantoMap["Safari Entrance"] = {["Safari Area 1"] = 1, ["Safari Area 3"] = 1, ["Safari Effort Wald 2"] = 1, ["Safari Stop"] = 1}
 KantoMap["Safari Exclusive"] = {["Safari Area 3"] = 1}
 KantoMap["Safari Stop"] = {["Fuchsia City"] = 1, ["Safari Effort Wald 2"] = 1, ["Safari Entrance"] = 1}
-KantoMap["Saffron City"] = {["Pokecenter Saffron"] = 1, ["Route 5 Stop House"] = 1, ["Route 6 Stop House"] = 1, ["Route 7 Stop House"] = 1, ["Route 8 Stop House"] = 1}
+KantoMap["Saffron City"] = {["Pokecenter Saffron"] = 1, ["Route 5 Stop House"] = 1, ["Route 6 Stop House"] = 1, ["Route 7 Stop House"] = 1, ["Route 8 Stop House"] = 1, ["Saffron City Station"] = 1}
+KantoMap["Saffron City Station"] = {["Saffron City"] = 1, ["Saffron City Station Floor 2"] = 1}
+KantoMap["Saffron City Station Floor 2"] = {["Saffron City Station"] = 1}
 KantoMap["Seafoam 1F"] = {["Route 20"] = 1, ["Seafoam B1F"] = 1}
 KantoMap["Seafoam B1F"] = {["Seafoam 1F"] = 1}
 KantoMap["Tohjo Falls"] = {["Route 27"] = 1}
