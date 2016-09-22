@@ -3,7 +3,7 @@ author = "https://github.com/MeltWS"
 
 description = [[This allows you to move simply arround the map]]
 
-local PathFinder = require "Maps_Pathfind" -- requesting table with methods
+local PathFinder = require "Pathfinder/Maps_Pathfind" -- requesting table with methods
 
 --[[
 ----- Check out settings in static_settings.lua -------------------------------
@@ -25,7 +25,7 @@ function onStart()
 end
 
 function onPathAction()
-	PathFinder.MoveTo("Saffron City") -- example use of MoveTo(dest)
+	PathFinder.MoveTo("Route 33") -- example use of MoveTo(dest)
 	-- PathFinder.MoveToPC()
 end
 

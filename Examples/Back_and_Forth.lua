@@ -1,5 +1,5 @@
 name = "PathFinder"
-author = "https://github.com/MeltWS"
+author = "Melt"
 
 description = [[Example moving back and forth between two pokecenters]]
 
@@ -8,7 +8,7 @@ local dest = nil
 --[[
 ----- Check out settings in static_settings.lua -------------------------------
 ------------------
-MoveTo(dest) --> Main function for moving to dest. return false when done. true if destination is not reached. Need to be called multiple times.
+MoveTo(dest) --> Main function for moving to dest. true if destination is not reached, false when done. Need to be called multiple times.
 MoveToPC()   --> Move to nearest Pokecenter
 ResetPath() --> reseting the current Path, used in onStop()
 SolveDialog(message, PathFinder) --> allow the bot interact with NPC maps

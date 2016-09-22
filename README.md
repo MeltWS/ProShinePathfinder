@@ -2,19 +2,16 @@ This allows you to use simple, MoveTo ("MapName") instead of using 1000 elseif.
 
 All 3 Main regions 99% Supported, dig path supported one two first regions, support discovering a digway if it can't go threw.
 
-There is a setting system for dig and bike path.
+Dig and bike path can be set via settings dynamically.
 
-Subway support for Hoenn
+Subway support for all Regionms.
 
-Support train for Kanto / Johto, and Boat for Hoenn / Kanto / Johto
+Support train for Kanto / Johto, and Boat for Hoenn / Kanto / Johto.
 
-Please read the `LoadMe_Test.lua` for all infos on how to use.
+Please read the `LoadMe_Test.lua` for all infos on how to use, you can also read scripts in `Example folder`
 
-To do:
-
-+Add failsafe if bot cannot go to a path because of Cut or Surf.
-
-+Add Subway support Kanto Johto
+Know issue :
+-The boat will not consider not having surf or cut, or rock blast make sure you have what you need.
 
 # Contributors:
 

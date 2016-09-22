@@ -1,4 +1,4 @@
-local ss = require "static_Settings"
+local ss = require "Pathfinder/Settings/static_Settings"
 local H_TO_KJ = ss.H_TO_KJ
 local J_TO_K  = ss.J_TO_K
 

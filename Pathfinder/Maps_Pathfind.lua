@@ -1,8 +1,8 @@
-local lib = require "Lib/lib"
-local aStar = require "Lib/lua-astar/AStar"
-local GlobalMap = require "Maps/GlobalMap"
-local Digways = require "Maps/DigwaysMap"
-local MapExceptions = require "Maps_Exceptions"
+local lib = require "Pathfinder/Lib/lib"
+local aStar = require "Pathfinder/Lib/lua-astar/AStar"
+local GlobalMap = require "Pathfinder/Maps/GlobalMap"
+local Digways = require "Pathfinder/Maps/DigwaysMap"
+local MapExceptions = require "Pathfinder/Maps_Exceptions"
 local DescMaps = MapExceptions.DescMaps
 local ExceRouteEdit = MapExceptions.ExceRouteEdit
 local PathSolution = {}
@@ -69,7 +69,7 @@ local function SolvingException(EMap)
 	end
 end
 
--- CHECK EXCEPTION MAP1 MAP2 SUBWAY MAPS ( KANTO CASE )
+-- CHECK EXCEPTION MAP1 MAP2 SUBWAY MAPS ( KANTO AND JOHTO CASE )
 local function CheckSubwayExce(map1, map2)
 	return string.find(map1, "Subway") and string.find(map2, "Subway")
 end

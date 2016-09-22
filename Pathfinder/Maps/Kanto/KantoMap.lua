@@ -1,4 +1,4 @@
-local ss = require "static_Settings"
+local ss = require "Pathfinder/Settings/static_Settings"
 local K_SUBWAY = ss.K_SUBWAY
 
 local KantoMap = {}
@@ -31,7 +31,7 @@ KantoMap["Pewter Pokemart"] = {["Pewter City"] = 1}
 KantoMap["Pokecenter Celadon"] = {["Celadon City"] = 1, ["Celadon City Subway"] = 1}
 KantoMap["Pokecenter Cerulean"] = {["Cerulean City"] = 1, ["Cerulean City Subway"] = 1}
 KantoMap["Pokecenter Cinnabar"] = {["Cinnabar Island"] = 1}
-KantoMap["Pokecenter Fuchsia"] = {["Fuchsia City"] = 1, ["Fuschia City Subway"] = 1}
+KantoMap["Pokecenter Fuchsia"] = {["Fuchsia City"] = 1, ["Fuchsia City Subway"] = 1}
 KantoMap["Pokecenter Lavender"] = {["Lavender Town"] = 1, ["Lavender Town Subway"] = 1}
 KantoMap["Pokecenter Route 10"] = {["Route 10"] = 1}
 KantoMap["Pokecenter Route 3"] = {["Route 3"] = 1}

@@ -1,4 +1,4 @@
-local lib = require "Lib/lib"
+local lib = require "Pathfinder/Lib/lib"
 
 local ExceRouteEdit = {}
 local DescMaps = {}
@@ -128,7 +128,7 @@ local function DisableDigPath()
 end
 
 -- KANTO SUBWAY EXCEPTION
-local SubDestList = {["Viridian City Subway"] = 1, ["Pewter City Subway"] = 2, ["Cerulean City Subway"] = 3, ["Vermilion City Subway"] = 4, ["Lavender Town Subway"] = 5, ["Celadon City Subway"] = 6, ["Fuchsia City Subway"] = 7, ["Saffron City Subway"] = 8}
+local SubDestList = {["Viridian City Subway"] = 1, ["Pewter City Subway"] = 2, ["Cerulean City Subway"] = 3, ["Vermilion City Subway"] = 4, ["Lavender Town Subway"] = 5, ["Celadon City Subway"] = 6, ["Fuchsia City Subway"] = 7, ["Saffron City Subway"] = 8, ["Azalea Town Subway"] = 1, ["Blackthorn City Subway"] = 2, ["Cherrygrove City Subway"] = 3, ["Ecruteak City Subway"] = 4, ["Goldenrod City Subway"] = 5, ["Mahogany Town Subway"] = 6, ["Olivine City Subway"] = 7, ["Violet City Subway"] = 8}
 
 local function SubDialogFPage(map1, map2)
 	local answer = SubDestList[map2]

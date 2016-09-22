@@ -1,4 +1,4 @@
-local ss = require "static_Settings"
+local ss = require "Pathfinder/Settings/static_Settings"
 local H_SUBWAY = ss.H_SUBWAY
 local HoennMap = {}
 

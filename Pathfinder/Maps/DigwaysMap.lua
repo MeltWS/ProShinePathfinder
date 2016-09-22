@@ -1,4 +1,4 @@
-local lib = require "Lib/lib"
+local lib = require "Pathfinder/Lib/lib"
 
 local Digways = {} -- Digway map used for discovering them.
 
