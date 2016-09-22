@@ -1,10 +1,10 @@
 name = "PathFinder"
 author = "https://github.com/MeltWS"
 
-description = [[This allows you to move simply arround the map]]
+description = [[Example moving back and forth between two pokecenters]]
 
 local PathFinder = require "Maps_Pathfind" -- requesting table with methods
-
+local dest = nil
 --[[
 ----- Check out settings in static_settings.lua -------------------------------
 ------------------
@@ -20,13 +20,24 @@ SolveDialog(message, PathFinder) --> allow the bot interact with NPC maps
 	DisableDigPath()
 ------------------]]
 
-function onStart()
-	--  PathFinder.DisableDigPath() -- example use of settings
-end
-
 function onPathAction()
-	PathFinder.MoveTo("Saffron City") -- example use of MoveTo(dest)
-	-- PathFinder.MoveToPC()
+	if dest then
+		if PathFinder.MoveTo(dest) then
+			return
+		else
+			dest = nil
+			log("destination reached.")
+		end
+	end
+	if getMapName() == "Pokecenter Oldale Town" then
+		log("Moving to Ever Grande City")
+		dest = "Pokecenter Ever Grande City"
+	elseif getMapName() == "Pokecenter Ever Grande City" then
+		log("Moving to Pokecenter Oldale Town")
+		dest = "Pokecenter Oldale Town"
+	else dest = "Pokecenter Ever Grande City" log("Moving to Pokecenter Ever Grande City")
+	end
+	move = PathFinder.MoveTo(dest)
 end
 
 function onBattleAction()

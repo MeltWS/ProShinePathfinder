@@ -127,6 +127,27 @@ local function DisableDigPath()
 	
 end
 
+-- KANTO SUBWAY EXCEPTION
+local SubDestList = {["Viridian City Subway"] = 1, ["Pewter City Subway"] = 2, ["Cerulean City Subway"] = 3, ["Vermilion City Subway"] = 4, ["Lavender Town Subway"] = 5, ["Celadon City Subway"] = 6, ["Fuchsia City Subway"] = 7, ["Saffron City Subway"] = 8}
+
+local function SubDialogFPage(map1, map2)
+	local answer = SubDestList[map2]
+	if SubDestList[map1] < answer then
+		answer = answer - 1
+	end
+	return answer < 5
+end
+
+local function SolvSubExce(map1, map2)
+	lib.log1time("Exception Resolution:  [ Subway To " .. map2  .." ]  SpeakWithNPC  X:10 Y:9 ")
+	if SubDialogFPage(map1, map2) then
+		DialogChoose = {map2}
+	else DialogChoose = {"More Options", map2}
+	end
+	DialogCheck  = "Where would you like to go? Takes only $2500."
+	talkToNpcOnCell(10,9)
+end
+
 -- KANTO --
 
 -- TABLE- PATHEDIT FORCE 
@@ -422,5 +443,6 @@ return {
 	SetPathSolution = SetPathSolution,
 	EnableDigPath = EnableDigPath,
 	DisableDigPath = DisableDigPath,
+	SolvSubExce = SolvSubExce,
 	SolveDialog = SolveDialog
 }

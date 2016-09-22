@@ -60,8 +60,6 @@ local function SolvingException(EMap)
 	for index, value in pairs(DescMaps) do
 		if index == EMap then
 			MapExceptions.SetPathSolution(PathSolution)
-			-- CHECK MODE
-			--Res = tonumber(tablelength(DescMaps[index]))
 			for val, func in pairs(DescMaps[index]) do
 				if DescMaps[index][val]() == false then
 					return
@@ -71,13 +69,23 @@ local function SolvingException(EMap)
 	end
 end
 
+-- CHECK EXCEPTION MAP1 MAP2 SUBWAY MAPS ( KANTO CASE )
+local function CheckSubwayExce(map1, map2)
+	return string.find(map1, "Subway") and string.find(map2, "Subway")
+end
+
 -- CHECK EXCEPTION MAP1 TO MAP2    - IF FOUND CALL RESOLUTION EXCEPTION
-local function CheckException(EMap)
-	for index, value in pairs(DescMaps) do	
-		if index == EMap then	
+local function CheckException(map1, map2)
+	local EMap = map1 .. "_to_" .. map2
+	for index, value in pairs(DescMaps) do
+		if index == EMap then
 			SolvingException(EMap)
 			return true
 		end
+	end
+	if CheckSubwayExce(map1, map2) then
+		MapExceptions.SolvSubExce(map1, map2)
+		return true
 	end
 end
 
@@ -170,7 +178,7 @@ local function ResetPath()
 end
 
 local function MovingApply(ToMap)
-	if CheckException(getMapName() .. "_to_" .. PathSolution[1]) == true then
+	if CheckException(getMapName(), PathSolution[1]) then
 		return
 	else
 		lib.log1time("Maps Remains: " .. lib.tablelength(PathSolution) .. "  Moving To: --> " .. PathSolution[1])	
