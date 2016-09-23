@@ -73,17 +73,6 @@ function lib.getPokemonNumberWithMove(Move, ...) -- optional parameter happiness
 	return 0
 end
 
-function lib.mergeTable(table1, table2)
-	if type(table1) ~= "table" then
-		return error(" mergTable : #1 expected table, recieved " .. type(table1))
-	elseif type(table2) ~= "table" then
-		return error(" mergTable : #2 expected table, recieved " .. type(table2))
-	end
-	for key, value in pairs(table2) do
-		table1[key] = value
-	end
-end
-
 function lib.logTable(table, ...) -- logTable(table, name) with name as optional parameter
 	local name  = nil
 	local arg = {...}

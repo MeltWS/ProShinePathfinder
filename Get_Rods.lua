@@ -5,18 +5,19 @@ description = [[This script will collect every Rods if the bot has enough money,
 
 local pf = require "Pathfinder/Maps_Pathfind" -- requesting table with methods
 
-local check      = false
 local oldRod     = nil
 local goodRod    = nil
 local superRod   = nil
 local money      = nil
 local dialogs = {
-    ["xx"] = "x",
-    ["xxx"] = "x",
-    ["xxxx"] = "x"
+    ["Would you like to buy a Good Rod for 15000?"] = function() pushDialogAnswer("Yes") end,
+    ["Only yours for a one time payment of $75000, so what do you say?"] = function() pushDialogAnswer("Yes") end,
+    ["You have Recieved an Old Rod"] = function() oldRod = true end,
+    ["You have Recieved a Good Rod"] = function() goodRod = true end,
+    ["Thanks, you won't be disappointed!!!"] = function() superRod = true end,
 }
 
-local function initVars()
+local function Init()
     oldRod = hasItem("Old Rod")
     goodRod = hasItem("Good Rod")
     superRod = hasItem("Super Rod")
@@ -33,39 +34,25 @@ local function isDoable()
     return money > 0
 end
 
-local function getOldRod(map)
+local function getRod(map, npcX, npcY)
     if pf.MoveTo(map) then return end
-    return talkToNpcOnCell(0,5)
-end
-
-local function getGoodRod(map)
-    if pf.MoveTo(map) then return end
-    return talkToNpcOnCell(3,6)
-end
-
-local function getSuperRod(map)
-    if pf.MoveTo(map) then return end
-    return talkToNpcOnCell(0,10)
+    return talkToNpcOnCell(npcX,npcY)
 end
 
 function onStart()
-    initVars()
+    Init()
     if not isDoable() then
         fatal("Bot does not own enough money (15k Good Rod 75k Super Rod)")
     end
 end
 
 function onPathAction()
-    if check then
-        check = false
-        initVars()
-    end
     if not oldRod then
-        getOldRod("Fisherman House - Vermilion")
+        getRod("Fisherman House - Vermilion", 0, 6)
     elseif not goodRod then
-        getGoodRod("Fuchsia House 1")
+        getRod("Fuchsia House 1", 3, 6)
     elseif not superRod then
-        getSuperRod("Olivine House 1")
+        getRod("Olivine House 1", 0, 10)
     else log("Every rod owned, script terminated.")
     end
 end
@@ -75,10 +62,9 @@ function onBattleAction()
 end
 
 function onDialogMessage(message)
-    check = true
-    for k, v in pairs(dialogs) do
+    for k, _ in pairs(dialogs) do
         if message == k then
-            return pushDialogAnswer(v)
+            k()
         end
     end
 end
