@@ -6,12 +6,10 @@ description = [[This allows you to move simply arround the map]]
 local PathFinder = require "Pathfinder/Maps_Pathfind" -- requesting table with methods
 
 --[[
------ Check out settings in static_settings.lua -------------------------------
+----- Check out settings in Pathfind/Settings/static_settings.lua -------------------------------
 ------------------
 MoveTo(dest) --> Main function for moving to dest. return false when done. true if destination is not reached. Need to be called multiple times.
 MoveToPC()   --> Move to nearest Pokecenter
-ResetPath() --> reseting the current Path, used in onStop()
-SolveDialog(message, PathFinder) --> allow the bot interact with NPC maps
 
 --> Possible Setting Calls (Bike and Dig are set depending of Bot item/pokemons)
 	EnableBikePath()
@@ -25,7 +23,8 @@ function onStart()
 end
 
 function onPathAction()
-	PathFinder.MoveTo("Route 33") -- example use of MoveTo(dest)
+	moveToMap("Fisherman House - Vermilion")
+	-- PathFinder.MoveTo("Fisherman House - Vermilion") -- example use of MoveTo(dest)
 	-- PathFinder.MoveToPC()
 end
 
@@ -33,10 +32,3 @@ function onBattleAction()
 	run()
 end
 
-function onDialogMessage(message)
-	PathFinder.SolveDialog(message, PathFinder) -- this needs to be there
-end
-
-function onStop()
-	PathFinder.ResetPath()
-end

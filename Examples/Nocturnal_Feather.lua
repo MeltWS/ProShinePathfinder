@@ -49,11 +49,3 @@ local function onBattleAction()
 	else return useMove("Covet") or attack() or run() or sendAnyPokemon()
 	end
 end
-
-local function onDialogMessage(message)
-	PathFinder.SolveDialog(message, PathFinder) -- this needs to be there
-end
-
-local function onStop()
-	PathFinder.ResetPath()
-end

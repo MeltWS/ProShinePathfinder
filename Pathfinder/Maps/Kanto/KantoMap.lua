@@ -14,8 +14,10 @@ KantoMap["Cinnabar mansion 3"] = {["Cinnabar mansion 2"] = 1}
 KantoMap["Digletts Cave"] = {["Digletts Cave Entrance 1"] = 1, ["Digletts Cave Entrance 2"] = 1}
 KantoMap["Digletts Cave Entrance 1"] = {["Digletts Cave"] = 1, ["Route 2"] = 1}
 KantoMap["Digletts Cave Entrance 2"] = {["Digletts Cave"] = 1, ["Route 11"] = 1}
-KantoMap["Fuchsia City"] = {["Fuchsia City Stop House"] = 1, ["Pokecenter Fuchsia"] = 1, ["Route 15 Stop House"] = 1, ["Route 18"] = 1, ["Safari Stop"] = 1}
+KantoMap["Fisherman House - Vermilion"] = {["Vermilion City"] = 1}
+KantoMap["Fuchsia City"] = {["Fuchsia City Stop House"] = 1, ["Pokecenter Fuchsia"] = 1, ["Route 15 Stop House"] = 1, ["Route 18"] = 1, ["Safari Stop"] = 1, ["Fuchsia House 1"] = 1}
 KantoMap["Fuchsia City Stop House"] = {["Fuchsia City"] = 1, ["Route 19"] = 1}
+KantoMap["Fuchsia House 1"] = {["Fuchsia City"] = 1}
 KantoMap["Indigo Plateau"] = {["Indigo Plateau Center"] = 1, ["Indigo Plateau Center Johto"] = 1, ["Victory Road Kanto 3F"] = 1}
 KantoMap["Indigo Plateau Center"] = {["Indigo Plateau"] = 1}
 KantoMap["Indigo Plateau Center Johto"] = {["Indigo Plateau"] = 1}
@@ -130,7 +132,7 @@ KantoMap["Tohjo Falls"] = {["Route 27"] = 1}
 KantoMap["Underground House 1"] = {["Route 5"] = 1, ["Underground2"] = 1}
 KantoMap["Underground House 2"] = {["Route 6"] = 1, ["Underground2"] = 1}
 KantoMap["Underground2"] = {["Underground House 1"] = 1, ["Underground House 2"] = 1}
-KantoMap["Vermilion City"] = {["Pokecenter Vermilion"] = 1, ["Route 11"] = 1, ["Route 6"] = 1, ["Vermilion Pokemart"] = 1}
+KantoMap["Vermilion City"] = {["Pokecenter Vermilion"] = 1, ["Route 11"] = 1, ["Route 6"] = 1, ["Vermilion Pokemart"] = 1, ["Fisherman House - Vermilion"] = 1}
 KantoMap["Vermilion Pokemart"] = {["Vermilion City"] = 1}
 KantoMap["Victory Road Kanto 1F"] = {["Pokemon League Reception Gate"] = 1, ["Victory Road Kanto 2F"] = 1}
 KantoMap["Victory Road Kanto 2F"] = {["Victory Road Kanto 1F"] = 1, ["Victory Road Kanto 3F"] = 1}

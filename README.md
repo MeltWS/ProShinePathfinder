@@ -12,6 +12,8 @@ Please read the `LoadMe_Test.lua` for all infos on how to use, you can also read
 
 Know issue :
 -The boat will not consider not having surf or cut, or rock blast make sure you have what you need.
+-Need to fix Route 16, 18  Bike path exception
+-Exception Power Plant
 
 # Contributors:
 

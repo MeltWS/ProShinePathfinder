@@ -329,18 +329,32 @@ local function MoveToPC()
 	return MoveTo("Pokecenter")
 end
 
+
+local self = {
+ResetPath = ResetPath,
+EnableDigPath = EnableDigPath,
+DisableDigPath = DisableDigPath,
+SetOutlet = SetOutlet,
+OutletFound = OutletFound
+}
+
+local function onPathfinderDialogMessage(message)
+	MapExceptions.SolveDialog(message, self)
+end
+
+local function onPathfinderStop()
+	ResetPath()
+end
+
+registerHook("onDialogMessage", onPathfinderDialogMessage)
+registerHook("onStop", onPathfinderStop)
+
 -- RETURN TABLE FOR USER
 return {
-	-- user calls
 	MoveTo = MoveTo,
-	ResetPath = ResetPath,
-	SolveDialog = MapExceptions.SolveDialog,
+	MoveToPC = MoveToPC,
 	EnableBikePath = EnableBikePath,
 	DisableBikePath = DisableBikePath,
 	EnableDigPath = EnableDigPath,
 	DisableDigPath = DisableDigPath,
-	MoveToPC = MoveToPC,
-	-- used by Maps_exceptions
-	SetOutlet = SetOutlet,
-	OutletFound = OutletFound
  }

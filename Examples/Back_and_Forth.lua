@@ -1,4 +1,4 @@
-name = "PathFinder"
+name = "Back and Forth"
 author = "Melt"
 
 description = [[Example moving back and forth between two pokecenters]]
@@ -42,12 +42,4 @@ end
 
 function onBattleAction()
 	run()
-end
-
-function onDialogMessage(message)
-	PathFinder.SolveDialog(message, PathFinder) -- this needs to be there
-end
-
-function onStop()
-	PathFinder.ResetPath()
 end

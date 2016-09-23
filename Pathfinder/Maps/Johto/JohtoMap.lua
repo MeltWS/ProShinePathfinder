@@ -45,7 +45,8 @@ JohtoMap["National Park"] = {["National Park Stop"] = 1, ["National Park Stop Ho
 JohtoMap["National Park Stop"] = {["National Park"] = 1, ["Route 36"] = 1}
 JohtoMap["National Park Stop House 1"] = {["National Park"] = 1, ["Route 35"] = 1}
 JohtoMap["New Bark Town"] = {["Route 29"] = 1}
-JohtoMap["Olivine City"] = {["Olivine Pokecenter"] = 1, ["Olivine Pokemart"] = 1, ["Route 39"] = 1, ["Route 40"] = 1}
+JohtoMap["Olivine City"] = {["Olivine Pokecenter"] = 1, ["Olivine Pokemart"] = 1, ["Route 39"] = 1, ["Route 40"] = 1, ["Olivine House 1"] = 1}
+JohtoMap["Olivine House 1"] = {["Olivine City"] = 1}
 JohtoMap["Olivine Pokecenter"] = {["Olivine City"] = 1, ["Olivine City Subway"] = 1}
 JohtoMap["Olivine Pokemart"] = {["Olivine City"] = 1}
 JohtoMap["Pokecenter Azalea"] = {["Azalea Town"] = 1, ["Azalea Town Subway"] = 1}
