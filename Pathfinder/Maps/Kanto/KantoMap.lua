@@ -4,6 +4,7 @@ local K_SUBWAY = ss.K_SUBWAY
 local KantoMap = {}
 
 KantoMap["Berry Tower Kanto"] = {["Route 13"] = 1}
+KantoMap["Bike Road Stop"] = {["Route 18"] = 1}
 KantoMap["Celadon City"] = {["Pokecenter Celadon"] = 1, ["Route 16"] = 1, ["Route 7"] = 1}
 KantoMap["Cerulean City"] = {["Pokecenter Cerulean"] = 1, ["Route 24"] = 1, ["Route 4"] = 1, ["Route 5"] = 1, ["Route 9"] = 1}
 KantoMap["Cinnabar Island"] = {["Cinnabar Lab"] = 1, ["Cinnabar mansion 1"] = 1, ["Pokecenter Cinnabar"] = 1, ["Route 20"] = 1, ["Route 21"] = 1}
@@ -88,9 +89,10 @@ KantoMap["Route 13"] = {["Berry Tower Kanto"] = 1, ["Route 12"] = 1, ["Route 14"
 KantoMap["Route 14"] = {["Route 13"] = 1, ["Route 15"] = 1}
 KantoMap["Route 15"] = {["Route 14"] = 1, ["Route 15 Stop House"] = 1}
 KantoMap["Route 15 Stop House"] = {["Fuchsia City"] = 1, ["Route 15"] = 1}
-KantoMap["Route 16"] = {["Celadon City"] = 1, ["Route 17"] = 1}
+KantoMap["Route 16"] = {["Celadon City"] = 1, ["Route 17"] = 1, ["Route 16 Stop House"] = 1}
+KantoMap["Route 16 Stop House"] = {["Route 16"] = 1}
 KantoMap["Route 17"] = {["Route 16"] = 1, ["Route 18"] = 999}
-KantoMap["Route 18"] = {["Fuchsia City"] = 1, ["Route 17"] = 999}
+KantoMap["Route 18"] = {["Fuchsia City"] = 1, ["Route 17"] = 999, ["Bike Road Stop"] = 1}
 KantoMap["Route 19"] = {["Fuchsia City Stop House"] = 1, ["Route 20"] = 5}
 KantoMap["Route 2"] = {["Digletts Cave Entrance 1"] = 1, ["Pewter City"] = 1, ["Route 2 Stop"] = 1, ["Route 2 Stop2"] = 1, ["Route 2 Stop3"] = 1, ["Viridian City"] = 1}
 KantoMap["Route 2 Stop"] = {["Route 2"] = 1, ["Viridian Forest"] = 1}

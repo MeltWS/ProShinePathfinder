@@ -163,6 +163,11 @@ ExceRouteEdit["9"] = {{"Route 9","Route 10","Lavender Town"},{"Route 9","Lavende
 ExceRouteEdit["10"] = {{"Seafoam 1F","Route 20","Route 19"},{"Seafoam 1F","Route 19"}}
 ExceRouteEdit["11"] = {{"Lavender Town","Route 9","Pokecenter Route 10"},{"Lavender Town","Route 10","Route 9","Pokecenter Route 10"}}
 ExceRouteEdit["12"] = {{"Tohjo Falls", "Route 27", "Route 26"},{"Tohjo Falls", "Route 26"}}
+ExceRouteEdit["23"] = {{"Route 16 Stop House", "Route 16", "Route 17"},{"Route 16 Stop House", "Route 17"}}
+ExceRouteEdit["24"] = {{"Route 16 Stop House", "Route 16", "Celadon City"},{"Route 16 Stop House", "Celadon City"}}
+ExceRouteEdit["26"] = {{"Bike Road Stop", "Route 18", "Route 17"},{"Bike Road Stop", "Route 17"}}
+ExceRouteEdit["25"] = {{"Bike Road Stop", "Route 18", "Fuchsia City"},{"Bike Road Stop", "Fuchsia City"}}
+
 
 -- MOVE TO CELL --
 -- DIGLETTS CAVE (VIRIDIAN OR PEWTER CITY)
@@ -235,6 +240,19 @@ DescMaps["Pokemon Tower B20_to_Pokemon Tower B21"] = {function() Mode_MoveToCell
 
 -- VICTORY ROAD KANTO
 DescMaps["Victory Road Kanto 3F_to_Victory Road Kanto 2F"] = {function() Mode_MoveToCell("Victory Road Kanto 3F", 20,14,47,35,29,17) end}
+
+-- ROUTE 16
+DescMaps["Route 16_to_Route 17"] = {function() Mode_MoveToCell("Route 16", 70,3,91,21,70,13) end, function() Mode_MoveToCell("Route 16", 25,9,64,40,29,40) end}
+DescMaps["Route 16_to_Celadon City"] = {function() Mode_MoveToCell("Route 16", 70,3,91,21,91,19) end, function() Mode_MoveToCell("Route 16", 25,9,64,40,64,12) end}
+DescMaps["Route 16 Stop House_to_Route 17"] = {function() Mode_MoveToCell("Route 16 Stop House", 0,3,20,9,0,6) end}
+DescMaps["Route 16 Stop House_to_Celadon City"] = {function() Mode_MoveToCell("Route 16 Stop House", 0,3,20,9,20,6) end}
+
+-- Route 18
+DescMaps["Bike Road Stop_to_Fuchsia City"] = {function() Mode_MoveToCell("Bike Road Stop", 0,3,10,10,10,7) end}
+DescMaps["Bike Road Stop_to_Route 17"] = {function() Mode_MoveToCell("Bike Road Stop", 0,3,10,10,0,7) end}
+DescMaps["Route 18_to_Route 17"] = {function() Mode_MoveToCell("Route 18", 14,0,29,18,17,0) end, function() Mode_MoveToCell("Route 18", 30,15,50,25,35,17) end}
+DescMaps["Route 18_to_Fuchsia City"] = {function() Mode_MoveToCell("Route 18", 14,0,29,18,29,17) end, function() Mode_MoveToCell("Route 18", 30,15,50,25,50,17) end}
+
 
 -- SPEAK WITH NPC --
 -- SAFARI KANTO ALL MAPS

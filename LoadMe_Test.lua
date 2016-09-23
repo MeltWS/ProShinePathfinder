@@ -23,8 +23,7 @@ function onStart()
 end
 
 function onPathAction()
-	moveToMap("Fisherman House - Vermilion")
-	-- PathFinder.MoveTo("Fisherman House - Vermilion") -- example use of MoveTo(dest)
+	PathFinder.MoveTo("Fuchsia City") -- example use of MoveTo(dest)
 	-- PathFinder.MoveToPC()
 end
 
