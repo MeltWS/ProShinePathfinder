@@ -178,13 +178,13 @@ local function ResetPath()
 end
 
 local function MovingApply(ToMap)
-	if CheckException(getMapName(), PathSolution[1]) then
+	if lib.useBike() then
+		return	
+	elseif CheckException(getMapName(), PathSolution[1]) then
 		return
 	else
 		lib.log1time("Maps Remains: " .. lib.tablelength(PathSolution) .. "  Moving To: --> " .. PathSolution[1])	
-		if lib.useBike() then
-			return
-		elseif moveToMap(ToMap) then
+		if moveToMap(ToMap) then
 			return
 		else
 			ResetPath()
