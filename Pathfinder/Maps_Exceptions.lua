@@ -243,7 +243,7 @@ DescMaps["Victory Road Kanto 3F_to_Victory Road Kanto 2F"] = {function() Mode_Mo
 
 -- ROUTE 16
 DescMaps["Route 16_to_Route 17"] = {function() Mode_MoveToCell("Route 16", 70,3,91,21,70,13) end, function() Mode_MoveToCell("Route 16", 25,9,64,40,29,40) end}
-DescMaps["Route 16_to_Celadon City"] = {function() Mode_MoveToCell("Route 16", 70,3,91,21,91,19) end, function() Mode_MoveToCell("Route 16", 25,9,64,40,64,12) end}
+DescMaps["Route 16_to_Celadon City"] = {function() Mode_MoveToCell("Route 16", 70,3,91,21,90,19) end, function() Mode_MoveToCell("Route 16", 25,9,64,40,64,12) end}
 DescMaps["Route 16 Stop House_to_Route 17"] = {function() Mode_MoveToCell("Route 16 Stop House", 0,3,20,9,0,6) end}
 DescMaps["Route 16 Stop House_to_Celadon City"] = {function() Mode_MoveToCell("Route 16 Stop House", 0,3,20,9,20,6) end}
 
@@ -252,6 +252,10 @@ DescMaps["Bike Road Stop_to_Fuchsia City"] = {function() Mode_MoveToCell("Bike R
 DescMaps["Bike Road Stop_to_Route 17"] = {function() Mode_MoveToCell("Bike Road Stop", 0,3,10,10,0,7) end}
 DescMaps["Route 18_to_Route 17"] = {function() Mode_MoveToCell("Route 18", 14,0,29,18,17,0) end, function() Mode_MoveToCell("Route 18", 30,15,50,25,35,17) end}
 DescMaps["Route 18_to_Fuchsia City"] = {function() Mode_MoveToCell("Route 18", 14,0,29,18,29,17) end, function() Mode_MoveToCell("Route 18", 30,15,50,25,50,17) end}
+
+--Pallet
+DescMaps["Player House Pallet_to_Pallet Town"] = {function() Mode_MoveToCell("Player House Pallet", 0,0,13,10,4,10) end}
+DescMaps["Pallet Town_to_Player House Pallet"] = {function() Mode_MoveToCell("Pallet Town", 3,0,28,30,6,12) end}
 
 
 -- SPEAK WITH NPC --
@@ -265,6 +269,10 @@ DescMaps["Safari Effort Wald 2_to_Safari Effort Wald 1"] = {function() Mode_Spea
 DescMaps["Safari Effort Wald 1_to_Safari Effort Wald 2"] = {function() Mode_SpeakWithNPC("Safari Effort Wald 1","NoNeed",{1},6,22,6,21) end}
 DescMaps["Safari Effort Wald 2_to_Safari Stop"] = {function() Mode_SpeakWithNPC("Safari Effort Wald 2","Hello. How may I help you?",{3,1},8,27,8,28) end}
 DescMaps["Safari Effort Wald 1_to_Safari Stop"] = {function() Mode_SpeakWithNPC("Safari Effort Wald 1","Hello. How may I help you?",{3,1},6,22,6,21) end}
+
+-- LEAGUE ABRA TP
+DescMaps["Indigo Plateau Center_to_Player Bedroom Pallet"] = {function() Mode_SpeakWithNPC("Indigo Plateau Center","Do you want to use my Abra's powers?",{1},13,24,13,23) end}
+
 
 -- DIGWAYS
 DescMaps["Route 2 Stop3_to_Route 11"] = {function() Mode_MoveToCell("Route 2 Stop3", 0,2,7,12,3,2) end}

@@ -20,7 +20,7 @@ KantoMap["Fuchsia City"] = {["Fuchsia City Stop House"] = 1, ["Pokecenter Fuchsi
 KantoMap["Fuchsia City Stop House"] = {["Fuchsia City"] = 1, ["Route 19"] = 1}
 KantoMap["Fuchsia House 1"] = {["Fuchsia City"] = 1}
 KantoMap["Indigo Plateau"] = {["Indigo Plateau Center"] = 1, ["Indigo Plateau Center Johto"] = 1, ["Victory Road Kanto 3F"] = 1}
-KantoMap["Indigo Plateau Center"] = {["Indigo Plateau"] = 1}
+KantoMap["Indigo Plateau Center"] = {["Indigo Plateau"] = 1, ["Player Bedroom Pallet"] = 1}
 KantoMap["Indigo Plateau Center Johto"] = {["Indigo Plateau"] = 1}
 KantoMap["Lavender Town"] = {["Pokecenter Lavender"] = 1, ["Pokemon Tower 1F"] = 1, ["Route 10"] = 1, ["Route 12"] = 1, ["Route 8"] = 1}
 KantoMap["Mt. Moon 1F"] = {["Mt. Moon B1F"] = 1, ["Route 3"] = 1}
@@ -28,9 +28,11 @@ KantoMap["Mt. Moon B1F"] = {["Mt. Moon 1F"] = 1, ["Mt. Moon B2F"] = 1}
 KantoMap["Mt. Moon B2F"] = {["Mt. Moon B1F"] = 1, ["Mt. Moon Exit"] = 1}
 KantoMap["Mt. Moon Exit"] = {["Mt. Moon B2F"] = 1, ["Route 4"] = 1}
 KantoMap["New Bark Town"] = {["Route 27"] = 1}
-KantoMap["Pallet Town"] = {["Route 1"] = 1, ["Route 21"] = 1}
+KantoMap["Pallet Town"] = {["Route 1"] = 1, ["Route 21"] = 1, ["Player House Pallet"] = 1}
 KantoMap["Pewter City"] = {["Pewter Pokemart"] = 1, ["Route 2"] = 1, ["Route 3"] = 1, ["Pokecenter Pewter"] = 1}
 KantoMap["Pewter Pokemart"] = {["Pewter City"] = 1}
+KantoMap["Player Bedroom Pallet"] = {["Player House Pallet"] = 1}
+KantoMap["Player House Pallet"] = {["Player Bedroom Pallet"] = 1, ["Pallet Town"] = 1}
 KantoMap["Pokecenter Celadon"] = {["Celadon City"] = 1, ["Celadon City Subway"] = 1}
 KantoMap["Pokecenter Cerulean"] = {["Cerulean City"] = 1, ["Cerulean City Subway"] = 1}
 KantoMap["Pokecenter Cinnabar"] = {["Cinnabar Island"] = 1}

@@ -23,7 +23,7 @@ function onStart()
 end
 
 function onPathAction()
-	PathFinder.MoveTo("Fuchsia City") -- example use of MoveTo(dest)
+	PathFinder.MoveTo("Route 10") -- example use of MoveTo(dest)
 	-- PathFinder.MoveToPC()
 end
 
