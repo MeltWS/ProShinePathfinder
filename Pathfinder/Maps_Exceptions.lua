@@ -44,6 +44,7 @@ local function Mode_MoveToCell(MapName,Xh,Yh,Xl,Yl,Xc,Yc)
 	else
 		return false
 	end
+	return true
 end
 
 -- RESOLUTION EXCEPTION FOR MOVE MAP1 TO MAP2 SPEAKING WITH NPC
@@ -110,7 +111,7 @@ end
 -- DIG PATH EXCEPTION EDIT
 local function EnableDigPath()
 	-- Kanto
-	DescMaps["Route 10_to_Lavender Town"] = {function() if lib.inRectangle(10,0,24,11) then Mode_DigWay("Route 10",10,9,9,9) else moveToMap("Lavender Town") end end}
+	DescMaps["Route 10_to_Lavender Town"] = {function() if lib.inRectangle(10,0,24,11) then Mode_DigWay("Route 10",10,9,9,9) elseif Mode_MoveToCell("Route 10", 27,0,30,35,27,0) or Mode_MoveToCell("Route 10", 8,22,26,35,27,0) then return else moveToMap("Lavender Town") end end}
 	DescMaps["Route 10_to_Route 9"] = {function() if lib.inRectangle(2,45,29,71) then Mode_DigWay("Route 10",2,45,2,44) else moveToMap("Route 9") end end}
 	-- Johto
 	DescMaps["Route 42_to_Mahogany Town"] = {function() if lib.inRectangle(1,14,18,26) then Mode_SpeakWithNPC("Route 42","Do you want to attempt to use it?",{1,lib.getPokemonNumberWithMove("Dig")},15,14,15,13) else moveToMap("Mahogany Town") end end} -- enabling digway route 42 from left to right side
@@ -119,7 +120,7 @@ end
 
 local function DisableDigPath()
 	-- Kanto
-	DescMaps["Route 10_to_Lavender Town"] = {function() Mode_MoveToCell("Route 10", 1,43,32,71,16,71) end,function() Mode_MoveToCell("Route 10", 9,0,25,12,11,5) end,function() Mode_MoveToCell("Route 10", 26,0,31,12,28,0) end}
+	DescMaps["Route 10_to_Lavender Town"] = {function() Mode_MoveToCell("Route 10", 1,43,32,71,16,71) end,function() Mode_MoveToCell("Route 10", 9,0,25,12,11,5) end, function() Mode_MoveToCell("Route 10", 8,22,26,35,27,0) end, function() Mode_MoveToCell("Route 10", 27,0,30,35,27,0) end}
 	DescMaps["Route 10_to_Route 9"] = {function() Mode_MoveToCell("Route 10", 1,43,32,71,5,44) end,function() Mode_MoveToCell("Route 10", 9,0,25,12,23,0) end,function() Mode_MoveToCell("Route 10", 6,13,33,35,28,0) end,function() Mode_MoveToCell("Route 10", 26,0,31,12,28,0) end}
 	-- Johto
 	DescMaps["Route 42_to_Mahogany Town"] = {function() Mode_MoveToCell("Route 42", 3,14,18,26,17,13) end, function() Mode_MoveToCell("Route 42", 19,0,95,28,95,17) end}
@@ -165,8 +166,11 @@ ExceRouteEdit["11"] = {{"Lavender Town","Route 9","Pokecenter Route 10"},{"Laven
 ExceRouteEdit["12"] = {{"Tohjo Falls", "Route 27", "Route 26"},{"Tohjo Falls", "Route 26"}}
 ExceRouteEdit["23"] = {{"Route 16 Stop House", "Route 16", "Route 17"},{"Route 16 Stop House", "Route 17"}}
 ExceRouteEdit["24"] = {{"Route 16 Stop House", "Route 16", "Celadon City"},{"Route 16 Stop House", "Celadon City"}}
-ExceRouteEdit["26"] = {{"Bike Road Stop", "Route 18", "Route 17"},{"Bike Road Stop", "Route 17"}}
 ExceRouteEdit["25"] = {{"Bike Road Stop", "Route 18", "Fuchsia City"},{"Bike Road Stop", "Fuchsia City"}}
+ExceRouteEdit["26"] = {{"Bike Road Stop", "Route 18", "Route 17"},{"Bike Road Stop", "Route 17"}}
+ExceRouteEdit["27"] = {{"Lavender Town", "Route 10", "Power Plant"},{"Lavender Town", "Route 10", "Route 9", "Power Plant"}}
+ExceRouteEdit["28"] = {{"Power Plant", "Route 10", "Lavender Town"},{"Power Plant", "Route 9", "Lavender Town"}}
+ExceRouteEdit["29"] = {{"Route 9", "Route 10", "Power Plant"},{"Route 9", "Power Plant"}}
 
 
 -- MOVE TO CELL --
@@ -210,9 +214,7 @@ DescMaps["Seafoam 1F_to_Cinnabar Island"] = {function() Mode_MoveToCell("Seafoam
 DescMaps["Seafoam 1F_to_Route 19"] = {function() Mode_MoveToCell("Seafoam 1F", 6,6,20,16,13,16) end,function() Mode_MoveToCell("Seafoam 1F", 64,7,77,15,64,8) end}
 
 -- ROUTE 9 ,ROUTE 10 AND ROCKTUNNEL 1,2
-DescMaps["Route 10_to_Route 9"] = {function() Mode_MoveToCell("Route 10", 1,43,32,71,5,44) end,function() Mode_MoveToCell("Route 10", 9,0,25,12,23,0) end,function() Mode_MoveToCell("Route 10", 6,13,33,35,28,0) end,function() Mode_MoveToCell("Route 10", 26,0,31,12,28,0) end}
 DescMaps["Route 9_to_Lavender Town"] = {function() Mode_MoveToCell("Route 9", 0,0,100,100,86,33) end}
-DescMaps["Route 10_to_Lavender Town"] = {function() Mode_MoveToCell("Route 10", 1,43,32,71,16,71) end,function() Mode_MoveToCell("Route 10", 9,0,25,12,11,5) end,function() Mode_MoveToCell("Route 10", 26,0,31,12,28,0) end}
 DescMaps["Rock Tunnel 1_to_Route 10"] = {function() Mode_MoveToCell("Rock Tunnel 1", 5,26,26,33,7,30) end,function() Mode_MoveToCell("Rock Tunnel 1", 5,5,32,17,7,7) end,function() Mode_MoveToCell("Rock Tunnel 1", 32,4,48,19,43,11) end}
 DescMaps["Rock Tunnel 2_to_Route 10"] = {function() Mode_MoveToCell("Rock Tunnel 2", 5,12,29,29,10,13) end,function() Mode_MoveToCell("Rock Tunnel 2", 5,4,48,11,36,16) end,function() Mode_MoveToCell("Rock Tunnel 2", 34,12,39,18,36,16) end}
 DescMaps["Rock Tunnel 1_to_Route 9"] = {function() Mode_MoveToCell("Rock Tunnel 1", 5,26,26,33,7,30) end,function() Mode_MoveToCell("Rock Tunnel 1", 5,5,32,17,7,7) end,function() Mode_MoveToCell("Rock Tunnel 1", 32,4,48,19,43,11) end}
@@ -220,9 +222,9 @@ DescMaps["Rock Tunnel 2_to_Route 9"] = {function() Mode_MoveToCell("Rock Tunnel 
 DescMaps["Rock Tunnel 1_to_Lavender Town"] = {function() Mode_MoveToCell("Rock Tunnel 1", 5,26,26,33,21,32) end,function() Mode_MoveToCell("Rock Tunnel 1", 5,5,32,17,8,15) end,function() Mode_MoveToCell("Rock Tunnel 1", 32,4,48,19,35,16) end}
 DescMaps["Rock Tunnel 2_to_Lavender Town"] = {function() Mode_MoveToCell("Rock Tunnel 2", 5,12,29,29,8,26) end,function() Mode_MoveToCell("Rock Tunnel 2", 5,4,48,11,7,5) end,function() Mode_MoveToCell("Rock Tunnel 2", 34,12,39,18,7,5) end}
 
--- POWERPLANT (ROUTE 9)
+-- POWERPLANT
 DescMaps["Route 9_to_Power Plant"] = {function() Mode_MoveToCell("Route 9", 0,0,97,35,92,33) end}
-DescMaps["Route 10_to_Power Plant"] = {function() Mode_MoveToCell("Route 10", 8,0,25,11,22,0) end,function() Mode_MoveToCell("Route 10", 8,21,26,34,15,26) end,function() Mode_MoveToCell("Route 10", 27,0,30,34,15,26) end}
+DescMaps["Route 10_to_Power Plant"] = {function() Mode_MoveToCell("Route 10", 8,0,25,11,22,0) end,function() Mode_MoveToCell("Route 10", 8,21,26,34,15,26) end,function() Mode_MoveToCell("Route 10", 27,0,30,34,15,26) end, function() Mode_MoveToCell("Route 10",2,45,32,71,16,71) end}
 DescMaps["Power Plant_to_Route 9"] = {function() Mode_MoveToCell("Power Plant", 0,0,48,39,5,39) end}
 DescMaps["Route 10_to_Pokecenter Route 10"] = {function() Mode_MoveToCell("Route 10", 8,0,25,11,18,4) end,function() Mode_MoveToCell("Route 10", 8,21,26,34,28,0) end,function() Mode_MoveToCell("Route 10", 27,0,30,34,28,0) end}
 DescMaps["Route 9_to_Pokecenter Route 10"] = {function() Mode_MoveToCell("Route 9", 0,0,97,35,87,33) end}
@@ -303,7 +305,6 @@ ExceRouteEdit["22"] = {{"Ice Path B3F", "Ice Path B2F", "Ice Path B1F", "Ice Pat
 
 -- MOVE TO CELL --
 --ROUTE 42 to Ecruteak or Mahogany.
-DescMaps["Route 42_to_Mahogany Town"] = {function() Mode_MoveToCell("Route 42", 3,14,18,26,17,13) end, function() Mode_MoveToCell("Route 42", 19,0,95,28,95,17) end}
 DescMaps["Mt. Mortar 1F_to_Mahogany Town"] = {function() Mode_MoveToCell("Mt. Mortar 1F", 56,36,67,45,65,46) end, function() Mode_MoveToCell("Mt. Mortar 1F", 53,36,56,36,65,46) end, function() Mode_MoveToCell("Mt. Mortar 1F", 21,35,31,45,34,35) end, function() Mode_MoveToCell("Mt. Mortar 1F", 32,36,34,36,34,35) end, function() if isSurfing() then Mode_MoveToCell("Mt. Mortar 1F", 33,32,54,48,43,49) else Mode_MoveToCell("Mt. Mortar 1F", 40,42,45,48,43,49) end end}
 DescMaps["Mt. Mortar Lower Cave_to_Mahogany Town"] = {function() Mode_MoveToCell("Mt. Mortar Lower Cave", 10,0,66,57,47,57) end}
 

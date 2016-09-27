@@ -19,11 +19,11 @@ MoveToPC()   --> Move to nearest Pokecenter
 ------------------]]
 
 function onStart()
-	--  PathFinder.DisableDigPath() -- example use of settings
+	 PathFinder.DisableDigPath() -- example use of settings
 end
 
 function onPathAction()
-	PathFinder.MoveTo("Route 10") -- example use of MoveTo(dest)
+	PathFinder.MoveTo("Power Plant") -- example use of MoveTo(dest)
 	-- PathFinder.MoveToPC()
 end
 
