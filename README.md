@@ -12,7 +12,7 @@ Please read the `LoadMe_Test.lua` for all infos on how to use, you can also read
 
 Know issue :
 -The bot will not consider not having surf or cut, or rock blast make sure you have what you need.
-
+-Need to add an error log if the moveToMap() fails ( Route 2 to viridian if not having cut etc... )
 # Contributors:
 
 # lua-astar

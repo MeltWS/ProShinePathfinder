@@ -20,7 +20,7 @@ local function goHeal()
 	end
 end
 
-local function onStart()
+function onStart()
 	for i=1, getTeamSize() do
 		if hasMove(i, "Covet") then
 			if i > 1 then
@@ -33,7 +33,7 @@ local function onStart()
 end
 
 
-local function onPathAction()
+function onPathAction()
 	if not isNight() then fatal("Feather are only found at night time") end
 	if needPC() then
 		return goHeal()
@@ -43,7 +43,7 @@ local function onPathAction()
 	end
 end
 
-local function onBattleAction()
+function onBattleAction()
 	if getOpponentName() ~= "Pidgeotto" or needPC() then
 		return run() or sendAnyPokemon() or attack()
 	else return useMove("Covet") or attack() or run() or sendAnyPokemon()
