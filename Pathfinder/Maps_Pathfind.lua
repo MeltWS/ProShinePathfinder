@@ -271,7 +271,8 @@ end
 local function initSettings()
 	Settings = {}
 	Settings.bike = hasItem("Bicycle")
-	Settings.dig = lib.hasPokemonWithMove("Dig")
+	Settings.dig = lib.getPokemonNumberWithMove("Dig", 155)
+	if Settings.dig == 0 then Settings.dig = false end
 	ApplySettings()
 end
 

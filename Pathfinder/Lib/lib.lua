@@ -38,14 +38,6 @@ function lib.log1time(msg)
 end
 
 -- MOVE CHECK --
-function lib.hasPokemonWithMove(Move)
-	for pokemonId=1, getTeamSize(), 1 do
-		if hasMove(pokemonId, Move) then
-			return true
-		end
-	end
-	return false
-end
 
 -- BIKE USAGE --
 function lib.useBike()
