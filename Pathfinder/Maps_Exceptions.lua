@@ -115,8 +115,8 @@ local function EnableDigPath()
 	DescMaps["Route 10_to_Route 9"] = {function() if lib.inRectangle(2,45,29,71) then Mode_DigWay("Route 10",2,45,2,44) else moveToMap("Route 9") end end}
 	DescMaps["Route 10_to_Power Plant"] = {function() Mode_MoveToCell("Route 10", 8,0,25,11,22,0) end,function() Mode_MoveToCell("Route 10", 8,21,26,34,15,26) end,function() Mode_MoveToCell("Route 10", 27,0,30,34,15,26) end, function() if lib.inRectangle(2,45,29,71) then Mode_DigWay("Route 10",2,45,2,44) end end}
 	-- Johto
-	DescMaps["Route 42_to_Mahogany Town"] = {function() if lib.inRectangle(1,14,18,26) then Mode_SpeakWithNPC("Route 42","Do you want to attempt to use it?",{1,lib.getPokemonNumberWithMove("Dig")},15,14,15,13) else moveToMap("Mahogany Town") end end} -- enabling digway route 42 from left to right side
-	DescMaps["Route 42_to_Ecruteak Stop House 2"] = {function() if lib.inRectangle(66,14,95,21) then Mode_SpeakWithNPC("Route 42","Do you want to attempt to use it?",{1,lib.getPokemonNumberWithMove("Dig")},77,14,77,13) else moveToMap("Ecruteak Stop House 2") end end} -- enabling digway route 42 from right to left side
+	DescMaps["Route 42_to_Mahogany Town"] = {function() if lib.inRectangle(1,14,18,26) then Mode_SpeakWithNPC("Route 42","Do you want to attempt to use it?",{1,lib.getPokemonNumberWithMove("Dig", 155)},15,14,15,13) else moveToMap("Mahogany Town") end end} -- enabling digway route 42 from left to right side
+	DescMaps["Route 42_to_Ecruteak Stop House 2"] = {function() if lib.inRectangle(66,14,95,21) then Mode_SpeakWithNPC("Route 42","Do you want to attempt to use it?",{1,lib.getPokemonNumberWithMove("Dig", 155)},77,14,77,13) else moveToMap("Ecruteak Stop House 2") end end} -- enabling digway route 42 from right to left side
 end
 
 local function DisableDigPath()
@@ -246,9 +246,11 @@ DescMaps["Victory Road Kanto 3F_to_Victory Road Kanto 2F"] = {function() Mode_Mo
 
 -- ROUTE 16
 DescMaps["Route 16_to_Route 17"] = {function() Mode_MoveToCell("Route 16", 70,3,91,21,70,13) end, function() Mode_MoveToCell("Route 16", 25,9,64,40,29,40) end}
-DescMaps["Route 16_to_Celadon City"] = {function() Mode_MoveToCell("Route 16", 70,3,91,21,90,19) end, function() Mode_MoveToCell("Route 16", 25,9,64,40,64,12) end}
 DescMaps["Route 16 Stop House_to_Route 17"] = {function() Mode_MoveToCell("Route 16 Stop House", 0,3,20,9,0,6) end}
+DescMaps["Route 16_to_Celadon City"] = {function() Mode_MoveToCell("Route 16", 70,3,91,21,90,19) end, function() Mode_MoveToCell("Route 16", 25,9,64,40,64,12) end}
 DescMaps["Route 16 Stop House_to_Celadon City"] = {function() Mode_MoveToCell("Route 16 Stop House", 0,3,20,9,20,6) end}
+DescMaps["Route 16_to_Route 16 house"] = {function() Mode_MoveToCell("Route 16", 70,3,91,21,70,13) end, function() Mode_MoveToCell("Route 16", 25,9,64,40,31,14) end}
+DescMaps["Route 16 Stop House_to_Route 16 house"] = {function() Mode_MoveToCell("Route 16 Stop House", 0,3,20,9,0,6) end}
 
 -- Route 18
 DescMaps["Bike Road Stop_to_Fuchsia City"] = {function() Mode_MoveToCell("Bike Road Stop", 0,3,10,10,10,7) end}
