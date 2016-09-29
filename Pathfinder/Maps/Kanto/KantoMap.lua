@@ -119,7 +119,7 @@ KantoMap["Route 7"] = {["Celadon City"] = 1, ["Route 7 Stop House"] = 1}
 KantoMap["Route 7 Stop House"] = {["Route 7"] = 1, ["Saffron City"] = 1}
 KantoMap["Route 8"] = {["Lavender Town"] = 1, ["Route 8 Stop House"] = 1}
 KantoMap["Route 8 Stop House"] = {["Route 8"] = 1, ["Saffron City"] = 1}
-KantoMap["Route 9"] = {["Route 10"] = 1}
+KantoMap["Route 9"] = {["Route 10"] = 1, ["Cerulean City"] = 1}
 KantoMap["Safari Area 1"] = {["Safari Area 2"] = 1, ["Safari Entrance"] = 1}
 KantoMap["Safari Area 2"] = {["Safari Area 1"] = 1, ["Safari Area 3"] = 1}
 KantoMap["Safari Area 3"] = {["Safari Area 2"] = 1, ["Safari Entrance"] = 1, ["Safari Exclusive"] = 1}
