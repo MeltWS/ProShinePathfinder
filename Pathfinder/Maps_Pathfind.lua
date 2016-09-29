@@ -179,17 +179,18 @@ end
 
 local function MovingApply(ToMap)
 	if lib.useBike() then
-		return	
+		return true	
 	elseif CheckException(getMapName(), PathSolution[1]) then
-		return
+		return true
 	else
 		lib.log1time("Maps Remains: " .. lib.tablelength(PathSolution) .. "  Moving To: --> " .. PathSolution[1])	
 		if moveToMap(ToMap) then
-			return
+			return true
 		else
 			ResetPath()
 			lib.log1time("Error in Path - Reset and Recalc")
-			swapPokemon(getTeamSize(), getTeamSize()-1)
+			swapPokemon(getTeamSize(), getTeamSize() - 1)
+			return true
 		end
 	end
 end
@@ -199,15 +200,14 @@ local function MoveWithCalcPath()
 		if PathSolution[1] == getMapName() then
 			table.remove(PathSolution, 1)
 			if lib.tablelength(PathSolution) > 0 then
-				MovingApply(PathSolution[1])
+				return MovingApply(PathSolution[1])
 			end
+			return false
 		else
-			MovingApply(PathSolution[1])
+			return MovingApply(PathSolution[1])
 		end
-		return true
-	else
-		return false
-	end	
+	end
+	return false	
 end
 
 
@@ -278,13 +278,15 @@ end
 
 -- MOVETO DEST
 local function MoveTo(Destination)
+	local map = getMapName()
+
 	lib.ifNotThen(Settings, initSettings)
-	if Outlet and checkOutlet(getMapName()) then
+	if Outlet and checkOutlet(map) then
 		return true
 	elseif PathDestStore == Destination then
 		return MoveWithCalcPath()	
 	else
-	 	PathSolution = simpleAStar(goal(Destination))(getMapName())
+	 	PathSolution = simpleAStar(goal(Destination))(map)
 		if not PathSolution then
 			return fatal("Path Not Found ERROR")
 		end		
