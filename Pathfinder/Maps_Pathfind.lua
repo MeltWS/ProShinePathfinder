@@ -332,6 +332,12 @@ local function MoveToPC()
 	return MoveTo("Pokecenter")
 end
 
+local function UseNearestPokecenter()
+	if string.find(getMapName(), "Pokecenter") then
+		return usePokecenter()
+	else return MoveToPC()
+	end
+end
 
 local self = {
 ResetPath = ResetPath,
@@ -356,6 +362,7 @@ registerHook("onStop", onPathfinderStop)
 return {
 	MoveTo = MoveTo,
 	MoveToPC = MoveToPC,
+	UseNearestPokecenter = UseNearestPokecenter,
 	EnableBikePath = EnableBikePath,
 	DisableBikePath = DisableBikePath,
 	EnableDigPath = EnableDigPath,

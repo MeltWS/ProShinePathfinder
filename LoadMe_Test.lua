@@ -9,7 +9,8 @@ local PathFinder = require "Pathfinder/Maps_Pathfind" -- requesting table with m
 ----- Check out settings in Pathfind/Settings/static_settings.lua -------------------------------
 ------------------
 MoveTo(dest) --> Main function for moving to dest. return false when done. true if destination is not reached. Need to be called multiple times.
-MoveToPC()   --> Move to nearest Pokecenter
+MoveToPC()   --> Move to nearest Pokecenter.
+UseNearestPokecenter() --> Go heal your team to the nearest Pokecenter.
 
 --> Possible Setting Calls (Bike and Dig are set depending of Bot item/pokemons)
 	EnableBikePath()
@@ -19,11 +20,11 @@ MoveToPC()   --> Move to nearest Pokecenter
 ------------------]]
 
 function onStart()
-	 PathFinder.DisableDigPath() -- example use of settings
+	--  PathFinder.DisableDigPath() -- example use of settings
 end
 
 function onPathAction()
-	PathFinder.MoveTo("Power Plant") -- example use of MoveTo(dest)
+	PathFinder.MoveTo("Saffron City") -- example use of MoveTo(dest)
 	-- PathFinder.MoveToPC()
 end
 
