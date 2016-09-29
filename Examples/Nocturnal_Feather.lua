@@ -39,7 +39,7 @@ end
 function onPathAction()
 	if not isNight() then fatal("Feather are only found at night time") end
 	if needPC() then
-		return PathFinder.useNearestPokecenter()
+		return PathFinder.UseNearestPokecenter()
 	elseif getMapName() == "Route 16 Stop House" then
         moveToCell(20,6)
     elseif not PathFinder.MoveTo("Route 16") then

@@ -334,7 +334,7 @@ end
 
 local function UseNearestPokecenter()
 	if string.find(getMapName(), "Pokecenter") then
-		return usePokecenter()
+		return assert(usePokecenter(), "usePokecenter() failed")
 	else return MoveToPC()
 	end
 end
