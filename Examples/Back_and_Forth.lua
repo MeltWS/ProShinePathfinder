@@ -3,7 +3,7 @@ author = "Melt"
 
 description = [[Example moving back and forth between two pokecenters]]
 
-local PathFinder = require "Maps_Pathfind" -- requesting table with methods
+local PathFinder = require "Pathfinder/Maps_Pathfind" -- requesting table with methods
 local dest = nil
 --[[
 ----- Check out settings in static_settings.lua -------------------------------

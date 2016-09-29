@@ -3,7 +3,17 @@ author = "Melt"
 
 description = [[Farm Nocturnal Feathers, it assumes you have a pokemon with "Covet"]]
 
-local PathFinder = require "Maps_Pathfind" -- requesting table with methods
+local PathFinder = require "Pathfinder/Maps_Pathfind" -- requesting table with methods
+
+function inRectangle(UpperX, UpperY, LowerX, LowerY)
+	local ActX = getPlayerX()
+	local ActY = getPlayerY()
+	if (ActX >= UpperX and ActX <= LowerX) and (ActY >= UpperY and ActY <= LowerY) then
+		return true
+	else
+		return false
+	end
+end
 
 local function needPC()
 	if getPokemonHealth(1) == 0 or getRemainingPowerPoints(1, "Covet") == 0 then
@@ -11,13 +21,6 @@ local function needPC()
 		return true
 	else return false
 	end 
-end
-
-local function goHeal()
-	if string.find(getMapName(), "Pokecenter") then
-		return usePokecenter()
-	else return PathFinder.MoveToPC()
-	end
 end
 
 function onStart()
@@ -36,11 +39,16 @@ end
 function onPathAction()
 	if not isNight() then fatal("Feather are only found at night time") end
 	if needPC() then
-		return goHeal()
-	elseif getMapName() ~= "Route 16" then
-		return PathFinder.MoveTo("Route 16")
-	else return moveToGrass()
-	end
+		return PathFinder.useNearestPokecenter()
+	elseif getMapName() == "Route 16 Stop House" then
+        moveToCell(20,6)
+    elseif not PathFinder.MoveTo("Route 16") then
+        if inRectangle(70,3,91,21) then
+            moveToGrass()
+        else
+            moveToMap("Route 16 Stop House")
+        end
+    end
 end
 
 function onBattleAction()
