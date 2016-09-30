@@ -1,4 +1,10 @@
-local lib = require "Pathfinder/Lib/lib"
+local modpath = ""
+local ppath = select(1, ...)
+if ppath ~= nil then
+    modpath = ppath:match(".+[/%.]") or modpath
+end
+
+local lib = require (modpath .. "Lib/lib")
 
 local ExceRouteEdit = {}
 local DescMaps = {}
@@ -58,7 +64,7 @@ local function Mode_SpeakWithNPC(MapName,Check,Dialogs,cellX,cellY,npcX,npcY)
 		if MapName == getMapName() then
 			moveToCell(cellX,cellY)
 		end
-	end	
+	end
 end
 
 -- DIGS WAYS EXCEPTION
@@ -127,7 +133,7 @@ local function DisableDigPath()
 	-- Johto
 	DescMaps["Route 42_to_Mahogany Town"] = {function() Mode_MoveToCell("Route 42", 3,14,18,26,17,13) end, function() Mode_MoveToCell("Route 42", 19,0,95,28,95,17) end}
 	DescMaps["Route 42_to_Ecruteak Stop House 2"] = nil
-	
+
 end
 
 -- KANTO SUBWAY EXCEPTION
@@ -153,7 +159,7 @@ end
 
 -- KANTO --
 
--- TABLE- PATHEDIT FORCE 
+-- TABLE- PATHEDIT FORCE
 ExceRouteEdit["1"] = {{"Mt. Moon B1F","Mt. Moon B2F","Mt. Moon Exit"},{"Mt. Moon Exit"}}
 ExceRouteEdit["2"] = {{"Mt. Moon B2F","Mt. Moon B1F","Mt. Moon 1F"},{"Mt. Moon B1F","Mt. Moon 1F"}}
 ExceRouteEdit["3"] = {{"Rock Tunnel 1","Rock Tunnel 2","Route 9"},{"Rock Tunnel 1","Route 10","Route 9"}}
@@ -230,7 +236,7 @@ DescMaps["Power Plant_to_Route 9"] = {function() Mode_MoveToCell("Power Plant", 
 DescMaps["Route 10_to_Pokecenter Route 10"] = {function() Mode_MoveToCell("Route 10", 8,0,25,11,18,4) end,function() Mode_MoveToCell("Route 10", 8,21,26,34,28,0) end,function() Mode_MoveToCell("Route 10", 27,0,30,34,28,0) end}
 DescMaps["Route 9_to_Pokecenter Route 10"] = {function() Mode_MoveToCell("Route 9", 0,0,97,35,87,33) end}
 
--- POKEMON TOWER 
+-- POKEMON TOWER
 DescMaps["Pokemon Tower B3_to_Pokemon Tower B4"] = {function() Mode_MoveToCell("Pokemon Tower B3", 23,17,23,19,23,20) end,function() Mode_MoveToCell("Pokemon Tower B3", 17,19,19,22,17,23) end,function() Mode_MoveToCell("Pokemon Tower B3", 23,20,23,21,23,22) end}
 DescMaps["Pokemon Tower B7_to_Pokemon Tower B8"] = {function() Mode_MoveToCell("Pokemon Tower B7", 0,0,99,99,23,17) end}
 DescMaps["Pokemon Tower B9_to_Pokemon Tower B11"] = {function() Mode_MoveToCell("Pokemon Tower B9", 17,17,19,21,18,21) end,function() Mode_MoveToCell("Pokemon Tower B9", 21,17,24,21,24,21) end}

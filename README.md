@@ -1,3 +1,9 @@
+-------------- RELATIVE MODULE PATH BRANCH ----------------------
+This branch support relative module path, this allows the user to
+have his main script outside of the pathfinder folder.
+This helps easier integration of the pathfinder as a submodule.
+-----------------------------------------------------------------
+
 This allows you to use simple, MoveTo ("MapName") instead of using 1000 elseif.
 
 All 3 Main regions 99% Supported, dig path supported one two first regions, support discovering a digway if it can't go threw.
@@ -19,7 +25,7 @@ Know issue :
 @https://github.com/Shakadak/lua-astar
 A simple implementation of the A* pathfinding algorithm
 
-The `aStar` function expect a few more arguments than most other implementations available anywhere.  
+The `aStar` function expect a few more arguments than most other implementations available anywhere.
 I therefore invite you to read `example.lua`
 
 # Original Project

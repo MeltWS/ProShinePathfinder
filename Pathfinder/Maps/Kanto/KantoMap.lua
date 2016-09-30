@@ -1,4 +1,10 @@
-local ss = require "Pathfinder/Settings/static_Settings"
+local modpath = ""
+local ppath = select(1, ...)
+if ppath ~= nil then
+    modpath = ppath:match(".+[/%.]") or modpath
+end
+local SettingsPath = (string.gsub(modpath, "[/%.]Maps[/%.]Kanto", "" ) or "") .. "Settings/"
+local ss = require (SettingsPath .. "static_Settings")
 local K_SUBWAY = ss.K_SUBWAY
 
 local KantoMap = {}

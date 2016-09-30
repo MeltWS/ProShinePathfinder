@@ -1,4 +1,11 @@
-local lib = require "Pathfinder/Lib/lib"
+local modpath = ""
+local ppath = select(1, ...)
+if ppath ~= nil then
+    modpath = ppath:match(".+[/%.]") or modpath
+end
+local LibPath = (string.gsub(modpath, "[/%.]Maps", "" ) or "") .. "Lib/"
+
+local lib = require (LibPath .. "lib")
 
 local Digways = {} -- Digway map used for discovering them.
 

@@ -1,0 +1,1 @@
+Place examples in the same folder as LoadMe_Test.lua to use.

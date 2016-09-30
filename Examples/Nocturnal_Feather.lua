@@ -20,7 +20,7 @@ local function needPC()
 		log(getRemainingPowerPoints(1, "Covet"))
 		return true
 	else return false
-	end 
+	end
 end
 
 function onStart()
