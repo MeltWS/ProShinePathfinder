@@ -2,6 +2,9 @@
 This branch support relative module path, this allows the user to
 have his main script outside of the pathfinder folder.
 This helps easier integration of the pathfinder as a submodule.
+The current Moonsharp does not support this feature of lua,
+you need to replace those in your proshine by the one provided
+in this repository.
 -----------------------------------------------------------------
 
 This allows you to use simple, MoveTo ("MapName") instead of using 1000 elseif.
