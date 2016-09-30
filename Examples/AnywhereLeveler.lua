@@ -10,9 +10,35 @@ local xpTargets   = {1, 3} -- table containing index of pokemon(s) to train.
 local holdItem    = "Leftovers" -- support giving an item to the leader, if you don't want to give one, set to nil.
 local xpZone      = function() return moveToWater() end -- you can change this depending of your needs, moveToRectangle() or moveToGrass().
 
+-- failsafe function for battle, in the event where the last Pokemon is the active but API call attack() does not work.
+-- This is due to his only move(s) with PP being not damaging type move(s).
+function useAnyMove()
+    local pokemonId = getActivePokemonNumber()
+    for i=1,4 do
+        local moveName = getPokemonMoveName(pokemonId, i)
+        if moveName and getRemainingPowerPoints(pokemonID, moveName) > 0 then
+            log("Use any move")
+            return useMove(moveName)
+        elseif not moveName then
+            log("useAnyMove : moveName nil")
+        end
+    end
+    return false
+end
+
+function hasUsableDamageMove(pokemonID)
+    for i = 1, 4 do
+        local moveName = getPokemonMoveName(pokemonID, i)
+        if moveName ~= "False Swipe" and getPokemonMovePower(pokemonID, i) > 0 and getRemainingPowerPoints(pokemonID, moveName) > 0 then
+            return true
+        end
+    end
+    return false
+end
+
 local function swapLeaderWithTargetXp()
     for k, v in pairs(xpTargets) do
-        if getPokemonHealth(v) > 0 then
+        if v ~= 1 and getPokemonHealth(v) > 0 and hasUsableDamageMove(v) then
             if not getPokemonHeldItem(1) then
                 return assert(swapPokemonWithLeader(getPokemonName(v)), "Failed to swap Pokemon ".. v .."  with leader.")
             else return assert(takeItemFromPokemon(1), "Failed to retrieve item from leader")
@@ -50,7 +76,7 @@ end
 function onPathAction()
     if isDone() then
         return fatal("level reached")
-    elseif getPokemonHealth(1) == 0 then
+    elseif getPokemonHealth(1) == 0 or not hasUsableDamageMove(1) then
         if not swapLeaderWithTargetXp() then
             return pf.UseNearestPokecenter()
         end
@@ -63,8 +89,8 @@ end
 
 function onBattleAction()
     if getPokemonHealth(1) > 0 and getMapName() == mapExp then
-        return attack() or run() or sendUsablePokemon() or sendAnyPokemon()
-    else return run() or attack() or sendUsablePokemon() or sendAnyPokemon()
+        return attack() or run() or sendUsablePokemon() or sendAnyPokemon() or useAnyMove()
+    else return run() or attack() or sendUsablePokemon() or sendAnyPokemon() or useAnyMove()
     end
 end
 
