@@ -1,3 +1,0 @@
-[submodule "Lib/lua-astar"]
-	path = Lib/lua-astar
-	url = https://github.com/Shakadak/lua-astar.git
