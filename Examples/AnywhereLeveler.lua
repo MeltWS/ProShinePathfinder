@@ -54,6 +54,7 @@ local function isDone()
             return false
         end
     end
+    return true
 end
 
 local function giveLeaderItem()

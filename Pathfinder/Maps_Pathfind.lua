@@ -207,7 +207,7 @@ local function MoveWithCalcPath()
 			return MovingApply(PathSolution[1])
 		end
 	end
-	return false	
+	return false
 end
 
 
@@ -261,7 +261,7 @@ local function ApplySettings()
 		unsetLink("Route 31", "Route 45")
 		unsetLink("Route 45", "Route 31")
 		unsetLink("Route 33", "Route 32")
-		unsetLink("Route 32", "Route 33")		
+		unsetLink("Route 32", "Route 33")
 		unsetLink("Blackthorn City", "Route 44")
 		unsetLink("Route 44", "Blackthorn City")
 	end
@@ -284,23 +284,23 @@ local function MoveTo(Destination)
 	if Outlet and checkOutlet(map) then
 		return true
 	elseif PathDestStore == Destination then
-		return MoveWithCalcPath()	
+		return MoveWithCalcPath()
 	else
-	 	PathSolution = simpleAStar(goal(Destination))(map)
+		PathSolution = simpleAStar(goal(Destination))(map)
 		if not PathSolution then
 			return fatal("Path Not Found ERROR")
-		end		
+		end
 		PathDestStore = Destination
 		EditPathGenerated()
 		log("Path: " .. table.concat(PathSolution,"->"))
-		return MoveWithCalcPath()	
+		return MoveWithCalcPath()
 	end
 	return false
 end
 
 -- SETTINGS CALLS
 local function EnableBikePath()
-	lib.ifNotThen(Settings, initSettings)	
+	lib.ifNotThen(Settings, initSettings)
 	Settings.bike = true
 	log("BIKE PATH ENABLED")
 	ApplySettings()
@@ -367,4 +367,4 @@ return {
 	DisableBikePath = DisableBikePath,
 	EnableDigPath = EnableDigPath,
 	DisableDigPath = DisableDigPath,
- }
+}
