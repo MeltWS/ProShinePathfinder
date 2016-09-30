@@ -1,11 +1,9 @@
-local modpath = ""
-local ppath = select(1, ...)
-if ppath ~= nil then
-    modpath = ppath:match(".+[/%.]") or modpath
-end
-local LibPath = (string.gsub(modpath, "[/%.]Maps", "" ) or "") .. "Lib/"
+local cpath = select(1, ...) or "" -- callee path
+local function nTimes(n, f, x) for i = 0, n - 1 do x = f(x) end return x end -- calls n times f(x)
+local function rmlast(str) return str:sub(1, -2):match(".+[%./]") or "" end -- removes last dir / file from the callee path
+cpdpath = nTimes(2, rmlast, cpath) -- callee parent of parent dir path
 
-local lib = require (LibPath .. "lib")
+local lib = require (cpdpath .. "Lib/lib")
 
 local Digways = {} -- Digway map used for discovering them.
 

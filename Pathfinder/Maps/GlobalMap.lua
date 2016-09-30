@@ -1,15 +1,13 @@
-local modpath = ""
-local ppath = select(1, ...)
-if ppath ~= nil then
-    modpath = ppath:match(".+[/%.]") or modpath
-end
-local LibPath = (string.gsub(modpath, "[/%.]Maps", "" ) or "") .. "Lib/"
+local cpath = select(1, ...) or "" -- callee path
+local function rmlast(str) return str:sub(1, -2):match(".+[%./]") or "" end -- removes last dir / file from the callee path
+cdpath = rmlast(cpath) -- callee dir path
+cpdpath = rmlast(cdpath) -- callee parent dir path
 
-local lib = require (LibPath .. "lib")
-local KantoMap = require (modpath .. "Kanto/KantoMap")
-local JohtoMap = require (modpath .. "Johto/JohtoMap")
-local HoennMap = require (modpath .. "Hoenn/HoennMap")
-local LinkMap  = require (modpath .. "LinkMap")
+local lib = require (cpdpath .. "Lib/lib")
+local KantoMap = require (cdpath .. "Kanto/KantoMap")
+local JohtoMap = require (cdpath .. "Johto/JohtoMap")
+local HoennMap = require (cdpath .. "Hoenn/HoennMap")
+local LinkMap  = require (cdpath .. "LinkMap")
 local GlobalMap = {}
 
 local function mergeMap(t1, t2)

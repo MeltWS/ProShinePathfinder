@@ -1,10 +1,9 @@
-local modpath = ""
-local ppath = select(1, ...)
-if ppath ~= nil then
-    modpath = ppath:match(".+[/%.]") or modpath
-end
-local SettingsPath = (string.gsub(modpath, "[/%.]Maps[/%.]Kanto", "" ) or "") .. "Settings/"
-local ss = require (SettingsPath .. "static_Settings")
+local cpath = select(1, ...) or "" -- callee path
+local function nTimes(n, f, x) for i = 0, n - 1 do x = f(x) end return x end -- calls n times f(x)
+local function rmlast(str) return str:sub(1, -2):match(".+[%./]") or "" end -- removes last dir / file from the callee path
+cppdpath = nTimes(3, rmlast, cpath) -- callee parent of parent dir path
+
+local ss = require (cppdpath .. "Settings/static_Settings")
 local K_SUBWAY = ss.K_SUBWAY
 
 local KantoMap = {}
