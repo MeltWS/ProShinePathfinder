@@ -1,14 +1,14 @@
-local modpath = ""
-local ppath = select(1, ...)
-if ppath ~= nil then
-    modpath = ppath:match(".+[/%.]") or modpath
+local cdpath = ""
+local cpath = select(1, ...) -- callee path
+if cpath ~= nil then
+    cdpath = cpath:match(".+[/%.]") or cdpath -- callee dir path
 end
 
-local lib = require (modpath .. "Lib/lib")
-local aStar = require (modpath .. "Lib/lua-astar/AStar")
-local GlobalMap = require (modpath .. "Maps/GlobalMap")
-local Digways = require (modpath .. "Maps/DigwaysMap")
-local MapExceptions = require (modpath .. "Maps_Exceptions")
+local lib = require (cdpath .. "Lib/lib")
+local aStar = require (cdpath .. "Lib/lua-astar/AStar")
+local GlobalMap = require (cdpath .. "Maps/GlobalMap")
+local Digways = require (cdpath .. "Maps/DigwaysMap")
+local MapExceptions = require (cdpath .. "Maps_Exceptions")
 local DescMaps = MapExceptions.DescMaps
 local ExceRouteEdit = MapExceptions.ExceRouteEdit
 local PathSolution = {}

@@ -1,10 +1,10 @@
-local modpath = ""
-local ppath = select(1, ...)
-if ppath ~= nil then
-    modpath = ppath:match(".+[/%.]") or modpath
+local cdpath = ""
+local cpath = select(1, ...) -- callee path
+if cpath ~= nil then
+    cdpath = cpath:match(".+[/%.]") or cdpath -- callee dir path
 end
 
-local lib = require (modpath .. "Lib/lib")
+local lib = require (cdpath .. "Lib/lib")
 
 local ExceRouteEdit = {}
 local DescMaps = {}

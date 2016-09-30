@@ -1,7 +1,7 @@
 local cpath = select(1, ...) or "" -- callee path
 local function rmlast(str) return str:sub(1, -2):match(".+[%./]") or "" end -- removes last dir / file from the callee path
-cdpath = rmlast(cpath) -- callee dir path
-cpdpath = rmlast(cdpath) -- callee parent dir path
+local cdpath = rmlast(cpath) -- callee dir path
+local cpdpath = rmlast(cdpath) -- callee parent dir path
 
 local lib = require (cpdpath .. "Lib/lib")
 local KantoMap = require (cdpath .. "Kanto/KantoMap")
