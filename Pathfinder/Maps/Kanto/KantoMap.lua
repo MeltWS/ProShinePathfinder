@@ -18,6 +18,12 @@ KantoMap["Cinnabar mansion 1"] = {["Cinnabar Island"] = 1, ["Cinnabar mansion 2"
 KantoMap["Cinnabar mansion 2"] = {["Cinnabar mansion 1"] = 1, ["Cinnabar mansion 3"] = 1}
 KantoMap["Cinnabar mansion 3"] = {["Cinnabar mansion 2"] = 1}
 KantoMap["Digletts Cave"] = {["Digletts Cave Entrance 1"] = 1, ["Digletts Cave Entrance 2"] = 1}
+KantoMap["Celadon Mart 1"] = {["Celadon City"] = 1, ["Celadon Mart 2"] = 1}
+KantoMap["Celadon Mart 2"] = {["Celadon Mart 1"] = 1, ["Celadon Mart 3"] = 1}
+KantoMap["Celadon Mart 3"] = {["Celadon Mart 2"] = 1, ["Celadon Mart 4"] = 1}
+KantoMap["Celadon Mart 4"] = {["Celadon Mart 3"] = 1, ["Celadon Mart 5"] = 1}
+KantoMap["Celadon Mart 5"] = {["Celadon Mart 4"] = 1, ["Celadon Mart 6"] = 1}
+KantoMap["Celadon Mart 6"] = {["Celadon Mart 5"] = 1}
 KantoMap["Digletts Cave Entrance 1"] = {["Digletts Cave"] = 1, ["Route 2"] = 1}
 KantoMap["Digletts Cave Entrance 2"] = {["Digletts Cave"] = 1, ["Route 11"] = 1}
 KantoMap["Fisherman House - Vermilion"] = {["Vermilion City"] = 1}
