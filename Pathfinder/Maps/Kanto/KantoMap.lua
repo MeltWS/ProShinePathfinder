@@ -10,7 +10,7 @@ local KantoMap = {}
 
 KantoMap["Berry Tower Kanto"] = {["Route 13"] = 1}
 KantoMap["Bike Road Stop"] = {["Route 18"] = 1}
-KantoMap["Celadon City"] = {["Pokecenter Celadon"] = 1, ["Route 16"] = 1, ["Route 7"] = 1}
+KantoMap["Celadon City"] = {["Pokecenter Celadon"] = 1, ["Route 16"] = 1, ["Route 7"] = 1, ["Celadon Mart 1"] = 1}
 KantoMap["Cerulean City"] = {["Pokecenter Cerulean"] = 1, ["Route 24"] = 1, ["Route 4"] = 1, ["Route 5"] = 1, ["Route 9"] = 1}
 KantoMap["Cinnabar Island"] = {["Cinnabar Lab"] = 1, ["Cinnabar mansion 1"] = 1, ["Pokecenter Cinnabar"] = 1, ["Route 20"] = 1, ["Route 21"] = 1}
 KantoMap["Cinnabar Lab"] = {["Cinnabar Island"] = 1}
