@@ -77,7 +77,7 @@ end
 function onPathAction()
     if isDone() then
         return fatal("level reached")
-    elseif getPokemonHealth(1) == 0 or not hasUsableDamageMove(1) then
+    elseif getPokemonHealth(1) == 0 or not hasUsableDamageMove(1) or getPokemonLevel(1) > levelGoal then
         if not swapLeaderWithTargetXp() then
             return pf.UseNearestPokecenter()
         end
