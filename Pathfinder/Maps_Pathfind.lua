@@ -41,7 +41,7 @@ end
 local function goal(dest)
 	return function(node)
 		if dest == "Pokecenter" then
-			return string.match(node, dest)
+			return string.find(node, dest) or node == "Indigo Plateau Center"
 		else
 			return node == dest
 		end
@@ -63,7 +63,7 @@ local function SolvingException(EMap)
 			for val, func in pairs(DescMaps[index]) do
 				if DescMaps[index][val]() == false then
 					return
-				end 
+				end
 			end
 		end
 	end
@@ -92,7 +92,7 @@ end
 -- FUNCTION NO BULTIN FOR ADD VALUE ON A TABLE
 local function replacepath(startpos, endpos, namexc)
 	local temppath = {}
-	for posS=1,(startpos-1) do	
+	for posS=1,(startpos-1) do
 		table.insert(temppath,PathSolution[posS])
 	end
 	for posex, val in pairs(ExceRouteEdit[namexc][1]) do
@@ -107,7 +107,7 @@ end
 -- EDIT PATH FOR NO EDIT BASIC MAP TABLE
 local function EditPathGenerated()
 	local found = false
-	for val, zone in pairs(PathSolution) do -- for every val in array path 
+	for val, zone in pairs(PathSolution) do -- for every val in array path
 		for valx, exce in pairs(ExceRouteEdit) do -- for every val in exception, based on path, compare
 			if zone == ExceRouteEdit[valx][1][1] then -- if 1 of element is a start of exception- get table length exception
 				found = true
@@ -179,11 +179,11 @@ end
 
 local function MovingApply(ToMap)
 	if lib.useBike() then
-		return true	
+		return true
 	elseif CheckException(getMapName(), PathSolution[1]) then
 		return true
 	else
-		lib.log1time("Maps Remains: " .. lib.tablelength(PathSolution) .. "  Moving To: --> " .. PathSolution[1])	
+		lib.log1time("Maps Remains: " .. lib.tablelength(PathSolution) .. "  Moving To: --> " .. PathSolution[1])
 		if moveToMap(ToMap) then
 			return true
 		else
@@ -196,7 +196,7 @@ local function MovingApply(ToMap)
 end
 
 local function MoveWithCalcPath()
-	if lib.tablelength(PathSolution) > 0 then	
+	if lib.tablelength(PathSolution) > 0 then
 		if PathSolution[1] == getMapName() then
 			table.remove(PathSolution, 1)
 			if lib.tablelength(PathSolution) > 0 then
@@ -229,7 +229,7 @@ end
 local function ApplySettings()
 	-- BIKE PATHS
 	if Settings.bike then
-		setLink("Route 18", "Route 17", 1)		
+		setLink("Route 18", "Route 17", 1)
 		setLink("Route 17", "Route 18", 1)
 	else
 		unsetLink("Route 18", "Route 17")
@@ -247,7 +247,7 @@ local function ApplySettings()
 		setLink("Route 31", "Route 45", 1)
 		setLink("Route 45", "Route 31", 1)
 		setLink("Route 33", "Route 32", 1)
-		setLink("Route 32", "Route 33", 1)		
+		setLink("Route 32", "Route 33", 1)
 		setLink("Blackthorn City", "Route 44", 1)
 		setLink("Route 44", "Blackthorn City", 1)
 	else
@@ -314,14 +314,14 @@ local function DisableBikePath()
 end
 
 local function EnableDigPath()
-	lib.ifNotThen(Settings, initSettings)	
+	lib.ifNotThen(Settings, initSettings)
 	Settings.dig = true
 	log("DIG PATH ENABLED")
 	ApplySettings()
 end
 
 local function DisableDigPath()
-	lib.ifNotThen(Settings, initSettings)	
+	lib.ifNotThen(Settings, initSettings)
 	Settings.dig = false
 	log("DIG PATH DISABLED")
 	ApplySettings()
