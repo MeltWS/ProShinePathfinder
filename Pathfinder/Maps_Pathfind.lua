@@ -333,8 +333,11 @@ local function MoveToPC()
 end
 
 local function UseNearestPokecenter()
-	if string.find(getMapName(), "Pokecenter") then
+    map = getMapName()
+	if string.find(map, "Pokecenter") then
 		return assert(usePokecenter(), "usePokecenter() failed")
+    elseif map == "Indigo Plateau Center" then
+        return assert(talkToNpcOnCell(4, 21), "Failed to talk to Nurse on Cell 4/21")
 	else return MoveToPC()
 	end
 end
