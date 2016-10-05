@@ -22,5 +22,7 @@ Digways["Route 32"] = {["x"] = 10, ["y"] = 143, ["outletMap"] = "Route 33"}
 Digways["Route 33"] = {["x"] = 14, ["y"] = 13, ["outletMap"] = "Route 32"}
 Digways["Route 44"] = {["x"] = 73, ["y"] = 9, ["outletMap"] = "Blackthorn City"}
 Digways["Blackthorn City"] = {["x"] = 49, ["y"] = 16, ["outletMap"] = "Route 44"}
+Digways["Route 42"] = {["x"] = 15, ["y"] = 13, ["outletMap"] = "Route 42", ["inRectangle"] = function () return lib.inRectangle(1,13,18,26) end}
+Digways["Route 42_2"] = {["x"] = 77, ["y"] = 13, ["outletMap"] = "Route 42", ["inRectangle"] = function () return lib.inRectangle(19,13,95,26) end}
 
 return Digways

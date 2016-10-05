@@ -80,7 +80,7 @@ function lib.logTable(table, ...) -- logTable(table, name) with name as optional
 	end
 	for key, value in pairs(table) do
 		if name then
-			log(name .. " -> Key : " .. key .. ", Value : " .. value)			
+			log(name .. " -> Key : " .. key .. ", Value : " .. value)
 		else
 			log("Key : " .. key .. " --- Value : " .. value)
 		end
@@ -91,12 +91,6 @@ function lib.ifNotThen(anything, call)
 	if not anything then
 		return call()
 	end
-end
-
-function lib.swap(v1, v2) -- swap two var
-	local tmp = v1
-	v1 = v2
-	v2 = tmp
 end
 
 function lib.pairsByKeys(t, f) -- sort table keys by alpha order or f as alternative order.

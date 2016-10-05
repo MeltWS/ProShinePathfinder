@@ -147,7 +147,7 @@ local function SetOutlet(currentMap)
 	Outlet.found = false
 	if outletMap == currentMap then -- if the outlet is on the same map
 		if Digways[currentMap].inRectangle() then -- if the outlet is the other digway on the same map
-			lib.swap(Digways[currentMap], Digways[currentMap .. "_2"]) -- swap digways arround for currentMap
+            Digways[currentMap], Digways[currentMap .. "_2"] = Digways[currentMap .. "_2"], Digways[currentMap]-- swap digways arround for currentMap
 		end
 		Outlet.inRectangle = Digways[currentMap].inRectangle
 	else
