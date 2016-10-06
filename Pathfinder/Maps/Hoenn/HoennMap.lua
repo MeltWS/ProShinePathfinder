@@ -3,7 +3,11 @@ local function nTimes(n, f, x) for i = 0, n - 1 do x = f(x) end return x end -- 
 local function rmlast(str) return str:sub(1, -2):match(".+[%./]") or "" end -- removes last dir / file from the callee path
 local cppdpath = nTimes(3, rmlast, cpath) -- callee parent of parent dir path
 
-local ss = require (cppdpath .. "Settings/static_Settings")
+local _ss = require (cppdpath .. "Settings/static_Settings")
+
+return function()
+
+local ss = _ss()
 local H_SUBWAY = ss.H_SUBWAY
 local HoennMap = {}
 
@@ -108,3 +112,4 @@ HoennMap["Victory Road Hoenn 1F"] = {["Ever Grande City"] = 1, ["Victory Road Ho
 HoennMap["Victory Road Hoenn B1F"] = {["Victory Road Hoenn 1F"] = 1}
 
 return HoennMap
+end

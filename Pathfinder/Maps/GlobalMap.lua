@@ -4,10 +4,18 @@ local cdpath = rmlast(cpath) -- callee dir path
 local cpdpath = rmlast(cdpath) -- callee parent dir path
 
 local lib = require (cpdpath .. "Lib/lib")
-local KantoMap = require (cdpath .. "Kanto/KantoMap")
-local JohtoMap = require (cdpath .. "Johto/JohtoMap")
-local HoennMap = require (cdpath .. "Hoenn/HoennMap")
-local LinkMap  = require (cdpath .. "LinkMap")
+local _KantoMap = require (cdpath .. "Kanto/KantoMap")
+local _JohtoMap = require (cdpath .. "Johto/JohtoMap")
+local _HoennMap = require (cdpath .. "Hoenn/HoennMap")
+local _LinkMap  = require (cdpath .. "LinkMap")
+
+return function()
+
+local KantoMap = _KantoMap()
+local JohtoMap = _JohtoMap()
+local HoennMap = _HoennMap()
+local LinkMap  = _LinkMap()
+
 local GlobalMap = {}
 
 local function mergeMap(t1, t2)
@@ -26,3 +34,4 @@ mergeMap(GlobalMap, HoennMap)
 mergeMap(GlobalMap, LinkMap)
 
 return GlobalMap
+end

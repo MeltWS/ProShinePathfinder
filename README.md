@@ -24,6 +24,8 @@ This script allows you to use simple, MoveTo ("MapName") instead of using 1000 e
 
 * Please read the `LoadMe_Test.lua` for all infos on how to use, you can also read scripts in `Example folder`
 
+* Custom per Bot Settings.
+
 #####Know issues :
 
 * The bot will not consider not having surf or cut, or rock blast make sure you have what you need.

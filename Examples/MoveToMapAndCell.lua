@@ -18,7 +18,7 @@ MoveToPC()   --> Move to nearest Pokecenter
 	DisableDigPath()
 ------------------]]
 
-function moveToMapAndCell(mapname, x, y)  
+function moveToMapAndCell(mapname, x, y)
     local moving = PathFinder.MoveTo(mapname)
     if not moving and (getPlayerX() ~= x or  getPlayerY() ~= y) then
         moving = moveToCell(x, y)
@@ -27,7 +27,7 @@ function moveToMapAndCell(mapname, x, y)
 end
 
 function onStart()
-	 PathFinder.DisableDigPath() -- example use of settings
+	PathFinder.DisableDigPath() -- example use of settings
 end
 
 function onPathAction()

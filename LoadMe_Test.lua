@@ -3,7 +3,8 @@ author = "https://github.com/MeltWS"
 
 description = [[This allows you to move simply arround the map]]
 
-local PathFinder = require "Pathfinder/Maps_Pathfind" -- requesting table with methods
+-- You can require Maps_Pathfind from anywhere above in the hierarchie
+PathFinder = require "Pathfinder/Maps_Pathfind"  -- requesting table with methods
 
 --[[
 ----- Check out settings in Pathfind/Settings/static_settings.lua -------------------------------
@@ -20,15 +21,14 @@ UseNearestPokecenter() --> Go heal your team to the nearest Pokecenter.
 ------------------]]
 
 function onStart()
-	--  PathFinder.DisableDigPath() -- example use of settings
+--  PathFinder.DisableDigPath() -- example use of settings
 end
 
 function onPathAction()
-	PathFinder.MoveTo("Saffron City") -- example use of MoveTo(dest)
-	-- PathFinder.MoveToPC()
+    PathFinder.MoveTo("Indigo Plateau Center") -- example use of MoveTo(dest)
 end
 
 function onBattleAction()
-	run()
+    run()
 end
 

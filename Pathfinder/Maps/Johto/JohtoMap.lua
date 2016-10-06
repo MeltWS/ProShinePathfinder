@@ -3,7 +3,11 @@ local function nTimes(n, f, x) for i = 0, n - 1 do x = f(x) end return x end -- 
 local function rmlast(str) return str:sub(1, -2):match(".+[%./]") or "" end -- removes last dir / file from the callee path
 local cppdpath = nTimes(3, rmlast, cpath) -- callee parent of parent dir path
 
-local ss = require (cppdpath .. "Settings/static_Settings")
+local _ss = require (cppdpath .. "Settings/static_Settings")
+
+return function()
+
+local _local ss = _ss()
 local J_SUBWAY = ss.J_SUBWAY
 
 
@@ -111,3 +115,4 @@ JohtoMap["Ecruteak City Subway"] = {["Pokecenter Ecruteak"] = 1, ["Olivine City 
 JohtoMap["Goldenrod City Subway"] = {["Pokecenter Goldenrod"] = 1, ["Olivine City Subway"] = J_SUBWAY, ["Violet City Subway"] = J_SUBWAY, ["Azalea Town Subway"] = J_SUBWAY, ["Blackthorn City Subway"] = J_SUBWAY, ["Cherrygrove City Subway"] = J_SUBWAY, ["Ecruteak City Subway"] = J_SUBWAY, ["Mahogany Town Subway"] = J_SUBWAY}
 
 return JohtoMap
+end

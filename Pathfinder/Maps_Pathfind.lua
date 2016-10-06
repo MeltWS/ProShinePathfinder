@@ -4,16 +4,17 @@ if cpath ~= nil then
     cdpath = cpath:match(".+[/%.]") or cdpath -- callee dir path
 end
 
-local lib = require (cdpath .. "Lib/lib")
-local aStar = require (cdpath .. "Lib/lua-astar/AStar")
-local GlobalMap = require (cdpath .. "Maps/GlobalMap")
-local Digways = require (cdpath .. "Maps/DigwaysMap")
+local lib           = require (cdpath .. "Lib/lib")
+local aStar         = require (cdpath .. "Lib/lua-astar/AStar")
+local _GlobalMap    = require (cdpath .. "Maps/GlobalMap")
+local GlobalMap     = {}
+local Digways       = require (cdpath .. "Maps/DigwaysMap")
 local MapExceptions = require (cdpath .. "Maps_Exceptions")
-local DescMaps = MapExceptions.DescMaps
+local DescMaps      = MapExceptions.DescMaps
 local ExceRouteEdit = MapExceptions.ExceRouteEdit
-local PathSolution = {}
+local PathSolution  = {}
 local PathDestStore = ""
-local Outlet = nil
+local Outlet        = nil
 
 -----------------------------------
 ----- A* NECESSARY  FUNCTIONS -----
@@ -357,10 +358,24 @@ local function onPathfinderDialogMessage(message)
 	MapExceptions.SolveDialog(message, self)
 end
 
-local function onPathfinderStop()
-	ResetPath()
+local function onPathfinderStart()
+    GlobalMap = _GlobalMap()
 end
 
+local function onPathfinderStop()
+    ResetPath()
+    -- Removing package to reset Settings
+    -- local packages = {"KantoMap", "JohtoMap", "HoennMap", "LinkMap", "GlobalMap", "DigwaysMap", "Maps_Exceptions", "Maps_Pathfind", "static_Settings"}
+    -- for k, v in pairs(package.loaded) do
+    --     for i, check in ipairs(packages) do
+    --         if stringContains(k, check) then
+    --             package.loaded[k] = nil
+    --         end
+    --     end
+    -- end
+end
+
+registerHook("onStart", onPathfinderStart)
 registerHook("onDialogMessage", onPathfinderDialogMessage)
 registerHook("onStop", onPathfinderStop)
 

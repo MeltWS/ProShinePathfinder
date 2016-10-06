@@ -3,7 +3,11 @@ local function nTimes(n, f, x) for i = 0, n - 1 do x = f(x) end return x end -- 
 local function rmlast(str) return str:sub(1, -2):match(".+[%./]") or "" end -- removes last dir / file from the callee path
 local cppdpath = nTimes(3, rmlast, cpath) -- callee parent of parent dir path
 
-local ss = require (cppdpath .. "Settings/static_Settings")
+local _ss = require (cppdpath .. "Settings/static_Settings")
+
+return function()
+
+local ss = _ss()
 local K_SUBWAY = ss.K_SUBWAY
 
 local KantoMap = {}
@@ -168,3 +172,4 @@ KantoMap["Vermilion City Subway"] = {["Pokecenter Vermilion"] = 1, ["Celadon Cit
 KantoMap["Lavender Town Subway"] = {["Pokecenter Lavender"] = 1, ["Celadon City Subway"] = K_SUBWAY, ["Fuchsia City Subway"] = K_SUBWAY, ["Saffron City Subway"] = K_SUBWAY, ["Viridian City Subway"] = K_SUBWAY, ["Cerulean City Subway"] = K_SUBWAY, ["Vermilion City Subway"] = K_SUBWAY, ["Pewter City Subway"] = K_SUBWAY}
 
 return KantoMap
+end
