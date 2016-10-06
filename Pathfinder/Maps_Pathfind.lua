@@ -364,15 +364,6 @@ end
 
 local function onPathfinderStop()
     ResetPath()
-    -- Removing package to reset Settings
-    -- local packages = {"KantoMap", "JohtoMap", "HoennMap", "LinkMap", "GlobalMap", "DigwaysMap", "Maps_Exceptions", "Maps_Pathfind", "static_Settings"}
-    -- for k, v in pairs(package.loaded) do
-    --     for i, check in ipairs(packages) do
-    --         if stringContains(k, check) then
-    --             package.loaded[k] = nil
-    --         end
-    --     end
-    -- end
 end
 
 registerHook("onStart", onPathfinderStart)
