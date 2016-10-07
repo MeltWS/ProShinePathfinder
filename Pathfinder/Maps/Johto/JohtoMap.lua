@@ -7,7 +7,7 @@ local _ss = require (cppdpath .. "Settings/static_Settings")
 
 return function()
 
-local _local ss = _ss()
+local ss = _ss()
 local J_SUBWAY = ss.J_SUBWAY
 
 
