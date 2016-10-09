@@ -40,16 +40,14 @@ end
 -- MOVE CHECK --
 
 -- BIKE USAGE --
-function lib.useBike()
-	if not hasItem("Bicycle") or isMounted() or isSurfing() or not isOutside() then
-		return false
-	else
-		log("Using: Bicycle") -- too much verbose
-		if not useItem("Bicycle") then
-			log("Error using item : Bicycle.")
-		end
-		return true
-	end
+function lib.useMount(mount)
+    if not hasItem(mount) or isMounted() or isSurfing() or not isOutside() then
+        return false
+    else
+        log("Using: " .. mount)
+        assert(useItem(mount), "Error using item: " .. mount .. ".")
+        return true
+    end
 end
 
 function lib.getPokemonNumberWithMove(Move, ...) -- optional parameter happiness

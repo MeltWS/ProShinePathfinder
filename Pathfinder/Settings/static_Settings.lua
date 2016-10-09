@@ -17,6 +17,7 @@ return function()
 local Settings = {
 --  Default Settings
     Default        = {
+        MOUNT      = "Bicycle",
         K_SUBWAY   = 999, -- Weight for using the subway path. Kanto
         J_SUBWAY   = 999, -- Weight for using the subway path. Johto
         H_SUBWAY   = 999, -- Weight for using the subway path. Hoenn
@@ -26,6 +27,7 @@ local Settings = {
     },
 --  Custom Settings, loaded if the bot name match.
     MyBotName      = {
+        MOUNT      = "Latios Mount",
         K_SUBWAY   = 10, -- Weight for using the subway path. Kanto
         J_SUBWAY   = 10, -- Weight for using the subway path. Johto
         H_SUBWAY   = 999,-- Weight for using the subway path. Hoenn
@@ -35,6 +37,7 @@ local Settings = {
     },
 --  Custom Settings, loaded if the bot name match.
     MyOtherBotName = {
+        MOUNT      = "Arcanine Mount",
         K_SUBWAY   = 5, -- Weight for using the subway path. Kanto
         J_SUBWAY   = 5, -- Weight for using the subway path. Johto
         H_SUBWAY   = 5, -- Weight for using the subway path. Hoenn
@@ -50,6 +53,9 @@ local BotName = getBotName()
 
 if Settings[BotName] then
     lib.log1time("Pathfinder : Loading " .. BotName .. " settings.")
+    if not hasItem(Settings[BotName].MOUNT) then
+        Settings[BotName].MOUNT = "Bicycle"
+    end
 else
     lib.log1time("Pathfinder : Loading Default settings.")
 end

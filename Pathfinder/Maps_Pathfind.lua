@@ -5,6 +5,8 @@ if cpath ~= nil then
 end
 
 local lib           = require (cdpath .. "Lib/lib")
+local _ss           = require (cdpath .. "Settings/static_settings")
+local ss            = nil
 local aStar         = require (cdpath .. "Lib/lua-astar/AStar")
 local _GlobalMap    = require (cdpath .. "Maps/GlobalMap")
 local GlobalMap     = {}
@@ -15,6 +17,7 @@ local ExceRouteEdit = MapExceptions.ExceRouteEdit
 local PathSolution  = {}
 local PathDestStore = ""
 local Outlet        = nil
+local Settings      = nil
 
 -----------------------------------
 ----- A* NECESSARY  FUNCTIONS -----
@@ -185,7 +188,7 @@ local function ResetPath()
 end
 
 local function MovingApply(ToMap)
-	if lib.useBike() then
+	if lib.useMount(ss.MOUNT) then
 		return true
 	elseif CheckException(getMapName(), PathSolution[1]) then
 		return true
@@ -221,8 +224,6 @@ end
 ---------------------------
 -------- SETTINGS ---------
 ---------------------------
-
-local Settings = nil
 
 local function setLink(n1, n2, dist)
 	GlobalMap[n1][n2] = dist
@@ -277,7 +278,7 @@ end
 -- INIT SETTINGS WITH CURRENT INVENTORY AND TEAM
 local function initSettings()
 	Settings = {}
-	Settings.bike = hasItem("Bicycle")
+	Settings.bike = hasItem(ss.MOUNT)
 	Settings.dig = lib.getPokemonNumberWithMove("Dig", 155)
 	if Settings.dig == 0 then Settings.dig = false end
 	ApplySettings()
@@ -287,7 +288,6 @@ end
 local function MoveTo(Destination)
 	local map = getMapName()
 
-	lib.ifNotThen(Settings, initSettings)
 	if Outlet and checkOutlet(map) then
 		return true
 	elseif PathDestStore == Destination then
@@ -307,28 +307,24 @@ end
 
 -- SETTINGS CALLS
 local function EnableBikePath()
-	lib.ifNotThen(Settings, initSettings)
 	Settings.bike = true
 	log("BIKE PATH ENABLED")
 	ApplySettings()
 end
 
 local function DisableBikePath()
-	lib.ifNotThen(Settings, initSettings)
 	Settings.bike = false
 	log("BIKE PATH DISABLED")
 	ApplySettings()
 end
 
 local function EnableDigPath()
-	lib.ifNotThen(Settings, initSettings)
 	Settings.dig = true
 	log("DIG PATH ENABLED")
 	ApplySettings()
 end
 
 local function DisableDigPath()
-	lib.ifNotThen(Settings, initSettings)
 	Settings.dig = false
 	log("DIG PATH DISABLED")
 	ApplySettings()
@@ -359,7 +355,9 @@ local function onPathfinderDialogMessage(message)
 end
 
 local function onPathfinderStart()
-    GlobalMap = _GlobalMap()
+    GlobalMap = assert(_GlobalMap(), "Error : failed to laod map")
+    ss        = assert(_ss(), "Error : failed to load settings")
+    initSettings()
 end
 
 local function onPathfinderStop()
