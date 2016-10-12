@@ -212,6 +212,9 @@ DescMaps["Seafoam B1F_to_Cinnabar Island"] = {function() Mode_MoveToCell("Seafoa
 DescMaps["Seafoam B1F_to_Route 19"] = {function() Mode_MoveToCell("Seafoam B1F", 15,9,86,28,15,12) end}
 DescMaps["Seafoam 1F_to_Cinnabar Island"] = {function() Mode_MoveToCell("Seafoam 1F", 64,7,78,16,71,15) end,function() Mode_MoveToCell("Seafoam 1F", 7,7,20,16,20,8) end}
 DescMaps["Seafoam 1F_to_Route 19"] = {function() Mode_MoveToCell("Seafoam 1F", 6,6,20,16,13,16) end,function() Mode_MoveToCell("Seafoam 1F", 64,7,77,15,64,8) end}
+DescMaps["Seafoam B1F_to_Seafoam B2F"] = {function() Mode_MoveToCell("Seafoam B1F", 14,8,88,30,64,25) end}
+DescMaps["Seafoam B2F_to_Seafoam B3F"] = {function() Mode_MoveToCell("Seafoam B2F", 9,7,69,34,63,19) end}
+DescMaps["Seafoam B3F_to_Seafoam B4F"] = {function() Mode_MoveToCell("Seafoam B3F", 7,4,69,33,57,26) end}
 
 -- ROUTE 9 ,ROUTE 10 AND ROCKTUNNEL 1,2
 DescMaps["Route 9_to_Lavender Town"] = {function() Mode_MoveToCell("Route 9", 0,0,100,100,86,33) end}
@@ -261,6 +264,17 @@ DescMaps["Route 18_to_Fuchsia City"] = {function() Mode_MoveToCell("Route 18", 1
 --Pallet
 DescMaps["Player House Pallet_to_Pallet Town"] = {function() Mode_MoveToCell("Player House Pallet", 0,0,13,10,4,10) end}
 DescMaps["Pallet Town_to_Player House Pallet"] = {function() Mode_MoveToCell("Pallet Town", 3,0,28,30,6,12) end}
+
+--MT. SILVER
+DescMaps["Mt. Silver 1F_to_Mt. Silver 2F"] = {function() Mode_MoveToCell("Mt. Silver 1F", 41,46,57,63,56,47) end, function() Mode_MoveToCell("Mt. Silver 1F", 35,15,58,44,36,16) end}
+DescMaps["Mt. Silver Lower Mountainside_to_Mt. Silver 1F"] = {function() Mode_MoveToCell("Mt. Silver Lower Mountainside", 11,6,24,42,18,28) end}
+DescMaps["Mt. Silver 2F_to_Mt. Silver Upper Mountainside"] = {function() Mode_MoveToCell("Mt. Silver 2F", 16,13,46,46,32,14) end, function() Mode_MoveToCell("Mt. Silver 2F", 48,31,52,47,51,45) end}
+DescMaps["Mt. Silver Upper Mountainside_to_Mt. Silver 3F"] = {function() Mode_MoveToCell("Mt. Silver Upper Mountainside", 22,22,41,44,39,43) end, function() Mode_MoveToCell("Mt. Silver Upper Mountainside", 9,48,41,63,14,49) end}
+DescMaps["Mt. Silver Upper Mountainside_to_Mt. Silver 2F"] = {function() Mode_MoveToCell("Mt. Silver Upper Mountainside", 9,48,41,63,39,56) end, function() Mode_MoveToCell("Mt. Silver Upper Mountainside", 22,22,41,44,22,25) end}
+DescMaps["Mt. Silver 2F_to_Mt. Silver 1F"] = {function() Mode_MoveToCell("Mt. Silver 2F", 48,31,52,47,51,32) end, function() Mode_MoveToCell("Mt. Silver 2F", 16,13,46,46,32,35) end}
+DescMaps["Mt. Silver 1F_to_Mt. Silver Exterior"] = {function() Mode_MoveToCell("Mt. Silver 1F", 42,46,57,64,45,63) end, function() Mode_MoveToCell("Mt. Silver 1F", 41,41,59,46,58,43) end, function() Mode_MoveToCell("Mt. Silver 1F", 16,15,41,53,58,43) end}
+DescMaps["Mt. Silver Lower Mountainside_to_Mt. Silver Exterior"] = {function() Mode_MoveToCell("Mt. Silver Lower Mountainside", 11,6,24,42,22,34) end}
+DescMaps["Mt. Silver 1F_to_Mt. Silver Expert Belt"] = {function() Mode_MoveToCell("Mt. Silver 1F", 41,46,57,63,56,47) end, function() Mode_MoveToCell("Mt. Silver 1F", 16,15,41,53,40,48) end, function() Mode_MoveToCell("Mt. Silver 1F", 41,41,59,46,40,48) end}
 
 
 -- SPEAK WITH NPC --
