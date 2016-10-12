@@ -445,7 +445,7 @@ DescMaps["Pokecenter Mauville City_to_Transmat Station"] = {function() Mode_Spea
 DescMaps["Pokecenter Lilycove City_to_Transmat Station"] = {function() Mode_SpeakWithNPC("Pokecenter Lilycove City","Can you present to me your registered",{1},8,5,8,4) end}
 DescMaps["Pokecenter Lavaridge Town_to_Transmat Station"] = {function() Mode_SpeakWithNPC("Pokecenter Lavaridge Town","Can you present to me your registered",{1},8,5,8,4) end}
 DescMaps["Pokecenter Fortree City_to_Transmat Station"] = {function() Mode_SpeakWithNPC("Pokecenter Fortree City","Can you present to me your registered",{1},8,5,8,4) end}
-DescMaps["Pokecenter Fallabor Town_to_Transmat Station"] = {function() Mode_SpeakWithNPC("Pokecenter Fallabor Town","Can you present to me your registered",{1},8,5,8,4) end}
+DescMaps["Pokecenter Fallarbor Town_to_Transmat Station"] = {function() Mode_SpeakWithNPC("Pokecenter Fallarbor Town","Can you present to me your registered",{1},8,5,8,4) end}
 DescMaps["Pokecenter Ever Grande City_to_Transmat Station"] = {function() Mode_SpeakWithNPC("Pokecenter Ever Grande City","Can you present to me your registered",{1},8,5,8,4) end}
 DescMaps["Pokecenter Dewford Town_to_Transmat Station"] = {function() Mode_SpeakWithNPC("Pokecenter Dewford Town","Can you present to me your registered",{1},8,5,8,4) end}
 
@@ -462,7 +462,7 @@ DescMaps["Transmat Station_to_Pokecenter Mauville City"] = {function() Mode_Tran
 DescMaps["Transmat Station_to_Pokecenter Lilycove City"] = {function() Mode_Transmat("Pokecenter Lilycove City", {6,6,2}) end}
 DescMaps["Transmat Station_to_Pokecenter Lavaridge Town"] = {function() Mode_Transmat("Pokecenter Lavaridge Town", {6,4}) end}
 DescMaps["Transmat Station_to_Pokecenter Fortree City"] = {function() Mode_Transmat("Pokecenter Fortree City", {6,6,1}) end}
-DescMaps["Transmat Station_to_Pokecenter Fallabor Town"] = {function() Mode_Transmat("Pokecenter Fallabor Town", {6,3}) end}
+DescMaps["Transmat Station_to_Pokecenter Fallarbor Town"] = {function() Mode_Transmat("Pokecenter Fallarbor Town", {6,3}) end}
 DescMaps["Transmat Station_to_Pokecenter Ever Grande City"] = {function() Mode_Transmat("Pokecenter Ever Grande City", {6,6,6,2}) end}
 DescMaps["Transmat Station_to_Pokecenter Dewford Town"] = {function() Mode_Transmat("Pokecenter Dewford Town", {4}) end}
 

@@ -34,7 +34,7 @@ end
 
 -- return a table of node, linked to the node n
 local function expand(n)
-	return getKeys(GlobalMap[n])
+    return getKeys(GlobalMap[n])
 end
 
 -- Take 2 nodes return dist
