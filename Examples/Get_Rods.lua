@@ -62,9 +62,9 @@ function onBattleAction()
 end
 
 function onDialogMessage(message)
-    for k, _ in pairs(dialogs) do
+    for k, f in pairs(dialogs) do
         if message == k then
-            k()
+            f()
         end
     end
 end
