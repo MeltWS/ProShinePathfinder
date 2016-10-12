@@ -24,6 +24,7 @@ local dialogs            = {
     ["You harvested "] = function() end,      -- berries
     ["You have harvested "] = function() end, -- berries
     ["You found "] = function() end,          -- loot item
+    ["Obtained "] = function() end,          -- loot item
     ["You've found "] = function() end,      -- loot item
     ["You obtained "] = function() end,       -- loot TM
     ["Select a Pokemon that has Headbutt."] = function() selectPokeWithMove("Headbutt", 155) end,
