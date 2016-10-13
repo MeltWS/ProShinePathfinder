@@ -336,8 +336,13 @@ local function UseNearestPokecenter()
     map = getMapName()
 	if string.find(map, "Pokecenter") then
 		return assert(usePokecenter(), "usePokecenter() failed")
-    elseif map == "Indigo Plateau Center" then
-        return assert(talkToNpcOnCell(4, 22), "Failed to talk to Nurse on Cell 4/22")
+        elseif map == "Indigo Plateau Center" then
+            return assert(talkToNpcOnCell(4, 22), "Failed to talk to Nurse on Cell 4/22")
+	elseif string.find(getMapName(), "Seafoam") and getMoney() > 1500 then
+		if getMapName() == "Seafoam B4F" then
+			return assert(talkToNpcOnCell(59,13), "Failed to talk to Nurse on Cell 59/13")
+		else moveToMap("Seafoam B4F")
+		end
 	else return MoveToPC()
 	end
 end
