@@ -5,7 +5,7 @@ local KantoMap = {}
 
 KantoMap["Berry Tower Kanto"] = {["Route 13"] = 1}
 KantoMap["Bike Road Stop"] = {["Route 18"] = 1}
-KantoMap["Celadon City"] = {["Pokecenter Celadon"] = 1, ["Route 16"] = 1, ["Route 7"] = 1}
+KantoMap["Celadon City"] = {["Pokecenter Celadon"] = 1, ["Celadon Mart 1"] = 1, ["Route 16"] = 1, ["Route 7"] = 1}
 KantoMap["Celadon Mart 1"] = {["Celadon Mart 2"] = 1, ["Celadon City"] = 1}
 KantoMap["Celadon Mart 2"] = {["Celadon Mart 1"] = 1, ["Celadon Mart 3"] = 1}
 KantoMap["Celadon Mart 3"] = {["Celadon Mart 2"] = 1, ["Celadon Mart 4"] = 1}
@@ -123,7 +123,7 @@ KantoMap["Route 24"] = {["Cerulean City"] = 1, ["Route 25"] = 1}
 KantoMap["Route 25"] = {["Route 24"] = 1}
 KantoMap["Route 26"] = {["Pokemon League Reception Gate"] = 1, ["Route 27"] = 5}
 KantoMap["Route 27"] = {["New Bark Town"] = 3, ["Route 26"] = 3, ["Tohjo Falls"] = 1}
-KantoMap["Route 28"] = {["Pokemon League Reception Gate"] = 1}
+KantoMap["Route 28"] = {["Pokemon League Reception Gate"] = 1, ["Mt. Silver Exterior"] = 1}
 KantoMap["Route 3"] = {["Mt. Moon 1F"] = 1, ["Pewter City"] = 1, ["Pokecenter Route 3"] = 1}
 KantoMap["Route 4"] = {["Cerulean City"] = 1, ["Mt. Moon Exit"] = 1}
 KantoMap["Route 5"] = {["Cerulean City"] = 1, ["Route 5 Stop House"] = 1, ["Underground House 1"] = 1}
