@@ -14,7 +14,13 @@ local KantoMap = {}
 
 KantoMap["Berry Tower Kanto"] = {["Route 13"] = 1}
 KantoMap["Bike Road Stop"] = {["Route 18"] = 1}
-KantoMap["Celadon City"] = {["Pokecenter Celadon"] = 1, ["Route 16"] = 1, ["Route 7"] = 1, ["Celadon Mart 1"] = 1}
+KantoMap["Celadon City"] = {["Pokecenter Celadon"] = 1, ["Celadon Mart 1"] = 1, ["Route 16"] = 1, ["Route 7"] = 1}
+KantoMap["Celadon Mart 1"] = {["Celadon Mart 2"] = 1, ["Celadon City"] = 1}
+KantoMap["Celadon Mart 2"] = {["Celadon Mart 1"] = 1, ["Celadon Mart 3"] = 1}
+KantoMap["Celadon Mart 3"] = {["Celadon Mart 2"] = 1, ["Celadon Mart 4"] = 1}
+KantoMap["Celadon Mart 4"] = {["Celadon Mart 3"] = 1, ["Celadon Mart 5"] = 1}
+KantoMap["Celadon Mart 5"] = {["Celadon Mart 4"] = 1, ["Celadon Mart 6"] = 1}
+KantoMap["Celadon Mart 6"] = {["Celadon Mart 5"] = 1}
 KantoMap["Cerulean City"] = {["Pokecenter Cerulean"] = 1, ["Route 24"] = 1, ["Route 4"] = 1, ["Route 5"] = 1, ["Route 9"] = 1}
 KantoMap["Cinnabar Island"] = {["Cinnabar Lab"] = 1, ["Cinnabar mansion 1"] = 1, ["Pokecenter Cinnabar"] = 1, ["Route 20"] = 1, ["Route 21"] = 1}
 KantoMap["Cinnabar Lab"] = {["Cinnabar Island"] = 1}
@@ -42,6 +48,15 @@ KantoMap["Mt. Moon 1F"] = {["Mt. Moon B1F"] = 1, ["Route 3"] = 1}
 KantoMap["Mt. Moon B1F"] = {["Mt. Moon 1F"] = 1, ["Mt. Moon B2F"] = 1}
 KantoMap["Mt. Moon B2F"] = {["Mt. Moon B1F"] = 1, ["Mt. Moon Exit"] = 1}
 KantoMap["Mt. Moon Exit"] = {["Mt. Moon B2F"] = 1, ["Route 4"] = 1}
+KantoMap["Mt. Silver Exterior"] = {["Route 28"] = 1, ["Mt. Silver Pokecenter"] = 1, ["Mt. Silver 1F"] = 1}
+KantoMap["Mt. Silver 1F"] = {["Mt. Silver Exterior"] = 1, ["Mt. Silver Lower Mountainside"] = 3, ["Mt. Silver 2F"] = 1, ["Mt. Silver Expert Belt"] = 1}
+KantoMap["Mt. Silver Lower Mountainside"] = {["Mt. Silver 1F"] = 3}
+KantoMap["Mt. Silver 2F"] = {["Mt. Silver 1F"] = 1, ["Mt. Silver Upper Mountainside"] = 6}
+KantoMap["Mt. Silver Upper Mountainside"] = {["Mt. Silver 2F"] = 6, ["Mt. Silver 3F"] = 1}
+KantoMap["Mt. Silver 3F"] = {["Mt. Silver Upper Mountainside"] = 1, ["Mt. Silver Summit"] = 1}
+KantoMap["Mt. Silver Summit"] = {["Mt. Silver 3F"] = 1}
+KantoMap["Mt. Silver Expert Belt"] = {["Mt. Silver 1F"] = 1}
+KantoMap["Mt. Silver Pokecenter"] = {["Mt. Silver Exterior"] = 1}
 KantoMap["New Bark Town"] = {["Route 27"] = 1}
 KantoMap["Pallet Town"] = {["Route 1"] = 1, ["Route 21"] = 1, ["Player House Pallet"] = 1}
 KantoMap["Pewter City"] = {["Pewter Pokemart"] = 1, ["Route 2"] = 1, ["Route 3"] = 1, ["Pokecenter Pewter"] = 1}
@@ -123,7 +138,7 @@ KantoMap["Route 24"] = {["Cerulean City"] = 1, ["Route 25"] = 1}
 KantoMap["Route 25"] = {["Route 24"] = 1}
 KantoMap["Route 26"] = {["Pokemon League Reception Gate"] = 1, ["Route 27"] = 5}
 KantoMap["Route 27"] = {["New Bark Town"] = 3, ["Route 26"] = 3, ["Tohjo Falls"] = 1}
-KantoMap["Route 28"] = {["Pokemon League Reception Gate"] = 1}
+KantoMap["Route 28"] = {["Pokemon League Reception Gate"] = 1, ["Mt. Silver Exterior"] = 1}
 KantoMap["Route 3"] = {["Mt. Moon 1F"] = 1, ["Pewter City"] = 1, ["Pokecenter Route 3"] = 1}
 KantoMap["Route 4"] = {["Cerulean City"] = 1, ["Mt. Moon Exit"] = 1}
 KantoMap["Route 5"] = {["Cerulean City"] = 1, ["Route 5 Stop House"] = 1, ["Underground House 1"] = 1}
@@ -148,7 +163,10 @@ KantoMap["Saffron City Station"] = {["Saffron City"] = 1, ["Saffron City Station
 KantoMap["Saffron City Station Floor 2"] = {["Saffron City Station"] = 1}
 KantoMap["Saffron Pokemart"] = {["Saffron City"] = 1}
 KantoMap["Seafoam 1F"] = {["Route 20"] = 1, ["Seafoam B1F"] = 1}
-KantoMap["Seafoam B1F"] = {["Seafoam 1F"] = 1}
+KantoMap["Seafoam B1F"] = {["Seafoam 1F"] = 1, ["Seafoam B2F"] = 1}
+KantoMap["Seafoam B2F"] = {["Seafoam B1F"] = 1, ["Seafoam B3F"] = 1}
+KantoMap["Seafoam B3F"] = {["Seafoam B2F"] = 1, ["Seafoam B4F"] = 1}
+KantoMap["Seafoam B4F"] = {["Seafoam B3F"] = 1}
 KantoMap["Tohjo Falls"] = {["Route 27"] = 1}
 KantoMap["Underground House 1"] = {["Route 5"] = 1, ["Underground2"] = 1}
 KantoMap["Underground House 2"] = {["Route 6"] = 1, ["Underground2"] = 1}

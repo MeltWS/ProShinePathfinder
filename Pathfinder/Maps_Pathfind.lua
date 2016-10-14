@@ -53,7 +53,7 @@ end
 local function goal(dest)
     return function(node)
         if dest == "Pokecenter" then
-            return string.match(node, dest)
+            return string.find(node, dest) or node == "Indigo Plateau Center"
         else
             return node == dest
         end
@@ -339,8 +339,16 @@ local function MoveToPC()
 end
 
 local function UseNearestPokecenter()
-    if string.find(getMapName(), "Pokecenter") then
+    map = getMapName()
+    if string.find(map, "Pokecenter") then
         return assert(usePokecenter(), "usePokecenter() failed")
+        elseif map == "Indigo Plateau Center" then
+            return assert(talkToNpcOnCell(4, 22), "Failed to talk to Nurse on Cell 4/22")
+    elseif string.find(map, "Seafoam") and getMoney() > 1500 then
+        if map == "Seafoam B4F" then
+            return assert(talkToNpcOnCell(59,13), "Failed to talk to Nurse on Cell 59/13")
+        else moveToMap("Seafoam B4F")
+        end
     else return MoveToPC()
     end
 end

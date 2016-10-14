@@ -100,7 +100,15 @@ HoennMap["Route 133"] = {["Route 132"] = 1, ["Route 134"] = 1}
 HoennMap["Route 134"] = {["Route 133"] = 1, ["Slateport City"] = 1}
 HoennMap["Rustboro City"] = {["Mart Rustboro City"] = 1, ["Pokecenter Rustboro City"] = 1, ["Route 104"] = 1, ["Route 115"] = 1, ["Route 116"] = 1}
 HoennMap["Rusturf Tunnel"] = {["Route 116"] = 1, ["Verdanturf Town"] = 1}
-HoennMap["Sky Pillar Entrance"] = {["Route 131"] = 1}
+HoennMap["Sky Pillar Entrance"] = {["Route 131"] = 1, ["Sky Pillar Entrance Cave 1F"] = 2, ["Sky Pillar 1F"] = 1}
+HoennMap["Sky Pillar Entrance Cave 1F"] = {["Sky Pillar Entrance"] = 2}
+HoennMap["Sky Pillar Entrance"] = {["Route 131"] = 1, ["Sky Pillar Entrance Cave 1F"] = 2, ["Sky Pillar 1F"] = 1}
+HoennMap["Sky Pillar 1F"] = {["Sky Pillar Entrance"] = 1, ["Sky Pillar 2F"] = 1}
+HoennMap["Sky Pillar 2F"] = {["Sky Pillar 1F"] = 1, ["Sky Pillar 3F"] = 1}
+HoennMap["Sky Pillar 3F"] = {["Sky Pillar 2F"] = 1, ["Sky Pillar 4F"] = 1}
+HoennMap["Sky Pillar 4F"] = {["Sky Pillar 3F"] = 1, ["Sky Pillar 5F"] = 1}
+HoennMap["Sky Pillar 5F"] = {["Sky Pillar 4F"] = 1, ["Sky Pillar 6F"] = 1}
+HoennMap["Sky Pillar 6F"] = {["Sky Pillar 5F"] = 1}
 HoennMap["Slateport City"] = {["Mart Slateport"] = 1, ["Pokecenter Slateport"] = 1, ["Route 109"] = 1, ["Route 110"] = 1}
 HoennMap["Sootopolis City"] = {["Pokecenter Sootopolis City"] = 1, ["Sootopolis City Underwater"] = 1, ["Sootopolis Mart"] = 1}
 HoennMap["Sootopolis City Underwater"] = {["Route 126 Underwater"] = 1, ["Sootopolis City"] = 1}
