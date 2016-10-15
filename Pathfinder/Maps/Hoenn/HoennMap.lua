@@ -10,6 +10,14 @@ HoennMap["Fallarbor Town"] = {["Mart Fallarbor Town"] = 1, ["Pokecenter Fallarbo
 HoennMap["Fiery Path"] = {["Route 112"] = 1}
 HoennMap["Fortree City"] = {["Fortree Mart"] = 1, ["Pokecenter Fortree City"] = 1, ["Route 119A"] = 1, ["Route 120"] = 1}
 HoennMap["Fortree Mart"] = {["Fortree City"] = 1}
+HoennMap["Hoenn Safari Zone Lobby"] = {["Hoenn Safari Zone Area 1"] = 1, ["Route 121"] = 1}
+HoennMap["Hoenn Safari Zone Area 1"] = {["Hoenn Safari Zone Lobby"] = 1, ["Hoenn Safari Zone Area 2"] = 1, ["Hoenn Safari Zone Area 4"] = 1, ["Hoenn Safari Zone Area 5"] = 1}
+HoennMap["Hoenn Safari Zone Area 2"] = {["Hoenn Safari Zone Area 1"] = 1}
+HoennMap["Hoenn Safari Zone Area 3"] = {["Hoenn Safari Zone Area 4"] = 1}
+HoennMap["Hoenn Safari Zone Area 4"] = {["Hoenn Safari Zone Area 1"] = 1, ["Hoenn Safari Zone Area 3"] = 1}
+HoennMap["Hoenn Safari Zone Area 5"] = {["Hoenn Safari Zone Area 1"] = 1, ["Hoenn Safari Zone Area 6"] = 1}
+HoennMap["Hoenn Safari Zone Area 6"] = {["Hoenn Safari Zone Area 5"] = 1}
+HoennMap["Route 121"] = {["Lilycove City"] = 1, ["Route 120"] = 1, ["Route 122"] = 1, ["Hoenn Safari Zone Lobby"] = 1}
 HoennMap["Jagged Pass"] = {["Mt. Chimney"] = 1, ["Route 112"] = 1}
 HoennMap["Lavaridge Mart"] = {["Lavaridge Town"] = 1}
 HoennMap["Lavaridge Town"] = {["Lavaridge Mart"] = 1, ["Pokecenter Lavaridge Town"] = 1, ["Route 112"] = 1}
@@ -74,7 +82,7 @@ HoennMap["Route 118"] = {["Mauville City Stop House 4"] = 1, ["Route 119B"] = 1,
 HoennMap["Route 119A"] = {["Fortree City"] = 1, ["Route 119B"] = 1}
 HoennMap["Route 119B"] = {["Route 118"] = 1, ["Route 119A"] = 1}
 HoennMap["Route 120"] = {["Fortree City"] = 1, ["Route 121"] = 1}
-HoennMap["Route 121"] = {["Lilycove City"] = 1, ["Route 120"] = 1, ["Route 122"] = 1}
+HoennMap["Route 121"] = {["Lilycove City"] = 1, ["Route 120"] = 1, ["Route 122"] = 1, ["Hoenn Safari Zone Lobby"] = 1}
 HoennMap["Route 122"] = {["Route 121"] = 1, ["Route 123"] = 1}
 HoennMap["Route 123"] = {["Route 118"] = 1}
 HoennMap["Route 124"] = {["Lilycove City"] = 2, ["Mossdeep City"] = 2, ["Route 126"] = 2}
