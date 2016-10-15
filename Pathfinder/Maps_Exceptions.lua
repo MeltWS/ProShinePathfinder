@@ -437,6 +437,8 @@ DescMaps["Sky Pillar Entrance Cave 1F_to_Sky Pillar Entrance"] = {function() Mod
 DescMaps["Sky Pillar 3F_to_Sky Pillar 4F"] = {function() Mode_MoveToCell("Sky Pillar 3F", 1,5,14,11,3,6) end}
 DescMaps["Sky Pillar Entrance_to_Route 131"] = {function() Mode_MoveToCell("Sky Pillar Entrance", 25,7,36,26,35,23) end, function() Mode_MoveToCell("Sky Pillar Entrance", 13,30,37,49,26,49) end}
 DescMaps["Sky Pillar Entrance Cave 1F_to_Route 131"] = {function() Mode_MoveToCell("Sky Pillar Entrance Cave 1F", 5,2,18,18,7,17) end}
+-- SAFARI HOENN
+DescMaps["Hoenn Safari Zone Lobby_to_Hoenn Safari Zone Area 1"] = {function() Mode_SpeakWithNPC("Hoenn Safari Zone Lobby","Hello! Welcome to the Hoenn Safari zone!",{1},21,7,21,6) end}
 
 -- SPEAK WITH NPC --
 -- Cable Car Station
