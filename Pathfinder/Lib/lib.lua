@@ -80,7 +80,7 @@ function lib.logTable(table, ...) -- logTable(table, name) with name as optional
 	end
 	for key, value in pairs(table) do
 		if name then
-			log(name .. " -> Key : " .. key .. ", Value : " .. value)			
+			log(name .. " -> Key : " .. key .. ", Value : " .. value)
 		else
 			log("Key : " .. key .. " --- Value : " .. value)
 		end
@@ -111,6 +111,16 @@ function lib.pairsByKeys(t, f) -- sort table keys by alpha order or f as alterna
     	end
 	end
 	return iter
+end
+
+-- CHECK IF IN TABLE --
+function lib.intable (tab, val)
+   for index, value in ipairs (tab) do
+       if value == val then
+           return true
+       end
+   end
+   return false
 end
 
 return lib
