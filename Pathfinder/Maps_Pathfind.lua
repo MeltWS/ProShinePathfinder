@@ -4,6 +4,7 @@ local GlobalMap = require "Pathfinder/Maps/GlobalMap"
 local Digways = require "Pathfinder/Maps/DigwaysMap"
 local MapExceptions = require "Pathfinder/Maps_Exceptions"
 local ItemList = require "Pathfinder/Maps/Items/Items"
+local PokecenterList = require "Pathfinder/Maps/Pokecenters/Pokecenters"
 local DescMaps = MapExceptions.DescMaps
 local ExceRouteEdit = MapExceptions.ExceRouteEdit
 local PathSolution = {}
@@ -43,8 +44,6 @@ local function goal(targets)
     if type(targets) == "string" then
         targets = {targets}
     end
-    -- if target == "Pokecenter" then
-        -- return string.find(current, target) or current == "Indigo Plateau Center"
     return function(current)
         return lib.intable(targets, current)
     end
@@ -330,18 +329,19 @@ local function DisableDigPath()
 end
 
 local function UseNearestPokecenter()
-    map = getMapName()
-    if string.find(map, "Pokecenter") then
-        return assert(usePokecenter(), "usePokecenter() failed")
-        elseif map == "Indigo Plateau Center" then
-            return assert(talkToNpcOnCell(4, 22), "Failed to talk to Nurse on Cell 4/22")
-    elseif string.find(getMapName(), "Seafoam") and getMoney() > 1500 then
-        if getMapName() == "Seafoam B4F" then
-            return assert(talkToNpcOnCell(59,13), "Failed to talk to Nurse on Cell 59/13")
-        else moveToMap("Seafoam B4F")
-        end
-    else return MoveTo(PokecenterList)
+    if MoveTo(PokecenterList) then
+        return true
     end
+    map = getMapName()
+    if map == "Indigo Plateau Center" then
+        return assert(talkToNpcOnCell(4, 22), "Failed to talk to Nurse on Cell 4/22")
+    elseif string.find(getMapName(), "Seafoam") and getMoney() > 1500 then
+        if MoveTo("Seafoam B4F") then
+            return true
+        end
+        return assert(talkToNpcOnCell(59,13), "Failed to talk to Nurse on Cell 59/13")
+    end
+    return assert(usePokecenter(), "usePokecenter() failed")
 end
 
 local function usePokemart(item, amount)
