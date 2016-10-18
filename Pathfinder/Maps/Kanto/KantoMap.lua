@@ -130,7 +130,7 @@ KantoMap["Route 19"] = {["Fuchsia City Stop House"] = 1, ["Route 20"] = 5}
 KantoMap["Route 2"] = {["Digletts Cave Entrance 1"] = 1, ["Pewter City"] = 1, ["Route 2 Stop"] = 1, ["Route 2 Stop2"] = 1, ["Route 2 Stop3"] = 1, ["Viridian City"] = 1}
 KantoMap["Route 2 Stop"] = {["Route 2"] = 1, ["Viridian Forest"] = 1}
 KantoMap["Route 2 Stop2"] = {["Route 2"] = 1, ["Viridian Forest"] = 1}
-KantoMap["Route 2 Stop3"] = {["Digletts Cave Entrance 1"] = 1, ["Pewter City"] = 1, ["Viridian City"] = 1}
+KantoMap["Route 2 Stop3"] = {["Digletts Cave Entrance 1"] = 1, ["Pewter City"] = 1, ["Viridian City"] = 1, ["Route 2"] = 1}
 KantoMap["Route 20"] = {["Cinnabar Island"] = 5, ["Route 19"] = 5, ["Seafoam 1F"] = 1}
 KantoMap["Route 21"] = {["Cinnabar Island"] = 1, ["Pallet Town"] = 1}
 KantoMap["Route 22"] = {["Pokemon League Reception Gate"] = 1, ["Viridian City"] = 1}
