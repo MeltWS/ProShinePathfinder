@@ -29,8 +29,8 @@ JohtoMap["Dark Cave South"] = {["Route 31"] = 1}
 JohtoMap["Dragons Den"] = {["Dragons Den B1F"] = 1, ["Dragons Den Entrance"] = 1}
 JohtoMap["Dragons Den B1F"] = {["Dragons Den"] = 1}
 JohtoMap["Dragons Den Entrance"] = {["Blackthorn City"] = 1, ["Dragons Den"] = 1}
-JohtoMap["Ecruteak City"] = {["Ecruteak Pokemart"] = 1, ["Ecruteak Stop House 1"] = 1, ["Ecruteak Stop House 2"] = 1, ["Pokecenter Ecruteak"] = 1, ["Route 37"] = 1}
-JohtoMap["Ecruteak Pokemart"] = {["Ecruteak City"] = 1}
+JohtoMap["Ecruteak City"] = {["Ecruteak Mart"] = 1, ["Ecruteak Stop House 1"] = 1, ["Ecruteak Stop House 2"] = 1, ["Pokecenter Ecruteak"] = 1, ["Route 37"] = 1}
+JohtoMap["Ecruteak Mart"] = {["Ecruteak City"] = 1}
 JohtoMap["Ecruteak Stop House 1"] = {["Ecruteak City"] = 1, ["Route 38"] = 1}
 JohtoMap["Ecruteak Stop House 2"] = {["Ecruteak City"] = 1, ["Route 42"] = 1}
 JohtoMap["Goldenrod City"] = {["Goldenrod Mart 1"] = 1, ["Pokecenter Goldenrod"] = 1, ["Route 34"] = 1, ["Route 35 Stop House"] = 1, ["Goldenrod City Station"] = 1}

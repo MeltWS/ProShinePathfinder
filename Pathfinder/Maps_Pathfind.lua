@@ -4,22 +4,24 @@ if cpath ~= nil then
     cdpath = cpath:match(".+[/%.]") or cdpath -- callee dir path
 end
 
-local lib           = require (cdpath .. "Lib/lib")
-local Work          = require (cdpath .. "Lib/Work")
-local _ss           = require (cdpath .. "Settings/static_Settings")
-local ss            = nil
-local workOpts      = {}
-local aStar         = require (cdpath .. "Lib/lua-astar/AStar")
-local _GlobalMap    = require (cdpath .. "Maps/GlobalMap")
-local GlobalMap     = {}
-local Digways       = require (cdpath .. "Maps/DigwaysMap")
-local MapExceptions = require (cdpath .. "Maps_Exceptions")
-local DescMaps      = MapExceptions.DescMaps
-local ExceRouteEdit = MapExceptions.ExceRouteEdit
-local PathSolution  = {}
-local PathDestStore = ""
-local Outlet        = nil
-local Settings      = nil
+local lib            = require (cdpath .. "Lib/lib")
+local Work           = require (cdpath .. "Lib/Work")
+local _ss            = require (cdpath .. "Settings/static_Settings")
+local ss             = nil
+local workOpts       = {}
+local aStar          = require (cdpath .. "Lib/lua-astar/AStar")
+local _GlobalMap     = require (cdpath .. "Maps/GlobalMap")
+local GlobalMap      = {}
+local Digways        = require (cdpath .. "Maps/DigwaysMap")
+local MapExceptions  = require (cdpath .. "Maps_Exceptions")
+local DescMaps       = MapExceptions.DescMaps
+local ItemList       = require (cdpath ..  "Maps/Items/Items")
+local PokecenterList = require (cdpath ..  "Maps/Pokecenters/Pokecenters")
+local ExceRouteEdit  = MapExceptions.ExceRouteEdit
+local PathSolution   = {}
+local PathDestStore  = ""
+local Outlet         = nil
+local Settings       = nil
 
 -----------------------------------
 ----- A* NECESSARY  FUNCTIONS -----
@@ -50,13 +52,12 @@ local function heuristic(n)
 end
 
 -- return true if destination is reached
-local function goal(dest)
-    return function(node)
-        if dest == "Pokecenter" then
-            return string.find(node, dest) or node == "Indigo Plateau Center"
-        else
-            return node == dest
-        end
+local function goal(targets)
+    if type(targets) == "string" then
+        targets = {targets}
+    end
+    return function(current)
+        return lib.intable(targets, current)
     end
 end
 
@@ -333,24 +334,88 @@ local function DisableDigPath()
     ApplySettings()
 end
 
--- move to nearest PC
-local function MoveToPC()
-    return MoveTo("Pokecenter")
+local function UseNearestPokecenter()
+    if MoveTo(PokecenterList) then
+        return true
+    end
+    map = getMapName()
+    if map == "Indigo Plateau Center" then
+        return assert(talkToNpcOnCell(4, 22), "Failed to talk to Nurse on Cell 4/22")
+    elseif string.find(getMapName(), "Seafoam") and getMoney() > 1500 then
+        if MoveTo("Seafoam B4F") then
+            return true
+        end
+        return assert(talkToNpcOnCell(59,13), "Failed to talk to Nurse on Cell 59/13")
+    end
+    return assert(usePokecenter(), "usePokecenter() failed")
 end
 
-local function UseNearestPokecenter()
+local function usePokemart(item, amount)
     map = getMapName()
-    if string.find(map, "Pokecenter") then
-        return assert(usePokecenter(), "usePokecenter() failed")
-        elseif map == "Indigo Plateau Center" then
-            return assert(talkToNpcOnCell(4, 22), "Failed to talk to Nurse on Cell 4/22")
-    elseif string.find(map, "Seafoam") and getMoney() > 1500 then
-        if map == "Seafoam B4F" then
-            return assert(talkToNpcOnCell(59,13), "Failed to talk to Nurse on Cell 59/13")
-        else moveToMap("Seafoam B4F")
+    if isShopOpen() then
+        if buyItem(item, amount) then
+            log("Bought " .. amount .. " " .. item)
+            return false -- job done
         end
-    else return MoveToPC()
+    else
+        if map == "Celadon Mart 2" then
+            if ItemList[item]["type"] == "Pokeball" then
+                talkToNpcOnCell(4,10)
+            elseif ItemList[item]["type"] == "Recovery" then
+                talkToNpcOnCell(7,3)
+            elseif ItemList[item]["type"] == "Evolutionary" then
+                talkToNpcOnCell(7,3)
+            elseif ItemList[item]["type"] == "Miscellaneous" then
+                talkToNpcOnCell(7,3)
+            end
+        elseif map == "Goldenrod Mart 2" then
+            if ItemList[item]["type"] == "Pokeball" then
+                talkToNpcOnCell(7,3)
+            elseif ItemList[item]["type"] == "Recovery" then
+                talkToNpcOnCell(7,3)
+            elseif ItemList[item]["type"] == "Evolutionary" then
+                talkToNpcOnCell(7,3)
+            elseif ItemList[item]["type"] == "Miscellaneous" then
+                talkToNpcOnCell(7,3)
+            end
+        elseif map == "Lilycove Department Store 2F" then
+            if ItemList[item]["type"] == "Pokeball" then
+                talkToNpcOnCell(7,3)
+            elseif ItemList[item]["type"] == "Recovery" then
+                talkToNpcOnCell(7,3)
+            elseif ItemList[item]["type"] == "Evolutionary" then
+                talkToNpcOnCell(7,3)
+            elseif ItemList[item]["type"] == "Miscellaneous" then
+                talkToNpcOnCell(7,3)
+            end
+        elseif map == "Indigo Plateau Center" then
+            talkToNpcOnCell(16, 22)
+        elseif map == "Blackthorn City Pokemart" then
+            talkToNpcOnCell(3, 4)
+        else
+            talkToNpcOnCell(3, 5)
+        end
     end
+    return true
+end
+
+-- true if has enought money to buy amount of item
+local function canBuy(itemCost, amount)
+    return getMoney() > itemCost * amount
+end
+
+-- move to nearest PM and buy
+local function UseNearestPokemart(item, amount)
+    map = getMapName()
+    assert(ItemList[item], "Item does not exist in the list, this is case sensitive.")
+    if not canBuy(ItemList[item].value, amount) then
+        log("Not enough money to buy " .. amount .. " " .. item)
+        return false
+    end
+    if MoveTo(ItemList[item].maps) then
+        return true
+    end
+    return usePokemart(item, amount)
 end
 
 local self = {
@@ -392,4 +457,5 @@ return {
     DisableBikePath = DisableBikePath,
     EnableDigPath = EnableDigPath,
     DisableDigPath = DisableDigPath,
+    UseNearestPokemart = UseNearestPokemart,
 }
