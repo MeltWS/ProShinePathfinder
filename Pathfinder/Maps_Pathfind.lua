@@ -5,6 +5,7 @@ local Digways = require "Pathfinder/Maps/DigwaysMap"
 local MapExceptions = require "Pathfinder/Maps_Exceptions"
 local ItemList = require "Pathfinder/Maps/Items/Items"
 local PokecenterList = require "Pathfinder/Maps/Pokecenters/Pokecenters"
+local PokemartList   = require ("Pathfinder/Maps/Pokemarts/Pokemarts")
 local DescMaps = MapExceptions.DescMaps
 local ExceRouteEdit = MapExceptions.ExceRouteEdit
 local PathSolution = {}
@@ -179,9 +180,7 @@ local function ResetPath()
 end
 
 local function MovingApply(ToMap)
-    if lib.useBike() then
-        return true
-    elseif CheckException(getMapName(), PathSolution[1]) then
+    if CheckException(getMapName(), PathSolution[1]) then
         return true
     else
         lib.log1time("Maps Remains: " .. lib.tablelength(PathSolution) .. "  Moving To: --> " .. PathSolution[1])
@@ -280,16 +279,16 @@ end
 -- MOVETO DEST
 local function MoveTo(Destination)
     local map = getMapName()
-
-    lib.ifNotThen(Settings, initSettings)
-    if Outlet and checkOutlet(map) then
+    if lib.useBike() then
+        return true
+    elseif Outlet and checkOutlet(map) then
         return true
     elseif PathDestStore == Destination then
         return MoveWithCalcPath()
     else
         PathSolution = simpleAStar(goal(Destination))(map)
         if not PathSolution then
-            return fatal("Path Not Found ERROR")
+            return error("Path Not Found ERROR")
         end
         PathDestStore = Destination
         EditPathGenerated()
@@ -328,11 +327,17 @@ local function DisableDigPath()
     ApplySettings()
 end
 
+-- move to closest PC
+local function MoveToPC()
+    return MoveTo(PokecenterList)
+end
+
+-- move to closest PC and use the nurse
 local function UseNearestPokecenter()
     if MoveTo(PokecenterList) then
         return true
     end
-    map = getMapName()
+    local map = getMapName()
     if map == "Indigo Plateau Center" then
         return assert(talkToNpcOnCell(4, 22), "Failed to talk to Nurse on Cell 4/22")
     elseif string.find(getMapName(), "Seafoam") and getMoney() > 1500 then
@@ -344,53 +349,22 @@ local function UseNearestPokecenter()
     return assert(usePokecenter(), "usePokecenter() failed")
 end
 
+-- move to npc and use shop
 local function usePokemart(item, amount)
-    map = getMapName()
+    local map = getMapName()
     if isShopOpen() then
-        if buyItem(item, amount) then
-            log("Bought " .. amount .. " " .. item)
-            return false -- job done
-        end
+        assert(buyItem(item, amount), "buyItem("..item..", "..amount..") failed")
+        log("buyItem("..item..", "..amount..") success")
+        return false -- job done
     else
-        if map == "Celadon Mart 2" then
-            if ItemList[item]["type"] == "Pokeball" then
-                talkToNpcOnCell(4,10)
-            elseif ItemList[item]["type"] == "Recovery" then
-                talkToNpcOnCell(7,3)
-            elseif ItemList[item]["type"] == "Evolutionary" then
-                talkToNpcOnCell(7,3)
-            elseif ItemList[item]["type"] == "Miscellaneous" then
-                talkToNpcOnCell(7,3)
-            end
-        elseif map == "Goldenrod Mart 2" then
-            if ItemList[item]["type"] == "Pokeball" then
-                talkToNpcOnCell(7,3)
-            elseif ItemList[item]["type"] == "Recovery" then
-                talkToNpcOnCell(7,3)
-            elseif ItemList[item]["type"] == "Evolutionary" then
-                talkToNpcOnCell(7,3)
-            elseif ItemList[item]["type"] == "Miscellaneous" then
-                talkToNpcOnCell(7,3)
-            end
-        elseif map == "Lilycove Department Store 2F" then
-            if ItemList[item]["type"] == "Pokeball" then
-                talkToNpcOnCell(7,3)
-            elseif ItemList[item]["type"] == "Recovery" then
-                talkToNpcOnCell(7,3)
-            elseif ItemList[item]["type"] == "Evolutionary" then
-                talkToNpcOnCell(7,3)
-            elseif ItemList[item]["type"] == "Miscellaneous" then
-                talkToNpcOnCell(7,3)
-            end
-        elseif map == "Indigo Plateau Center" then
-            talkToNpcOnCell(16, 22)
-        elseif map == "Blackthorn City Pokemart" then
-            talkToNpcOnCell(3, 4)
+        local mart = PokemartList[map][ItemList[item]["maps"][map]]
+        if mart[3] ~= 0 then
+            talkToNpcOnCell(mart[1], mart[2])
+            pushDialogAnswer(mart[3])
         else
-            talkToNpcOnCell(3, 5)
+            talkToNpcOnCell(mart[1], mart[2])
         end
     end
-    return true
 end
 
 -- true if has enought money to buy amount of item
@@ -400,13 +374,12 @@ end
 
 -- move to nearest PM and buy
 local function UseNearestPokemart(item, amount)
-    map = getMapName()
-    assert(ItemList[item], "Item does not exist in the list, this is case sensitive.")
+    assert(ItemList[item], "BuyItem: Item does not exist in the list, this is case sensitive.")
     if not canBuy(ItemList[item].value, amount) then
         log("Not enough money to buy " .. amount .. " " .. item)
         return false
     end
-    if MoveTo(ItemList[item].maps) then
+    if MoveTo(getKeys(ItemList[item].maps)) then
         return true
     end
     return usePokemart(item, amount)
