@@ -8,9 +8,10 @@
 This script provides a module to move from a map A to a map B using the shortest path.  
 The Objective of this project is to provide a tool to simplify scripting in proshine. So you don't have to use an elseif per map you're crossing.  
 It also provides advanced functionality, settings, and more...  
-For explanation on how to use read HOWTO.  
-Use LoadMe_Test.lua to test the module, I recommand you read it as well.  
-You should also read and modify the setting file located in Pathfinder/Settings/static_Settings.lua to your needs.  
+
+[For explanation on how to use read HOWTO](https://github.com/MeltWS/ProShinePathfinder/blob/dev/HOWTO.md).  
+Use `LoadMe_Test.lua` to test the module, I recommand you [read](https://github.com/MeltWS/ProShinePathfinder/blob/dev/LoadMe_Test.lua) it as well.  
+You should also read and modify the setting file located in `Pathfinder/Settings/static_Settings.lua` to your needs.  
 
 #####Features
 
