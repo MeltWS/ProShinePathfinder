@@ -177,6 +177,9 @@ ExceRouteEdit["24"] = {{"Route 16 Stop House", "Route 16", "Celadon City"},{"Rou
 ExceRouteEdit["25"] = {{"Bike Road Stop", "Route 18", "Fuchsia City"},{"Bike Road Stop", "Fuchsia City"}}
 ExceRouteEdit["26"] = {{"Bike Road Stop", "Route 18", "Route 17"},{"Bike Road Stop", "Route 17"}}
 ExceRouteEdit["29"] = {{"Route 9", "Route 10", "Power Plant"},{"Route 9", "Power Plant"}}
+ExceRouteEdit["30"] = {{"Route 2 Stop3", "Route 2", "Pewter City"},{"Route 2 Stop3", "Pewter City"}}
+ExceRouteEdit["31"] = {{"Route 2 Stop3", "Route 2", "Viridian City"},{"Route 2 Stop3", "Viridian City"}}
+ExceRouteEdit["32"] = {{"Route 2 Stop3", "Route 2", "Route 11"},{"Route 2 Stop3", "Route 11"}}
 
 
 -- MOVE TO CELL --
