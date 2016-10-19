@@ -334,6 +334,10 @@ local function DisableDigPath()
     ApplySettings()
 end
 
+local function MoveToPC()
+    return MoveTo(PokecenterList)
+end
+
 local function UseNearestPokecenter()
     if MoveTo(PokecenterList) then
         return true
