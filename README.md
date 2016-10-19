@@ -16,6 +16,8 @@ You should also read and modify the setting file located in Pathfinder/Settings/
 
 * Move to the requested map or go to the closest in a list of Map given. Supports most of the maps of the 3 main regions.
 * Move to the closest Pokecenter.
+* Use the closest Pokecenter.
+* Use the closest Pokemart to buy the requiered items. (testing, item map need to be completed.)
 * Uses Bike or Mount.
 * Uses digways as shortcut if has a Pokemon that can use dig.
 * Discover digways if it can't use it.

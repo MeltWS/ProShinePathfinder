@@ -4,9 +4,9 @@ author = "MeltWS"
 description = [[Simple application of the PathFinder, this script moves to a destination from anywhere.]]
 
 -- First you need to get the module loaded in your script :
-PathFinder = require "Pathfinder/Maps_Pathfind"  -- loading the module Maps_Pathfind and getting the functions in a table: PathFinder.
+local PathFinder = require "Pathfinder/MoveToApp"  -- loading the module MoveToApp and getting the functions it sends back in a table: PathFinder.
 -- Now to use PathFinder functions you can write PathFinder.functionName().
--- You can require Maps_Pathfind from anywhere above in the hierarchie.
+-- You can require MoveToApp from anywhere above in the hierarchie.
 
 --[[
 

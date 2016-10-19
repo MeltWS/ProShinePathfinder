@@ -3,7 +3,7 @@ author = "Melt"
 
 description = [[Farm Nocturnal Feathers, it assumes you have a pokemon with "Covet"]]
 
-local PathFinder = require "Pathfinder/Maps_Pathfind" -- requesting table with methods
+local PathFinder = require "Pathfinder/MoveToApp" -- requesting table with methods
 
 function inRectangle(UpperX, UpperY, LowerX, LowerY)
 	local ActX = getPlayerX()

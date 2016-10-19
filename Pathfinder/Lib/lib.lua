@@ -106,7 +106,7 @@ function lib.pairsByKeys(t, f) -- sort table keys by alpha order or f as alterna
 end
 
 -- CHECK IF IN TABLE --
-function lib.intable (tab, val)
+function lib.inTable (tab, val)
    for index, value in ipairs (tab) do
        if value == val then
            return true

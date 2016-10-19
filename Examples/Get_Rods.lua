@@ -3,7 +3,7 @@ author = "melt"
 
 description = [[This script will collect every Rods if the bot has enough money, make sure you have access to all maps necessary.]]
 
-local pf = require "Pathfinder/Maps_Pathfind" -- requesting table with methods
+local pf = require "Pathfinder/MoveToApp" -- requesting table with methods
 
 local oldRod     = nil
 local goodRod    = nil

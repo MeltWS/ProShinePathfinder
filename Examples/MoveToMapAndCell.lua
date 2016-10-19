@@ -3,7 +3,7 @@ author = "MeltWS"
 
 description = [[This allows you to move simply arround the map]]
 
-local PathFinder = require "Pathfinder/Maps_Pathfind" -- requesting table with methods
+local PathFinder = require "Pathfinder/MoveToApp" -- requesting table with methods
 
 --[[
 ----- Check out settings in Pathfind/Settings/static_settings.lua -------------------------------

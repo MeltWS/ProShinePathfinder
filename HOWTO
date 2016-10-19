@@ -4,7 +4,10 @@ I strongly advice you read the LoadMe_Test.lua. As it is the simplest applicatio
 The Settings are located in Pathfinder/Settings/static_Settings.lua, You should read and modify them if you want.
 How to enable Dig / Headbutt / Discoving Items ? Read the setting file.
 
-This assume you understand the lua module system and understand how to use functions from a module.
+The only module you need to require is MoveToApp. The module return a table of functions.
+Pathfinder = require "Pathfinder/MoveToApp"
+
+The following assume you understand the lua module system and understand how to use functions from a module.
 
 Module functions list :
 1) MoveTo(map)
