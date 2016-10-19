@@ -5,6 +5,7 @@ if cpath ~= nil then
 end
 
 local lib            = require (cdpath .. "Lib/lib")
+local Table          = require (cdpath .. "Lib/Table")
 local Work           = require (cdpath .. "Lib/Work")
 local _ss            = require (cdpath .. "Settings/static_Settings")
 local ss             = nil
@@ -20,22 +21,14 @@ local PathSolution   = {}
 local PathDestStore  = ""
 local Outlet         = nil
 local Settings       = nil
+
 -----------------------------------
 ----- A* NECESSARY  FUNCTIONS -----
 -----------------------------------
 
--- return keys from table
-local function getKeys(tab)
-    local keys = {}
-    for k, v in pairs(tab) do
-        table.insert(keys, k)
-    end
-    return keys
-end
-
 -- return a table of node, linked to the node n
 local function expand(n)
-    return getKeys(GlobalMap[n])
+    return Table.getKeys(GlobalMap[n])
 end
 
 -- Take 2 nodes return dist
@@ -188,9 +181,7 @@ local function ResetPath()
 end
 
 local function MovingApply(ToMap)
-    if lib.useMount(ss.MOUNT) then
-        return true
-    elseif CheckException(getMapName(), PathSolution[1]) then
+    if CheckException(getMapName(), PathSolution[1]) then
         return true
     else
         lib.log1time("Maps Remains: " .. lib.tablelength(PathSolution) .. "  Moving To: --> " .. PathSolution[1])
@@ -286,8 +277,9 @@ end
 -- MOVETO DEST
 local function MoveTo(Destination)
     local map = getMapName()
-
-    if Outlet and checkOutlet(map) then
+    if lib.useMount(ss.MOUNT) then
+        return true
+    elseif Outlet and checkOutlet(map) then
         return true
     elseif Work.isWorking(map, workOpts) then
         return true
@@ -296,7 +288,7 @@ local function MoveTo(Destination)
     else
         PathSolution = simpleAStar(goal(Destination))(map)
         if not PathSolution then
-            return fatal("Path Not Found ERROR")
+            return error("Path Not Found ERROR")
         end
         PathDestStore = Destination
         EditPathGenerated()

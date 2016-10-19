@@ -13,4 +13,13 @@ function Table.tablelength(T)
     return count
 end
 
+-- return keys from table
+function Table.getKeys(tab)
+    local keys = {}
+    for k, v in pairs(tab) do
+        table.insert(keys, k)
+    end
+    return keys
+end
+
 return Table
