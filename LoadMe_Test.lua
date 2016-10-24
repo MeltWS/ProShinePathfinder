@@ -20,10 +20,10 @@ UseNearestPokemart(item, amount) --> /!\ experimental, item map is not completed
 
 --> Possible Setting Calls (If for some reason you want to disable some path or enable them manually)
 --> Those setting are set on loading dynamically depending on your bot items and Pokemons, so you don't have to worry about them usually.
-	- EnableBikePath() -- to use digway shorcuts
-	- DisableBikePath()
-	- EnableDigPath() -- to use Bike exclusive paths
-	- DisableDigPath()
+    - EnableBikePath() -- to use digway shorcuts
+    - DisableBikePath()
+    - EnableDigPath() -- to use Bike exclusive paths
+    - DisableDigPath()
 
 if you need more details see HOWTO
 ------------------]]
@@ -33,7 +33,7 @@ function onStart()
 end
 
 function onPathAction()
-    PathFinder.MoveTo("Indigo Plateau Center") -- example use of MoveTo(dest)
+    PathFinder.MoveTo("Pokemon Tower B29") -- example use of MoveTo(dest)
     -- the line above will move the bot to the map "Indigo Plateau Center"
 end
 

@@ -66,7 +66,7 @@ end
 local function initTargets()
     local NpcTables = {digSpots, headbuttTrees, BerryTrees, discoverItems}
     for _, v in pairs(NpcTables) do
-        targets = Table.tableConcat(targets, v)
+        targets = Table.concat(targets, v)
     end
 end
 

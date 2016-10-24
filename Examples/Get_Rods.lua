@@ -58,7 +58,7 @@ function onPathAction()
 end
 
 function onBattleAction()
-	run()
+    run()
 end
 
 function onDialogMessage(message)

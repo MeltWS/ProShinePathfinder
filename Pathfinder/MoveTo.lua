@@ -11,14 +11,16 @@ local _ss            = require (cdpath .. "Settings/static_Settings")
 local ss             = nil
 local workOpts       = {}
 local aStar          = require (cdpath .. "Lib/lua-astar/AStar")
-local _GlobalMap     = require (cdpath .. "Maps/GlobalMap")
+-- local _GlobalMap     = require (cdpath .. "Maps/GlobalMap")
+local _GlobalMap     = require (cdpath .. "Maps/Kanto/TestKantoMap")
 local GlobalMap      = {}
 local Digways        = require (cdpath .. "Maps/Digways/DigwaysMap")
+local SubMaps        = require (cdpath .. "Maps/MapExceptions/SubstituteMaps")
 local MapExceptions  = require (cdpath .. "Maps_Exceptions")
 local DescMaps       = MapExceptions.DescMaps
 local ExceRouteEdit  = MapExceptions.ExceRouteEdit
 local PathSolution   = {}
-local PathDestStore  = ""
+local destStore      = ""
 local Outlet         = nil
 local Settings       = nil
 
@@ -28,6 +30,7 @@ local Settings       = nil
 
 -- return a table of node, linked to the node n
 local function expand(n)
+    assert(type(GlobalMap[n]) == "table", "Received node \"" .. n .. "\" doesn't exist in the map.")
     return Table.getKeys(GlobalMap[n])
 end
 
@@ -43,9 +46,6 @@ end
 
 -- return true if destination is reached
 local function goal(targets)
-    if type(targets) == "string" then
-        targets = {targets}
-    end
     return function(current)
         return lib.inTable(targets, current)
     end
@@ -58,79 +58,81 @@ local simpleAStar = aStar(expand)(cost)(heuristic)
 --- EXCEPTION  HANDLING ---
 ---------------------------
 
--- CALL FUNCTION ON EXCEPTION TABLE
-local function SolvingException(EMap)
-    for index, value in pairs(DescMaps) do
-        if index == EMap then
-            MapExceptions.SetPathSolution(PathSolution)
-            for val, func in pairs(DescMaps[index]) do
-                if DescMaps[index][val]() == false then
-                    return
-                end
-            end
-        end
-    end
-end
-
 -- CHECK EXCEPTION MAP1 MAP2 SUBWAY MAPS ( KANTO AND JOHTO CASE )
 local function CheckSubwayExce(map1, map2)
     return string.find(map1, "Subway") and string.find(map2, "Subway")
 end
 
+local function exceptionExist(n1, n2)
+    return DescMaps[n1] and DescMaps[n1][n2]
+end
+
 -- CHECK EXCEPTION MAP1 TO MAP2    - IF FOUND CALL RESOLUTION EXCEPTION
-local function CheckException(map1, map2)
-    local EMap = map1 .. "_to_" .. map2
-    for index, value in pairs(DescMaps) do
-        if index == EMap then
-            SolvingException(EMap)
-            return true
-        end
+local function CheckException(n1, n2)
+    if exceptionExist(n1, n2) then
+        return assert(moveToCell(table.unpack(DescMaps[n1][n2])), "Pathfinder --> Error: Exception invalid for:" .. n1 .. " -> " .. n2)
     end
-    if CheckSubwayExce(map1, map2) then
-        MapExceptions.SolvSubExce(map1, map2)
+    if CheckSubwayExce(n1, n2) then
+        MapExceptions.SolvSubExce(n1, n2)
         return true
     end
 end
 
--- FUNCTION NO BULTIN FOR ADD VALUE ON A TABLE
-local function replacepath(startpos, endpos, namexc)
-    local temppath = {}
-    for posS=1,(startpos-1) do
-        table.insert(temppath,PathSolution[posS])
-    end
-    for posex, val in pairs(ExceRouteEdit[namexc][1]) do
-        table.insert(temppath,ExceRouteEdit[namexc][2][posex])
-    end
-    for posE=1,(lib.tablelength(PathSolution) - endpos) do
-        table.insert(temppath,PathSolution[(endpos + posE)])
-    end
-    PathSolution = temppath
+local function isSameMap(n1, n2)
+    return n1 and n1:gsub("_%u$", "") == n2:gsub("_%u$", "")
 end
 
--- EDIT PATH FOR NO EDIT BASIC MAP TABLE
+-- Search for case with 2 sub of the same map in a row, and remove the 2nd one.
+-- A -> B1 -> B2 -> C becomes A -> B1 -> C if no exception exist
 local function EditPathGenerated()
-    local found = false
-    for val, zone in pairs(PathSolution) do -- for every val in array path
-        for valx, exce in pairs(ExceRouteEdit) do -- for every val in exception, based on path, compare
-            if zone == ExceRouteEdit[valx][1][1] then -- if 1 of element is a start of exception- get table length exception
-                found = true
-                for stat, element in pairs(ExceRouteEdit[valx][1]) do
-                    local posp = val - 1
-                    if not (element == PathSolution[(posp + stat)]) then
-                        found = false
-                    end
-                end
-                if found == true then
-                    local exclng = tonumber(val - 1 + lib.tablelength(ExceRouteEdit[valx][1]))
-                    replacepath(val, exclng, valx)
-                    return
+    local n1 = nil
+    local ePath = {}
+    for i, n2 in ipairs(PathSolution) do
+        if not isSameMap(n1, n2) or exceptionExist(n1, n2) then
+            table.insert(ePath, n2)
+        end
+        n1 = n2
+    end
+    PathSolution = ePath
+end
+
+-- return the node coresponding to the current player pos.
+local function getPlayerNode()
+    local map = getMapName()
+    if SubMaps[map] then
+        for subMap, locs in pairs(SubMaps[map]) do
+            for _, rect in ipairs(locs) do
+                if lib.inRectangle(table.unpack(rect)) then
+                    return subMap
                 end
             end
         end
+    error("Pathfinder --> sub map could not be defined, map: " .. map .. "  x: " .. getPlayerX() .. "  y: " .. getPlayerY())
     end
+    return map
 end
 
+-- Create a new list with destination maps, and replace map that have submaps
+local function getDestNodes(dest)
+    local destNodes = {}
+    if type(dest) == "string" then
+        dest = {dest}
+    end
+    for _, map in pairs(dest) do
+        if SubMaps[map] then  -- if the map has sub maps
+            for submap, _ in pairs(SubMaps[map]) do
+                table.insert(destNodes, submap)
+            end
+        else
+            table.insert(destNodes, map)
+        end
+    end
+    return destNodes
+end
+
+---------------------
 -- DISCOVERING OUTLET
+---------------------
 
 --SET OUTLET
 local function SetOutlet(currentMap)
@@ -164,9 +166,7 @@ end
 -- DISCOVER OUTLET IF POSSIBLE
 local function checkOutlet(current)
     if OutletFound(current) then
-        talkToNpcOnCell(Digways[current].x, Digways[current].y)
-        -- Outlet.found = true
-        return true
+        return assert(talkToNpcOnCell(Digways[current].x, Digways[current].y), "Pathfinder -> could not discover outlet, map: " .. current .. " x:" .. x .. " y:" .. y)
     end
     return false
 end
@@ -177,15 +177,16 @@ end
 
 -- RESET PATH ON STOP
 local function ResetPath()
-    PathDestStore = ""
+    destStore = ""
 end
 
-local function MovingApply(ToMap)
-    if CheckException(getMapName(), PathSolution[1]) then
+local function MovingApply(toMap)
+    lib.log1time("Maps Remains: " .. #PathSolution .. "  Moving To: --> " .. toMap)
+    if CheckException(getPlayerNode(), toMap) then
         return true
     else
-        lib.log1time("Maps Remains: " .. lib.tablelength(PathSolution) .. "  Moving To: --> " .. PathSolution[1])
-        if moveToMap(ToMap) then
+        toMap = toMap:gsub("_%u$", "") -- remove split map tags
+        if moveToMap(toMap) then
             return true
         else
             ResetPath()
@@ -197,10 +198,10 @@ local function MovingApply(ToMap)
 end
 
 local function MoveWithCalcPath()
-    if lib.tablelength(PathSolution) > 0 then
-        if PathSolution[1] == getMapName() then
+    if #PathSolution > 0 then
+        if PathSolution[1] == getPlayerNode() then
             table.remove(PathSolution, 1)
-            if lib.tablelength(PathSolution) > 0 then
+            if #PathSolution > 0 then
                 return MovingApply(PathSolution[1])
             end
             return false
@@ -271,26 +272,25 @@ local function initSettings()
     Settings.bike = hasItem(ss.MOUNT)
     Settings.dig = lib.getPokemonNumberWithMove("Dig", 155)
     if Settings.dig == 0 then Settings.dig = false end
-    ApplySettings()
+    -- ApplySettings()
 end
 
 -- MOVETO DEST
-local function MoveTo(Destination)
+local function MoveTo(dest)
     local map = getMapName()
+    dest = getDestNodes(dest)
     if lib.useMount(ss.MOUNT) then
         return true
     elseif Outlet and checkOutlet(map) then
         return true
     elseif Work.isWorking(map, workOpts) then
         return true
-    elseif PathDestStore == Destination then
+    elseif destStore == table.concat(dest, "|") then
         return MoveWithCalcPath()
     else
-        PathSolution = simpleAStar(goal(Destination))(map)
-        if not PathSolution then
-            return error("Path Not Found ERROR")
-        end
-        PathDestStore = Destination
+        PathSolution = simpleAStar(goal(dest))(getPlayerNode())
+        assert(PathSolution, "Path Not Found ERROR")
+        destStore = table.concat(dest, "|")
         EditPathGenerated()
         log("Path: " .. table.concat(PathSolution,"->"))
         return MoveWithCalcPath()

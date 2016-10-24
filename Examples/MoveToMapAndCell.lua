@@ -12,10 +12,10 @@ MoveTo(dest) --> Main function for moving to dest. return false when done. true 
 MoveToPC()   --> Move to nearest Pokecenter
 
 --> Possible Setting Calls (Bike and Dig are set depending of Bot item/pokemons)
-	EnableBikePath()
-	DisableBikePath()
-	EnableDigPath()
-	DisableDigPath()
+    EnableBikePath()
+    DisableBikePath()
+    EnableDigPath()
+    DisableDigPath()
 ------------------]]
 
 function moveToMapAndCell(mapname, x, y)
@@ -27,16 +27,16 @@ function moveToMapAndCell(mapname, x, y)
 end
 
 function onStart()
-	PathFinder.DisableDigPath() -- example use of settings
+    PathFinder.DisableDigPath() -- example use of settings
 end
 
 function onPathAction()
-	if not moveToMapAndCell("Power Plant", 5, 33) then
-		log("Destination reached")
-	end
+    if not moveToMapAndCell("Power Plant", 5, 33) then
+        log("Destination reached")
+    end
 end
 
 function onBattleAction()
-	run()
+    run()
 end
 

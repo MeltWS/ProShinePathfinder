@@ -9,6 +9,32 @@ local Table          = require (cdpath .. "Lib/Table")
 local ItemList       = require (cdpath .. "Maps/Items/Items")
 local PokecenterList = require (cdpath .. "Maps/Pokecenters/Pokecenters")
 local PokemartList   = require (cdpath .. "Maps/Pokemarts/Pokemarts")
+local SubMaps        = require (cdpath .. "Maps/MapExceptions/SubstituteMaps")
+
+local function getSubMapWithloc(dest, x ,y)
+    for subMap, locs in pairs(SubMaps[dest]) do
+        for _, rect in ipairs(locs) do
+            if (x >= rect[1] and x <= rect[3]) and (y >= rect[2] and y <= rect[4]) then
+                return subMap
+            end
+        end
+    end
+    error("Pathfinder -> Location x:" .. x .. "  y:" .. y .. " does not match any sub map for :" .. dest)
+end
+
+-- move to a cell on a map
+local function MoveToMapCell(dest, x, y)
+    if SubMaps[dest] then
+        dest = getSubMapWithloc(dest, x, y)
+    end
+    if not pf.MoveTo(dest) then
+        if getPlayerX() == x and getPlayerY() == y then
+            return false
+        end
+        return moveToCell(x, y)
+    end
+    return true
+end
 
 -- move to closest PC
 local function MoveToPC()
@@ -72,6 +98,7 @@ return {
     MoveToPC = MoveToPC,
     UseNearestPokecenter = UseNearestPokecenter,
     UseNearestPokemart = UseNearestPokemart,
+    MoveToMapCell = MoveToMapCell,
     MoveTo = pf.MoveTo,
     EnableBikePath = pf.EnableBikePath,
     DisableBikePath = pf.DisableBikePath,
