@@ -70,14 +70,15 @@ local function rmlast(str) return str:sub(1, -2):match(".+[%./]") or "" end -- r
 local cdpath = rmlast(cpath) -- callee dir path
 local cpdpath = rmlast(cdpath) -- callee parent dir path
 
-local lib = require (cpdpath .. "Lib/lib")
-local message = ""
+local lib        = require (cpdpath .. "Lib/lib")
+local Maybe      = require (cpdpath .. "Lib/Maybe")
+local message    = ""
 local loadedName = nil
 
 local function fillOmittedSettings(botName)
     default = "default"
     for key, value in pairs(Settings[default]) do
-        if not Settings[botName][key] then
+        if Maybe.isNothing(Settings[botName][key]) then
             message = message .. "\n --> Filling omitted setting: " .. tostring(key) .. ", replacing with: " .. tostring(value) .. "."
             Settings[botName][key] = Settings[default][key]
         end
