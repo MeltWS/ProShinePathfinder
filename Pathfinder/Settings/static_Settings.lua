@@ -37,7 +37,7 @@ Settings = {
     },
 --  Custom Settings, loaded if the bot name match.
 --  Omitted settings will be taken on Default profile.
-    myBotName      = {
+    myAccountName      = {
         MOUNT      = "Latios Mount",
 
         K_SUBWAY   = 10, -- Weight for using the subway path. Kanto
@@ -48,7 +48,7 @@ Settings = {
         H_TO_KJ    = 999 -- Weight of the Subway from Hoenn to Kanto/Johto and reverse.
     },
 --  Custom Settings, loaded if the bot name match.
-    myOtherBotName = {
+    myOtherAccountName = {
         MOUNT      = "Arcanine Mount",
 
         K_SUBWAY   = 5, -- Weight for using the subway path. Kanto
@@ -75,44 +75,44 @@ local Maybe      = require (cpdpath .. "Lib/Maybe")
 local message    = ""
 local loadedName = nil
 
-local function fillOmittedSettings(botName)
+local function fillOmittedSettings(accountName)
     default = "default"
     for key, value in pairs(Settings[default]) do
-        if Maybe.isNothing(Settings[botName][key]) then
+        if Maybe.isNothing(Settings[accountName][key]) then
             message = message .. "\n --> Filling omitted setting: " .. tostring(key) .. ", replacing with: " .. tostring(value) .. "."
-            Settings[botName][key] = Settings[default][key]
+            Settings[accountName][key] = Settings[default][key]
         end
     end
 end
 
-local function validateSettings(botName)
-    if not hasItem(Settings[botName].MOUNT) then
-        Settings[botName].MOUNT = "Bicycle"
+local function validateSettings(accountName)
+    if not hasItem(Settings[accountName].MOUNT) then
+        Settings[accountName].MOUNT = "Bicycle"
         message = message .. "\n -> Mount not found, setting to Bicycle."
     end
     if not lib.getPokemonNumberWithMove("Headbutt", 155) then
-        Settings[botName].HEADBUTT = false
+        Settings[accountName].HEADBUTT = false
         message = message .. "\n -> No Pokemon can Headbutt trees, setting to false."
     end
     if not lib.getPokemonNumberWithMove("Dig") then
-        Settings[botName].DIG = false
+        Settings[accountName].DIG = false
         message = message .. "\n -> No Pokemon can Dig, setting to false."
     end
 end
 
 return function()
-    local botName = getBotName()
-    if botName ~= loadedName then
-        loadedName = botName
+    local accountName = getAccountName()
+    if accountName ~= loadedName then
+        loadedName = accountName
         initSettings()
-        if Settings[botName] then
-            message = "Pathfinder : Loading " .. botName .. " settings."
-            fillOmittedSettings(botName)
-            validateSettings(botName)
+        if Settings[accountName] then
+            message = "Pathfinder : Loading " .. accountName .. " settings."
+            fillOmittedSettings(accountName)
+            validateSettings(accountName)
         else
             message = "Pathfinder : Loading default settings."
         end
         lib.log1time(message)
     end
-    return Settings[botName] or Settings["default"]
+    return Settings[accountName] or Settings["default"]
 end
