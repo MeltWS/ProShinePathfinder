@@ -1,4 +1,13 @@
-local ss = require "Pathfinder/Settings/static_Settings"
+local cpath = select(1, ...) or "" -- callee path
+local function nTimes(n, f, x) for i = 0, n - 1 do x = f(x) end return x end -- calls n times f(x)
+local function rmlast(str) return str:sub(1, -2):match(".+[%./]") or "" end -- removes last dir / file from the callee path
+local cppdpath = nTimes(3, rmlast, cpath) -- callee parent of parent dir path
+
+local _ss = require (cppdpath .. "Settings/static_Settings")
+
+return function()
+
+local ss = _ss()
 local K_SUBWAY = ss.K_SUBWAY
 
 local KantoMap = {}
@@ -19,6 +28,12 @@ KantoMap["Cinnabar mansion 1"] = {["Cinnabar Island"] = 1, ["Cinnabar mansion 2"
 KantoMap["Cinnabar mansion 2"] = {["Cinnabar mansion 1"] = 1, ["Cinnabar mansion 3"] = 1}
 KantoMap["Cinnabar mansion 3"] = {["Cinnabar mansion 2"] = 1}
 KantoMap["Digletts Cave"] = {["Digletts Cave Entrance 1"] = 1, ["Digletts Cave Entrance 2"] = 1}
+KantoMap["Celadon Mart 1"] = {["Celadon City"] = 1, ["Celadon Mart 2"] = 1}
+KantoMap["Celadon Mart 2"] = {["Celadon Mart 1"] = 1, ["Celadon Mart 3"] = 1}
+KantoMap["Celadon Mart 3"] = {["Celadon Mart 2"] = 1, ["Celadon Mart 4"] = 1}
+KantoMap["Celadon Mart 4"] = {["Celadon Mart 3"] = 1, ["Celadon Mart 5"] = 1}
+KantoMap["Celadon Mart 5"] = {["Celadon Mart 4"] = 1, ["Celadon Mart 6"] = 1}
+KantoMap["Celadon Mart 6"] = {["Celadon Mart 5"] = 1}
 KantoMap["Digletts Cave Entrance 1"] = {["Digletts Cave"] = 1, ["Route 2"] = 1}
 KantoMap["Digletts Cave Entrance 2"] = {["Digletts Cave"] = 1, ["Route 11"] = 1}
 KantoMap["Fisherman House - Vermilion"] = {["Vermilion City"] = 1}
@@ -175,3 +190,4 @@ KantoMap["Vermilion City Subway"] = {["Pokecenter Vermilion"] = 1, ["Celadon Cit
 KantoMap["Lavender Town Subway"] = {["Pokecenter Lavender"] = 1, ["Celadon City Subway"] = K_SUBWAY, ["Fuchsia City Subway"] = K_SUBWAY, ["Saffron City Subway"] = K_SUBWAY, ["Viridian City Subway"] = K_SUBWAY, ["Cerulean City Subway"] = K_SUBWAY, ["Vermilion City Subway"] = K_SUBWAY, ["Pewter City Subway"] = K_SUBWAY}
 
 return KantoMap
+end

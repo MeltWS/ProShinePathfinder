@@ -1,4 +1,10 @@
-local lib = require "Pathfinder/Lib/lib"
+local cdpath = ""
+local cpath = select(1, ...) -- callee path
+if cpath ~= nil then
+    cdpath = cpath:match(".+[/%.]") or cdpath -- callee dir path
+end
+
+local lib = require (cdpath .. "Lib/lib")
 
 local ExceRouteEdit = {}
 local DescMaps = {}
@@ -248,7 +254,10 @@ DescMaps["Pokemon Tower B19_to_Pokemon Tower B20"] = {function() Mode_MoveToCell
 DescMaps["Pokemon Tower B20_to_Pokemon Tower B21"] = {function() Mode_MoveToCell("Pokemon Tower B20", 17,22,19,23,18,22) end,function() Mode_MoveToCell("Pokemon Tower B20", 20,20,24,23,22,19) end,function() Mode_MoveToCell("Pokemon Tower B20", 17,16,24,19,22,19) end}
 
 -- VICTORY ROAD KANTO
-DescMaps["Victory Road Kanto 3F_to_Victory Road Kanto 2F"] = {function() Mode_MoveToCell("Victory Road Kanto 3F", 20,14,47,35,29,17) end}
+-- not fully supported.
+DescMaps["Victory Road Kanto 3F_to_Victory Road Kanto 2F"] = {function() if not Mode_MoveToCell("Victory Road Kanto 3F", 20,14,47,35,29,17) then moveToCell(29,17) end end}
+DescMaps["Victory Road Kanto 2F_to_Victory Road Kanto 3F"] = {function() if not Mode_MoveToCell("Victory Road Kanto 2F", 31,23,38,31,33,29) then moveToMap("Victory Road Kanto 3F") end end}
+DescMaps["Victory Road Kanto 2F_to_Victory Road Kanto 1F"] = {function() if not Mode_MoveToCell("Victory Road Kanto 2F", 31,23,38,31,33,29) then moveToMap("Victory Road Kanto 1F") end end}
 
 -- ROUTE 16
 DescMaps["Route 16_to_Route 17"] = {function() Mode_MoveToCell("Route 16", 70,3,91,21,70,13) end, function() Mode_MoveToCell("Route 16", 25,9,64,40,29,40) end}

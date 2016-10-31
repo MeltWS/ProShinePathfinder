@@ -3,7 +3,7 @@ author = "MeltWS"
 
 description = [[Simple yet effective leveler using PathFinder]]
 
-local pf          = require "Pathfinder/Maps_Pathfind" -- requesting table with methods
+local pf          = require "Pathfinder/MoveToApp" -- requesting table with methods
 local mapExp      = "Dragons Den"
 local levelGoal   = 98 -- scripts prevents Evolution so be carefull.
 local xpTargets   = {1, 3} -- table containing index of pokemon(s) to train.

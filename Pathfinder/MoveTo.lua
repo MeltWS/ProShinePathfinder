@@ -1,33 +1,34 @@
-local lib = require "Pathfinder/Lib/lib"
-local aStar = require "Pathfinder/Lib/lua-astar/AStar"
-local GlobalMap = require "Pathfinder/Maps/GlobalMap"
-local Digways = require "Pathfinder/Maps/DigwaysMap"
-local MapExceptions = require "Pathfinder/Maps_Exceptions"
-local ItemList = require "Pathfinder/Maps/Items/Items"
-local PokecenterList = require "Pathfinder/Maps/Pokecenters/Pokecenters"
-local PokemartList   = require ("Pathfinder/Maps/Pokemarts/Pokemarts")
-local DescMaps = MapExceptions.DescMaps
-local ExceRouteEdit = MapExceptions.ExceRouteEdit
-local PathSolution = {}
-local PathDestStore = ""
-local Outlet = nil
+local cdpath = ""
+local cpath = select(1, ...) -- callee path
+if cpath ~= nil then
+    cdpath = cpath:match(".+[/%.]") or cdpath -- callee dir path
+end
+
+local lib            = require (cdpath .. "Lib/lib")
+local Table          = require (cdpath .. "Lib/Table")
+local Work           = require (cdpath .. "Lib/Work")
+local _ss            = require (cdpath .. "Settings/static_Settings")
+local ss             = nil
+local workOpts       = {}
+local aStar          = require (cdpath .. "Lib/lua-astar/AStar")
+local _GlobalMap     = require (cdpath .. "Maps/GlobalMap")
+local GlobalMap      = {}
+local Digways        = require (cdpath .. "Maps/Digways/DigwaysMap")
+local MapExceptions  = require (cdpath .. "Maps_Exceptions")
+local DescMaps       = MapExceptions.DescMaps
+local ExceRouteEdit  = MapExceptions.ExceRouteEdit
+local PathSolution   = {}
+local PathDestStore  = ""
+local Outlet         = nil
+local Settings       = nil
 
 -----------------------------------
 ----- A* NECESSARY  FUNCTIONS -----
 -----------------------------------
 
--- return keys from table
-local function getKeys(tab)
-    local keys = {}
-    for k, v in pairs(tab) do
-        table.insert(keys, k)
-    end
-    return keys
-end
-
 -- return a table of node, linked to the node n
 local function expand(n)
-    return getKeys(GlobalMap[n])
+    return Table.getKeys(GlobalMap[n])
 end
 
 -- Take 2 nodes return dist
@@ -46,7 +47,7 @@ local function goal(targets)
         targets = {targets}
     end
     return function(current)
-        return lib.intable(targets, current)
+        return lib.inTable(targets, current)
     end
 end
 
@@ -143,7 +144,7 @@ local function SetOutlet(currentMap)
     Outlet.found = false
     if outletMap == currentMap then -- if the outlet is on the same map
         if Digways[currentMap].inRectangle() then -- if the outlet is the other digway on the same map
-            lib.swap(Digways[currentMap], Digways[currentMap .. "_2"]) -- swap digways arround for currentMap
+            Digways[currentMap], Digways[currentMap .. "_2"] = Digways[currentMap .. "_2"], Digways[currentMap]-- swap digways arround for currentMap
         end
         Outlet.inRectangle = Digways[currentMap].inRectangle
     else
@@ -210,12 +211,9 @@ local function MoveWithCalcPath()
     return false
 end
 
-
 ---------------------------
 -------- SETTINGS ---------
 ---------------------------
-
-local Settings = nil
 
 local function setLink(n1, n2, dist)
     GlobalMap[n1][n2] = dist
@@ -270,7 +268,7 @@ end
 -- INIT SETTINGS WITH CURRENT INVENTORY AND TEAM
 local function initSettings()
     Settings = {}
-    Settings.bike = hasItem("Bicycle")
+    Settings.bike = hasItem(ss.MOUNT)
     Settings.dig = lib.getPokemonNumberWithMove("Dig", 155)
     if Settings.dig == 0 then Settings.dig = false end
     ApplySettings()
@@ -279,9 +277,11 @@ end
 -- MOVETO DEST
 local function MoveTo(Destination)
     local map = getMapName()
-    if lib.useBike() then
+    if lib.useMount(ss.MOUNT) then
         return true
     elseif Outlet and checkOutlet(map) then
+        return true
+    elseif Work.isWorking(map, workOpts) then
         return true
     elseif PathDestStore == Destination then
         return MoveWithCalcPath()
@@ -300,89 +300,27 @@ end
 
 -- SETTINGS CALLS
 local function EnableBikePath()
-    lib.ifNotThen(Settings, initSettings)
     Settings.bike = true
     log("BIKE PATH ENABLED")
     ApplySettings()
 end
 
 local function DisableBikePath()
-    lib.ifNotThen(Settings, initSettings)
     Settings.bike = false
     log("BIKE PATH DISABLED")
     ApplySettings()
 end
 
 local function EnableDigPath()
-    lib.ifNotThen(Settings, initSettings)
     Settings.dig = true
     log("DIG PATH ENABLED")
     ApplySettings()
 end
 
 local function DisableDigPath()
-    lib.ifNotThen(Settings, initSettings)
     Settings.dig = false
     log("DIG PATH DISABLED")
     ApplySettings()
-end
-
--- move to closest PC
-local function MoveToPC()
-    return MoveTo(PokecenterList)
-end
-
--- move to closest PC and use the nurse
-local function UseNearestPokecenter()
-    if MoveTo(PokecenterList) then
-        return true
-    end
-    local map = getMapName()
-    if map == "Indigo Plateau Center" then
-        return assert(talkToNpcOnCell(4, 22), "Failed to talk to Nurse on Cell 4/22")
-    elseif string.find(getMapName(), "Seafoam") and getMoney() > 1500 then
-        if MoveTo("Seafoam B4F") then
-            return true
-        end
-        return assert(talkToNpcOnCell(59,13), "Failed to talk to Nurse on Cell 59/13")
-    end
-    return assert(usePokecenter(), "usePokecenter() failed")
-end
-
--- move to npc and use shop
-local function usePokemart(item, amount)
-    local map = getMapName()
-    if isShopOpen() then
-        assert(buyItem(item, amount), "buyItem("..item..", "..amount..") failed")
-        log("buyItem("..item..", "..amount..") success")
-        return false -- job done
-    else
-        local mart = PokemartList[map][ItemList[item]["maps"][map]]
-        if mart[3] ~= 0 then
-            talkToNpcOnCell(mart[1], mart[2])
-            pushDialogAnswer(mart[3])
-        else
-            talkToNpcOnCell(mart[1], mart[2])
-        end
-    end
-end
-
--- true if has enought money to buy amount of item
-local function canBuy(itemCost, amount)
-    return getMoney() > itemCost * amount
-end
-
--- move to nearest PM and buy
-local function UseNearestPokemart(item, amount)
-    assert(ItemList[item], "BuyItem: Item does not exist in the list, this is case sensitive.")
-    if not canBuy(ItemList[item].value, amount) then
-        log("Not enough money to buy " .. amount .. " " .. item)
-        return false
-    end
-    if MoveTo(getKeys(ItemList[item].maps)) then
-        return true
-    end
-    return usePokemart(item, amount)
 end
 
 local self = {
@@ -397,21 +335,29 @@ local function onPathfinderDialogMessage(message)
     MapExceptions.SolveDialog(message, self)
 end
 
+local function onPathfinderStart()
+    GlobalMap = assert(_GlobalMap(), "Error : failed to laod map")
+    ss        = assert(_ss(), "Error : failed to load settings")
+    initSettings()
+    workOpts.dig = ss.DIG
+    workOpts.harvest = ss.HARVEST
+    workOpts.headbutt = ss.HEADBUTT
+    workOpts.discover = ss.DISCOVER
+end
+
 local function onPathfinderStop()
     ResetPath()
 end
 
+registerHook("onStart", onPathfinderStart)
 registerHook("onDialogMessage", onPathfinderDialogMessage)
 registerHook("onStop", onPathfinderStop)
 
 -- RETURN TABLE FOR USER
 return {
     MoveTo = MoveTo,
-    MoveToPC = MoveToPC,
-    UseNearestPokecenter = UseNearestPokecenter,
     EnableBikePath = EnableBikePath,
     DisableBikePath = DisableBikePath,
     EnableDigPath = EnableDigPath,
     DisableDigPath = DisableDigPath,
-    UseNearestPokemart = UseNearestPokemart,
 }

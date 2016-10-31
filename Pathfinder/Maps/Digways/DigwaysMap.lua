@@ -1,4 +1,9 @@
-local lib = require "Pathfinder/Lib/lib"
+local cpath = select(1, ...) or "" -- callee path
+local function nTimes(n, f, x) for i = 0, n - 1 do x = f(x) end return x end -- calls n times f(x)
+local function rmlast(str) return str:sub(1, -2):match(".+[%./]") or "" end -- removes last dir / file from the callee path
+local cppdpath = nTimes(3, rmlast, cpath) -- callee parent of parent dir path
+
+local lib = require (cppdpath .. "Lib/lib")
 
 local Digways = {} -- Digway map used for discovering them.
 
@@ -17,5 +22,7 @@ Digways["Route 32"] = {["x"] = 10, ["y"] = 143, ["outletMap"] = "Route 33"}
 Digways["Route 33"] = {["x"] = 14, ["y"] = 13, ["outletMap"] = "Route 32"}
 Digways["Route 44"] = {["x"] = 73, ["y"] = 9, ["outletMap"] = "Blackthorn City"}
 Digways["Blackthorn City"] = {["x"] = 49, ["y"] = 16, ["outletMap"] = "Route 44"}
+Digways["Route 42"] = {["x"] = 15, ["y"] = 13, ["outletMap"] = "Route 42", ["inRectangle"] = function () return lib.inRectangle(1,13,18,26) end}
+Digways["Route 42_2"] = {["x"] = 77, ["y"] = 13, ["outletMap"] = "Route 42", ["inRectangle"] = function () return lib.inRectangle(19,13,95,26) end}
 
 return Digways

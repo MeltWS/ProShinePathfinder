@@ -3,7 +3,7 @@ author = "MeltWS"
 
 description = [[This allows you to move simply arround the map]]
 
-local PathFinder = require "Pathfinder/Maps_Pathfind" -- requesting table with methods
+local PathFinder = require "Pathfinder/MoveToApp" -- requesting table with methods
 
 --[[
 ----- Check out settings in Pathfind/Settings/static_settings.lua -------------------------------
@@ -18,7 +18,7 @@ MoveToPC()   --> Move to nearest Pokecenter
 	DisableDigPath()
 ------------------]]
 
-function moveToMapAndCell(mapname, x, y)  
+function moveToMapAndCell(mapname, x, y)
     local moving = PathFinder.MoveTo(mapname)
     if not moving and (getPlayerX() ~= x or  getPlayerY() ~= y) then
         moving = moveToCell(x, y)
@@ -27,7 +27,7 @@ function moveToMapAndCell(mapname, x, y)
 end
 
 function onStart()
-	 PathFinder.DisableDigPath() -- example use of settings
+	PathFinder.DisableDigPath() -- example use of settings
 end
 
 function onPathAction()
