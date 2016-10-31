@@ -1,17 +1,11 @@
-
-
-####DEV BRANCH
->In order to use this version of the Pathfinder you will need to take the files from the Moonsharp folder and CustomProshine and replace those in your proshine folder by them. This moonsharp modification is a simple fix that has been merged already, and you can check the proshine changes if you like on my github, everything is public.
-
----
 ##Pathfinder for Proshine
-This script provides a module to move from a map A to a map B using the shortest path.  
-The Objective of this project is to provide a tool to simplify scripting in proshine. So you don't have to use an elseif per map you're crossing.  
-It also provides advanced functionality, settings, and more...  
+This script provides a module to move from a map A to a map B using the shortest path.
+The Objective of this project is to provide a tool to simplify scripting in proshine. So you don't have to use an elseif per map you're crossing.
+It also provides advanced functionality, settings, and more...
 
-[For explanation on how to use read HOWTO](https://github.com/MeltWS/ProShinePathfinder/blob/dev/HOWTO.md).  
-Use `LoadMe_Test.lua` to test the module, I recommand you [read](https://github.com/MeltWS/ProShinePathfinder/blob/dev/LoadMe_Test.lua) it as well.  
-You should also read and modify the setting file located in `Pathfinder/Settings/static_Settings.lua` to your needs.  
+[For explanation on how to use read HOWTO](https://github.com/MeltWS/ProShinePathfinder/blob/dev/HOWTO.md).
+Use `LoadMe_Test.lua` to test the module, I recommand you [read](https://github.com/MeltWS/ProShinePathfinder/blob/dev/LoadMe_Test.lua) it as well.
+You should also read and modify the setting file located in `Pathfinder/Settings/static_Settings.lua` to your needs.
 
 #####Features
 
@@ -44,10 +38,10 @@ You should also read and modify the setting file located in `Pathfinder/Settings
 ## Contributors:
 
 ### lua-astar
-*https://github.com/Shakadak/lua-astar*  
-A simple implementation of the A* pathfinding algorithm  
-The `aStar` function expect a few more arguments than most other implementations available anywhere.  
-I therefore invite you to read `example.lua`  
+*https://github.com/Shakadak/lua-astar*
+A simple implementation of the A* pathfinding algorithm
+The `aStar` function expect a few more arguments than most other implementations available anywhere.
+I therefore invite you to read `example.lua`
 
 ### Original Project
 *https://github.com/Rympex/Pathfinding-Dijkstra*
