@@ -35,7 +35,7 @@ local function isDoable()
 end
 
 local function getRod(map, npcX, npcY)
-    if pf.MoveTo(map) then return end
+    if pf.moveTo(map) then return end
     return talkToNpcOnCell(npcX,npcY)
 end
 

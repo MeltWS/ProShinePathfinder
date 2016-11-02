@@ -6,12 +6,14 @@ end
 
 local Table           = require (cdpath .. "Table")
 local Game            = require (cdpath .. "Game")
-local lib            = require (cdpath .. "lib")
+local Lib            = require (cdpath .. "Lib")
 
 local discardedNpc = 0
 
 local work = {}
 
+local digIndex           = nil
+local headbuttIndex      = nil
 local prevMap            = nil
 local digSpots           = nil
 local headbuttTrees      = nil
@@ -20,6 +22,7 @@ local discoverItems      = nil
 local targetIndex        = nil
 local targets            = nil
 local selectPokeWithMove = nil
+local currentTarget      = nil
 local dialogs            = {
     ["You harvested "] = function() end,      -- berries
     ["You have harvested "] = function() end, -- berries
@@ -27,14 +30,9 @@ local dialogs            = {
     ["Obtained "] = function() end,          -- loot item
     ["You've found "] = function() end,      -- loot item
     ["You obtained "] = function() end,       -- loot TM
-    ["Select a Pokemon that has Headbutt."] = function() selectPokeWithMove("Headbutt", 155) end,
-    ["Select a Pokemon that has Dig."] = function() selectPokeWithMove("Dig", 155) end,
+    ["Select a Pokemon that has Headbutt."] = function() pushDialogAnswer(headbuttIndex) end,
+    ["Select a Pokemon that has Dig."] = function() pushDialogAnswer(digIndex) end,
 }
-
-selectPokeWithMove = function(move, joy)
-    local pokeId = assert(Game.getPokemonNumberWithMove(move, joy), "Work: does not have a Pokemon that can use " .. move)
-    pushDialogAnswer(pokeId)
-end
 
 local function resetData()
     digSpots      = {}
@@ -43,15 +41,16 @@ local function resetData()
     discoverItems = {}
     targets       = {}
     targetIndex   = nil
+    currentTarget        = nil
     prevMap       = nil
 end
 
 local function getNpcsData(opts)
     if opts then
-        if opts.headbutt then
+        if opts.headbutt and opts.headbuttIndex then
             headbuttTrees = assert(getActiveHeadbuttTrees())
         end
-        if opts.dig then
+        if opts.dig and opts.digIndex then
             digSpots = assert(getActiveDigSpots())
         end
         if opts.harvest then
@@ -85,18 +84,22 @@ local function getClosest(x, y, targets)
     return iTarget, target
 end
 
--- is working expects parameter opts to contain an array with keys : dig, harvest, discover, headbutt. Bool values.
+-- is working expects parameter opts to contain an array with keys : dig, harvest, discover, headbutt, headbuttIndex, digIndex. Bool values.
 -- return true if doing an action, false means it's done it's job.
 function work.isWorking(map, opts)
     if map ~= prevMap then
         prevMap = map
+        headbuttIndex = Game.getPokemonNumberWithMove("Headbutt", 155)
+        digIndex = Game.getPokemonNumberWithMove("Dig")
         getNpcsData(opts)
         initTargets()
     end
     while targets and #targets ~= 0 do
-        targetIndex, npc = getClosest(getPlayerX(), getPlayerY(), targets)
-        if talkToNpcOnCell(npc.x, npc.y) then
-            lib.log1time("Checking NPC index: " .. targetIndex .. " --> x:" .. npc.x .. ", y:" .. npc.y)
+        if not currentTarget then
+            targetIndex, currentTarget = getClosest(getPlayerX(), getPlayerY(), targets)
+        end
+        if talkToNpcOnCell(currentTarget.x, currentTarget.y) then
+            Lib.log1time("Work: Checking npc index: " .. targetIndex .. " --> x:" .. currentTarget.x .. ", y:" .. currentTarget.y)
             return true
         else discardedNpc = discardedNpc + 1
         end
@@ -114,18 +117,14 @@ function onWorkDialogMessage(message)
         for check, f in pairs(dialogs) do
             if string.find(message, check) then
                 table.remove(targets, targetIndex)
+                currentTarget = nil
                 f()
             end
         end
     end
 end
 
-function onWorkStop()
-    log("Work --> Discarded NPC: " .. discardedNpc)
-end
-
 registerHook("onStart", onWorkStart)
 registerHook("onDialogMessage", onWorkDialogMessage)
-registerHook("onStop", onWorkStop)
 
 return work

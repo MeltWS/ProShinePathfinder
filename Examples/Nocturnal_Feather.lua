@@ -4,6 +4,7 @@ author = "Melt"
 description = [[Farm Nocturnal Feathers, it assumes you have a pokemon with "Covet"]]
 
 local PathFinder = require "Pathfinder/MoveToApp" -- requesting table with methods
+local map        = nil
 
 function inRectangle(UpperX, UpperY, LowerX, LowerY)
     local ActX = getPlayerX()
@@ -37,12 +38,13 @@ end
 
 
 function onPathAction()
+    map = getMapName()
     if not isNight() then fatal("Feather are only found at night time") end
     if needPC() then
-        return PathFinder.UseNearestPokecenter()
-    elseif getMapName() == "Route 16 Stop House" then
+        return PathFinder.useNearestPokecenter()
+    elseif map == "Route 16 Stop House" then
         moveToCell(20,6)
-    elseif not PathFinder.MoveTo("Route 16") then
+    elseif not PathFinder.moveTo(map, "Route 16") then
         if inRectangle(70,3,91,21) then
             moveToGrass()
         else

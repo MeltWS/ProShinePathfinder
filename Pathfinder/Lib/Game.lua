@@ -14,7 +14,7 @@ function Game.getPokemonNumberWithMove(move, joy) -- optional parameter happines
             return i
         end
     end
-    return false
+    return nil
 end
 
 return Game

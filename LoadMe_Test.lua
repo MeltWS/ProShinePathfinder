@@ -7,33 +7,29 @@ description = [[Simple application of the PathFinder, this script moves to a des
 local PathFinder = require "Pathfinder/MoveToApp"  -- loading the module MoveToApp and getting the functions it sends back in a table: PathFinder.
 -- Now to use PathFinder functions you can write PathFinder.functionName().
 -- You can require MoveToApp from anywhere above in the hierarchie.
+local map = nil -- we want to only call getMapName() on time per onPathAction() so we use this variable
 
 --[[
 
------ /!\ Check out settings in Pathfind/Settings/static_settings.lua /!\ -------------------------------
+----- /!\ Check out settings in Pathfind/Settings/Static_Settings.lua /!\ -------------------------------
 
 -- Most usefull calls :
-MoveTo(dest) --> Main function for moving to dest. return false when done. true if destination is not reached. Need to be called multiple times. dest can be a string or a list of string.
-MoveToPC()   --> Move to nearest Pokecenter.
-UseNearestPokecenter() --> Go heal your team to the nearest Pokecenter.
-UseNearestPokemart(item, amount) --> /!\ experimental, item map is not completed./!\ Go to nearest pokemart buy item, at amount times. Return false when successfully buy item, true when moving.
+moveTo(map, dest) --> Main function for moving to dest. return false when done. true if destination is not reached. Need to be called multiple times. dest can be a string or a list of string. map is the current player map
+moveToPC(map)   --> Move to nearest Pokecenter.
+useNearestPokecenter(map) --> Go heal your team to the nearest Pokecenter.
+useNearestPokemart(map, item, amount) --> /!\ experimental, item map is not completed./!\ Go to nearest pokemart buy item, at amount times. Return false when successfully buy item, true when moving.
 
 --> Possible Setting Calls (If for some reason you want to disable some path or enable them manually)
 --> Those setting are set on loading dynamically depending on your bot items and Pokemons, so you don't have to worry about them usually.
-    - EnableBikePath() -- to use digway shorcuts
-    - DisableBikePath()
-    - EnableDigPath() -- to use Bike exclusive paths
-    - DisableDigPath()
+    - enableDigPath() -- to use Bike exclusive paths
+    - disableDigPath()
 
-if you need more details see HOWTO
+if you need more details see HOWTO and README
 ------------------]]
 
-function onStart()
---  PathFinder.DisableDigPath() -- example use of settings, this would prevent the pathfinder from using digway shortcuts, even if you had a pokemon with dig.
-end
-
 function onPathAction()
-    PathFinder.MoveTo("Pokemon Tower B29") -- example use of MoveTo(dest)
+    map = getMapName() -- get the map name
+    PathFinder.moveTo(map, "Indigo Plateau Center")
     -- the line above will move the bot to the map "Indigo Plateau Center"
 end
 

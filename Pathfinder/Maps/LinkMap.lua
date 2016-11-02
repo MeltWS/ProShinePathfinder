@@ -3,7 +3,7 @@ local function nTimes(n, f, x) for i = 0, n - 1 do x = f(x) end return x end -- 
 local function rmlast(str) return str:sub(1, -2):match(".+[%./]") or "" end -- removes last dir / file from the callee path
 local cpdpath = nTimes(2, rmlast, cpath) -- callee parent of parent dir path
 
-local _ss = require (cpdpath .. "Settings/static_Settings")
+local _ss = require (cpdpath .. "Settings/Static_Settings")
 
 return function()
 
