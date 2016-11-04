@@ -13,106 +13,172 @@ local J_SUBWAY = ss.J_SUBWAY
 
 local JohtoMap = {}
 
-JohtoMap["Azalea Pokemart"] = {["Azalea Town"] = 1}
-JohtoMap["Azalea Town"] = {["Azalea Pokemart"] = 1, ["Ilex Forest Stop House"] = 1, ["Pokecenter Azalea"] = 1, ["Route 33"] = 1}
-JohtoMap["Battle Road"] = {["Route 40"] = 1}
-JohtoMap["Blackthorn City"] = {["Blackthorn City Pokemart"] = 1, ["Dragons Den Entrance"] = 1, ["Ice Path 1F"] = 1, ["Pokecenter Blackthorn"] = 1, ["Route 45"] = 1}
-JohtoMap["Blackthorn City Pokemart"] = {["Blackthorn City"] = 1}
-JohtoMap["Cherrygrove City"] = {["Mart Cherrygrove City"] = 1, ["Pokecenter Cherrygrove City"] = 1, ["Route 29"] = 1, ["Route 30"] = 1}
-JohtoMap["Cianwood City"] = {["Cliff Edge Gate"] = 1, ["Pokecenter Cianwood"] = 1, ["Route 41"] = 1}
-JohtoMap["Cliff Cave 1F"] = {["Cliff Cave 2F"] = 1, ["Cliff Cave B1F"] = 1, ["Route 47"] = 1}
-JohtoMap["Cliff Cave 2F"] = {["Cliff Cave 1F"] = 1, ["Route 47"] = 1}
-JohtoMap["Cliff Cave B1F"] = {["Cliff Cave 1F"] = 1, ["Route 47"] = 1}
-JohtoMap["Cliff Edge Gate"] = {["Cianwood City"] = 1, ["Route 47"] = 1}
-JohtoMap["Dark Cave North"] = {["Dark Cave South"] = 1, ["Route 45"] = 1}
-JohtoMap["Dark Cave South"] = {["Route 31"] = 1}
-JohtoMap["Dragons Den"] = {["Dragons Den B1F"] = 1, ["Dragons Den Entrance"] = 1}
-JohtoMap["Dragons Den B1F"] = {["Dragons Den"] = 1}
-JohtoMap["Dragons Den Entrance"] = {["Blackthorn City"] = 1, ["Dragons Den"] = 1}
-JohtoMap["Ecruteak City"] = {["Ecruteak Mart"] = 1, ["Ecruteak Stop House 1"] = 1, ["Ecruteak Stop House 2"] = 1, ["Pokecenter Ecruteak"] = 1, ["Route 37"] = 1}
-JohtoMap["Ecruteak Mart"] = {["Ecruteak City"] = 1}
-JohtoMap["Ecruteak Stop House 1"] = {["Ecruteak City"] = 1, ["Route 38"] = 1}
-JohtoMap["Ecruteak Stop House 2"] = {["Ecruteak City"] = 1, ["Route 42"] = 1}
-JohtoMap["Goldenrod City"] = {["Goldenrod Mart 1"] = 1, ["Pokecenter Goldenrod"] = 1, ["Route 34"] = 1, ["Route 35 Stop House"] = 1, ["Goldenrod City Station"] = 1}
-JohtoMap["Goldenrod City Station"] = {["Goldenrod City"] = 1, ["Goldenrod City Station Floor 2"] = 1}
-JohtoMap["Goldenrod City Station Floor 2"] = {["Goldenrod City Station"] = 1}
-JohtoMap["Goldenrod Mart 1"] = {["Goldenrod City"] = 1, ["Goldenrod Mart 2"] = 1}
-JohtoMap["Goldenrod Mart 2"] = {["Goldenrod Mart 1"] = 1}
-JohtoMap["Ice Path 1F"] = {["Blackthorn City"] = 1, ["Ice Path B1F"] = 1, ["Route 44"] = 1}
-JohtoMap["Ice Path B1F"] = {["Ice Path 1F"] = 1, ["Ice Path B2F"] = 1}
-JohtoMap["Ice Path B2F"] = {["Ice Path B1F"] = 1, ["Ice Path B3F"] = 1}
-JohtoMap["Ice Path B3F"] = {["Ice Path B2F"] = 1}
-JohtoMap["Ilex Forest"] = {["Ilex Forest Stop House"] = 1, ["Route 34 Stop House"] = 1}
-JohtoMap["Ilex Forest Stop House"] = {["Azalea Town"] = 1, ["Ilex Forest"] = 1}
-JohtoMap["Johto Safari Zone Lobby"] = {["Route 48"] = 1}
-JohtoMap["Lake Of Rage"] = {["Route 43"] = 1}
-JohtoMap["Mahogany Town"] = {["Pokecenter Mahogany"] = 1, ["Route 42"] = 1, ["Route 43"] = 1, ["Route 44"] = 1}
-JohtoMap["Mart Cherrygrove City"] = {["Cherrygrove City"] = 1}
-JohtoMap["Mt. Mortar 1F"] = {["Mt. Mortar Lower Cave"] = 1, ["Route 42"] = 1}
-JohtoMap["Mt. Mortar Lower Cave"] = {["Mt. Mortar 1F"] = 1}
-JohtoMap["National Park"] = {["National Park Stop"] = 1, ["National Park Stop House 1"] = 1}
-JohtoMap["National Park Stop"] = {["National Park"] = 1, ["Route 36"] = 1}
-JohtoMap["National Park Stop House 1"] = {["National Park"] = 1, ["Route 35"] = 1}
-JohtoMap["New Bark Town"] = {["Route 29"] = 1}
-JohtoMap["Olivine City"] = {["Olivine Pokecenter"] = 1, ["Olivine Pokemart"] = 1, ["Route 39"] = 1, ["Route 40"] = 1, ["Olivine House 1"] = 1}
-JohtoMap["Olivine House 1"] = {["Olivine City"] = 1}
-JohtoMap["Olivine Pokecenter"] = {["Olivine City"] = 1, ["Olivine City Subway"] = 1}
-JohtoMap["Olivine Pokemart"] = {["Olivine City"] = 1}
-JohtoMap["Pokecenter Azalea"] = {["Azalea Town"] = 1, ["Azalea Town Subway"] = 1}
-JohtoMap["Pokecenter Blackthorn"] = {["Blackthorn City"] = 1, ["Blackthorn City Subway"] = 1}
-JohtoMap["Pokecenter Cherrygrove City"] = {["Cherrygrove City"] = 1, ["Cherrygrove City Subway"] = 1}
-JohtoMap["Pokecenter Cianwood"] = {["Cianwood City"] = 1}
-JohtoMap["Pokecenter Ecruteak"] = {["Ecruteak City"] = 1, ["Ecruteak City Subway"] = 1}
-JohtoMap["Pokecenter Goldenrod"] = {["Goldenrod City"] = 1, ["Goldenrod City Subway"] = 1}
-JohtoMap["Pokecenter Mahogany"] = {["Mahogany Town"] = 1, ["Mahogany Town Subway"] = 1}
-JohtoMap["Pokecenter Route 32"] = {["Route 32"] = 1}
-JohtoMap["Pokecenter Route 48"] = {["Route 48"] = 1}
-JohtoMap["Pokecenter Violet City"] = {["Violet City"] = 1, ["Violet City Subway"] = 1}
-JohtoMap["Route 29"] = {["Cherrygrove City"] = 1, ["New Bark Town"] = 1, ["Route 29 Stop House"] = 1}
-JohtoMap["Route 29 Stop House"] = {["Route 29"] = 1, ["Route 46"] = 1}
-JohtoMap["Route 30"] = {["Cherrygrove City"] = 1, ["Route 31"] = 1}
-JohtoMap["Route 31"] = {["Dark Cave South"] = 1, ["Route 30"] = 1, ["Violet City Stop House"] = 1}
-JohtoMap["Route 32"] = {["Pokecenter Route 32"] = 1, ["Ruins Of Alph Stop House"] = 1, ["Union Cave 1F"] = 1, ["Violet City"] = 1}
-JohtoMap["Route 33"] = {["Azalea Town"] = 1, ["Union Cave 1F"] = 1}
-JohtoMap["Route 34"] = {["Goldenrod City"] = 1, ["Route 34 Stop House"] = 1}
-JohtoMap["Route 34 Stop House"] = {["Ilex Forest"] = 1, ["Route 34"] = 1}
-JohtoMap["Route 35"] = {["National Park Stop House 1"] = 1, ["Route 35 Stop House"] = 1, ["Route 36"] = 1}
-JohtoMap["Route 35 Stop House"] = {["Goldenrod City"] = 1, ["Route 35"] = 1}
-JohtoMap["Route 36"] = {["Route 35"] = 1, ["Route 36 Stop"] = 1, ["Route 37"] = 1, ["Ruins Of Alph Stop House 1"] = 1}
-JohtoMap["Route 36 Stop"] = {["Route 36"] = 1, ["Violet City"] = 1}
-JohtoMap["Route 37"] = {["Ecruteak City"] = 1, ["Route 36"] = 1}
-JohtoMap["Route 38"] = {["Ecruteak Stop House 1"] = 1, ["Route 39"] = 1}
-JohtoMap["Route 39"] = {["Olivine City"] = 1, ["Route 38"] = 1}
-JohtoMap["Route 40"] = {["Battle Road"] = 1, ["Olivine City"] = 1, ["Route 41"] = 1}
-JohtoMap["Route 41"] = {["Cianwood City"] = 1, ["Route 40"] = 1, ["Whirl Islands 1F NorthEast"] = 1, ["Whirl Islands 1F NorthWest"] = 1, ["Whirl Islands 1F SouthWest"] = 1}
-JohtoMap["Route 42"] = {["Mahogany Town"] = 1, ["Mt. Mortar 1F"] = 1}
-JohtoMap["Route 43"] = {["Lake Of Rage"] = 1, ["Mahogany Town"] = 1}
-JohtoMap["Route 44"] = {["Ice Path 1F"] = 1, ["Mahogany Town"] = 1}
-JohtoMap["Route 45"] = {["Blackthorn City"] = 1, ["Dark Cave North"] = 1, ["Route 46"] = 1}
-JohtoMap["Route 46"] = {["Route 29 Stop House"] = 1}
-JohtoMap["Route 47"] = {["Cliff Cave 1F"] = 1, ["Cliff Cave 2F"] = 1, ["Cliff Cave B1F"] = 1, ["Cliff Edge Gate"] = 1, ["Route 48"] = 1}
-JohtoMap["Route 48"] = {["Johto Safari Zone Lobby"] = 1, ["Pokecenter Route 48"] = 1, ["Route 47"] = 1}
-JohtoMap["Ruins Of Alph"] = {["Ruins Of Alph Stop House"] = 1, ["Ruins Of Alph Stop House 1"] = 1}
-JohtoMap["Ruins Of Alph Stop House"] = {["Route 32"] = 1, ["Ruins Of Alph"] = 5}
-JohtoMap["Ruins Of Alph Stop House 1"] = {["Route 36"] = 1, ["Ruins Of Alph"] = 5}
-JohtoMap["Union Cave 1F"] = {["Route 32"] = 1, ["Route 33"] = 1, ["Ruins Of Alph"] = 3, ["Union Cave B1F"] = 1}
-JohtoMap["Union Cave B1F"] = {["Union Cave 1F"] = 1, ["Union Cave B2F"] = 1}
-JohtoMap["Union Cave B2F"] = {["Union Cave 1F"] = 1, ["Union Cave B1F"] = 1}
-JohtoMap["Violet City"] = {["Pokecenter Violet City"] = 1, ["Route 32"] = 1, ["Route 36 Stop"] = 1, ["Violet City Pokemart"] = 1, ["Violet City Stop House"] = 1}
-JohtoMap["Violet City Pokemart"] = {["Violet City"] = 1}
-JohtoMap["Violet City Stop House"] = {["Route 31"] = 1, ["Violet City"] = 1}
-JohtoMap["Whirl Islands 1F NorthEast"] = {["Whirl Islands B1F"] = 1}
-JohtoMap["Whirl Islands 1F NorthWest"] = {["Route 41"] = 1, ["Whirl Islands B1F"] = 1}
-JohtoMap["Whirl Islands 1F SouthWest"] = {["Route 41"] = 1, ["Whirl Islands B1F"] = 1}
-JohtoMap["Whirl Islands B1F"] = {["Whirl Islands 1F NorthEast"] = 1, ["Whirl Islands 1F NorthWest"] = 1, ["Whirl Islands 1F SouthWest"] = 1}
-JohtoMap["Mahogany Town Subway"] = {["Pokecenter Mahogany"] = 1, ["Olivine City Subway"] = J_SUBWAY, ["Violet City Subway"] = J_SUBWAY, ["Azalea Town Subway"] = J_SUBWAY, ["Blackthorn City Subway"] = J_SUBWAY, ["Cherrygrove City Subway"] = J_SUBWAY, ["Ecruteak City Subway"] = J_SUBWAY, ["Goldenrod City Subway"] = J_SUBWAY}
-JohtoMap["Olivine City Subway"] = {["Olivine Pokecenter"] = 1, ["Mahogany Town Subway"] = J_SUBWAY, ["Violet City Subway"] = J_SUBWAY, ["Azalea Town Subway"] = J_SUBWAY, ["Blackthorn City Subway"] = J_SUBWAY, ["Cherrygrove City Subway"] = J_SUBWAY, ["Ecruteak City Subway"] = J_SUBWAY, ["Goldenrod City Subway"] = J_SUBWAY}
-JohtoMap["Violet City Subway"] = {["Pokecenter Violet City"] = 1, ["Olivine City Subway"] = J_SUBWAY, ["Mahogany Town Subway"] = J_SUBWAY, ["Azalea Town Subway"] = J_SUBWAY, ["Blackthorn City Subway"] = J_SUBWAY, ["Cherrygrove City Subway"] = J_SUBWAY, ["Ecruteak City Subway"] = J_SUBWAY, ["Goldenrod City Subway"] = J_SUBWAY}
-JohtoMap["Azalea Town Subway"] = {["Pokecenter Azalea"] = 1, ["Olivine City Subway"] = J_SUBWAY, ["Violet City Subway"] = J_SUBWAY, ["Mahogany Town Subway"] = J_SUBWAY, ["Blackthorn City Subway"] = J_SUBWAY, ["Cherrygrove City Subway"] = J_SUBWAY, ["Ecruteak City Subway"] = J_SUBWAY, ["Goldenrod City Subway"] = J_SUBWAY}
-JohtoMap["Blackthorn City Subway"] = {["Pokecenter Blackthorn"] = 1, ["Olivine City Subway"] = J_SUBWAY, ["Violet City Subway"] = J_SUBWAY, ["Azalea Town Subway"] = J_SUBWAY, ["Mahogany Town Subway"] = J_SUBWAY, ["Cherrygrove City Subway"] = J_SUBWAY, ["Ecruteak City Subway"] = J_SUBWAY, ["Goldenrod City Subway"] = J_SUBWAY}
-JohtoMap["Cherrygrove City Subway"] = {["Pokecenter Cherrygrove City"] = 1, ["Olivine City Subway"] = J_SUBWAY, ["Violet City Subway"] = J_SUBWAY, ["Azalea Town Subway"] = J_SUBWAY, ["Blackthorn City Subway"] = J_SUBWAY, ["Mahogany Town Subway"] = J_SUBWAY, ["Ecruteak City Subway"] = J_SUBWAY, ["Goldenrod City Subway"] = J_SUBWAY}
-JohtoMap["Ecruteak City Subway"] = {["Pokecenter Ecruteak"] = 1, ["Olivine City Subway"] = J_SUBWAY, ["Violet City Subway"] = J_SUBWAY, ["Azalea Town Subway"] = J_SUBWAY, ["Blackthorn City Subway"] = J_SUBWAY, ["Cherrygrove City Subway"] = J_SUBWAY, ["Mahogany Town Subway"] = J_SUBWAY, ["Goldenrod City Subway"] = J_SUBWAY}
-JohtoMap["Goldenrod City Subway"] = {["Pokecenter Goldenrod"] = 1, ["Olivine City Subway"] = J_SUBWAY, ["Violet City Subway"] = J_SUBWAY, ["Azalea Town Subway"] = J_SUBWAY, ["Blackthorn City Subway"] = J_SUBWAY, ["Cherrygrove City Subway"] = J_SUBWAY, ["Ecruteak City Subway"] = J_SUBWAY, ["Mahogany Town Subway"] = J_SUBWAY}
+JohtoMap["Pokecenter Goldenrod"] = {["Goldenrod City"] = {1}, ["Goldenrod City Subway"] = {0.2}}
+JohtoMap["Goldenrod City"] = {["Goldenrod Mart 1"] = {1}, ["Pokecenter Goldenrod"] = {1}, ["Route 34_A"] = {1}, ["Route 35 Stop House"] = {1}, ["Goldenrod City Station_A"] = {1}, ["Goldenrod Underground Entrance Top"] = {1}, ["Goldenrod Underground Entrance Bottom"] = {1}}
+JohtoMap["Goldenrod City Station Floor 2"] = {["Goldenrod City Station_B"] = {0.5}}
+JohtoMap["Goldenrod City Station_A"] = {["Goldenrod City Station_B"] = {0.5}, ["Goldenrod City"] = {0.5}}
+JohtoMap["Goldenrod City Station_B"] = {["Goldenrod City Station Floor 2"] = {1}, ["Goldenrod City Station_A"] = {0.5}}
+JohtoMap["Goldenrod Mart B1F"] = {["Goldenrod Mart Elevator"] = {1}, ["Underground Warehouse"] = {1}}
+JohtoMap["Underground Warehouse"] = {["Goldenrod Mart B1F"] = {1}, ["Goldenrod Underground Path"] = {1}}
+JohtoMap["Goldenrod Underground Entrance Bottom"] = {["Goldenrod City"] = {0.2}, ["Goldenrod Underground Path"] = {0.2}}
+JohtoMap["Goldenrod Underground Entrance Top"] = {["Goldenrod City"] = {0.2}, ["Goldenrod Underground Path"] = {0.2}}
+JohtoMap["Goldenrod Underground Path"] = {["Goldenrod Underground Entrance Top"] = {1}, ["Goldenrod Underground Entrance Bottom"] = {1}, ["Underground Warehouse"] = {1}}
+JohtoMap["Goldenrod Mart 1"] = {["Goldenrod Mart 2"] = {1}, ["Goldenrod Mart Elevator"] = {1}, ["Goldenrod City"] = {1}}
+JohtoMap["Goldenrod Mart 2"] = {["Goldenrod Mart 1"] = {1}, ["Goldenrod Mart Elevator"] = {1}, ["Goldenrod Mart 3"] = {1}}
+JohtoMap["Goldenrod Mart 3"] = {["Goldenrod Mart 2"] = {1}, ["Goldenrod Mart Elevator"] = {1}, ["Goldenrod Mart 4"] = {1}}
+JohtoMap["Goldenrod Mart 4"] = {["Goldenrod Mart 3"] = {1}, ["Goldenrod Mart Elevator"] = {1}, ["Goldenrod Mart 5"] = {1}}
+JohtoMap["Goldenrod Mart 5"] = {["Goldenrod Mart 4"] = {1}, ["Goldenrod Mart Elevator"] = {1}, ["Goldenrod Mart 6"] = {1}}
+JohtoMap["Goldenrod Mart 6"] = {["Goldenrod Mart 5"] = {1}, ["Goldenrod Mart Elevator"] = {1}}
+JohtoMap["Goldenrod Mart Elevator"] = {["Goldenrod Mart 2"] = {0.2}, ["Goldenrod Mart 1"] = {0.2}, ["Goldenrod Mart 4"] = {0.2}, ["Goldenrod Mart 3"] = {0.2}, ["Goldenrod Mart 5"] = {0.2}, ["Goldenrod Mart 6"] = {0.2}, ["Goldenrod Mart B1F"] = {0.2}}
+JohtoMap["Route 35 Stop House"] = {["Goldenrod City"] = {0.2}, ["Route 35_A"] = {0.2}}
+JohtoMap["Route 35_A"] = {["National Park Stop House 1"] = {1}, ["Route 35 Stop House"] = {1}, ["Route 35_B"] = {1, {["abilities"] = {"cut"}}}}
+JohtoMap["Route 35_B"] = {["Route 35_A"] = {0, {["abilities"] = {"cut"}}}, ["Route 36"] = {0.2}}
+JohtoMap["National Park"] = {["National Park Stop"] = {1.5}, ["National Park Stop House 1"] = {1.5}}
+JohtoMap["National Park Stop"] = {["National Park"] = {0.2}, ["Route 36"] = {0.2}}
+JohtoMap["National Park Stop House 1"] = {["National Park"] = {0.2}, ["Route 35_A"] = {0.2}}
+JohtoMap["Route 36"] = {["Route 35_B"] = {1}, ["Route 36 Stop"] = {1}, ["Route 37"] = {1}, ["Ruins Of Alph Stop House 1"] = {1}}
+JohtoMap["Route 36 Stop"] = {["Route 36"] = {0.2}, ["Violet City"] = {0.2}}
+JohtoMap["Pokecenter Violet City"] = {["Violet City"] = {1}, ["Violet City Subway"] = {0.2}}
+JohtoMap["Violet City"] = {["Pokecenter Violet City"] = {1}, ["Route 32"] = {1}, ["Route 36 Stop"] = {1}, ["Violet City Pokemart"] = {1}, ["Violet City Stop House"] = {1}}
+JohtoMap["Violet City Pokemart"] = {["Violet City"] = {1}}
+JohtoMap["Violet City Stop House"] = {["Route 31"] = {0.2}, ["Violet City"] = {0.2}}
+JohtoMap["Route 32"] = {["Pokecenter Route 32"] = {1.5}, ["Ruins Of Alph Stop House"] = {1.5}, ["Union Cave 1F_C"] = {1.5}, ["Violet City"] = {1.5}, ["Route 33"] = {1.5, {["abilities"] = {"dig"}}}}
+JohtoMap["Pokecenter Route 32"] = {["Route 32"] = {1}}
+JohtoMap["Ruins Of Alph Stop House"--[[npcs entrance]]] = {["Route 32"] = {1}, ["Ruins Of Alph_A"] = {0.2, {["items"] = {"Zephyr Badge"}}}}
+JohtoMap["Ruins Of Alph Stop House 1"--[[npcs entrance]]] = {["Route 36"] = {0.2}, ["Ruins Of Alph_A"] = {0.2, {["items"] = {"Zephyr Badge"}}}}
+JohtoMap["Ruins Of Alph_A"--[[npcs entrance]]] = {["Ruins Of Alph Stop House"] = {1}, ["Ruins Of Alph Stop House 1"] = {1}, ["Ruins Of Alph_D"] = {1, {["abilities"] = {"surf"}}}}
+JohtoMap["Ruins Of Alph_B"] = {["Union Cave 1F_B"] = {1}}
+JohtoMap["Ruins Of Alph_C"] = {["Ruins Of Alph_D"] = {0.2}, ["Union Cave 1F_A"] = {0.2}}
+JohtoMap["Ruins Of Alph_D"] = {["Ruins Of Alph_A"] = {0.5, {["abilities"] = {"surf"}}}}
+JohtoMap["Union Cave 1F_A"] = {["Union Cave B2F_A"] = {0.5}, ["Ruins Of Alph_C"] = {0.5}}
+JohtoMap["Union Cave 1F_B"] = {["Union Cave B2F_B"] = {0.5}, ["Ruins Of Alph_B"] = {0.5}}
+JohtoMap["Union Cave 1F_C"] = {["Union Cave 1F_D"] = {2.5, {["abilities"] = {"surf"}}}, ["Route 32"] = {2.5}, ["Route 33"] = {2.5}, ["Union Cave B1F_A"] = {2.5}}
+JohtoMap["Union Cave 1F_D"] = {["Union Cave 1F_C"] = {0, {["abilities"] = {"surf"}}}, ["Union Cave B1F_C"] = {0.5}}
+JohtoMap["Union Cave B1F_A"] = {["Union Cave 1F_C"] = {0.5}, ["Union Cave B1F_B"] = {0.5, {["abilities"] = {"surf"}}}}
+JohtoMap["Union Cave B1F_B"] = {["Union Cave B2F_A"] = {1.5}, ["Union Cave B2F_B"] = {1.5}, ["Union Cave B1F_A"] = {1.5, {["abilities"] = {"surf"}}}}
+JohtoMap["Union Cave B1F_C"] = {["Union Cave 1F_D"] = {1, {["abilities"] = {"surf"}}}, ["Union Cave B2F_C"] = {1, {["abilities"] = {"surf"}}}}
+JohtoMap["Union Cave B2F_A"] = {["Union Cave 1F_A"] = {1}, ["Union Cave B1F_B"] = {1}}
+JohtoMap["Union Cave B2F_B"] = {["Union Cave 1F_B"] = {1}, ["Union Cave B1F_B"] = {1}}
+JohtoMap["Union Cave B2F_C"] = {["Union Cave B1F_C"] = {1}}
+JohtoMap["Route 33"] = {["Azalea Town"] = {1}, ["Union Cave 1F_C"] = {1}, ["Route 32"] = {1, {["abilities"] = {"dig"}}}}
+JohtoMap["Route 37"] = {["Ecruteak City"] = {1}, ["Route 36"] = {1}}
+JohtoMap["Ecruteak City"] = {["Ecruteak Mart"] = {1}, ["Ecruteak Stop House 1"] = {1}, ["Ecruteak Stop House 2"] = {1}, ["Pokecenter Ecruteak"] = {1}, ["Route 37"] = {1}}
+JohtoMap["Ecruteak Mart"] = {["Ecruteak City"] = {1}}
+JohtoMap["Ecruteak Stop House 1"] = {["Ecruteak City"] = {0.2}, ["Route 38"] = {0.2}}
+JohtoMap["Ecruteak Stop House 2"] = {["Ecruteak City"] = {0.2}, ["Route 42_A"] = {0.2}}
+JohtoMap["Pokecenter Ecruteak"] = {["Ecruteak City"] = {1}, ["Ecruteak City Subway"] = {0.2}}
+JohtoMap["Route 42_A"] = {["Ecruteak Stop House 2"] = {0.2}, ["Mt. Mortar 1F_A"] = {0.2}, ["Route 42_D"] = {0, {["abilities"] = {"dig"}}}}
+JohtoMap["Route 42_B"] = {["Mt. Mortar 1F_B"] = {0.2}, ["Route 42_A"] = {0.2, {["abilities"] = {"surf"}}}, ["Route 42_C"] = {0.2, {["abilities"] = {"surf"}}}, ["Route 42_D"] = {0.2, {["abilities"] = {"surf"}}}}
+JohtoMap["Route 42_C"] = {["Mt. Mortar 1F_D"] = {0.2}, ["Route 42_B"] = {0.2, {["abilities"] = {"surf"}}}, ["Route 42_D"] = {0.2, {["abilities"] = {"surf"}}}}
+JohtoMap["Route 42_D"] = {["Mahogany Town"] = {0.2}, ["Mt. Mortar 1F_C"] = {0.2}, ["Route 42_A"] = {0, {["abilities"] = {"dig"}}}, ["Route 42_C"] = {0.2, {["abilities"] = {"surf"}}}, ["Route 42_B"] = {0.2, {["abilities"] = {"surf"}}}, ["Route 42_E"] = {0, {["abilities"] = {"rock climb"}}}}
+JohtoMap["Route 42_E"] = {["Route 42_D"] = {0}}
+JohtoMap["Mt. Mortar 1F_A"] = {["Mt. Mortar Lower Cave"] = {1}, ["Route 42_A"] = {1}}
+JohtoMap["Mt. Mortar 1F_B"] = {["Mt. Mortar B1F_A"] = {1}, ["Route 42_B"] = {1}}
+JohtoMap["Mt. Mortar 1F_C"] = {["Mt. Mortar Lower Cave"] = {1}, ["Route 42_D"] = {1}}
+JohtoMap["Mt. Mortar 1F_D"] = {["Mt. Mortar Lower Cave"] = {1.5}, ["Route 42_C"] = {1}}
+JohtoMap["Mt. Mortar 1F_E"] = {["Mt. Mortar Lower Cave"] = {1}}
+JohtoMap["Mt. Mortar 1F_F"] = {["Mt. Mortar Upper Cave"] = {1}}
+JohtoMap["Mt. Mortar 1F_G"] = {["Mt. Mortar Lower Cave"] = {1}}
+JohtoMap["Mt. Mortar Lower Cave"] = {["Mt. Mortar 1F_C"] = {1.5}, ["Mt. Mortar 1F_A"] = {1.5}, ["Mt. Mortar 1F_E"] = {1.5}, ["Mt. Mortar 1F_G"] = {1.5}, ["Mt. Mortar 1F_D"] = {2}, ["Mt. Mortar B1F_B"] = {2.5}, ["Mt. Mortar Upper Cave"] = {2.5}}
+JohtoMap["Mt. Mortar Upper Cave"] = {["Mt. Mortar Lower Cave"] = {1.5, {["abilities"] = {"surf"}}}, ["Mt. Mortar 1F_F"] = {2}}
+JohtoMap["Mt. Mortar B1F_A"] = {["Mt. Mortar 1F_B"] = {1}, ["Mt. Mortar B1F_B"] = {1, {["abilities"] = {"surf"}}}}
+JohtoMap["Mt. Mortar B1F_B"] = {["Mt. Mortar B1F_A"] = {1, {["abilities"] = {"surf"}}}, ["Mt. Mortar Lower Cave"] = {1}}
+JohtoMap["Mahogany Town"] = {["Pokecenter Mahogany"] = {1}, ["Route 42_D"] = {1}, ["Route 43"] = {1}, ["Route 44"] = {1}}
+JohtoMap["Pokecenter Mahogany"] = {["Mahogany Town"] = {1}, ["Mahogany Town Subway"] = {0.2}}
+JohtoMap["Route 43"] = {["Lake of Rage_A"] = {1}, ["Lake of Rage_B"] = {1}, ["Mahogany Town"] = {1}}
+JohtoMap["Lake of Rage_A"] = {["Route 43"] = {1}, ["Lake of Rage_C"] = {1, {["abilities"] = {"cut"}}}}
+JohtoMap["Lake of Rage_B"] = {["Route 43"] = {1}, ["Lake of Rage_E"] = {1, {["abilities"] = {"cut"}}}}
+JohtoMap["Lake of Rage_C"] = {["Lake of Rage_A"] = {1, {["abilities"] = {"cut"}}}}
+JohtoMap["Lake of Rage_D"] = {["Lake of Rage_B"] = {1, {["abilities"] = {"cut"}}}}
+JohtoMap["Lake of Rage_E"] = {["Lake of Rage_B"] = {1, {["abilities"] = {"cut"}}}, ["Lake of Rage_D"] = {1, {["abilities"] = {"cut"}}}}
+JohtoMap["Route 44"] = {["Ice Path 1F_A"] = {1}, ["Mahogany Town"] = {1}, ["Blackthorn City"] = {1, {["abilities"] = {"dig"}}}}
+JohtoMap["Ice Path 1F_A"] = {["Route 44"] = {3}, ["Ice Path B1F_A"] = {3}}
+JohtoMap["Ice Path 1F_B"] = {["Blackthorn City"] = {1}, ["Ice Path B1F_B"] = {1}}
+JohtoMap["Ice Path B1F_A"] = {["Ice Path B2F_A"] = {0.5}, ["Ice Path 1F_A"] = {1.5}}
+JohtoMap["Ice Path B1F_B"] = {["Ice Path B2F_B"] = {1}, ["Ice Path 1F_B"] = {1}}
+JohtoMap["Ice Path B2F_A"] = {["Ice Path B3F"] = {1}, ["Ice Path B1F_A"] = {1}}
+JohtoMap["Ice Path B2F_B"] = {["Ice Path B3F"] = {1}, ["Ice Path B1F_B"] = {1}}
+JohtoMap["Ice Path B3F"] = {["Ice Path B2F_A"] = {1}, ["Ice Path B2F_B"] = {1}}
+JohtoMap["Blackthorn City"] = {["Blackthorn City Pokemart"] = {1}, ["Route 44"] = {1, {["abilities"] = {"dig"}}}, ["Dragons Den Entrance"] = {1, {["abilities"] = {"surf"}}}, ["Ice Path 1F_B"] = {1}, ["Pokecenter Blackthorn"] = {1}, ["Route 45_A"] = {1}}
+JohtoMap["Blackthorn City Pokemart"] = {["Blackthorn City"] = {1}}
+JohtoMap["Pokecenter Blackthorn"] = {["Blackthorn City"] = {1}, ["Blackthorn City Subway"] = {0.2}}
+JohtoMap["Dragons Den"] = {["Dragons Den B1F"] = {1, {["abilities"] = {"surf"}}}, ["Dragons Den Entrance"] = {1}}
+JohtoMap["Dragons Den B1F"] = {["Dragons Den"] = {1, {["abilities"] = {"surf"}}}}
+JohtoMap["Dragons Den Entrance"] = {["Blackthorn City"] = {1}, ["Dragons Den"] = {1}}
+JohtoMap["Route 45_A"] = {["Blackthorn City"] = {0.5}, ["Dark Cave North_A"] = {0.5}, ["Route 45_B"] = {0.5}, ["Route 31"] = {0.5, {["abilities"] = {"dig"}}}}
+JohtoMap["Route 45_B"] = {["Route 46_A"] = {1.5}}
+JohtoMap["Route 46_A"] = {["Route 46_B"] = {0.5}, ["Route 45_B"] = {0.5}, ["Dark Cave South_D"] = {0.5}}
+JohtoMap["Route 46_B"] = {["Route 29 Stop House"] = {0.5}}
+JohtoMap["Route 29 Stop House"] = {["Route 29"] = {0.2}, ["Route 46_B"] = {0.2}}
+JohtoMap["Route 29"] = {["Cherrygrove City_A"] = {1}, ["New Bark Town"] = {1}, ["Route 29 Stop House"] = {1}}
+JohtoMap["New Bark Town"] = {["Route 29"] = {1}}
+JohtoMap["Mart Cherrygrove City"] = {["Cherrygrove City_A"] = {1}}
+JohtoMap["Pokecenter Cherrygrove City"] = {["Cherrygrove City_A"] = {1}, ["Cherrygrove City Subway"] = {0.2}}
+JohtoMap["Cherrygrove City_A"] = {["Mart Cherrygrove City"] = {1}, ["Pokecenter Cherrygrove City"] = {1}, ["Route 29"] = {1}, ["Route 30"] = {1}}
+JohtoMap["Cherrygrove City_B"] = {["Route 30"] = {1}}
+JohtoMap["Route 30"] = {["Cherrygrove City_A"] = {1.5}, ["Cherrygrove City_B"] = {1.5, {["abilities"] = {"surf"}}}, ["Route 31"] = {1.5}}
+JohtoMap["Route 31"] = {["Dark Cave South_A"] = {1}, ["Route 30"] = {1}, ["Violet City Stop House"] = {1}, ["Route 45_A"] = {1, {["abilities"] = {"dig"}}}}
+JohtoMap["Dark Cave North_A"] = {["Route 45_A"] = {2}, ["Dark Cave North_B"] = {2, {["abilities"] = {"surf"}}}}
+JohtoMap["Dark Cave North_B"] = {["Dark Cave South_B"] = {0.5}}
+JohtoMap["Dark Cave South_A"] = {["Route 31"] = {1}, ["Dark Cave South_B"] = {1, {["abilities"] = {"surf"}}}, ["Dark Cave South_C"] = {1, {["abilities"] = {"rock smash"}}}}
+JohtoMap["Dark Cave South_B"] = {["Dark Cave South_A"] = {0.5}, ["Dark Cave South_C"] = {0.5}, ["Dark Cave North_B"] = {0.5}}
+JohtoMap["Dark Cave South_C"] = {["Dark Cave South_B"] = {1.5, {["abilities"] = {"surf"}}}, ["Dark Cave South_A"] = {1.5, {["abilities"] = {"rock smash"}}}, ["Dark Cave South_D"] = {1.5}}
+JohtoMap["Dark Cave South_D"] = {["Dark Cave South_C"] = {0.5, {["abilities"] = {"rock smash"}}}, ["Route 46_A"] = {0.5}}
+JohtoMap["Azalea Town"] = {["Azalea Pokemart"] = {1}, ["Ilex Forest Stop House"] = {1}, ["Pokecenter Azalea"] = {1}, ["Route 33"] = {1}}
+JohtoMap["Azalea Pokemart"] = {["Azalea Town"] = {1}}
+JohtoMap["Pokecenter Azalea"] = {["Azalea Town"] = {1}, ["Azalea Town Subway"] = {0.2}}
+JohtoMap["Ilex Forest Stop House"] = {["Azalea Town"] = {0.2}, ["Ilex Forest_A"] = {0.2}}
+JohtoMap["Ilex Forest_A"] = {["Ilex Forest Stop House"] = {1}, ["Ilex Forest_B"] = {1, {["abilities"] = {"cut"}}}}
+JohtoMap["Ilex Forest_B"] = {["Ilex Forest_A"] = {2, {["abilities"] = {"cut"}}}, ["Route 34 Stop House"] = {2}}
+JohtoMap["Route 34 Stop House"] = {["Ilex Forest_B"] = {0.2}, ["Route 34_A"] = {0.2}}
+JohtoMap["Route 34_A"] = {["Goldenrod City"] = {1}, ["Route 34 Stop House"] = {1}, ["Route 34_B"] = {1, {["abilities"] = {"surf"}}}}
+JohtoMap["Route 34_B"] = {["Route 34_A"] = {1, {["abilities"] = {"surf"}}}}
+JohtoMap["Route 38"] = {["Ecruteak Stop House 1"] = {1}, ["Route 39"] = {1}}
+JohtoMap["Route 39"] = {["Olivine City"] = {1}, ["Route 38"] = {1}}
+JohtoMap["Olivine City"] = {["Olivine Pokecenter"] = {1}, ["Olivine Pokemart"] = {1}, ["Route 39"] = {1}, ["Route 40"] = {1}, ["Olivine House 1"] = {1}}
+JohtoMap["Olivine House 1"] = {["Olivine City"] = {1}}
+JohtoMap["Olivine Pokecenter"] = {["Olivine City"] = {1}, ["Olivine City Subway"] = {0.2}}
+JohtoMap["Olivine Pokemart"] = {["Olivine City"] = {1}}
+JohtoMap["Route 40"] = {["Battle Road"] = {1}, ["Olivine City"] = {1}, ["Route 41"] = {2, {["abilities"] = {"surf"}}}}
+JohtoMap["Battle Road"] = {["Route 40"] = {1}}
+JohtoMap["Route 41"] = {["Cianwood City"] = {2}, ["Route 40"] = {2}, ["Whirl Islands 1F NorthEast_A"] = {2}, ["Whirl Islands 1F NorthWest"] = {2}, ["Whirl Islands 1F SouthWest"] = {2}}
+JohtoMap["Whirl Islands 1F NorthWest"] = {["Route 41"] = {0.5}, ["Whirl Islands B1F_A"] ={0.5}}
+JohtoMap["Whirl Islands 1F NorthEast_A"] = {["Route 41"] = {0.2}, ["Whirl Islands 1F NorthEast_B"] = {0}}
+JohtoMap["Whirl Islands 1F NorthEast_B"] = {["Whirl Islands 1F NorthEast_C"] = {0}, ["Whirl Islands 1F NorthEast_D"] = {0}}
+JohtoMap["Whirl Islands 1F NorthEast_C"] = {["Whirl Islands B1F_A"] = {0.5}}
+JohtoMap["Whirl Islands 1F NorthEast_D"] = {["Whirl Islands B1F_C"] = {0.5}}
+JohtoMap["Whirl Islands 1F SouthWest"] = {["Route 41"] = {1}, ["Whirl Islands B1F_B"] = {1}}
+JohtoMap["Whirl Islands 1F SouthEast"] = {["Route 41"] = {1}, ["Whirl Islands B1F_B"] = {1}}
+JohtoMap["Whirl Islands B1F_A"] = {["Whirl Islands 1F NorthWest"] = {2}, ["Whirl Islands 1F NorthEast_C"] = {2}, ["Whirl Islands B1F_B"] = {1.5}, ["Whirl Islands B2F"] = {1.5}}
+JohtoMap["Whirl Islands B1F_B"] = {["Whirl Islands 1F SouthWest"] = {1}, ["Whirl Islands 1F SouthEast"] = {1}}
+JohtoMap["Whirl Islands B1F_C"] = {["Whirl Islands B1F_B"] = {2}, ["Whirl Islands 1F NorthEast_D"] = {2}, ["Whirl Islands B2F"] = {1.5}}
+JohtoMap["Whirl Islands B2F"] = {["Whirl Islands B1F_A"] = {1}, ["Whirl Islands B1F_C"] = {1}, ["Whirl Islands B3F"] = {1},  ["Whirl Islands B4F"] = {1}}
+JohtoMap["Whirl Islands B3F"] = {["Whirl Islands B2F"] = {1}}
+JohtoMap["Whirl Islands B4F"] = {["Whirl Islands B2F"] = {1}}
+JohtoMap["Cianwood City"] = {["Cliff Edge Gate"] = {1}, ["Pokecenter Cianwood"] = {1}, ["Route 41"] = {1, {["abilities"] = {"surf"}}}}
+JohtoMap["Pokecenter Cianwood"] = {["Cianwood City"] = {1}}
+JohtoMap["Cliff Edge Gate"] = {["Cianwood City"] = {1}, ["Route 47_A"] = {1}}
+JohtoMap["Cliff Cave 1F"] = {["Cliff Cave 2F"] = {1}, ["Cliff Cave B1F"] = {1}, ["Route 47_A"] = {1}}
+JohtoMap["Cliff Cave 2F"] = {["Cliff Cave 1F"] = {1}, ["Route 47_C"] = {1}}
+JohtoMap["Cliff Cave B1F"] = {["Cliff Cave 1F"] = {1}, ["Route 47_B"] = {1}}
+JohtoMap["Route 47_A"] = {["Cliff Cave 1F"] = {1}, ["Cliff Edge Gate"] = {1}}
+JohtoMap["Route 47_B"] = {["Cliff Cave B1F"] = {1}}
+JohtoMap["Route 47_C"] = {["Cliff Cave 2F"] = {2}, ["Route 48"] = {2}}
+JohtoMap["Route 48"] = {["Johto Safari Zone Lobby"] = {1}, ["Pokecenter Route 48"] = {1}, ["Route 47_C"] = {1}}
+JohtoMap["Johto Safari Zone Lobby"] = {["Route 48"] = {1}}
+JohtoMap["Pokecenter Route 48"] = {["Route 48"] = {1}}
+JohtoMap["Mahogany Town Subway"] = {["Pokecenter Mahogany"] = {0.2}, ["Olivine City Subway"] = {J_SUBWAY}, ["Violet City Subway"] = {J_SUBWAY}, ["Azalea Town Subway"] = {J_SUBWAY}, ["Blackthorn City Subway"] = {J_SUBWAY}, ["Cherrygrove City Subway"] = {J_SUBWAY}, ["Ecruteak City Subway"] = {J_SUBWAY}, ["Goldenrod City Subway"] = {J_SUBWAY}}
+JohtoMap["Olivine City Subway"] = {["Olivine Pokecenter"] = {0.2}, ["Mahogany Town Subway"] = {J_SUBWAY}, ["Violet City Subway"] = {J_SUBWAY}, ["Azalea Town Subway"] = {J_SUBWAY}, ["Blackthorn City Subway"] = {J_SUBWAY}, ["Cherrygrove City Subway"] = {J_SUBWAY}, ["Ecruteak City Subway"] = {J_SUBWAY}, ["Goldenrod City Subway"] = {J_SUBWAY}}
+JohtoMap["Violet City Subway"] = {["Pokecenter Violet City"] = {0.2}, ["Olivine City Subway"] = {J_SUBWAY}, ["Mahogany Town Subway"] = {J_SUBWAY}, ["Azalea Town Subway"] = {J_SUBWAY}, ["Blackthorn City Subway"] = {J_SUBWAY}, ["Cherrygrove City Subway"] = {J_SUBWAY}, ["Ecruteak City Subway"] = {J_SUBWAY}, ["Goldenrod City Subway"] = {J_SUBWAY}}
+JohtoMap["Azalea Town Subway"] = {["Pokecenter Azalea"] = {0.2}, ["Olivine City Subway"] = {J_SUBWAY}, ["Violet City Subway"] = {J_SUBWAY}, ["Mahogany Town Subway"] = {J_SUBWAY}, ["Blackthorn City Subway"] = {J_SUBWAY}, ["Cherrygrove City Subway"] = {J_SUBWAY}, ["Ecruteak City Subway"] = {J_SUBWAY}, ["Goldenrod City Subway"] = {J_SUBWAY}}
+JohtoMap["Blackthorn City Subway"] = {["Pokecenter Blackthorn"] = {0.2}, ["Olivine City Subway"] = {J_SUBWAY}, ["Violet City Subway"] = {J_SUBWAY}, ["Azalea Town Subway"] = {J_SUBWAY}, ["Mahogany Town Subway"] = {J_SUBWAY}, ["Cherrygrove City Subway"] = {J_SUBWAY}, ["Ecruteak City Subway"] = {J_SUBWAY}, ["Goldenrod City Subway"] = {J_SUBWAY}}
+JohtoMap["Cherrygrove City Subway"] = {["Pokecenter Cherrygrove City"] = {0.2}, ["Olivine City Subway"] = {J_SUBWAY}, ["Violet City Subway"] = {J_SUBWAY}, ["Azalea Town Subway"] = {J_SUBWAY}, ["Blackthorn City Subway"] = {J_SUBWAY}, ["Mahogany Town Subway"] = {J_SUBWAY}, ["Ecruteak City Subway"] = {J_SUBWAY}, ["Goldenrod City Subway"] = {J_SUBWAY}}
+JohtoMap["Ecruteak City Subway"] = {["Pokecenter Ecruteak"] = {0.2}, ["Olivine City Subway"] = {J_SUBWAY}, ["Violet City Subway"] = {J_SUBWAY}, ["Azalea Town Subway"] = {J_SUBWAY}, ["Blackthorn City Subway"] = {J_SUBWAY}, ["Cherrygrove City Subway"] = {J_SUBWAY}, ["Mahogany Town Subway"] = {J_SUBWAY}, ["Goldenrod City Subway"] = {J_SUBWAY}}
+JohtoMap["Goldenrod City Subway"] = {["Pokecenter Goldenrod"] = {0.2}, ["Olivine City Subway"] = {J_SUBWAY}, ["Violet City Subway"] = {J_SUBWAY}, ["Azalea Town Subway"] = {J_SUBWAY}, ["Blackthorn City Subway"] = {J_SUBWAY}, ["Cherrygrove City Subway"] = {J_SUBWAY}, ["Ecruteak City Subway"] = {J_SUBWAY}, ["Mahogany Town Subway"] = {J_SUBWAY}}
+
+
+-- JohtoMap["test run"] = {} -- load this to check for map eror
+-- JohtoMap["node"] = {["link"] = {distance, {["restrictionType"] = {"restriction"}}}}
 
 return JohtoMap
 end

@@ -5,27 +5,11 @@ local cppdpath = nTimes(3, rmlast, cpath) -- callee parent of parent dir path
 
 local Lib = require (cppdpath .. "Lib/Lib")
 
-local digways = {} -- Digway map used for discovering them.
+local digways = {}
 
--- Kanto
--- Digways["Route 2_B"] = {["x"] = 30, ["y"] = 31, ["outletMap"] = "Route 11"}
--- Digways["Route 11"] = {["x"] = 12, ["y"] = 12, ["outletMap"] = "Route 2"}
--- Digways["Route 3"] = {["x"] = 74, ["y"] = 16, ["outletMap"] = "Route 4"}
--- Digways["Route 4"] = {["x"] = 9, ["y"] = 20, ["outletMap"] = "Route 3"}
-
--- Digways["Route 10_C"] = {["x"] = 2, ["y"] = 44, ["outletMap"] = "Route 10"}
--- Digways["Route 10_A"] = {["x"] = 9, ["y"] = 9, ["outletMap"] = "Route 10"}
--- -- Johto
--- Digways["Route 31"] = {["x"] = 53, ["y"] = 10, ["outletMap"] = "Route 45"}
--- Digways["Route 45"] = {["x"] = 14, ["y"] = 5, ["outletMap"] = "Route 31"}
--- Digways["Route 32"] = {["x"] = 10, ["y"] = 143, ["outletMap"] = "Route 33"}
--- Digways["Route 33"] = {["x"] = 14, ["y"] = 13, ["outletMap"] = "Route 32"}
--- Digways["Route 44"] = {["x"] = 73, ["y"] = 9, ["outletMap"] = "Blackthorn City"}
--- Digways["Blackthorn City"] = {["x"] = 49, ["y"] = 16, ["outletMap"] = "Route 44"}
--- Digways["Route 42"] = {["x"] = 15, ["y"] = 13, ["outletMap"] = "Route 42"}
--- Digways["Route 42_2"] = {["x"] = 77, ["y"] = 13, ["outletMap"] = "Route 42"}
-
--- return Digways
+----------------------
+------ Kanto ---------
+----------------------
 
 digways["Route 10_C"] = {
     ["Route 10_A"] = {{2, 44}, {1}}
@@ -44,6 +28,35 @@ digways["Route 3"] = {
 }
 digways["Route 4"] = {
     ["Route 3"] = {{9, 20}, {1}}
+}
+
+----------------------
+------ JOHTO ---------
+----------------------
+
+digways["Route 42_D"] = {
+    ["Route 42_A"] = {{77, 13}, {1}}
+}
+digways["Route 42_A"] = {
+    ["Route 42_D"] = {{15, 13}, {1}}
+}
+digways["Route 44"] = {
+    ["Blackthorn City"] = {{73, 9}, {1}}
+}
+digways["Blackthorn City"] = {
+    ["Route 44"] = {{49, 16}, {1}}
+}
+digways["Route 31"] = {
+    ["Route 45_A"] = {{53, 10}, {1}}
+}
+digways["Route 45_A"] = {
+    ["Route 31"] = {{14, 5}, {1}}
+}
+digways["Route 32"] = {
+    ["Route 33"] = {{10, 143}, {1}}
+}
+digways["Route 33"] = {
+    ["Route 32"] = {{14, 13}, {1}}
 }
 
 

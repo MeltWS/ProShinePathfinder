@@ -1,4 +1,9 @@
 return {
+
+----------------------
+------ KANTO ---------
+----------------------
+
     ["Route 2"] = {
         ["Route 2_A"] = {{7, 0, 28, 31}, {7, 33, 11, 42}}, -- top / pewter side
         ["Route 2_B"] = {{19, 32, 42, 89}}, -- top right / digletts side
@@ -191,6 +196,129 @@ return {
         ["Vermilion City_B"] = {{5, 49, 37, 68}}, -- arena
     },
 
+----------------------
+------ JOHTO ---------
+----------------------
+
+    ["Goldenrod City Station"] = {
+        ["Goldenrod City Station_A"] = {{0, 9, 32, 20}}, -- main part, towards Goldenrod
+        ["Goldenrod City Station_B"] = {{1, 3, 13, 8}}, -- secondary part, towards F2
+    },
+    ["Route 35"] = {
+        ["Route 35_A"] = {{3, 6, 30, 59}}, -- Main road
+        ["Route 35_B"] = {{27, 0, 29, 5}}, -- Cut part
+    },
+    ["Route 42"] = {
+        ["Route 42_A"] = {{3, 13, 18, 28}}, -- left
+        ["Route 42_B"] = {{19, 11, 65, 28}, {25, 10, 31, 10}}, -- middle
+        ["Route 42_C"] = {{47, 6, 58, 10}}, --  middle top
+        ["Route 42_D"] = {{66, 13, 95, 21}}, -- right
+        ["Route 42_E"] = {{89, 0, 95, 10}}, -- top right
+    },
+    ["Mt. Mortar 1F"] = {
+        ["Mt. Mortar 1F_A"] = {{21, 35, 31, 46}, {32, 35, 34, 36}}, -- bottom left
+        ["Mt. Mortar 1F_B"] = {{33, 38, 35, 42}, {36, 32, 51, 49}, {52, 38, 54, 42}}, -- bottom center
+        ["Mt. Mortar 1F_C"] = {{53, 35, 56, 36}, {56, 37, 63, 43}, {64, 41, 67, 46}}, -- bottom right
+        ["Mt. Mortar 1F_D"] = {{55, 46, 57, 48}, {55, 49, 70, 52}, {71, 34, 75, 51}}, -- bottom right upside
+        ["Mt. Mortar 1F_E"] = {{24, 19, 31, 26}, {31, 23, 36, 25}}, -- top left
+        ["Mt. Mortar 1F_F"] = {{26, 14, 65, 16}, {26, 17, 60, 18}, {33, 19, 57, 21}, {32, 22, 50, 22}, {38, 23, 50, 26}}, -- top center
+        ["Mt. Mortar 1F_G"] = {{55, 22, 67, 34}, {58, 19, 66, 21}, {61, 17, 66, 18}}, -- top right
+    },
+    ["Mt. Mortar B1F"] = {
+        ["Mt. Mortar B1F_A"] = {{16, 41, 64, 59}}, -- bottom stairs
+        ["Mt. Mortar B1F_B"] = {{27, 12, 63, 40}}, -- top side stairs
+    },
+    ["Lake of Rage"] = {
+        ["Lake of Rage_A"] = {{36, 43, 67, 60}, {55, 41, 70, 42}, {63, 34, 73, 40}, {68, 25, 71, 33}}, -- bottom right entry
+        ["Lake of Rage_B"] = {{20, 32, 28, 60}, {29, 45, 33, 49}}, -- bottom left entry
+        ["Lake of Rage_C"] = {{28, 20, 30, 24}, {31, 20, 34, 42}, {29, 36, 30, 36}, {27, 39, 30, 39}, {35, 23, 48, 42}, {48, 17, 54, 42}, {55, 16, 62, 40}, {63, 16, 64, 33}, {65, 20, 71, 24}, {66, 25, 66, 25}}, -- middle lake after cut
+        ["Lake of Rage_D"] = {{52, 4, 64, 14}}, -- top part berry farmer
+        ["Lake of Rage_E"] = {{8, 10, 51, 17}, {8, 17, 47, 18}, {37, 19, 44, 21}, {8, 19, 27, 23}, {11, 24, 28, 31}, {29, 27, 30, 31}, {18, 32, 19, 32}}, -- left side after cut
+    },
+    ["Ice Path 1F"] = {
+        ["Ice Path 1F_A"] = {{10, 13, 48, 62}, {49, 13, 58, 20}}, -- route 44 side
+        ["Ice Path 1F_B"] = {{50, 21, 59, 46}}, -- blackthorn side
+    },
+    ["Ice Path B1F"] = {
+        ["Ice Path B1F_A"] = {{13, 11, 40, 29}}, -- route 44 side
+        ["Ice Path B1F_B"] = {{17, 42, 41, 50}}, -- blackthorn side
+    },
+    ["Ice Path B2F"] = {
+        ["Ice Path B2F_A"] = {{12, 13, 35, 30}}, -- route 44 side
+        ["Ice Path B2F_B"] = {{49, 9, 65, 30}}, -- blackthorn side
+    },
+    ["Route 45"] = {
+        ["Route 45_A"] = {{5,0, 25, 16}, {5, 17, 16, 18}, {5, 19, 9, 36}}, -- top side
+        ["Route 45_B"] = {{18, 18, 28, 19}, {15, 20, 28, 37}, {6, 38, 29, 144}}, -- middle + bot side
+    },
+    ["Route 46"] = {
+        ["Route 46_A"] = {{10, 4, 40, 17}}, -- topside
+        ["Route 46_B"] = {{4, 18, 32, 51}}, -- middle + bot side
+    },
+    ["Cherrygrove City"] = {
+        ["Cherrygrove City_A"] = {{2, 0, 52, 29}, {53, 8, 55, 24}, {56, 12, 63, 22}}, -- main city
+        ["Cherrygrove City_B"] = {{53, 0 , 63, 7}, {57, 8, 60, 9}} -- isolated water,
+    },
+    ["Dark Cave North"] = {
+        ["Dark Cave North_A"] = {{13, 14, 72, 51}, {22, 52, 62, 58}}, -- main cave
+        ["Dark Cave North_B"] = {{13, 52, 21, 62}}, -- bottom left
+    },
+    ["Dark Cave South"] = {
+        ["Dark Cave South_A"] = {{14, 16, 27, 27}, {14, 28, 26, 34}, {27, 33, 28, 34}}, -- left side
+        ["Dark Cave South_B"] = {{28, 15, 36, 27}}, -- middle water to North_B
+        ["Dark Cave South_C"] = {{27, 28, 41, 29}, {42, 13, 67, 60}}, -- middle / right with most digs
+        ["Dark Cave South_D"] = {{57, 57, 65, 60}}, -- bottom right to Route 46_A
+    },
+    ["Ruins Of Alph"] = {
+        ["Ruins Of Alph_A"] = {{6, 5, 38, 29}, {20, 30, 42, 39}}, -- main map
+        ["Ruins Of Alph_B"] = {{7, 30, 18, 42}}, -- left enclosed
+        ["Ruins Of Alph_C"] = {{6, 47, 20, 53}}, -- bottom left enclosed
+        ["Ruins Of Alph_D"] = {{6, 54, 43, 57}, {21, 40, 39, 53}}, -- bottom below water
+    },
+    ["Union Cave 1F"] = {
+        ["Union Cave 1F_A"] = {{18, 15, 24, 18}}, -- top left
+        ["Union Cave 1F_B"] = {{39, 15, 44, 19}}, -- top right
+        ["Union Cave 1F_C"] = {{18, 30, 44, 75}, {33, 76, 44, 84}}, -- main cave path
+        ["Union Cave 1F_D"] = {{18, 76, 24, 83}}, -- bottom left after water
+    },
+    ["Union Cave B1F"] = {
+        ["Union Cave B1F_A"] = {{25, 37, 44, 49}}, -- pre water, down
+        ["Union Cave B1F_B"] = {{15, 15, 40, 36}}, -- post water, top
+        ["Union Cave B1F_C"] = {{15, 59, 44, 63}}, -- bottom isolated
+    },
+    ["Union Cave B2F"] = {
+        ["Union Cave B2F_A"] = {{18, 20, 28, 29}}, -- left
+        ["Union Cave B2F_B"] = {{39, 18, 47, 29}}, -- right
+        ["Union Cave B2F_C"] = {{18, 41, 45, 83}}, -- down
+    },
+    ["Ilex Forest"] = {
+        ["Ilex Forest_A"] = {{4, 58, 15, 76}, {16, 43, 48, 63}}, -- bottom before cut
+        ["Ilex Forest_B"] = {{4, 7, 46, 35}, {4, 36, 13, 57}}, -- top side after cut
+    },
+    ["Route 34"] = {
+        ["Route 34_A"] = {{5, 0, 24, 17}, {7, 18, 18, 23}, {13, 24, 32, 32}, {15, 33, 34, 57}, {14, 58, 35, 65}}, -- main road
+        ["Route 34_B"] = {{9, 71, 25, 89}, {9, 46, 13, 66}, {3, 43, 8, 75}, {3, 24, 12, 42}, {3, 18, 6, 23}}, -- left surf side
+    },
+    ["Whirl Islands 1F NorthEast"] = {
+        ["Whirl Islands 1F NorthEast_A"] = {{12, 15, 15, 23}}, -- left
+        ["Whirl Islands 1F NorthEast_B"] = {{16, 12, 28, 22}}, -- right
+    },
+    ["Whirl Islands 1F NorthEast"] = {
+        ["Whirl Islands 1F NorthEast_A"] = {{12, 15, 15, 23}}, -- left
+        ["Whirl Islands 1F NorthEast_B"] = {{16, 14, 21, 22}}, -- middle
+        ["Whirl Islands 1F NorthEast_C"] = {{22, 17, 28, 22}}, -- bottom right
+        ["Whirl Islands 1F NorthEast_D"] = {{22, 12, 28, 16}}, -- top right
+    },
+    ["Whirl Islands B1F"] = {
+        ["Whirl Islands B1F_A"] = {{13, 12, 33, 56}, {34, 14, 48, 40}, {49, 13, 60, 36}, {61, 33, 61, 35}}, -- topleft + middle
+        ["Whirl Islands B1F_B"] = {{25, 58, 34, 63}, {35, 45, 38, 62}, {37, 42, 48, 44}, {39, 54, 52, 63}, {53, 45, 67, 63}, {59, 40, 67, 44}, {66, 38, 66, 39}}, -- bottom
+        ["Whirl Islands B1F_C"] = {{62, 12, 68, 15}, {65, 16, 68, 36}, {68, 35, 64, 36}, {58, 37, 64, 38}, {50, 39, 57, 44}, {39, 45, 51, 53}}, -- right
+    },
+    ["Route 47"] = { -- some places overlapse with water and bridge
+        ["Route 47_A"] = {{63, 71, 93, 83}, {43, 72, 56, 81}, {41, 79, 42, 81}, {57, 74, 62, 76}}, -- right entrance
+        ["Route 47_B"] = {{19, 76, 32, 93}, {19, 63, 32, 72}, {32, 84, 56, 96}, {57, 77, 62, 93}, {57, 69, 62, 73}, {63, 84, 95, 95}, {96, 81, 98, 86}, {57, 65, 62, 65}}, -- bottom water
+        ["Route 47_C"] = {{41, 65, 70, 68}, {16, 73, 41, 75}, {41, 69, 41, 72}, {12, 60, 15, 75}, {5, 0, 38, 59}}, -- middle to top entrance
+    },
     -- [""] = {
     --     [""] = {{}},
     -- },

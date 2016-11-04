@@ -1,5 +1,9 @@
 local npcExce = {}
 
+----------------------
+------ KANTO ---------
+----------------------
+
 npcExce["Indigo Plateau Center"] = {
     ["Player Bedroom Pallet"] = {{13, 23}, {"Yes"}, "Do you want to use my Abra's powers and send you back home?"},
 }
@@ -26,6 +30,27 @@ npcExce["Safari Effort Wald 2_A"] = {
 npcExce["Safari Effort Wald 1"] = {
     ["Safari Stop"] = {{6, 21}, {"I'd like to leave the zones, actually."}, "Would you like to be transported to the zone for HP-, Special Attack- and Defense-EV Pokemon?"},
     ["Safari Effort Wald 2_A"] = {{6, 21}, {"Yes."}, "Would you like to be transported to the zone for HP-, Special Attack- and Defense-EV Pokemon?"}
+}
+
+----------------------
+------ JOHTO ---------
+----------------------
+
+npcExce["Goldenrod City Station_A"] = {
+    ["Goldenrod City Station_B"] = {{9, 9}, {"Yes"}, "Would you like to take the train? It costs $5,000 to go to Saffron."}
+}
+npcExce["Goldenrod City Station_B"] = {
+    ["Goldenrod City Station_A"] = {{9, 7}, {"Yes"}, "Would you like to return to the Goldenrod lobby?"}
+}
+
+----------------------
+---- INTER REGION ----
+----------------------
+npcExce["Goldenrod City Station Floor 2"] = {
+    ["Saffron City Floor 2"] = {{14, 10}, {"Yes"}, "Are you sure you would like to board on the ride to Goldenrod City at this moment?"}
+}
+npcExce["Saffron City Station Floor 2"] = {
+    ["Goldenrod City Floor 2"] = {{14, 10}, {"Yes"}, "Are you sure you would like to travel to Goldenrod City"}
 }
 -- npcExce[""] = {
 --     [""] = {{}, {}, ""}

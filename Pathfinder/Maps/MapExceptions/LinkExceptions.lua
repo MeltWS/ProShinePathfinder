@@ -161,8 +161,53 @@ linkExce["Cinnabar mansion 2"] = {
 linkExce["Cinnabar mansion 3_B"] = {
     ["Cinnabar mansion B1F_A"] = {21, 19},
 }
-linkExce[""] = {
-    [""] = {},
+
+----------------------
+------ JOHTO ---------
+----------------------
+
+linkExce["Route 42_E"] = {
+    ["Route 42_D"] = {90, 9},
 }
+linkExce["Mt. Mortar Lower Cave"] = {
+    ["Mt. Mortar 1F_A"] = {26, 57},
+    ["Mt. Mortar 1F_C"] = {47, 57},
+    ["Mt. Mortar 1F_D"] = {65, 58},
+    ["Mt. Mortar 1F_F"] = {17, 45},
+    ["Mt. Mortar 1F_G"] = {56, 46},
+}
+linkExce["Route 43"] = {
+    ["Lake of Rage_A"] = {22, 0}, -- main lake
+    ["Lake of Rage_B"] = {7, 0}, -- left of lake
+}
+linkExce["Ice Path B3F"] = {
+    ["Ice Path B2F_A"] = {13, 16}, -- to route 44
+    ["Ice Path B2F_B"] = {32, 17}, -- to blackthorn
+}
+linkExce["Route 30"] = {
+    ["Cherrygrove City_A"] = {9, 96}, -- to main city
+    ["Cherrygrove City_B"] = {25, 96}, -- to isolated water
+}
+linkExce["Union Cave 1F_C"] = {
+    ["Union Cave B1F_A"] = {19, 31},
+}
+linkExce["Union Cave 1F_D"] = {
+    ["Union Cave B1F_C"] = {23, 82},
+}
+linkExce["Union Cave B1F_B"] = {
+    ["Union Cave B2F_A"] = {16, 24},
+    ["Union Cave B2F_B"] = {16, 16},
+}
+linkExce["Whirl Islands 1F NorthEast_B"] = {
+    ["Whirl Islands B1F_A"] = {24, 18},
+    ["Whirl Islands B1F_C"] = {27, 12},
+}
+linkExce["Whirl Islands B2F"] = {
+    ["Whirl Islands B1F_A"] = {19, 25},
+    ["Whirl Islands B1F_C"] = {24, 13},
+}
+-- linkExce[""] = {
+--     [""] = {},
+-- }
 
 return linkExce
