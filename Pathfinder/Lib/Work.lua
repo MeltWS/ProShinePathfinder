@@ -14,7 +14,7 @@ local work = {}
 
 local digIndex           = nil
 local headbuttIndex      = nil
-local prevMap            = nil
+local currentMap            = nil
 local digSpots           = nil
 local headbuttTrees      = nil
 local BerryTrees         = nil
@@ -29,9 +29,13 @@ local dialogs            = {
     ["You found "] = function() end,          -- loot item
     ["Obtained "] = function() end,          -- loot item
     ["You've found "] = function() end,      -- loot item
+    ["You have found "] = function() end,      -- loot item
     ["You obtained "] = function() end,       -- loot TM
     ["Select a Pokemon that has Headbutt."] = function() pushDialogAnswer(headbuttIndex) end,
     ["Select a Pokemon that has Dig."] = function() pushDialogAnswer(digIndex) end,
+}
+local uncollectableItems = {
+    ["Route 32"] = {{10, 95}},
 }
 
 local function resetData()
@@ -42,7 +46,7 @@ local function resetData()
     targets       = {}
     targetIndex   = nil
     currentTarget        = nil
-    prevMap       = nil
+    currentMap       = nil
 end
 
 local function getNpcsData(opts)
@@ -74,21 +78,33 @@ local function getClosest(x, y, targets)
     local target      = nil
     local iTarget     = nil
     for i, t in ipairs(targets) do
-        local dist = Game.getDistance(x, y, t.x, t.y)
-        if not closest or dist < closest then
-            closest = dist
-            target  = t
-            iTarget = i
-        end
+            local dist = Game.getDistance(x, y, t.x, t.y)
+            if not closest or dist < closest then
+                closest = dist
+                target  = t
+                iTarget = i
+            end
     end
     return iTarget, target
+end
+
+-- some items are not collectables.
+local function isBlacklisted(target)
+    if uncollectableItems[currentMap] then
+        for _, loc in ipairs(uncollectableItems[currentMap]) do
+            if loc[1] == target.x and loc[2] == target.y then
+                return true
+            end
+        end
+    end
+    return false
 end
 
 -- is working expects parameter opts to contain an array with keys : dig, harvest, discover, headbutt, headbuttIndex, digIndex. Bool values.
 -- return true if doing an action, false means it's done it's job.
 function work.isWorking(map, opts)
-    if map ~= prevMap then
-        prevMap = map
+    if map ~= currentMap then
+        currentMap = map
         headbuttIndex = Game.getPokemonNumberWithMove("Headbutt", 155)
         digIndex = Game.getPokemonNumberWithMove("Dig")
         getNpcsData(opts)
@@ -97,11 +113,12 @@ function work.isWorking(map, opts)
     while targets and #targets ~= 0 do
         if not currentTarget then
             targetIndex, currentTarget = getClosest(getPlayerX(), getPlayerY(), targets)
+            assert(targets[targetIndex], "Work --> getClosest returned inexisting target Index:" .. targetIndex)
         end
-        if talkToNpcOnCell(currentTarget.x, currentTarget.y) then
+        if not isBlacklisted(currentTarget) and talkToNpcOnCell(currentTarget.x, currentTarget.y) then
             Lib.log1time("Work: Checking npc index: " .. targetIndex .. " --> x:" .. currentTarget.x .. ", y:" .. currentTarget.y)
             return true
-        else discardedNpc = discardedNpc + 1
+        else currentTarget = nil
         end
         table.remove(targets, targetIndex)
     end
