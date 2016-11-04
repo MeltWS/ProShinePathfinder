@@ -63,7 +63,8 @@ local function solveOutlet(message, pf)
     elseif pf.outletInNode() then -- outlet discovered
         pf.unsetOutlet()
         pf.enableDigPath()
-        pushDialogAnswer(2) -- not using digway
+        pushDialogAnswer(2)
+        log("Pathfinder: Pushing dialog: 2 (Not using the digway just discovered.)")
         return true
     end
     return false

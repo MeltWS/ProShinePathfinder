@@ -11,7 +11,7 @@ local Table               = require (cppdpath .. "Lib/Table")
 local Work                = require (cppdpath .. "Lib/Work")
 local _ss                 = require (cppdpath .. "Settings/Static_Settings")
 -- local _globalMap          = require (cppdpath .. "Maps/globalMap")
-local _globalMap          = require (cppdpath .. "Maps/Kanto/KantoMap")
+local _globalMap          = require (cppdpath .. "Maps/Hoenn/TestHoennMap")
 local subMaps             = require (cppdpath .. "Maps/MapExceptions/SubstituteMaps")
 local linkExceptions      = require (cppdpath .. "Maps/MapExceptions/LinkExceptions")
 local npcExceptions       = require (cppdpath .. "Maps/MapExceptions/NpcExceptions")
@@ -20,7 +20,7 @@ local dialogSolver        = require (cppdpath .. "Lib/MoveTo/DialogSolver")
 local elevatorExceptions  = require (cppdpath .. "Maps/MapExceptions/Elevators")
 local moveAbilities       = {["cut"] = 0, ["surf"] = 0, ["dig"] = 155, ["rock smash"] = 0, ["dive"] = 155}
 local workAbilities       = {["headbutt"] = 155, ["dig"] = 0}
-local moveItems           = {"Fresh Water", "Marsh Badge"}
+local moveItems           = {"Fresh Water", "Marsh Badge", "Zephyr Badge"}
 local globalMap           = {}
 local pathSolution        = {}
 local settings            = {}
@@ -45,7 +45,7 @@ local function isLinkRestrictionMatched(data)
         end
     elseif data.abilities then
         for _, ability in ipairs(data.abilities) do
-            if not settings.abilitiesIndex[ability] then
+            if not settings.abilitiesIndex[ability] or ability == "dig" and not settings.dig then
                 return false
             end
         end
@@ -55,7 +55,7 @@ local function isLinkRestrictionMatched(data)
 end
 
 -- return a new table containing only valid links
-local function getUsableLinks(n, links)
+local function getUsableLinks(links)
     local usableLinks = {}
     for link, data in pairs(links) do
         local isLinkValid = #data == 1
@@ -75,7 +75,7 @@ end
 -- return a table of node, linked to the node n
 local function expand(n)
     assert(type(globalMap[n]) == "table", "Pathfinder --> Received node \"" .. n .. "\" doesn't exist in the map.")
-    return getUsableLinks(n, globalMap[n])
+    return getUsableLinks(globalMap[n])
 end
 
 -- Take 2 nodes return dist
@@ -217,7 +217,7 @@ end
 -- discover outlet if possible
 local function checkOutlet()
     if outletInNode() then
-        return assert(talkToNpcOnCell(table.unpack(digways[playerNode][outlet.fromNode]), "Pathfinder -> could not discover outlet, node: " .. playerNode .. " -> " .. outlet.fromNode))
+        return assert(talkToNpcOnCell(table.unpack(digways[playerNode][outlet.fromNode][1])), "Pathfinder -> could not discover outlet, node: " .. playerNode .. " -> " .. outlet.fromNode)
     end
     return false
 end
@@ -233,7 +233,7 @@ end
 
 -- try to move with exception, and with the map name if no exception are found.
 local function movingApply(from, toMap)
-    Lib.log1time("Pathfinder: Maps Remains: " .. #pathSolution .. "  Moving To: --> " .. toMap)
+    Lib.log1time("Path: Maps Remains: " .. #pathSolution .. "  Moving To: --> " .. toMap)
     if handleException(from, toMap) then
         return true
     else
@@ -241,7 +241,7 @@ local function movingApply(from, toMap)
             return true
         else
             resetPath()
-            Lib.log1time("Pathfinder --> Error in Path - Reset and Recalc")
+            Lib.log1time("Pathfinder --> Error in Path: from " .. from .. " to " .. toMap .. " -- Reset and Recalc")
             swapPokemon(getTeamSize(), getTeamSize() - 1)
             return true
         end
@@ -269,28 +269,6 @@ end
 ---------------------------
 -------- SETTINGS ---------
 ---------------------------
-
--- -- MODIF NODEMAP ACCORDING TO SETTINGS
--- local function ApplySettings()
---     if Settings.dig then
---         -- MapExceptions.enableDigPath()
---         -- Johto
---         setLink("Route 31", "Route 45", 1)
---         setLink("Route 45", "Route 31", 1)
---         setLink("Route 33", "Route 32", 1)
---         setLink("Route 32", "Route 33", 1)
---         setLink("Blackthorn City", "Route 44", 1)
---         setLink("Route 44", "Blackthorn City", 1)
---     else
---         -- Johto
---         unsetLink("Route 31", "Route 45")
---         unsetLink("Route 45", "Route 31")
---         unsetLink("Route 33", "Route 32")
---         unsetLink("Route 32", "Route 33")
---         unsetLink("Blackthorn City", "Route 44")
---         unsetLink("Route 44", "Blackthorn City")
---     end
--- end
 
 -- check if the player can use TM / HM moves.
 local function validateAbilitiesIndex(dirtyList, abilityList)

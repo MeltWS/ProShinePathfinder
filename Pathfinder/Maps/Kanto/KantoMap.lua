@@ -258,6 +258,9 @@ KantoMap["Viridian Forest"] = {["Viridian Maze"] = {1}, ["Route 2 Stop"] = {2}, 
 KantoMap["Viridian Maze"] = {["Viridian Forest"] = {1}}
 KantoMap["Viridian Pokemart"] = {["Viridian City"] = {1}}
 
--- KantoMap["test run"] = {}
+
+-- JohtoMap["test run"] = {} -- load this to check for map eror
+-- JohtoMap["node"] = {["link"] = {distance, {["restrictionType"] = {"restriction"}}}}
+
 return KantoMap
 end
