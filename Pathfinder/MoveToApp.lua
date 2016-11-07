@@ -11,6 +11,7 @@ local Pokecenter    = require (cdpath .. "Lib/MoveTo/Pokecenter")
 local Pokemart      = require (cdpath .. "Lib/MoveTo/Pokemart")
 
 return {
+    getPath = PathFinder.getPath,
     moveTo = PathFinder.moveTo,
     moveToMapCell = moveToMapCell.moveToMapCell,
     useNearestPokemart = Pokemart.useNearestPokemart,

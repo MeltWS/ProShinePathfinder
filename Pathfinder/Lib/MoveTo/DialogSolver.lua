@@ -22,14 +22,10 @@ local subwayDialogAnswers   = {["Viridian City Subway"] = 1, ["Pewter City Subwa
 
 local function solveNpc(message, n1, n2)
     local npcExce = npcExceptions[n1][n2]
-    local pushLog = "Pathfinder: Pushing dialog:"
     assert(npcExce[2] and npcExce[3], "PathFinder --> npc dialog exception is missing some data. " .. n1 .. " -> " .. n2)
     if message == npcExce[3] then
-        for _, push in pairs(npcExce[2]) do
-            pushDialogAnswer(push)
-            pushLog = pushLog .. " " .. push
-        end
-        log(pushLog)
+        pushDialogAnswer(npcExce[2])
+        log("Pathfinder: Pushing dialog: " .. npcExce[2])
     end
 end
 

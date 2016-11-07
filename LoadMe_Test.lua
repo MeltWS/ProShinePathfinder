@@ -34,6 +34,6 @@ function onPathAction()
 end
 
 function onBattleAction()
-    run() -- we use this to not get stuck in battle.
+    return run() or attack() -- we use this to not get stuck in battle.
 end
 

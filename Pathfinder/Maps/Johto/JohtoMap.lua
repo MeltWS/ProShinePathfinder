@@ -1,9 +1,9 @@
 local cpath = select(1, ...) or "" -- callee path
 local function nTimes(n, f, x) for i = 0, n - 1 do x = f(x) end return x end -- calls n times f(x)
 local function rmlast(str) return str:sub(1, -2):match(".+[%./]") or "" end -- removes last dir / file from the callee path
-local cppdpath = nTimes(3, rmlast, cpath) -- callee parent of parent dir path
+local cpppdpath = nTimes(4, rmlast, cpath) -- callee parent parent of parent dir path
 
-local _ss = require (cppdpath .. "Settings/Static_Settings")
+local _ss = require (cpppdpath .. "Settings/Static_Settings")
 
 return function()
 
@@ -177,7 +177,6 @@ JohtoMap["Ecruteak City Subway"] = {["Pokecenter Ecruteak"] = {0.2}, ["Olivine C
 JohtoMap["Goldenrod City Subway"] = {["Pokecenter Goldenrod"] = {0.2}, ["Olivine City Subway"] = {J_SUBWAY}, ["Violet City Subway"] = {J_SUBWAY}, ["Azalea Town Subway"] = {J_SUBWAY}, ["Blackthorn City Subway"] = {J_SUBWAY}, ["Cherrygrove City Subway"] = {J_SUBWAY}, ["Ecruteak City Subway"] = {J_SUBWAY}, ["Mahogany Town Subway"] = {J_SUBWAY}}
 
 
--- JohtoMap["test run"] = {} -- load this to check for map eror
 -- JohtoMap["node"] = {["link"] = {distance, {["restrictionType"] = {"restriction"}}}}
 
 return JohtoMap

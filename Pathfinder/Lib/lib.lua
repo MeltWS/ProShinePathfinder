@@ -46,28 +46,6 @@ function Lib.useMount(mount)
     end
 end
 
-function Lib.logTable(table, ...) -- logTable(table, name) with name as optional parameter
-    local name  = nil
-    local arg = {...}
-    if type(table) ~= "table" then
-        return error(" bad argument #1 to logTable, expected table")
-    elseif #arg > 1 then
-        return error(" logTable expected two parameters at most :: logTable(table, (optional) name)")
-    elseif #arg == 1 then
-        if type(arg[1]) ~= "string" then
-            return error(" bad argument #2 to logTable, expected string")
-        end
-        name = arg[1]
-    end
-    for key, value in pairs(table) do
-        if name then
-            log(name .. " -> Key : " .. key .. ", Value : " .. value)
-        else
-            log("Key : " .. key .. " --- Value : " .. value)
-        end
-    end
-end
-
 function Lib.ifNotThen(anything, call)
     if not anything then
         return call()

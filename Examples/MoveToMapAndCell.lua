@@ -6,7 +6,7 @@ description = [[This allows you to move simply arround the map]]
 local PathFinder = require "Pathfinder/MoveToApp" -- requesting table with methods
 
 --[[
------ Check out settings in Pathfind/Settings/Static_Settings.lua -------------------------------
+----- Check out settings in Settings/Static_Settings.lua -------------------------------
 ------------------
 moveTo(dest) --> Main function for moving to dest. return false when done. true if destination is not reached. Need to be called multiple times.
 moveToPC()   --> Move to nearest Pokecenter

@@ -22,4 +22,42 @@ function Table.getKeys(tab)
     return keys
 end
 
+function Table.show(tab)
+    local start = true
+    local ret = "["
+    for k, v in pairs(tab) do
+        if start then
+            start = false
+        else
+            ret = ret .. ", "
+        end
+        ret = ret .. "[" .. k .. "] = "
+        if type(v) == "nil"
+            then ret = ret .. "Nil"
+        elseif type(v) == "string"
+            then ret = ret .. "\""..v.."\""
+        elseif type(v) == "function"
+            then ret = ret .. "Function"
+        elseif type(v) == "number"
+            then ret = ret .. v
+        elseif type(v) == "userdata"
+            then ret = ret .. "Userdata"
+        elseif type(v) == "thread"
+            then ret = ret .. "Thread"
+        elseif type(v) == "table"
+            then if type(v.show) == "function"
+                 then ret = ret .. "("..v:show()..")"
+                 else ret = ret .. Table.show(v)
+            end
+        elseif type(v) == "boolean"
+            then if v
+                 then ret = ret .. "True"
+                 else ret = ret .. "False"
+            end
+        end
+    end
+    ret = ret .. "]"
+    return ret
+end
+
 return Table

@@ -192,7 +192,7 @@ return {
         ["Route 1B_B"] = {{8, 3, 12, 9}}, -- small grass patch
     },
     ["Vermilion City"] = {
-        ["Vermilion City_A"] = {{5, 12, 82, 48}, {38, 49, 82, 68}}, -- main city
+        ["Vermilion City_A"] = {{5, 0, 82, 48}, {38, 49, 82, 68}}, -- main city
         ["Vermilion City_B"] = {{5, 49, 37, 68}}, -- arena
     },
 

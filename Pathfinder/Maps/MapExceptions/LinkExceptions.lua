@@ -208,7 +208,7 @@ linkExce["Whirl Islands B2F"] = {
 }
 
 ----------------------
------- JOHTO ---------
+------ HOENN ---------
 ----------------------
 
 linkExce["Route 124_A"] = {
@@ -354,6 +354,14 @@ linkExce["Hoenn Safari Zone Area 1"] = {
 linkExce["Hoenn Safari Zone Area 3"] = {
     ["Hoenn Safari Zone Area 2_C"] = {28, 50},
     ["Hoenn Safari Zone Area 2_D"] = {17, 50},
+}
+
+----------------------
+---- INTER MAP -------
+----------------------
+
+linkExce["Vermilion City_A"] = {
+    ["Lilycove City Harbor"] = {40, 67},
 }
 -- linkExce[""] = {
 --     [""] = {},

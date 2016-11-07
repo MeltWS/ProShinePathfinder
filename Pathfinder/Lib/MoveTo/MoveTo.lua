@@ -2,16 +2,15 @@ local cpath = select(1, ...) or "" -- callee path
 local function nTimes(n, f, x) for i = 0, n - 1 do x = f(x) end return x end -- calls n times f(x)
 local function rmlast(str) return str:sub(1, -2):match(".+[%./]") or "" end -- removes last dir / file from the callee path
 local cppdpath = nTimes(3, rmlast, cpath) -- callee parent of parent dir path
-
+local cpppdpath = rmlast(cppdpath) -- callee parent parent of parent dir path
 
 local aStar               = require (cppdpath .. "Lib/lua-astar/AStar")
 local Lib                 = require (cppdpath .. "Lib/Lib")
 local Game                = require (cppdpath .. "Lib/Game")
 local Table               = require (cppdpath .. "Lib/Table")
 local Work                = require (cppdpath .. "Lib/Work")
-local _ss                 = require (cppdpath .. "Settings/Static_Settings")
--- local _globalMap          = require (cppdpath .. "Maps/GlobalMap")
-local _globalMap          = require (cppdpath .. "Maps/Hoenn/HoennMap")
+local _ss                 = require (cpppdpath .. "Settings/Static_Settings")
+local _globalMap          = require (cppdpath .. "Maps/GlobalMap")
 local subMaps             = require (cppdpath .. "Maps/MapExceptions/SubstituteMaps")
 local linkExceptions      = require (cppdpath .. "Maps/MapExceptions/LinkExceptions")
 local npcExceptions       = require (cppdpath .. "Maps/MapExceptions/NpcExceptions")
@@ -361,13 +360,18 @@ local function moveTo(map, dest)
         settings.abilitiesIndex = validateAbilitiesIndex(settings.abilitiesIndex, moveAbilities)
         settings.accountItems = validateItems(settings.accountItems, moveItems)
         pathSolution = simpleAStar(goal(dest))(playerNode)
-        -- assert(pathSolution, "path not found")
         destStore = table.concat(dest, " | ")
         if not pathSolution then return findSettings(dest) end
         log("Path: " .. table.concat(pathSolution,"->"))
         return moveWithCalcPath()
     end
     return false
+end
+
+local function getPath(start, dest)
+    settings.abilitiesIndex = validateAbilitiesIndex(settings.abilitiesIndex, moveAbilities)
+    settings.accountItems = validateItems(settings.accountItems, moveItems)
+    return simpleAStar(goal(mapsToNodes(dest)))(start)
 end
 
 -- allow user control for digway shortcuts
@@ -428,6 +432,7 @@ registerHook("onStop", onPathfinderStop)
 -- return table for users
 return {
     moveTo = moveTo,
+    getPath = getPath,
     enableDigPath = enableDigPath,
     disableDigPath = disableDigPath,
     isDigPathEnabled = isDigPathEnabled,

@@ -1,14 +1,15 @@
 local cpath = select(1, ...) or "" -- callee path
 local function nTimes(n, f, x) for i = 0, n - 1 do x = f(x) end return x end -- calls n times f(x)
 local function rmlast(str) return str:sub(1, -2):match(".+[%./]") or "" end -- removes last dir / file from the callee path
-local cppdpath = nTimes(3, rmlast, cpath) -- callee parent of parent dir path
+local cpppdpath = nTimes(4, rmlast, cpath) -- callee parent parent of parent dir path
 
-local _ss = require (cppdpath .. "Settings/Static_Settings")
+local _ss = require (cpppdpath .. "Settings/Static_Settings")
 
 return function()
 
 local ss = _ss()
 local H_SUBWAY = ss.H_SUBWAY
+
 local HoennMap = {}
 
 HoennMap["Cable Car Station 1"] = {["Cable Car Station 2"] = {0.2}, ["Route 112_B"] = {0.2}}
@@ -219,7 +220,7 @@ HoennMap["Victory Road Hoenn B2F_D"] = {["Victory Road Hoenn B2F_C"] = {1}, ["Vi
 HoennMap["Victory Road Hoenn B2F_E"] = {["Victory Road Hoenn B2F_F"] = {0.1, {["abilities"] = {"surf"}}}, ["Victory Road Hoenn B1F_B"] = {0.1}}
 HoennMap["Victory Road Hoenn B2F_F"] = {["Victory Road Hoenn B2F_E"] = {0}}
 
--- HoennMap["test run"] = {}
+-- HoennMap["node"] = {["link"] = {distance, {["restrictionType"] = {"restriction"}}}}
 
 return HoennMap
 end

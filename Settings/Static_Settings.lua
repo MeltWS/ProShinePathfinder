@@ -32,8 +32,8 @@ Settings = {
         J_SUBWAY   = 15, -- Weight for using the subway path. Johto
         H_SUBWAY   = 15, -- Weight for using the subway path. Hoenn
 
-        J_TO_K     = 15, -- Weight of the Subway from Johto to Kanto and reverse.
-        H_TO_KJ    = 15 -- Weight of the Subway from Hoenn to Kanto/Johto and reverse.
+        J_TO_K     = 10, -- Weight of the Subway from Johto to Kanto and reverse.
+        H_TO_KJ    = 10 -- Weight of the Subway from Hoenn to Kanto/Johto and reverse.
     },
 --  Custom Settings, loaded if the bot name match.
 --  Omitted settings will be taken on Default profile.
@@ -65,13 +65,14 @@ Settings = {
 -----------------------
 end
 
+local version = "2.0.0"
 local cpath = select(1, ...) or "" -- callee path
 local function rmlast(str) return str:sub(1, -2):match(".+[%./]") or "" end -- removes last dir / file from the callee path
 local cdpath = rmlast(cpath) -- callee dir path
 local cpdpath = rmlast(cdpath) -- callee parent dir path
 
-local Lib = require (cpdpath .. "Lib/Lib")
-local message = ""
+local Lib = require (cpdpath .. "Pathfinder/Lib/Lib")
+local message = "Pathfinder v(" .. version .. ") :"
 local loadedName = nil
 
 local function fillOmittedSettings(accountName)
@@ -97,11 +98,11 @@ return function()
         loadedName = accountName
         initSettings()
         if Settings[accountName] then
-            message = "Pathfinder : Loading " .. accountName .. " settings."
+            message = message .. " Loading " .. accountName .. " settings."
             fillOmittedSettings(accountName)
             validateSettings(accountName)
         else
-            message = "Pathfinder : Loading default settings."
+            message = message .. " Loading default settings."
         end
         Lib.log1time(message)
     end

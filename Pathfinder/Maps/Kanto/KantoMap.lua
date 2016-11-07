@@ -1,9 +1,9 @@
 local cpath = select(1, ...) or "" -- callee path
 local function nTimes(n, f, x) for i = 0, n - 1 do x = f(x) end return x end -- calls n times f(x)
 local function rmlast(str) return str:sub(1, -2):match(".+[%./]") or "" end -- removes last dir / file from the callee path
-local cppdpath = nTimes(3, rmlast, cpath) -- callee parent of parent dir path
+local cpppdpath = nTimes(4, rmlast, cpath) -- callee parent parent of parent dir path
 
-local _ss = require (cppdpath .. "Settings/Static_Settings")
+local _ss = require (cpppdpath .. "Settings/Static_Settings")
 
 return function()
 
@@ -11,8 +11,9 @@ local ss = _ss()
 local K_SUBWAY = ss.K_SUBWAY
 
 local KantoMap = {}
+
 KantoMap["Berry Tower Kanto"] = {["Route 13_A"] = {1}}
-KantoMap["Bike Road Stop"] = {["Route 18_A"] = {0.2}, ["Route 18_B"] = {0.2}}
+KantoMap["Bike Road Stop"] = {["Route 18_A"] = {0.2, {["items"] = {"Bicycle"}}}, ["Route 18_B"] = {0.2}}
 KantoMap["Bills House"] = {["Route 25"] = {1}}
 KantoMap["Celadon City"] = {["Route 16_B"] = {1}, ["Celadon Mart 1"] = {1}, ["Pokecenter Celadon"] = {1}, ["Route 7"] = {1}}
 KantoMap["Celadon City Subway"] = {["Lavender Town Subway"] = {K_SUBWAY}, ["Viridian City Subway"] = {K_SUBWAY}, ["Vermilion City Subway"] = {K_SUBWAY}, ["Fuchsia City Subway"] = {K_SUBWAY}, ["Saffron City Subway"] = {K_SUBWAY}, ["Pewter City Subway"] = {K_SUBWAY}, ["Pokecenter Celadon"] = {0.2}, ["Cerulean City Subway"] = {K_SUBWAY}}
@@ -155,7 +156,7 @@ KantoMap["Route 14_A"] = {["Route 13_A"] = {1}, ["Route 14_B"] = {0, {["abilitie
 KantoMap["Route 14_B"] = {["Route 14_A"] = {0}}
 KantoMap["Route 15"] = {["Route 15 Stop House"] = {1}, ["Route 14_A"] = {1}}
 KantoMap["Route 15 Stop House"] = {["Route 15"] = {0.2}, ["Fuchsia City"] = {0.2}}
-KantoMap["Route 16 Stop House"] = {["Route 16_B"] = {0.2}, ["Route 16_A"] = {0.2}}
+KantoMap["Route 16 Stop House"] = {["Route 16_B"] = {0.2}, ["Route 16_A"] = {0.2, {["items"] = {"Bicycle"}}}}
 KantoMap["Route 16 house"] = {["Route 16_A"] = {1}}
 KantoMap["Route 16_A"] = {["Route 16 Stop House"] = {1}, ["Route 16 house"] = {1}, ["Route 17"] = {1}}
 KantoMap["Route 16_B"] = {["Route 16 Stop House"] = {0.5}}
@@ -258,9 +259,7 @@ KantoMap["Viridian Forest"] = {["Viridian Maze"] = {1}, ["Route 2 Stop"] = {2}, 
 KantoMap["Viridian Maze"] = {["Viridian Forest"] = {1}}
 KantoMap["Viridian Pokemart"] = {["Viridian City"] = {1}}
 
-
--- JohtoMap["test run"] = {} -- load this to check for map eror
--- JohtoMap["node"] = {["link"] = {distance, {["restrictionType"] = {"restriction"}}}}
+-- KantoMap["node"] = {["link"] = {distance, {["restrictionType"] = {"restriction"}}}}
 
 return KantoMap
 end

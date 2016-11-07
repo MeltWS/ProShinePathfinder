@@ -1,4 +1,4 @@
-##Pathfinder for Proshine v2.0
+##Pathfinder for Proshine v2.0.0
 This script provides a module to move from a map A to a map B using the shortest path.  
 The Objective of this project is to provide a tool to simplify scripting in proshine. So you don't have to use an elseif per map you're crossing.  
 It also provides advanced functionality, settings, and more...  
