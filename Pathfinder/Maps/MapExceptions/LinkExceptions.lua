@@ -206,6 +206,155 @@ linkExce["Whirl Islands B2F"] = {
     ["Whirl Islands B1F_A"] = {19, 25},
     ["Whirl Islands B1F_C"] = {24, 13},
 }
+
+----------------------
+------ JOHTO ---------
+----------------------
+
+linkExce["Route 124_A"] = {
+    ["Route 124 Underwater_A"] = {28, 43},
+    ["Route 124 Underwater_B"] = {41, 36},
+    ["Route 124 Underwater_D"] = {73, 27},
+    ["Route 124 Underwater_E"] = {61, 46},
+}
+linkExce["Route 124_B"] = {
+    ["Route 124 Underwater_C"] = {12, 8},
+    ["Route 124 Underwater_D"] = {71, 8},
+}
+linkExce["Route 124 Underwater_A"] = {
+    ["Route 124_A"] = {29, 52},
+    ["Route 124_C"] = {14, 54},
+    ["Route 124_D"] = {36, 67},
+}
+linkExce["Route 124 Underwater_D"] = {
+    ["Route 124_A"] = {52, 17},
+    ["Route 124_B"] = {52, 8},
+}
+linkExce["Route 126_A"] = {
+    ["Route 126 Underwater_A"] = {15, 71}, -- to main underwater
+    ["Route 126 Underwater_B"] = {20, 105}, -- to isolated bottom 
+}
+linkExce["Route 126_C"] = {
+    ["Route 126 Underwater_A"] = {46, 31}, -- to main underwater
+    ["Route 126 Underwater_C"] = {66, 8}, -- to top left side
+}
+linkExce["Route 126 Underwater_A"] = {
+    ["Route 126_A"] = {15, 71},
+    ["Route 126_C"] = {46, 31},
+}
+linkExce["Route 126 Underwater_B"] = {
+    ["Route 126_A"] = {20, 105},
+    ["Route 126_B"] = {11, 114},
+}
+linkExce["Route 126 Underwater_C"] = {
+    ["Route 126_C"] = {66, 8},
+    ["Route 126_D"] = {15, 14},
+}
+linkExce["Route 127_A"] = {
+    ["Route 127 Underwater_A"] = {37, 25}, -- to main road
+    ["Route 127 Underwater_B"] = {96, 72}, -- to isolated island
+}
+linkExce["Route 127 Underwater_B"] = {
+    ["Route 127_A"] = {83, 60}, -- to main road
+    ["Route 127_B"] = {90, 54}, -- to isolated island
+}
+linkExce["Route 128"] = {
+    ["Route 128 Underwater_B"] = {31, 19}, -- to middle isolated
+    ["Route 128 Underwater_C"] = {70, 27}, -- to right side dive
+}
+linkExce["Route 129_A"] = {
+    ["Route 129 Underwater"] = {127, 23}, -- missing link in pro
+}
+linkExce["Route 129_B"] = {
+    ["Route 129 Underwater"] = {82, 43}, -- missing link in pro
+}
+linkExce["Route 130_A"] = {
+    ["Route 130 Underwater_B"] = {75, 10}, -- missing link in pro
+}
+linkExce["Route 130_B"] = {
+    ["Route 130 Underwater_A"] = {15, 6}, -- missing link in pro
+}
+linkExce["Route 129 Underwater"] = {
+    ["Route 129_A"] = {56, 16}, -- to main path
+    ["Route 129_B"] = {38, 32}, -- to isolated part
+}
+linkExce["Sootopolis City Underwater"] = {
+    ["Sootopolis City"] = {17, 11}, -- link is missing in pro
+}
+linkExce["Sootopolis City"] = {
+    ["Sootopolis City Underwater"] = {50, 91}, -- link is missing in pro
+}
+linkExce["Victory Road Hoenn 1F_A"] = {
+    ["Ever Grande City_A"] = {21, 55},
+}
+linkExce["Victory Road Hoenn B1F_A"] = {
+    ["Victory Road Hoenn 1F_A"] = {13, 4},
+    ["Victory Road Hoenn 1F_B"] = {46, 7},
+    ["Victory Road Hoenn 1F_C"] = {53, 35},
+}
+linkExce["Victory Road Hoenn B2F_A"] = {
+    ["Victory Road Hoenn B1F_A"] = {29, 41},
+    ["Victory Road Hoenn B1F_D"] = {56, 3},
+}
+linkExce["Victory Road Hoenn B2F_E"] = {
+    ["Victory Road Hoenn B1F_B"] = {26, 14},
+}
+linkExce["Sky Pillar Entrance Cave 1F"] = {
+    ["Sky Pillar Entrance_A"] = {7, 17},
+    ["Sky Pillar Entrance_B"] = {17, 6},
+}
+linkExce["Cycle Road Stop House 1"] = {
+    ["Route 110_B"] = {3, 11}, -- to route 110 left
+    ["Route 110_D"] = {12, 11}, -- to bike road
+}
+linkExce["Cycle Road Stop House 2"] = {
+    ["Route 110_A"] = {3, 11}, -- to route 110 left
+    ["Route 110_D"] = {12, 11}, -- to bike road
+}
+linkExce["Fiery Path"] = {
+    ["Route 112_A"] = {38, 8}, -- to top exit
+    ["Route 112_B"] = {36, 48}, -- to bottom exit
+}
+linkExce["Route 115_A"] = {
+    ["Meteor falls 1F 1R_C"] = {74, 73},
+}
+linkExce["Route 115_D"] = {
+    ["Meteor falls 1F 1R_C"] = {58, 30},
+}
+linkExce["Meteor falls 1F 1R_X"] = { -- tmp fix for proshine cascade pathfind
+    ["Meteor falls 1F 1R_A"] = {21, 25},
+}
+linkExce["Meteor falls B1F 1R_A"] = {
+    ["Meteor Falls 1F 2R_A"] = {6, 8},
+    ["Meteor Falls 1F 2R_B"] = {22, 21},
+}
+linkExce["Meteor Falls 1F 2R_B"] = {
+    ["Meteor falls B1F 1R_A"] = {33, 41},
+    ["Meteor falls B1F 1R_B"] = {11, 35},
+}
+linkExce["Rusturf Tunnel_A"] = {
+    ["Route 116_A"] = {11, 19},
+}
+linkExce["Rusturf Tunnel_B"] = {
+    ["Route 116_B"] = {24, 32},
+}
+linkExce["Route 104_A"] = {
+    ["Rustboro City_A"] = {41, 0},
+    ["Rustboro City_B"] = {58, 0},
+}
+linkExce["Petalburg Woods_A"] = {
+    ["Route 104_A"] = {21, 0},
+    ["Route 104_B"] = {24, 60},
+    ["Route 104_C"] = {51, 60},
+}
+linkExce["Hoenn Safari Zone Area 1"] = {
+    ["Hoenn Safari Zone Area 2_A"] = {0, 42},
+    ["Hoenn Safari Zone Area 2_B"] = {0, 22},
+}
+linkExce["Hoenn Safari Zone Area 3"] = {
+    ["Hoenn Safari Zone Area 2_C"] = {28, 50},
+    ["Hoenn Safari Zone Area 2_D"] = {17, 50},
+}
 -- linkExce[""] = {
 --     [""] = {},
 -- }

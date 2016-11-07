@@ -44,8 +44,67 @@ npcExce["Goldenrod City Station_B"] = {
 }
 
 ----------------------
+------ HOENN ---------
+----------------------
+
+npcExce["Cable Car Station 1"] = {
+    ["Cable Car Station 2"] = {{10, 6}, {"Yes"}, "Do you want to be taken to the top of Mt. Chimney?"}
+}
+npcExce["Cable Car Station 2"] = {
+    ["Cable Car Station 1"] = {{10, 6}, {"Yes"}, "Do you want to be taken to the bottom of Mt. Chimney?"}
+}
+npcExce["Pokecenter Dewford Town"] = {
+    ["Transmat Station"] = {{8, 4}, {"Here you go."}, "Can you present to me your registered trainer's ID for authenticatory purposes?"}
+}
+npcExce["Pokecenter Ever Grande City"] = {
+    ["Transmat Station"] = {{8, 4}, {"Here you go."}, "Can you present to me your registered trainer's ID for authenticatory purposes?"}
+}
+npcExce["Pokecenter Fallarbor Town"] = {
+    ["Transmat Station"] = {{8, 4}, {"Here you go."}, "Can you present to me your registered trainer's ID for authenticatory purposes?"}
+}
+npcExce["Pokecenter Fortree City"] = {
+    ["Transmat Station"] = {{8, 4}, {"Here you go."}, "Can you present to me your registered trainer's ID for authenticatory purposes?"}
+}
+npcExce["Pokecenter Lavaridge Town"] = {
+    ["Transmat Station"] = {{8, 4}, {"Here you go."}, "Can you present to me your registered trainer's ID for authenticatory purposes?"}
+}
+npcExce["Pokecenter Lilycove City"] = {
+    ["Transmat Station"] = {{8, 4}, {"Here you go."}, "Can you present to me your registered trainer's ID for authenticatory purposes?"}
+}
+npcExce["Pokecenter Mauville City"] = {
+    ["Transmat Station"] = {{8, 4}, {"Here you go."}, "Can you present to me your registered trainer's ID for authenticatory purposes?"}
+}
+npcExce["Pokecenter Mossdeep City"] = {
+    ["Transmat Station"] = {{8, 4}, {"Here you go."}, "Can you present to me your registered trainer's ID for authenticatory purposes?"}
+}
+npcExce["Pokecenter Oldale Town"] = {
+    ["Transmat Station"] = {{8, 4}, {"Here you go."}, "Can you present to me your registered trainer's ID for authenticatory purposes?"}
+}
+npcExce["Pokecenter Pacifidlog Town"] = {
+    ["Transmat Station"] = {{8, 4}, {"Here you go."}, "Can you present to me your registered trainer's ID for authenticatory purposes?"}
+}
+npcExce["Pokecenter Petalburg City"] = {
+    ["Transmat Station"] = {{8, 4}, {"Here you go."}, "Can you present to me your registered trainer's ID for authenticatory purposes?"}
+}
+npcExce["Pokecenter Rustboro City"] = {
+    ["Transmat Station"] = {{8, 4}, {"Here you go."}, "Can you present to me your registered trainer's ID for authenticatory purposes?"}
+}
+npcExce["Pokecenter Slateport"] = {
+    ["Transmat Station"] = {{8, 4}, {"Here you go."}, "Can you present to me your registered trainer's ID for authenticatory purposes?"}
+}
+npcExce["Pokecenter Sootopolis City"] = {
+    ["Transmat Station"] = {{8, 4}, {"Here you go."}, "Can you present to me your registered trainer's ID for authenticatory purposes?"}
+}
+npcExce["Pokecenter Verdanturf"] = {
+    ["Transmat Station"] = {{8, 4}, {"Here you go."}, "Can you present to me your registered trainer's ID for authenticatory purposes?"}
+}
+npcExce["Hoenn Safari Zone Lobby"] = {
+    ["Hoenn Safari Zone Area 1"] = {{21, 6}, {"Yes"}, "Would you like to enter the safari zone for $5,000 today?"},
+}
+----------------------
 ---- INTER REGION ----
 ----------------------
+
 npcExce["Goldenrod City Station Floor 2"] = {
     ["Saffron City Floor 2"] = {{14, 10}, {"Yes"}, "Are you sure you would like to board on the ride to Goldenrod City at this moment?"}
 }

@@ -10,17 +10,18 @@ local Game                = require (cppdpath .. "Lib/Game")
 local Table               = require (cppdpath .. "Lib/Table")
 local Work                = require (cppdpath .. "Lib/Work")
 local _ss                 = require (cppdpath .. "Settings/Static_Settings")
--- local _globalMap          = require (cppdpath .. "Maps/globalMap")
-local _globalMap          = require (cppdpath .. "Maps/Hoenn/TestHoennMap")
+-- local _globalMap          = require (cppdpath .. "Maps/GlobalMap")
+local _globalMap          = require (cppdpath .. "Maps/Hoenn/HoennMap")
 local subMaps             = require (cppdpath .. "Maps/MapExceptions/SubstituteMaps")
 local linkExceptions      = require (cppdpath .. "Maps/MapExceptions/LinkExceptions")
 local npcExceptions       = require (cppdpath .. "Maps/MapExceptions/NpcExceptions")
 local digways             = require (cppdpath .. "Maps/MapExceptions/Digways")
 local dialogSolver        = require (cppdpath .. "Lib/MoveTo/DialogSolver")
 local elevatorExceptions  = require (cppdpath .. "Maps/MapExceptions/Elevators")
+local transmatExceptions  = require (cppdpath .. "Maps/MapExceptions/Transmats")
 local moveAbilities       = {["cut"] = 0, ["surf"] = 0, ["dig"] = 155, ["rock smash"] = 0, ["dive"] = 155}
 local workAbilities       = {["headbutt"] = 155, ["dig"] = 0}
-local moveItems           = {"Fresh Water", "Marsh Badge", "Zephyr Badge"}
+local moveItems           = {"Fresh Water", "Marsh Badge", "Zephyr Badge", "Bicycle", "Go-Goggles"}
 local globalMap           = {}
 local pathSolution        = {}
 local settings            = {}
@@ -58,6 +59,7 @@ end
 local function getUsableLinks(links)
     local usableLinks = {}
     for link, data in pairs(links) do
+        assert(type(data) == "table", "Pathfinder --> Link " .. link .. " data is not a table")
         local isLinkValid = #data == 1
         for i = 2, #data do
             if isLinkRestrictionMatched(data[i]) then
@@ -124,6 +126,15 @@ local function solveElevatorExce(n1, n2)
     end
 end
 
+local function solveTransmatExce(n2)
+    n2 = n2:gsub("Pokecenter ", "")
+    if transmatExceptions[n2][2] then
+        transmatExceptions[n2][2] = false
+        return assert(moveToCell(9, 10), "Pathfinder --> Failed to exit Transmat Station.")
+    end
+    return assert(talkToNpcOnCell(4, 4), "Pathfinder --> Failed to talk to npc in Transmat Station")
+end
+
 -- check if the nodes are the same map
 local function isSameMap(n1, n2)
     return n1:gsub("_%u$", "") == n2:gsub("_%u$", "")
@@ -156,6 +167,8 @@ local function handleException(n1, n2)
         return assert(talkToNpcOnCell(table.unpack(digways[n1][n2][1])), "Pathfinder --> Error: Exception invalid for: " .. n1 .. " -> " .. n2)
     elseif isSubwayPath(n1, n2) then
         return talkToNpcOnCell(10, 9)
+    elseif n1 == "Transmat Station" and transmatExceptions[n2:gsub("Pokecenter ", "")] ~= nil then
+        return solveTransmatExce(n2)
     end
 end
 
@@ -284,11 +297,14 @@ local function validateAbilitiesIndex(dirtyList, abilityList)
     return pokeIndexTable
 end
 
--- check if the account has items
-local function validateItems(items)
+-- check if the account has items. We assume items previously validated are always true, to limit API calls.
+local function validateItems(currentItems, items)
     local accountItems = {}
+    currentItems = currentItems or {}
     for _, item in ipairs(items) do
-        accountItems[item] = hasItem(item)
+        if not currentItems[item] then
+            accountItems[item] = hasItem(item)
+        end
     end
     return accountItems
 end
@@ -308,7 +324,7 @@ end
 
 -- try to find a path changing settings
 local function findSettings(dest)
-    local message = "Pathfinder --> Path Not Found ERROR."
+    local message = "Pathfinder --> Path Not Found ERROR. From " .. playerNode .. " to " .. destStore .. "."
 
     for ability, _ in pairs(moveAbilities) do
         if not settings.abilitiesIndex[ability] then
@@ -339,15 +355,15 @@ local function moveTo(map, dest)
         return true
     elseif Work.isWorking(map, settings.workOpts) then
         return true
-    elseif destStore == table.concat(dest, "|") then
+    elseif destStore == table.concat(dest, " | ") then
         return moveWithCalcPath()
     else
         settings.abilitiesIndex = validateAbilitiesIndex(settings.abilitiesIndex, moveAbilities)
-        settings.accountItems = validateItems(moveItems)
+        settings.accountItems = validateItems(settings.accountItems, moveItems)
         pathSolution = simpleAStar(goal(dest))(playerNode)
         -- assert(pathSolution, "path not found")
+        destStore = table.concat(dest, " | ")
         if not pathSolution then return findSettings(dest) end
-        destStore = table.concat(dest, "|")
         log("Path: " .. table.concat(pathSolution,"->"))
         return moveWithCalcPath()
     end

@@ -59,5 +59,27 @@ digways["Route 33"] = {
     ["Route 32"] = {{14, 13}, {1}}
 }
 
+----------------------
+------ HOENN ---------
+----------------------
+
+digways["Ever Grande City_A"] = {
+    ["Ever Grande City_B"] = {{29, 56}, {1}}
+}
+digways["Ever Grande City_B"] = {
+    ["Ever Grande City_A"] = {{34, 33}, {1}}
+}
+digways["Route 116_A"] = {
+    ["Route 116_B"] = {{74, 27}, {"Eastern segment of Route 116."}},
+    ["Verdanturf Town"] = {{74, 27}, {"Verdanturf Town."}}
+}
+digways["Route 116_B"] = {
+    ["Route 116_A"] = {{97, 24}, {"Western segment of Route 116."}},
+    ["Verdanturf Town"] = {{97, 24}, {"Verdanturf Town."}}
+}
+digways["Verdanturf Town"] = {
+    ["Route 116_A"] = {{14, 2}, {"Western segment of Route 116."}},
+    ["Route 116_B"] = {{14, 2}, {"Eastern segment of Route 116."}}
+}
 
 return digways

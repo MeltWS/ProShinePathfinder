@@ -26,11 +26,15 @@ local currentTarget      = nil
 local dialogs            = {
     ["You harvested "] = function() end,      -- berries
     ["You have harvested "] = function() end, -- berries
+    ["You have looted "] = function() end, -- berries
     ["You found "] = function() end,          -- loot item
     ["Obtained "] = function() end,          -- loot item
     ["You've found "] = function() end,      -- loot item
+    ["You have obtained "] = function() end,       -- loot item
     ["You have found "] = function() end,      -- loot item
     ["You obtained "] = function() end,       -- loot TM
+    ["You have received "] = function() end,       -- loot TM
+    ["krrtt..krrt.."] = function() end,       -- fake voltorb item
     ["Select a Pokemon that has Headbutt."] = function() pushDialogAnswer(headbuttIndex) end,
     ["Select a Pokemon that has Dig."] = function() pushDialogAnswer(digIndex) end,
 }

@@ -319,8 +319,176 @@ return {
         ["Route 47_B"] = {{19, 76, 32, 93}, {19, 63, 32, 72}, {32, 84, 56, 96}, {57, 77, 62, 93}, {57, 69, 62, 73}, {63, 84, 95, 95}, {96, 81, 98, 86}, {57, 65, 62, 65}}, -- bottom water
         ["Route 47_C"] = {{41, 65, 70, 68}, {16, 73, 41, 75}, {41, 69, 41, 72}, {12, 60, 15, 75}, {5, 0, 38, 59}}, -- middle to top entrance
     },
-    -- [""] = {
-    --     [""] = {{}},
-    -- },
 
+----------------------
+------ HOENN ---------
+----------------------
+
+    ["Route 124"] = {
+        ["Route 124_A"] = {{45, 23, 91, 60}, {43, 25, 44, 42}, {36, 27, 42, 42}, {24, 25, 35, 45}, {0, 21, 23, 34}, {19, 20, 20 , 20}}, -- main Road
+        ["Route 124_B"] = {{4, 4, 75, 19}, {54, 20, 61, 22}, {23, 20, 44, 23}, {25, 24, 42, 25}, {37, 26, 39, 26}}, -- top part
+        ["Route 124_C"] = {{3, 37, 14, 55}}, -- bottom left dive spot
+        ["Route 124_D"] = {{23, 50, 44, 58}, {34, 49, 38, 49}}, -- bottom dive spot
+    },
+    ["Route 124 Underwater"] = {
+        ["Route 124 Underwater_A"] = {{10, 50, 41, 90}}, -- bottom left
+        ["Route 124 Underwater_B"] = {{26, 27, 37, 35}}, -- middle
+        ["Route 124 Underwater_C"] = {{6, 4, 22, 14}}, -- top left
+        ["Route 124 Underwater_D"] = {{46, 7, 57, 18}}, -- top right
+        ["Route 124 Underwater_E"] = {{49, 48, 58, 58}}, -- bottom right
+    },
+    ["Route 126"] = {
+        ["Route 126_A"] = {{13, 105, 14, 109}, {15, 105, 20, 111}, {21, 105, 105, 116}, {11, 39, 125, 104}, {53, 28, 84, 38}, {63, 26, 65, 27}, {72, 0, 83, 14}, {72, 16, 84, 27}, {73, 15, 84, 15}, {61, 31, 52, 37}, {48, 38, 52, 38}, {36, 36, 40, 38}, {37, 34, 37, 35}}, -- main road
+        ["Route 126_B"] = {{6, 109, 13, 121}, {14, 111, 16, 121}}, -- bottom left isolated
+        ["Route 126_C"] = {{41, 36, 48, 38}, {39, 31, 50, 35}, {42, 28, 52, 30}, {42, 21, 62, 27}, {48, 3, 71, 20}, {72, 15, 72, 15}}, -- top left border to main path
+        ["Route 126_D"] = {{12, 11, 29, 24}}, -- top left isolated
+    },
+    ["Route 126 Underwater"] = {
+        ["Route 126 Underwater_A"] = {{25, 97, 27, 100}, {28, 97, 97, 109}, {13, 26, 107, 96}}, -- main path
+        ["Route 126 Underwater_B"] = {{7, 99, 25, 118}}, -- bottom part
+        ["Route 126 Underwater_C"] = {{13, 5, 70, 22}}, -- top part
+    },
+    ["Route 127"] = {
+        ["Route 127_A"] = {{0, 0, 78, 93}, {78, 68, 108, 92}, {78, 65, 97, 67}, {106, 66, 108, 67}, {92, 64, 93, 64}, {77, 62, 85, 64}, {78, 61, 82, 61}, {79, 9, 116, 36}, {80, 37, 81, 37}, {97, 37, 108, 42}, {100, 43, 107, 48}, {102, 49, 107, 50}}, -- main road
+        ["Route 127_B"] = {{79, 38, 96, 60}, {84, 37, 86, 37}, {97, 43, 97, 44}, {98, 49, 101, 50}, {98, 51, 105, 67}, {84, 61, 96, 63}, {88, 64, 88, 64}, {106, 62, 106, 62}}, -- isolated island
+    },
+    ["Route 127 Underwater"] = {
+        ["Route 127 Underwater_A"] = {{19, 5, 56, 70}}, -- main path
+        ["Route 127 Underwater_B"] = {{77, 50, 95, 65}}, -- bottom right
+    },
+    ["Route 128 Underwater"] = {
+        ["Route 128 Underwater_A"] = {{5, 42, 9, 48}, {7, 49, 50, 77}, {46, 28, 73, 49}, {8, 0, 48, 27}}, -- main path
+        ["Route 128 Underwater_B"] = {{17, 31, 35, 47}}, -- middle
+        ["Route 128 Underwater_C"] = {{86, 29, 105, 41}}, -- right
+    },
+    ["Route 129"] = {
+        ["Route 129_A"] = {{0, 0, 73, 45}, {74, 0, 111, 31}, {112, 6, 135, 50}}, -- main path
+        ["Route 129_B"] = {{74, 34, 112, 47}}, -- bottom part
+    },
+    ["Route 130"] = {
+        ["Route 130_A"] = {{0, 24, 50, 44}, {51, 3, 80, 44}}, -- main path
+        ["Route 130_B"] = {{11, 0, 50, 16}}, -- top part
+    },
+    ["Route 130 Underwater"] = {
+        ["Route 130 Underwater_A"] = {{28, 15, 80, 41}, {13, 5, 45, 14}}, -- main path
+        ["Route 130 Underwater_B"] = {{70, 6, 79, 14}}, -- top right
+    },
+    ["Ever Grande City"] = {
+        ["Ever Grande City_A"] = {{0, 56, 51, 117}}, -- bottom part
+        ["Ever Grande City_B"] = {{10, 3, 46, 42}}, -- top part
+    },
+    ["Victory Road Hoenn 1F"] = {
+        ["Victory Road Hoenn 1F_A"] = {{2, 14, 48, 48}, {7, 49, 37, 55}}, -- bottom entrance
+        ["Victory Road Hoenn 1F_B"] = {{33, 5, 48, 13}}, -- top right entrance path
+        ["Victory Road Hoenn 1F_C"] = {{39, 50, 49, 53}}, -- bottom right
+    },
+    ["Victory Road Hoenn B1F"] = {
+        ["Victory Road Hoenn B1F_A"] = {{3, 4, 28, 20}, {29, 3, 52, 37}, {53, 17, 57, 36}}, -- main path from top left
+        ["Victory Road Hoenn B1F_B"] = {{19, 22, 28, 37}}, -- bottom middle left
+        ["Victory Road Hoenn B1F_C"] = {{8, 22, 18, 37}}, -- bottom left
+        ["Victory Road Hoenn B1F_D"] = {{53, 2, 58, 14}}, -- top right isolated
+    },
+    ["Victory Road Hoenn B2F"] = { -- some issues with overlapsing areas possibly
+        ["Victory Road Hoenn B2F_A"] = {{1, 7, 9, 13}, {1, 14, 4, 33}, {5, 23, 9, 31}, {21, 23, 23, 31}, {24, 24, 31, 42}, {32, 14, 40, 42}, {41, 3, 57, 42}}, -- top right, bottom and bridges
+        ["Victory Road Hoenn B2F_B"] = {{5, 35, 10, 38}}, -- left enclosed
+        ["Victory Road Hoenn B2F_C"] = {{11, 25, 21, 38}, {20, 37, 22, 38}}, -- bottom below water
+        ["Victory Road Hoenn B2F_D"] = {{4, 1, 9, 6}, {10, 1, 37, 10}, {10, 11, 14, 13}}, -- water top
+        ["Victory Road Hoenn B2F_E"] = {{24, 14, 28, 16}}, -- middle land sourrounded by water
+        ["Victory Road Hoenn B2F_F"] = {{8, 14, 30, 20}, {13, 21, 23, 22}, {14, 24, 18, 24}}, -- water aside of island
+    },
+    ["Sky Pillar Entrance"] = {
+        ["Sky Pillar Entrance_A"] = {{10, 31, 46, 49}}, -- Water entranc 
+        ["Sky Pillar Entrance_B"] = {{20, 6, 36, 27}}, -- top part
+    },
+    ["Sky Pillar 4F"] = {
+        ["Sky Pillar 4F_A"] = {{1, 5, 14, 9}, {7, 10, 14, 13}}, -- top right
+        ["Sky Pillar 4F_B"] = {{1, 10, 5, 13}}, -- bottom left
+    },
+    ["Route 110"] = { -- overlapsing path with the bike road
+        ["Route 110_A"] = {{6, 3, 27, 31}, {7, 31, 9, 59}, {7, 60, 40, 62}}, -- main path top part
+        ["Route 110_B"] = {{41, 56, 44, 93}, {29, 65, 39, 98}, {40, 94, 47, 98}, {0, 94, 16, 98}, {0, 99, 53, 116}, {33, 117, 50, 122}, {39, 123, 50, 125}, {12, 118, 26, 140}, {27, 130, 31, 140}}, -- main path bot part
+        ["Route 110_C"] = {{12, 32, 38, 58}, {39, 32, 59, 54}}, -- water to powerplant
+        ["Route 110_D"] = {{28, 120, 32, 129}, {33, 124, 36, 132}, {37, 126, 47, 133}, {23, 82, 27, 98}, {14, 63, 28, 77}, {29, 11, 47, 31}, {16, 59, 20, 59}}, -- bike road
+    },
+    ["Route 118"] = {
+        ["Route 118_A"] = {{2, 12, 28, 28}}, -- left
+        ["Route 118_B"] = {{29, 0, 80, 28}}, -- right
+    },
+    ["Route 120"] = {
+        ["Route 120_A"] = {{0, 4, 46, 21}, {5, 22, 24, 23}, {30, 22, 35, 23}, {0, 24, 50, 105}}, -- left
+        ["Route 120_B"] = {{25, 22, 29, 23}}, -- middle top island
+    },
+    ["Route 123"] = {
+        ["Route 123_A"] = {{141, 14, 172, 24}, {173, 0, 177, 21}}, -- right entrance
+        ["Route 123_B"] = {{42, 2, 89, 18}, {90, 1, 108, 15}, {109, 2, 122, 8}, {123, 1, 159, 13}}, -- top with water
+        ["Route 123_C"] = {{0, 0, 41, 23}, {42, 18, 92, 27}, {93, 17, 111, 27}, {112, 10, 124, 26}, {125, 15, 139, 25}}, -- bottom left
+    },
+    ["Route 112"] = {
+        ["Route 112_A"] = {{14, 7, 45, 19}}, -- top
+        ["Route 112_B"] = {{6, 30, 32, 51}, {18, 52, 19, 53}, {20, 52, 45, 67}}, -- bottom right main path
+        ["Route 112_C"] = {{0, 52, 17, 71}, {18, 54, 19, 64}}, -- bottom left enclosed
+    },
+    ["Jagged Pass"] = {
+        ["Jagged Pass_A"] = {{0, 3, 30, 24}, {9, 25, 31, 32}, {32, 25, 38, 31}}, -- top 
+        ["Jagged Pass_B"] = {{4, 25, 6, 32}, {1, 33, 43, 84}, {24, 85, 37, 86}}, -- middle
+        ["Jagged Pass_C"] = {{4, 85, 22, 110}, {23, 88, 36, 107}}, -- bottom
+    },
+    ["Meteor falls 1F 1R"] = {
+        -- ["Meteor falls 1F 1R_A"] = {{15, 15, 43, 47}, {44, 44, 47, 47}, {43, 15, 49, 22}, {45, 5, 48, 14}}, --  main path
+        ["Meteor falls 1F 1R_A"] = {{15, 15, 43, 25}, {44, 44, 47, 47}, {43, 15, 49, 22}, {45, 5, 48, 14}}, --  main path
+        ["Meteor falls 1F 1R_B"] = {{25, 4, 36, 7}, {23, 8, 36, 11}}, --  middle top
+        ["Meteor falls 1F 1R_C"] = {{18, 4, 23, 10}}, -- top left drop
+        ["Meteor falls 1F 1R_D"] = {{44, 32, 48, 42}}, -- bottom right
+        ["Meteor falls 1F 1R_X"] = {{15, 26, 43, 47}}, -- tmp fix for issue with proshine pathfind and cascades
+    },
+    ["Meteor falls B1F 1R"] = {
+        ["Meteor falls B1F 1R_A"] = {{2, 8, 5, 36}, {6, 8, 10, 11}, {6, 22, 6, 24}, {6, 25, 17, 35}, {2, 25, 17, 36}, {18, 16, 22, 30}, {22, 21, 23, 25}}, -- left
+        ["Meteor falls B1F 1R_B"] = {{7, 14, 16, 24}, {12, 3, 27, 15}, {25, 16, 27, 36}, {23, 27, 25, 43}, {18, 32, 22, 44}, {15, 37, 17, 43}}, -- right
+    },
+    ["Meteor Falls 1F 2R"] = {
+        ["Meteor Falls 1F 2R_A"] = {{8, 2, 23, 23}, {24, 2, 39, 34}}, -- top
+        ["Meteor Falls 1F 2R_B"] = {{10, 26, 23, 34}, {10, 35, 39, 52}}, -- bottom
+    },
+    ["Route 115"] = {
+        ["Route 115_A"] = {{48, 62, 75, 78}, {10, 78, 82, 108}, {36, 77, 36, 77}, {41, 77, 43, 77}, {61, 109, 82, 123}}, -- meteor entrance
+        ["Route 115_B"] = {{12, 109, 55, 111}, {12, 112, 59, 150}, {60, 125, 77, 146}}, -- bottom part
+        ["Route 115_C"] = {{11, 76, 40, 77}, {10, 30, 44, 75}, {45, 1, 57, 28}, {58, 7, 65, 32}}, -- top
+        ["Route 115_D"] = {{46, 28, 58, 36}, {59, 33, 60, 36}}, -- top, rock smash part
+        ["Route 115_E"] = {{58, 1, 80, 6}, {67, 7, 80, 46}}, -- top, rock climb part
+    },
+    ["Route 116"] = {
+        ["Route 116_A"] = {{0, 9, 18, 30}, {19, 18, 24, 29}, {25, 23, 35, 30}, {36, 18, 79, 30}, {52, 14, 75, 17}}, -- left
+        ["Route 116_B"] = {{85, 10, 119, 31}}, --right
+        ["Route 116_C"] = {{19, 10, 45, 17}, {26, 18, 35, 21}}, -- top left
+    },
+    ["Rusturf Tunnel"] = {
+        ["Rusturf Tunnel_A"] = {{8, 5, 16, 19}, {17, 8, 23, 10}}, -- left
+        ["Rusturf Tunnel_B"] = {{24, 5, 38, 32}, {21, 25, 23, 31}}, -- right
+        ["Rusturf Tunnel_C"] = {{22, 11, 26, 16}}, -- excavation side
+    },
+    ["Rustboro City"] = {
+        ["Rustboro City_A"] = {{26, 0, 78, 56}, {33, 57, 41, 65}}, -- main city
+        ["Rustboro City_B"] = {{43, 58, 61, 65}}, -- bottom right
+    },
+    ["Route 103"] = {
+        ["Route 103_A"] = {{9, 8, 50, 35}}, -- left
+        ["Route 103_B"] = {{51, 18, 100, 25}, {86, 16, 92, 17}, {51, 10, 70, 17}}, -- right
+        ["Route 103_C"] = {{55, 5, 64, 9}}, -- top
+        ["Route 103_D"] = {{71 ,11, 89, 16}, {73, 17, 76, 17}}, -- top right
+    },
+    ["Route 104"] = {
+        ["Route 104_A"] = {{5, 0, 69, 51}}, -- top
+        ["Route 104_B"] = {{7, 79, 57, 148}, {58, 100, 60, 148}, {61, 104, 78, 148}}, -- bottom
+        ["Route 104_C"] = {{60, 79, 71, 99}, {62, 100, 67, 102}}, -- bottom right isolated, exit of woods
+    },
+    ["Petalburg Woods"] = {
+        ["Petalburg Woods_A"] = {{5, 0, 27, 60}, {28, 21, 43, 55}, {44, 49, 58, 60}}, -- left path
+        ["Petalburg Woods_B"] = {{28, 2, 69, 20}, {44, 21, 70, 47}}, -- right path
+    },
+    ["Hoenn Safari Zone Area 2"] = {
+        ["Hoenn Safari Zone Area 2_A"] = {{6, 6, 22, 30}, {7, 31, 50, 48}}, -- left
+        ["Hoenn Safari Zone Area 2_B"] = {{23, 5, 50, 30}}, -- right
+        ["Hoenn Safari Zone Area 2_C"] = {{23, 2, 34, 4}}, -- top right
+        ["Hoenn Safari Zone Area 2_D"] = {{16, 2, 16, 5}}, -- top left
+    },
 }
