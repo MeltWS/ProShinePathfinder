@@ -1,41 +1,47 @@
 ## - The map system
-The map system is located in `Pathfinder/Maps`, they are two big sections.  
-- The maps for the algorithm, such as the Regions maps. they represent Nodes and Links, a node is a Map and links are the possible Maps accessible from it.
+The map system is located in `Pathfinder/Maps`, there are two big sections, as well as the maps for pokecenters and items used by API calls like moveToPC():
+- The maps for the algorithm, such as the Regions maps. They represent Nodes and Links, a node is a Map and links are the possible Maps accessible from it.
 - The Exceptions maps, inside `MapExceptions`.
 
-aswell as the maps for pokecenters and items used by API calls like moveToPC().  
-`GlobalMap` and `LinkMap` are used to link the main regions maps together.  
+`GlobalMap` and `LinkMap` are used to link the main regions maps together.
+
 ### - Understanding the need for exceptions:
-Sometimes map have the same name in the game, but you can only access a part of them because of your team, items or simply they are not at the same locations  
-For example there could be water in the middle of a map, then you need to have `surf` to be able to cross that part.  
-Another example would be `Route 2`: there are parts before and after the forest, some part you only access with cut.  
-In these cases the maps need to be subdevided for the algorithm to make no mistakes.  
-Example: If we are on topside of `route 2` then the closest Pokecenter would be in `Pewter City`, if we are on the bottom side then it's in `Viridian City`.  
-If there is a reason that could prevent you from moving to another link from the current map, you should make exceptions.  
-There are exceptions aswell if moving the a link require talking to a NPC.
+
+Sometime, maps have the same name as in the game, but you can only access a part of them because of your team, items or simply because they are not at the same locations  
+For example: there could be water in the middle of a map, then you need to have `surf` to be able to cross that part.  
+Another example would be `Route 2`: there are parts before and after the forest, some part you can only access with `cut`.  
+In these cases the maps need to be subdivided for the algorithm to make no mistakes.  
+Example: If we are on the top side of `route 2` then the closest Pokecenter would be in `Pewter City`, if we are on the bottom side then it is in `Viridian City`.  
+If there is something that could prevent you from traversing a link from the current map, you should make exceptions.  
+There are exceptions aswell if moving to a link require talking to a NPC.
+
 ### - Adding map without exceptions:
-Take a look at the regions maps for example [Kanto](https://github.com/MeltWS/ProShinePathfinder/blob/master/Pathfinder/Maps/Kanto/KantoMap.lua)  
+
+Take a look at the region maps from [Kanto](https://github.com/MeltWS/ProShinePathfinder/blob/master/Pathfinder/Maps/Kanto/KantoMap.lua) as an example:
 ```lua
 KantoMap["node"] = {["link1"] = {distance1}, ["link2"] = {distance2}}
 ```
 The node is the name of the Map  
-We can have as many links as we need, they MUST be the name of other nodes in the map, they MUST have a number distance.  
+We can have as many links as we need, they MUST be names of other nodes in the map, they MUST have a number distance.  
 Example :
 ```lua
 KantoMap["Player Bedroom Pallet"] = {["Player House Pallet"] = {1}}
 ```
   
 Sometimes you can have restrictions on a link, for example if you need surf.  
-`-- KantoMap["node"] = {["link"] = {distance, {["restrictionType"] = {"restriction"}}}}`
-The restrictionType must be either `abilities` or `items`, there can be multiple restrictions. The account must meet all `restriction` paired to `restrictionType` in order to make the link valid  
+`-- KantoMap["node"] = {["link"] = {distance, {["restrictionType"] = {"restriction"}}}}`  
+The `restrictionType`s must either be `abilities` or `items`, there can be multiple restrictions. The account must fulfill every `restriction` paired to `restrictionType` in order to make the link traversable  
 Example:
 ```lua
 KantoMap["Pallet Town"] = {["Player House Pallet"] = {1}, ["Route 21"] = {1, {["abilities"] = {"surf"}}}, ["Route 1"] = {1}}
 ```
-Here the link will only be valid if the player has `surf`  
+Here the link will only be usable if the player has `surf`
+
 ### - Exceptions handling:
-- Substitutes Maps
-If the map must be subdivided we need to know which part are which, so we defined substitute maps with rectangles. See the file `MapExceptions/SubstituteMaps`.  
+
+#### Substitutes Maps
+
+If the map must be subdivided, we need to know which part is which, so we define substitute maps with rectangles. See the file `MapExceptions/SubstituteMaps`.  
 ```lua
     ["In Game Map Name"] = {
         ["SubMap_X] = {{x1, y1, x2, y2}, {x1, y1, x2, y2}} -- location of the submap
@@ -50,7 +56,7 @@ If the map must be subdivided we need to know which part are which, so we define
 ```
 There can be as many rectangles as you need to, the rectangles MUST cover the whole submap area.  
 Adding all sumap rectangles MUST cover the whole map Area.  
-Route 2 is subdevided is four submaps.  
+Route 2 is subdivided ii four submaps.  
   
 We also need to define links, as for any other maps:  
 ```lua
@@ -59,10 +65,10 @@ KantoMap["Route 2_B"] = {["Route 11"] = {1, {["abilities"] = {"dig"}}}, ["Route 
 KantoMap["Route 2_C"] = {["Viridian City"] = {1}, ["Route 2_D"] = {1, {["abilities"] = {"cut"}}}, ["Route 2 Stop"] = {1}}
 KantoMap["Route 2_D"] = {["Route 2 Stop3"] = {1}, ["Route 2_C"] = {0, {["abilities"] = {"cut"}}}}
 ```
-Here we have distance 0 because we do not want the algorithm to weight the path between submap, it could have been 0.2 or something else aswell.  
+Here we have distances of 0 because we do not want the algorithm to weight the path between submap, it could have been 0.2 or something else as well.  
 Note that each submap have it's own links and restrictions.  
   
-Sometimes after subdivising Maps the script will need to know which specific cell to go, because a map can link to multiple submaps with the same parent map, and Proshine won't understand moveToMap(Route 2_B). And if we use moveToMap("Route 2") it will go to the closest submap, which we do not always want. Therefore we need linkExceptions:  
+Sometimes, after subdividing Maps the script will need to know which specific cell to go on, because a map can link to multiple submaps with the same parent map, and Proshine won't understand moveToMap(Route 2_B). And if we use moveToMap("Route 2") it will go to the closest submap, which we do not always want. Therefore we need linkExceptions:  
 located in `LinkExceptions`  
 ```lua
 linkExce["node"] = {
@@ -73,8 +79,9 @@ linkExce["Route 2 Stop3"] = {
     ["Route 2_D"] = {3, 12} -- down
 }
 ```
-The pathfinder will know which cell to go to access submaps `B` and `D` from `Route 2 Stop3`.  
-- Npc Exceptions
+The pathfinder will know which cell to go to access submaps `B` and `D` from `Route 2 Stop3`.
+
+#### Npc Exceptions
 If moving from a map A to a map B requires talking to a NPC you must fill the data inside `NpcExceptions`  
 ```lua
 npcExce["node"] = {
