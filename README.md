@@ -20,7 +20,7 @@ You should also read and modify the setting file located in `Settings/Static_Set
 * Uses digways as shortcut if has a Pokemon that can use dig.
 * Discover digways if it can't use it.
 * Subway support for the 3 main regions.
-* Train and bot support from one Region to another.
+* Train and boat support from one Region to another.
 * Headbutt trees, on the way.
 * Dig digspots on the way.
 * Discover all items on the way.
