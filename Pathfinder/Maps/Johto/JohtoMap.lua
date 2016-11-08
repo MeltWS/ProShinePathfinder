@@ -80,11 +80,14 @@ JohtoMap["Bell Tower Floor 3"] = {["Bell Tower Floor 2"] = {1}, ["Bell Tower Flo
 JohtoMap["Bell Tower Floor 4_A"] = {["Bell Tower Floor 3"] = {1}, ["Bell Tower Floor 4_B"] = {1}, ["Bell Tower Floor 5_A"] = {1}}
 JohtoMap["Bell Tower Floor 4_B"] = {["Bell Tower Floor 5_D"] = {1}, ["Bell Tower Floor 4_C"] = {1}}
 JohtoMap["Bell Tower Floor 4_C"] = {["Bell Tower Floor 5_B"] = {1}, ["Bell Tower Floor 4_A"] = {1}}
-JohtoMap["Bell Tower Floor 5_A"] = {["Bell Tower Floor 4_A"] = {1}, ["Bell Tower Floor 5_B"] = {1}, ["Bell Tower Floor 5_C"] = {1}, ["Bell Tower Floor 5_D"] = {1}}
+JohtoMap["Bell Tower Floor 5_A"] = {["Bell Tower Floor 4_A"] = {1}, ["Bell Tower Floor 5_C"] = {1}, ["Bell Tower Floor 5_E"] = {1}}
 JohtoMap["Bell Tower Floor 5_B"] = {["Bell Tower Floor 4_C"] = {1}}
-JohtoMap["Bell Tower Floor 5_C"] = {["Bell Tower Floor 5_B"] = {1}, ["Bell Tower Floor 6"] = {1}}
+JohtoMap["Bell Tower Floor 5_C"] = {["Bell Tower Floor 5_E"] = {1}, ["Bell Tower Floor 5_F"] = {1}}
 JohtoMap["Bell Tower Floor 5_D"] = {["Bell Tower Floor 4_B"] = {1}}
-JohtoMap["Bell Tower Floor 6"] = {["Bell Tower Floor 5_C"] = {1}, ["Bell Tower Floor 7_A"] = {1}}
+JohtoMap["Bell Tower Floor 5_E"] = {["Bell Tower Floor 5_D"] = {1}}
+JohtoMap["Bell Tower Floor 5_F"] = {["Bell Tower Floor 5_B"] = {1}, ["Bell Tower Floor 5_E"] = {1}, ["Bell Tower Floor 5_G"] = {1}}
+JohtoMap["Bell Tower Floor 5_G"] = {["Bell Tower Floor 5_B"] = {1}, ["Bell Tower Floor 6"] = {1}}
+JohtoMap["Bell Tower Floor 6"] = {["Bell Tower Floor 5_G"] = {1}, ["Bell Tower Floor 7_A"] = {1}}
 JohtoMap["Bell Tower Floor 7_A"] = {["Bell Tower Floor 6"] = {1}, ["Bell Tower Floor 8_A"] = {1}, ["Bell Tower Floor 7_B"] = {1}}
 JohtoMap["Bell Tower Floor 7_B"] = {["Bell Tower Floor 7_A"] = {1}, ["Bell Tower Floor 8_C"] = {1}}
 JohtoMap["Bell Tower Floor 8_A"] = {["Bell Tower Floor 7_A"] = {1}, ["Bell Tower Floor 9_A"] = {1}, ["Bell Tower Floor 9_C"] = {1}}

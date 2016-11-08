@@ -333,10 +333,13 @@ return {
         ["Bell Tower Floor 4_C"] = {{1, 14, 5, 21}, {6, 16, 12, 21}}, -- bottom left corner
     },    
     ["Bell Tower Floor 5"] = {
-        ["Bell Tower Floor 5_A"] = {{1, 4, 12, 9}, {4, 10, 7, 16}, {13, 4, 21, 7}, {18, 8, 21, 10}}, --top, left side
-        ["Bell Tower Floor 5_B"] = {{1, 17, 4, 21}}, -- bottom left corner
-        ["Bell Tower Floor 5_C"] = {{5, 17, 14, 21}}, -- bottom middle
-        ["Bell Tower Floor 5_D"] = {{18, 11, 21, 21}, {8, 10, 17, 16}, {13, 8, 17, 9}}, --middle, bottom right
+        ["Bell Tower Floor 5_A"] = {{1, 7, 3, 8}, {1, 4, 21, 6}, {18, 7, 21, 9}}, --top, middle
+        ["Bell Tower Floor 5_B"] = {{1, 17, 5, 21}}, -- bottom left
+        ["Bell Tower Floor 5_C"] = {{5, 7, 9, 9}}, -- bottom middle
+        ["Bell Tower Floor 5_D"] = {{15, 14, 21, 21}}, -- bottom right
+        ["Bell Tower Floor 5_E"] = {{13, 8, 17, 9}, {15, 10, 21, 12}, {7, 10, 14, 16}},
+        ["Bell Tower Floor 5_F"] = {{4, 10, 6, 16}},
+        ["Bell Tower Floor 5_G"] = {{6, 17, 14, 21}},
     },
     ["Bell Tower Floor 7"] = {
         ["Bell Tower Floor 7_A"] = {{1, 4, 21, 10}, {1, 19, 21, 23}, {1, 11, 3, 18}, {18, 11, 19, 18}}, -- outside ring

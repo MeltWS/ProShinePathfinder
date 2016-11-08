@@ -229,18 +229,29 @@ linkExce["Bell Tower Floor 4_C"] = {
 }
 linkExce["Bell Tower Floor 5_A"] = {
     ["Bell Tower Floor 4_A"] = {2, 6},
-    ["Bell Tower Floor 5_B"] = {4, 17},
-    ["Bell Tower Floor 5_C"] = {6, 17},
-    ["Bell Tower Floor 5_D"] = {16,8},
+    ["Bell Tower Floor 5_C"] = {5, 8},
+    ["Bell Tower Floor 5_E"] = {17, 8},
 }
 linkExce["Bell Tower Floor 5_B"] = {
     ["Bell Tower Floor 4_C"] = {2, 20},
 }
 linkExce["Bell Tower Floor 5_C"] = {
-    ["Bell Tower Floor 5_B"] = {4, 21},
+    ["Bell Tower Floor 5_E"] = {9, 10},
+    ["Bell Tower Floor 5_F"] = {5, 10},
 }
 linkExce["Bell Tower Floor 5_D"] = {
     ["Bell Tower Floor 4_B"] = {20, 20},
+}
+linkExce["Bell Tower Floor 5_E"] = {
+    ["Bell Tower Floor 5_D"] = {16, 15},
+}
+linkExce["Bell Tower Floor 5_F"] = {
+    ["Bell Tower Floor 5_B"] = {4, 17},
+    ["Bell Tower Floor 5_G"] = {6, 17},
+    ["Bell Tower Floor 5_E"] = {7, 15},
+}
+linkExce["Bell Tower Floor 5_G"] = {
+    ["Bell Tower Floor 5_B"] = {4, 21},
 }
 linkExce["Bell Tower Floor 7_A"] = {
     ["Bell Tower Floor 8_A"] = {11, 22},
