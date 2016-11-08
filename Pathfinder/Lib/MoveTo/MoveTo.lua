@@ -184,7 +184,7 @@ local function getPlayerNode(map)
         end
     error("Pathfinder --> sub map could not be defined, map: " .. map .. "  x: " .. getPlayerX() .. "  y: " .. getPlayerY())
     end
-    assert(globalMap[map], "Pathfinder -> Starting location does not exist in the map: " .. map)
+    assert(globalMap[map], "Pathfinder -> Starting location does not exist in the map: " .. tostring(map))
     return map
 end
 
