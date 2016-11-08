@@ -7,8 +7,8 @@ The map system is located in `Pathfinder/Maps`, there are two big sections, as w
 
 ### - Understanding the need for exceptions:
 
-Sometime, maps have the same name as in the game, but you can only access a part of them because of your team, items or simply because they are not at the same locations  
-For example: there could be water in the middle of a map, then you need to have `surf` to be able to cross that part.  
+Sometime, you can only access a part of a map because of your team, items or simply because the map is devised by a cave, or another zone  
+For example: `Route 10` is devided in multiple parts due to water, and `Rock Tunnel`.  
 Another example would be `Route 2`: there are parts before and after the forest, some part you can only access with `cut`.  
 In these cases the maps need to be subdivided for the algorithm to make no mistakes.  
 Example: If we are on the top side of `route 2` then the closest Pokecenter would be in `Pewter City`, if we are on the bottom side then it is in `Viridian City`.  
@@ -55,8 +55,8 @@ If the map must be subdivided, we need to know which part is which, so we define
         },
 ```
 There can be as many rectangles as you need to, the rectangles MUST cover the whole submap area.  
-Adding all sumap rectangles MUST cover the whole map Area.  
-Route 2 is subdivided ii four submaps.  
+Adding all submap rectangles MUST cover the whole map Area.  
+`Route 2` is subdivided in four submaps.  
   
 We also need to define links, as for any other maps:  
 ```lua
