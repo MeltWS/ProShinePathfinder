@@ -55,10 +55,10 @@ end
 
 local function getNpcsData(opts)
     if opts then
-        if opts.headbutt and opts.headbuttIndex then
+        if opts.headbutt and headbuttIndex then
             headbuttTrees = assert(getActiveHeadbuttTrees())
         end
-        if opts.dig and opts.digIndex then
+        if opts.dig and digIndex then
             digSpots = assert(getActiveDigSpots())
         end
         if opts.harvest then
