@@ -9,7 +9,7 @@ local levelGoal   = 98 -- scripts prevents Evolution so be carefull.
 local xpTargets   = {1, 3} -- table containing index of pokemon(s) to train.
 local holdItem    = "Leftovers" -- support giving an item to the leader, if you don't want to give one, set to nil.
 local xpZone      = function() return moveToWater() end -- you can change this depending of your needs, moveToRectangle() or moveToGrass().
-
+local map         = nil
 -- failsafe function for battle, in the event where the last Pokemon is the active but API call attack() does not work.
 -- This is due to his only move(s) with PP being not damaging type move(s).
 function useAnyMove()
@@ -75,21 +75,22 @@ function onStart()
 end
 
 function onPathAction()
+    map = getMapName()
     if isDone() then
         return fatal("level reached")
     elseif getPokemonHealth(1) == 0 or not hasUsableDamageMove(1) or getPokemonLevel(1) > levelGoal then
         if not swapLeaderWithTargetXp() then
-            return pf.UseNearestPokecenter()
+            return pf.useNearestPokecenter()
         end
     elseif not giveLeaderItem() then
-        if not pf.MoveTo(mapExp) then
+        if not pf.moveTo(map, mapExp) then
             return xpZone()
         end
     end
 end
 
 function onBattleAction()
-    if getPokemonHealth(1) > 0 and getMapName() == mapExp then
+    if getPokemonHealth(1) > 0 and map == mapExp then
         return attack() or run() or sendUsablePokemon() or sendAnyPokemon() or useAnyMove()
     else return run() or attack() or sendUsablePokemon() or sendAnyPokemon() or useAnyMove()
     end

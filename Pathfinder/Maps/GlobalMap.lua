@@ -3,7 +3,7 @@ local function rmlast(str) return str:sub(1, -2):match(".+[%./]") or "" end -- r
 local cdpath = rmlast(cpath) -- callee dir path
 local cpdpath = rmlast(cdpath) -- callee parent dir path
 
-local lib = require (cpdpath .. "Lib/lib")
+local Lib = require (cpdpath .. "Lib/Lib")
 local _KantoMap = require (cdpath .. "Kanto/KantoMap")
 local _JohtoMap = require (cdpath .. "Johto/JohtoMap")
 local _HoennMap = require (cdpath .. "Hoenn/HoennMap")
