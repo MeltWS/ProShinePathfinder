@@ -39,8 +39,13 @@ JohtoMap["National Park Stop House 1"] = {["National Park"] = {0.2}, ["Route 35_
 JohtoMap["Route 36"] = {["Route 35_B"] = {1}, ["Route 36 Stop"] = {1}, ["Route 37"] = {1}, ["Ruins Of Alph Stop House 1"] = {1}}
 JohtoMap["Route 36 Stop"] = {["Route 36"] = {0.2}, ["Violet City"] = {0.2}}
 JohtoMap["Pokecenter Violet City"] = {["Violet City"] = {1}, ["Violet City Subway"] = {0.2}}
-JohtoMap["Violet City"] = {["Pokecenter Violet City"] = {1}, ["Route 32"] = {1}, ["Route 36 Stop"] = {1}, ["Violet City Pokemart"] = {1}, ["Violet City Stop House"] = {1}}
+JohtoMap["Violet City"] = {["Pokecenter Violet City"] = {1}, ["Route 32"] = {1}, ["Route 36 Stop"] = {1}, ["Violet City Pokemart"] = {1}, ["Violet City Stop House"] = {1}, ["Sprout Tower F1_A"] = {1}}
 JohtoMap["Violet City Pokemart"] = {["Violet City"] = {1}}
+JohtoMap["Sprout Tower F1_A"] = {["Violet City"] = {1}, ["Sprout Tower F2_A"] = {1}}
+JohtoMap["Sprout Tower F1_B"] = {["Sprout Tower F2_A"] = {1}, ["Sprout Tower F2_B"] = {1}}
+JohtoMap["Sprout Tower F2_A"] = {["Sprout Tower F1_A"] = {1}, ["Sprout Tower F1_B"] = {1}}
+JohtoMap["Sprout Tower F2_B"] = {["Sprout Tower F1_B"] = {1}, ["Sprout Tower F3"] = {1}}
+JohtoMap["Sprout Tower F3"] = {["Sprout Tower F2_B"] = {1}}
 JohtoMap["Violet City Stop House"] = {["Route 31"] = {0.2}, ["Violet City"] = {0.2}}
 JohtoMap["Route 32"] = {["Pokecenter Route 32"] = {1.5}, ["Ruins Of Alph Stop House"] = {1.5}, ["Union Cave 1F_C"] = {1.5}, ["Violet City"] = {1.5}, ["Route 33"] = {1.5, {["abilities"] = {"dig"}}}}
 JohtoMap["Pokecenter Route 32"] = {["Route 32"] = {1}}
@@ -62,11 +67,36 @@ JohtoMap["Union Cave B2F_B"] = {["Union Cave 1F_B"] = {1}, ["Union Cave B1F_B"] 
 JohtoMap["Union Cave B2F_C"] = {["Union Cave B1F_C"] = {1}}
 JohtoMap["Route 33"] = {["Azalea Town"] = {1}, ["Union Cave 1F_C"] = {1}, ["Route 32"] = {1, {["abilities"] = {"dig"}}}}
 JohtoMap["Route 37"] = {["Ecruteak City"] = {1}, ["Route 36"] = {1}}
-JohtoMap["Ecruteak City"] = {["Ecruteak Mart"] = {1}, ["Ecruteak Stop House 1"] = {1}, ["Ecruteak Stop House 2"] = {1}, ["Pokecenter Ecruteak"] = {1}, ["Route 37"] = {1}}
+JohtoMap["Ecruteak City"] = {["Ecruteak Mart"] = {1}, ["Ecruteak Stop House 1"] = {1}, ["Ecruteak Stop House 2"] = {1}, ["Pokecenter Ecruteak"] = {1}, ["Route 37"] = {1}, ["Burned Tower Top Floor"] = {1}, ["Bell Tower Barrier Station 1F"] = {1--[[npc maybe]]}}
 JohtoMap["Ecruteak Mart"] = {["Ecruteak City"] = {1}}
 JohtoMap["Ecruteak Stop House 1"] = {["Ecruteak City"] = {0.2}, ["Route 38"] = {0.2}}
 JohtoMap["Ecruteak Stop House 2"] = {["Ecruteak City"] = {0.2}, ["Route 42_A"] = {0.2}}
 JohtoMap["Pokecenter Ecruteak"] = {["Ecruteak City"] = {1}, ["Ecruteak City Subway"] = {0.2}}
+JohtoMap["Bell Tower Barrier Station 1F"] = {["Ecruteak City"] = {1}, ["Bell Tower Barrier Station B1F"] = {1}}
+JohtoMap["Bell Tower Barrier Station B1F"] = {["Bell Tower Barrier Station 1F"] = {1}, ["Bell Tower"] = {1}}
+JohtoMap["Bell Tower"] = {["Bell Tower Barrier Station B1F"] = {1}, ["Bell Tower Floor 2"] = {1}}
+JohtoMap["Bell Tower Floor 2"] = {["Bell Tower"] = {1}, ["Bell Tower Floor 3"] = {1}}
+JohtoMap["Bell Tower Floor 3"] = {["Bell Tower Floor 2"] = {1}, ["Bell Tower Floor 4_A"] = {1}}
+JohtoMap["Bell Tower Floor 4_A"] = {["Bell Tower Floor 3"] = {1}, ["Bell Tower Floor 4_B"] = {1}, ["Bell Tower Floor 5_A"] = {1}}
+JohtoMap["Bell Tower Floor 4_B"] = {["Bell Tower Floor 5_D"] = {1}, ["Bell Tower Floor 4_C"] = {1}}
+JohtoMap["Bell Tower Floor 4_C"] = {["Bell Tower Floor 5_B"] = {1}, ["Bell Tower Floor 4_A"] = {1}}
+JohtoMap["Bell Tower Floor 5_A"] = {["Bell Tower Floor 4_A"] = {1}, ["Bell Tower Floor 5_B"] = {1}, ["Bell Tower Floor 5_C"] = {1}, ["Bell Tower Floor 5_D"] = {1}}
+JohtoMap["Bell Tower Floor 5_B"] = {["Bell Tower Floor 4_C"] = {1}}
+JohtoMap["Bell Tower Floor 5_C"] = {["Bell Tower Floor 5_B"] = {1}, ["Bell Tower Floor 6"] = {1}}
+JohtoMap["Bell Tower Floor 5_D"] = {["Bell Tower Floor 4_B"] = {1}}
+JohtoMap["Bell Tower Floor 6"] = {["Bell Tower Floor 5_C"] = {1}, ["Bell Tower Floor 7_A"] = {1}}
+JohtoMap["Bell Tower Floor 7_A"] = {["Bell Tower Floor 6"] = {1}, ["Bell Tower Floor 8_A"] = {1}, ["Bell Tower Floor 7_B"] = {1}}
+JohtoMap["Bell Tower Floor 7_B"] = {["Bell Tower Floor 7_A"] = {1}, ["Bell Tower Floor 8_C"] = {1}}
+JohtoMap["Bell Tower Floor 8_A"] = {["Bell Tower Floor 7_A"] = {1}, ["Bell Tower Floor 9_A"] = {1}, ["Bell Tower Floor 9_C"] = {1}}
+JohtoMap["Bell Tower Floor 8_B"] = {["Bell Tower Floor 9_A"] = {1}, ["Bell Tower Floor 9_B"] = {1}}
+JohtoMap["Bell Tower Floor 8_C"] = {["Bell Tower Floor 7_B"] = {1}}
+JohtoMap["Bell Tower Floor 9_A"] = {["Bell Tower Floor 8_A"] = {1}, ["Bell Tower Floor 8_B"] = {1}}
+JohtoMap["Bell Tower Floor 9_B"] = {["Bell Tower Floor 8_B"] = {1}, ["Bell Tower Floor 10"] = {1}}
+JohtoMap["Bell Tower Floor 9_C"] = {["Bell Tower Floor 8_A"] = {1}}
+JohtoMap["Bell Tower Floor 10"] = {["Bell Tower Floor 9_B"] = {1}, ["Bell Tower Roof"] = {1}}
+JohtoMap["Bell Tower Roof"] = {["Bell Tower Floor 10"] = {1}}
+JohtoMap["Burned Tower Top Floor"] = {["Ecruteak City"] = {1}, ["Burned Tower Floor 2"] = {1}}
+JohtoMap["Burned Tower Floor 2"] = {["Burned Tower Top Floor"] = {1}}
 JohtoMap["Route 42_A"] = {["Ecruteak Stop House 2"] = {0.2}, ["Mt. Mortar 1F_A"] = {0.2}, ["Route 42_D"] = {0, {["abilities"] = {"dig"}}}}
 JohtoMap["Route 42_B"] = {["Mt. Mortar 1F_B"] = {0.2}, ["Route 42_A"] = {0.2, {["abilities"] = {"surf"}}}, ["Route 42_C"] = {0.2, {["abilities"] = {"surf"}}}, ["Route 42_D"] = {0.2, {["abilities"] = {"surf"}}}}
 JohtoMap["Route 42_C"] = {["Mt. Mortar 1F_D"] = {0.2}, ["Route 42_B"] = {0.2, {["abilities"] = {"surf"}}}, ["Route 42_D"] = {0.2, {["abilities"] = {"surf"}}}}
@@ -124,7 +154,7 @@ JohtoMap["Dark Cave South_A"] = {["Route 31"] = {1}, ["Dark Cave South_B"] = {1,
 JohtoMap["Dark Cave South_B"] = {["Dark Cave South_A"] = {0.5}, ["Dark Cave South_C"] = {0.5}, ["Dark Cave North_B"] = {0.5}}
 JohtoMap["Dark Cave South_C"] = {["Dark Cave South_B"] = {1.5, {["abilities"] = {"surf"}}}, ["Dark Cave South_A"] = {1.5, {["abilities"] = {"rock smash"}}}, ["Dark Cave South_D"] = {1.5}}
 JohtoMap["Dark Cave South_D"] = {["Dark Cave South_C"] = {0.5, {["abilities"] = {"rock smash"}}}, ["Route 46_A"] = {0.5}}
-JohtoMap["Azalea Town"] = {["Azalea Pokemart"] = {1}, ["Ilex Forest Stop House"] = {1}, ["Pokecenter Azalea"] = {1}, ["Route 33"] = {1}}
+JohtoMap["Azalea Town"] = {["Azalea Pokemart"] = {1}, ["Ilex Forest Stop House"] = {1}, ["Pokecenter Azalea"] = {1}, ["Route 33"] = {1}, ["Slowpoke Well"] = {1}}
 JohtoMap["Azalea Pokemart"] = {["Azalea Town"] = {1}}
 JohtoMap["Pokecenter Azalea"] = {["Azalea Town"] = {1}, ["Azalea Town Subway"] = {0.2}}
 JohtoMap["Ilex Forest Stop House"] = {["Azalea Town"] = {0.2}, ["Ilex Forest_A"] = {0.2}}
@@ -165,7 +195,14 @@ JohtoMap["Route 47_A"] = {["Cliff Cave 1F"] = {1}, ["Cliff Edge Gate"] = {1}}
 JohtoMap["Route 47_B"] = {["Cliff Cave B1F"] = {1}}
 JohtoMap["Route 47_C"] = {["Cliff Cave 2F"] = {2}, ["Route 48"] = {2}}
 JohtoMap["Route 48"] = {["Johto Safari Zone Lobby"] = {1}, ["Pokecenter Route 48"] = {1}, ["Route 47_C"] = {1}}
-JohtoMap["Johto Safari Zone Lobby"] = {["Route 48"] = {1}}
+JohtoMap["Johto Safari Zone Lobby"] = {["Route 48"] = {1}, ["Johto Safari Entrance"] = {1}}
+JohtoMap["Johto Safari Entrance"] = {["Safari Johto Wet Zone"] = {1}, ["Safari Johto Mountain Zone"] = {1}, ["Safari Johto Snow Zone"] = {1}, ["Safari Johto Grass and Swamp Zone"] = {1}}
+JohtoMap["Safari Johto Mountain Zone"] = {["Johto Safari Entrance"] = {1}}
+JohtoMap["Safari Johto Wet Zone"] = {["Johto Safari Entrance"] = {1}}
+JohtoMap["Safari Johto Snow Zone"] = {["Johto Safari Entrance"] = {1}}
+JohtoMap["Safari Johto Grass and Swamp Zone"] = {["Johto Safari Entrance"] = {1}}
+JohtoMap["Slowpoke Well"] = {["Azalea Town"] = {1}, ["Slowpoke Well L1"] = {1, {["abilities"] = {"surf"}}--[[npc maybe]]}}
+JohtoMap["Slowpoke Well L1"] = {["Slowpoke Well"] = {1, {["abilities"] = {"surf"}}}}
 JohtoMap["Pokecenter Route 48"] = {["Route 48"] = {1}}
 JohtoMap["Mahogany Town Subway"] = {["Pokecenter Mahogany"] = {0.2}, ["Olivine City Subway"] = {J_SUBWAY}, ["Violet City Subway"] = {J_SUBWAY}, ["Azalea Town Subway"] = {J_SUBWAY}, ["Blackthorn City Subway"] = {J_SUBWAY}, ["Cherrygrove City Subway"] = {J_SUBWAY}, ["Ecruteak City Subway"] = {J_SUBWAY}, ["Goldenrod City Subway"] = {J_SUBWAY}}
 JohtoMap["Olivine City Subway"] = {["Olivine Pokecenter"] = {0.2}, ["Mahogany Town Subway"] = {J_SUBWAY}, ["Violet City Subway"] = {J_SUBWAY}, ["Azalea Town Subway"] = {J_SUBWAY}, ["Blackthorn City Subway"] = {J_SUBWAY}, ["Cherrygrove City Subway"] = {J_SUBWAY}, ["Ecruteak City Subway"] = {J_SUBWAY}, ["Goldenrod City Subway"] = {J_SUBWAY}}
@@ -175,7 +212,6 @@ JohtoMap["Blackthorn City Subway"] = {["Pokecenter Blackthorn"] = {0.2}, ["Olivi
 JohtoMap["Cherrygrove City Subway"] = {["Pokecenter Cherrygrove City"] = {0.2}, ["Olivine City Subway"] = {J_SUBWAY}, ["Violet City Subway"] = {J_SUBWAY}, ["Azalea Town Subway"] = {J_SUBWAY}, ["Blackthorn City Subway"] = {J_SUBWAY}, ["Mahogany Town Subway"] = {J_SUBWAY}, ["Ecruteak City Subway"] = {J_SUBWAY}, ["Goldenrod City Subway"] = {J_SUBWAY}}
 JohtoMap["Ecruteak City Subway"] = {["Pokecenter Ecruteak"] = {0.2}, ["Olivine City Subway"] = {J_SUBWAY}, ["Violet City Subway"] = {J_SUBWAY}, ["Azalea Town Subway"] = {J_SUBWAY}, ["Blackthorn City Subway"] = {J_SUBWAY}, ["Cherrygrove City Subway"] = {J_SUBWAY}, ["Mahogany Town Subway"] = {J_SUBWAY}, ["Goldenrod City Subway"] = {J_SUBWAY}}
 JohtoMap["Goldenrod City Subway"] = {["Pokecenter Goldenrod"] = {0.2}, ["Olivine City Subway"] = {J_SUBWAY}, ["Violet City Subway"] = {J_SUBWAY}, ["Azalea Town Subway"] = {J_SUBWAY}, ["Blackthorn City Subway"] = {J_SUBWAY}, ["Cherrygrove City Subway"] = {J_SUBWAY}, ["Ecruteak City Subway"] = {J_SUBWAY}, ["Mahogany Town Subway"] = {J_SUBWAY}}
-
 
 -- JohtoMap["node"] = {["link"] = {distance, {["restrictionType"] = {"restriction"}}}}
 

@@ -42,6 +42,9 @@ npcExce["Goldenrod City Station_A"] = {
 npcExce["Goldenrod City Station_B"] = {
     ["Goldenrod City Station_A"] = {{9, 7}, "Yes", "Would you like to return to the Goldenrod lobby?"}
 }
+npcExce["Johto Safari Zone Lobby"] = {
+    ["Johto Safari Entrance"] = {{21, 6}, "Yes", "Would you like to enter the safari zone for $5,000 today?"},
+}
 
 ----------------------
 ------ HOENN ---------

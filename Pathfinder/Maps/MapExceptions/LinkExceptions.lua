@@ -206,6 +206,76 @@ linkExce["Whirl Islands B2F"] = {
     ["Whirl Islands B1F_A"] = {19, 25},
     ["Whirl Islands B1F_C"] = {24, 13},
 }
+linkExce["Sprout Tower F1_B"] = {
+    ["Sprout Tower F2_A"] = {24, 3},
+    ["Sprout Tower F2_B"] = {2, 11},
+}
+linkExce["Sprout Tower F2_A"] = {
+    ["Sprout Tower F1_A"] = {9, 9},
+    ["Sprout Tower F1_B"] = {23, 4},
+}
+linkExce["Bell Tower Floor 4_A"] = {
+    ["Bell Tower Floor 3"] = {20, 6},
+    ["Bell Tower Floor 4_B"] = {20, 14},
+    ["Bell Tower Floor 5_A"] = {2, 6},
+}
+linkExce["Bell Tower Floor 4_B"] = {
+    ["Bell Tower Floor 5_D"] = {20, 20},
+    ["Bell Tower Floor 4_C"] = {11, 16},
+}
+linkExce["Bell Tower Floor 4_C"] = {
+    ["Bell Tower Floor 5_B"] = {2, 20},
+    ["Bell Tower Floor 4_A"] = {6, 14},
+}
+linkExce["Bell Tower Floor 5_A"] = {
+    ["Bell Tower Floor 4_A"] = {2, 6},
+    ["Bell Tower Floor 5_B"] = {4, 17},
+    ["Bell Tower Floor 5_C"] = {6, 17},
+    ["Bell Tower Floor 5_D"] = {16,8},
+}
+linkExce["Bell Tower Floor 5_B"] = {
+    ["Bell Tower Floor 4_C"] = {2, 20},
+}
+linkExce["Bell Tower Floor 5_C"] = {
+    ["Bell Tower Floor 5_B"] = {4, 21},
+}
+linkExce["Bell Tower Floor 5_D"] = {
+    ["Bell Tower Floor 4_B"] = {20, 20},
+}
+linkExce["Bell Tower Floor 7_A"] = {
+    ["Bell Tower Floor 8_A"] = {11, 22},
+    ["Bell Tower Floor 7_B"] = {5, 7},
+}
+linkExce["Bell Tower Floor 7_B"] = {
+    ["Bell Tower Floor 8_C"] = {8, 13},
+    ["Bell Tower Floor 7_A"] = {14, 13},
+}
+linkExce["Bell Tower Floor 8_A"] = {
+    ["Bell Tower Floor 7_A"] = {4, 9},
+    ["Bell Tower Floor 9_A"] = {3, 17},
+    ["Bell Tower Floor 9_C"] = {20, 20},
+}
+linkExce["Bell Tower Floor 8_B"] = {
+    ["Bell Tower Floor 9_A"] = {19, 14},
+    ["Bell Tower Floor 9_B"] = {13, 6},
+}
+linkExce["Bell Tower Floor 8_C"] = {
+    ["Bell Tower Floor 7_B"] = {8, 14},
+}
+linkExce["Bell Tower Floor 9_A"] = {
+    ["Bell Tower Floor 8_A"] = {16, 5},
+    ["Bell Tower Floor 8_B"] = {2, 10},
+}
+linkExce["Bell Tower Floor 9_B"] = {
+    ["Bell Tower Floor 10"] = {8, 14},
+    ["Bell Tower Floor 8_B"] = {14, 12},
+}
+linkExce["Bell Tower Floor 9_C"] = {
+    ["Bell Tower Floor 8_A"] = {21, 13},
+}
+linkExce["Bell Tower Floor 10"] = {
+    ["Bell Tower Floor 9_B"] = {7, 14},
+}
 
 ----------------------
 ------ HOENN ---------

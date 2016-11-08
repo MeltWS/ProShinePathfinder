@@ -319,6 +319,39 @@ return {
         ["Route 47_B"] = {{19, 76, 32, 93}, {19, 63, 32, 72}, {32, 84, 56, 96}, {57, 77, 62, 93}, {57, 69, 62, 73}, {63, 84, 95, 95}, {96, 81, 98, 86}, {57, 65, 62, 65}}, -- bottom water
         ["Route 47_C"] = {{41, 65, 70, 68}, {16, 73, 41, 75}, {41, 69, 41, 72}, {12, 60, 15, 75}, {5, 0, 38, 59}}, -- middle to top entrance
     },
+    ["Sprout Tower F1"] = {
+        ["Sprout Tower F1_A"] = {{1, 16, 5, 26}, {6, 7, 21, 26}, {22, 16, 25, 26}}, -- bottom
+        ["Sprout Tower F1_B"] = {{1, 3, 4, 14}, {5, 3, 21, 5}, {22, 3, 25, 14}}, -- top
+    },
+    ["Sprout Tower F2"] = {
+        ["Sprout Tower F2_A"] = {{7, 3, 25, 14}}, -- top right
+        ["Sprout Tower F2_B"] = {{1, 3, 6, 25}, {7, 22, 25, 25}, {22, 16, 25, 21}}, -- bottom left
+    },
+    ["Bell Tower Floor 4"] = {
+        ["Bell Tower Floor 4_A"] = {{1, 4, 21, 13}, {6, 14, 14, 14}}, --top half
+        ["Bell Tower Floor 4_B"] = {{16, 14, 21, 14}, {13, 15, 21, 21}}, -- bottom right corner
+        ["Bell Tower Floor 4_C"] = {{1, 14, 5, 21}, {6, 16, 12, 21}}, -- bottom left corner
+    },    
+    ["Bell Tower Floor 5"] = {
+        ["Bell Tower Floor 5_A"] = {{1, 4, 12, 9}, {4, 10, 7, 16}, {13, 4, 21, 7}, {18, 8, 21, 10}}, --top, left side
+        ["Bell Tower Floor 5_B"] = {{1, 17, 4, 21}}, -- bottom left corner
+        ["Bell Tower Floor 5_C"] = {{5, 17, 14, 21}}, -- bottom middle
+        ["Bell Tower Floor 5_D"] = {{18, 11, 21, 21}, {8, 10, 17, 16}, {13, 8, 17, 9}}, --middle, bottom right
+    },
+    ["Bell Tower Floor 7"] = {
+        ["Bell Tower Floor 7_A"] = {{1, 4, 21, 10}, {1, 19, 21, 23}, {1, 11, 3, 18}, {18, 11, 19, 18}}, -- outside ring
+        ["Bell Tower Floor 7_B"] = {{7, 11, 15, 16}}, -- middle
+    },
+    ["Bell Tower Floor 8"] = {
+        ["Bell Tower Floor 8_A"] = {{1, 8, 4, 22}, {5, 18, 21, 22}}, -- bottom left
+        ["Bell Tower Floor 8_B"] = {{1, 4, 21, 7}, {18, 8, 21, 15}}, -- top right
+        ["Bell Tower Floor 8_C"] = {{7, 11, 13, 15}}, -- middle
+    },
+    ["Bell Tower Floor 9"] = {
+        ["Bell Tower Floor 9_A"] = {{1, 7, 5, 11}, {4, 4, 18, 6}}, -- top
+        ["Bell Tower Floor 9_B"] = {{7, 11, 15, 15}}, -- middle
+        ["Bell Tower Floor 9_C"] = {{20, 12, 21, 16}, {3, 17, 21, 23}}, -- bottom
+    },
 
 ----------------------
 ------ HOENN ---------
