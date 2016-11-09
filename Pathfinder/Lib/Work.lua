@@ -4,7 +4,7 @@ if cpath ~= nil then
     cdpath = cpath:match(".+[/%.]") or cdpath -- callee dir path
 end
 
-local Table           = require (cdpath .. "Table")
+local Array           = require (cdpath .. "Array")
 local Game            = require (cdpath .. "Game")
 local Lib            = require (cdpath .. "Lib")
 
@@ -49,8 +49,8 @@ local function resetData()
     discoverItems = {}
     targets       = {}
     targetIndex   = nil
-    currentTarget        = nil
-    currentMap       = nil
+    currentTarget = nil
+    currentMap    = nil
 end
 
 local function getNpcsData(opts)
@@ -72,9 +72,7 @@ end
 
 local function initTargets()
     local NpcTables = {digSpots, headbuttTrees, BerryTrees, discoverItems}
-    for _, v in pairs(NpcTables) do
-        targets = Table.concat(targets, v)
-    end
+    targets = Array.join(NpcTables)
 end
 
 local function getClosest(x, y, targets)
@@ -122,9 +120,9 @@ function work.isWorking(map, opts)
         if not isBlacklisted(currentTarget) and talkToNpcOnCell(currentTarget.x, currentTarget.y) then
             Lib.log1time("Work: Checking npc index: " .. targetIndex .. " --> x:" .. currentTarget.x .. ", y:" .. currentTarget.y)
             return true
-        else currentTarget = nil
         end
-        table.remove(targets, targetIndex)
+        currentTarget = nil
+        assert(table.remove(targets, targetIndex), "Work --> Failed to remove index: " .. targetIndex)
     end
     return false
 end
@@ -134,10 +132,10 @@ function onWorkStart()
 end
 
 function onWorkDialogMessage(message)
-    if targets then
+    if targets and currentTarget then
         for check, f in pairs(dialogs) do
             if string.find(message, check) then
-                table.remove(targets, targetIndex)
+                assert(table.remove(targets, targetIndex), "Work --> Failed to remove index: " .. targetIndex)
                 currentTarget = nil
                 f()
             end
