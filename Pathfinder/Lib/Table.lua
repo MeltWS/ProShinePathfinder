@@ -1,10 +1,32 @@
 local Table = {}
 
-function Table.concat(t1, t2)
-    for i = 1, #t2 do
-        t1[#t1+1] = t2[i]
+-- create a new copy of t1
+function Table.clone(t1)
+    local t2 = {}
+    for k, v in pairs(t1) do
+        if type(v) == "table" then 
+            t2[k] = Table.clone(v)
+        else
+            t2[k] = v
+        end
     end
-    return t1
+    return t2
+end
+
+-- create a new table with both t1 and t2 keys = value pairs
+function Table.merge(t1, t2)
+    local t3 = {}
+    t3 = table.clone(t1)
+    for k, v in pairs(t2) do
+        if t3[k] then
+            t3[k] = Table.merge(t3[k], v)
+        elseif type(v) == "table" then 
+            t3[k] = Table.clone(v)
+        else
+            t3[k] = v
+        end
+    end
+    return t3
 end
 
 function Table.tablelength(T)
