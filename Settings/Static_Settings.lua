@@ -78,7 +78,7 @@ local loadedName = nil
 local function fillOmittedSettings(accountName)
     default = "default"
     for key, value in pairs(Settings[default]) do
-        if Settings[accountName][key] ~= nil then
+        if Settings[accountName][key] == nil then
             message = message .. "\n --> Filling omitted setting: " .. tostring(key) .. ", replacing with: " .. tostring(value) .. "."
             Settings[accountName][key] = Settings[default][key]
         end
