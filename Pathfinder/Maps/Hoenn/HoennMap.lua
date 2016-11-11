@@ -83,8 +83,9 @@ HoennMap["New Mauville Entrance"] = {["Route 110_C"] = {1}, ["New Mauville"] = {
 HoennMap["Oldale Town"] = {["Mart Oldale Town"] = {1}, ["Pokecenter Oldale Town"] = {1}, ["Route 101"] = {1}, ["Route 102"] = {1}, ["Route 103_A"] = {1}}
 HoennMap["Pacifidlog Town"] = {["Pokecenter Pacifidlog Town"] = {1}, ["Route 131"] = {1}, ["Route 132"] = {1}}
 HoennMap["Petalburg City"] = {["Mart Petalburg City"] = {1}, ["Pokecenter Petalburg City"] = {1}, ["Route 102"] = {1}, ["Route 104_B"] = {1}}
+HoennMap["Petalburg Maze"] = {["Petalburg Woods_B"] = {1}}
 HoennMap["Petalburg Woods_A"] = {["Route 104_A"] = {1}, ["Route 104_B"] = {1}, ["Route 104_C"] = {1}, ["Petalburg Woods_B"] = {1, {["abilities"] = {"cut"}}}}
-HoennMap["Petalburg Woods_B"] = {["Petalburg Woods_A"] = {1}} -- link inside wood
+HoennMap["Petalburg Woods_B"] = {["Petalburg Woods_A"] = {1}, ["Petalburg Maze"] = {1}} -- link inside wood
 HoennMap["Pokecenter Dewford Town"] = {["Dewford Town"] = {1}, ["Transmat Station"] = {0.2}}
 HoennMap["Pokecenter Ever Grande City"] = {["Ever Grande City_A"] = {1}, ["Transmat Station"] = {0.2}}
 HoennMap["Pokecenter Fallarbor Town"] = {["Fallarbor Town"] = {1}, ["Transmat Station"] = {0.2}}
@@ -107,9 +108,10 @@ HoennMap["Route 103_A"] = {["Oldale Town"] = {0.5}, ["Route 103_B"] = {0.5, {["a
 HoennMap["Route 103_B"] = {["Route 103_C"] = {0, {["abilities"] = {"cut"}}}, ["Route 103_A"] = {0.5, {["abilities"] = {"surf"}}}, ["Route 103_D"] = {0.5, {["abilities"] = {"surf"}}}, ["Route 110_B"] = {1}}
 HoennMap["Route 103_C"] = {["Route 103_B"] = {0, {["abilities"] = {"surf"}}}} -- excavation site
 HoennMap["Route 103_D"] = {["Route 103_B"] = {0, {["abilities"] = {"cut"}}}}
-HoennMap["Route 104_A"] = {["Petalburg Woods_A"] = {1}, ["Rustboro City_A"] = {1}, ["Rustboro City_B"] = {1.1}}
+HoennMap["Route 104_A"] = {["Petalburg Woods_A"] = {1}, ["Rustboro City_A"] = {1}, ["Rustboro City_B"] = {1.1}, ["Route 104 House"] = {1}}
 HoennMap["Route 104_B"] = {["Petalburg Woods_A"] = {1}, ["Route 105"] = {1.5, {["abilities"] = {"surf"}}}, ["Petalburg City"] = {1}}
 HoennMap["Route 104_C"] = {["Route 104_B"] = {0.5}}
+HoennMap["Route 104 House"] = {["Route 104_A"] = {1}}
 HoennMap["Route 105"] = {["Route 104_B"] = {3}, ["Route 106"] = {3}}
 HoennMap["Route 106"] = {["Dewford Town"] = {1.5}, ["Route 105"] = {1.5, {["abilities"] = {"surf"}}}} -- link cave
 HoennMap["Route 107"] = {["Dewford Town"] = {2}, ["Route 108"] = {2}}
