@@ -159,7 +159,7 @@ KantoMap["Route 15 Stop House"] = {["Route 15"] = {0.2}, ["Fuchsia City"] = {0.2
 KantoMap["Route 16 Stop House"] = {["Route 16_B"] = {0.2}, ["Route 16_A"] = {0.2, {["items"] = {"Bicycle"}}}}
 KantoMap["Route 16 house"] = {["Route 16_A"] = {1}}
 KantoMap["Route 16_A"] = {["Route 16 Stop House"] = {1}, ["Route 16 house"] = {1}, ["Route 17"] = {1}}
-KantoMap["Route 16_B"] = {["Route 16 Stop House"] = {0.5}}
+KantoMap["Route 16_B"] = {["Route 16 Stop House"] = {0.5}, ["Celadon City"] = {0.5}}
 KantoMap["Route 17"] = {["Route 18_A"] = {2}, ["Route 16_A"] = {2}}
 KantoMap["Route 18_A"] = {["Route 17"] = {0.5}, ["Bike Road Stop"] = {0.5}}
 KantoMap["Route 18_B"] = {["Fuchsia City"] = {0.5}, ["Bike Road Stop"] = {0.5}}
