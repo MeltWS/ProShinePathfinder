@@ -7,6 +7,16 @@ elevatorExceptions["Celadon Mart Elevator"] = {
     ["Celadon Mart 4"] = {{1, 1}, {"4"}, "Which floor would you like to go to?", "You have arrived on the fourth floor.", false, {2, 5}},
     ["Celadon Mart 5"] = {{1, 1}, {"5"}, "Which floor would you like to go to?", "You have arrived on the fifth floor.", false, {2, 5}}
 }
+elevatorExceptions["Celadon Office Elevator 1"] = {
+	["Celadon Office 1F"] = {{1, 2}, {"1F"}, "What floor would you like to transport to?", "You have arrived on 1 F", false, {2, 5}},
+	["Celadon Office 2F"] = {{1, 2}, {"2F"}, "What floor would you like to transport to?", "You have arrived on 2 F", false, {2, 5}}, 
+	["Celadon Office 3F"] = {{1, 2}, {"3F"}, "What floor would you like to transport to?", "You have arrived on 3 F", false, {2, 5}}, 
+}
+elevatorExceptions["Celadon Office Elevator 2"] = {
+	["Celadon Office 2F"] = {{3, 2}, {"2F"}, "What floor would you like to transport to?", "You have arrived on 2 F", false, {3, 5}},
+	["Celadon Office 3F"] = {{3, 2}, {"3F"}, "What floor would you like to transport to?", "You have arrived on 3 F", false, {3, 5}},
+	["Celadon Office Roof Top"] = {{3, 2}, {"Roof Top"}, "What floor would you like to transport to?", "You have arrived on 4 F", false, {3, 5}}
+}
 elevatorExceptions["Goldenrod Mart Elevator"] = {
     ["Goldenrod Mart B1F"] = {{1,6}, {"B1F"}, "Which floor would you like to go to?", "You have arrived on the Underground.", false, {3,6}},
     ["Goldenrod Mart 1"] = {{1,6}, {" 1F"}, "Which floor would you like to go to?", "You have arrived on the first floor.", false, {3,6}},

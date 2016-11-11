@@ -195,6 +195,30 @@ return {
         ["Vermilion City_A"] = {{5, 0, 82, 48}, {38, 49, 82, 68}}, -- main city
         ["Vermilion City_B"] = {{5, 49, 37, 68}}, -- arena
     },
+    ["Saffron Gym"] = {
+        ["Saffron Gym_A"] = {{1, 2, 7, 6}}, -- top left
+		["Saffron Gym_B"] = {{9, 2, 15, 6}}, -- top middle
+		["Saffron Gym_C"] = {{17, 2, 23, 6}}, -- top right
+		["Saffron Gym_D"] = {{1, 9, 7, 13}}, -- middle left
+		["Saffron Gym_E"] = {{9, 9, 15, 13}}, -- middle middle/gym leader
+		["Saffron Gym_F"] = {{17, 9, 23, 13}}, -- middle right
+		["Saffron Gym_G"] = {{1, 16, 7, 20}}, -- bottom left
+		["Saffron Gym_H"] = {{9, 16, 15, 22}}, -- bottom middle
+		["Saffron Gym_I"] = {{17, 16, 23, 20}}, -- bottom right/entrance
+    },	
+    ["Celadon City"] = {
+        ["Celadon City_A"] = {{0, 8, 71, 49}, {46, 50, 59, 51}, {49, 52, 59, 56}}, -- main city
+        ["Celadon City_B"] = {{14, 50, 45, 56}, {46, 52, 48, 56}}, -- bottom/gym area-cut
+    },
+    ["Silph Co 7F"] = {
+        ["Silph Co 7F_A"] = {{7, 3, 31, 22}, {1, 15, 6, 22}}, -- main part
+        ["Silph Co 7F_B"] = {{1, 6, 6, 11}}, -- top left corner
+    },
+    ["Silph Co 11F"] = {
+        ["Silph Co 11F_A"] = {{6, 3, 17, 7}, {16, 8, 17, 22}}, -- right side
+        ["Silph Co 11F_B"] = {{1, 11, 13, 22}, {1, 6, 3, 10}}, -- left side/boss
+    },
+	
 
 ----------------------
 ------ JOHTO ---------
@@ -355,6 +379,23 @@ return {
         ["Bell Tower Floor 9_B"] = {{7, 11, 15, 15}}, -- middle
         ["Bell Tower Floor 9_C"] = {{20, 12, 21, 16}, {3, 17, 21, 23}}, -- bottom
     },
+	["Glitter Lighthouse 2F"] = {
+        ["Glitter Lighthouse 2F_A"] = {{10, 3, 15, 7}}, -- top right
+        ["Glitter Lighthouse 2F_B"] = {{1, 2, 9, 13}, {10, 11, 14, 13}}, -- left/bottom
+    },
+	["Glitter Lighthouse 3F"] = {
+        ["Glitter Lighthouse 3F_A"] = {{1, 2, 6, 6}}, -- top left
+        ["Glitter Lighthouse 3F_B"] = {{7, 2, 15, 13}, {1, 10, 6, 13}}, -- right/bottom
+    },
+	["Battle Road House"] = {
+        ["Battle Road House_A"] = {{1, 1, 4, 8}}, -- left
+        ["Battle Road House_B"] = {{6, 1, 12, 8}}, -- right
+    },
+	["Mahogany Town Gym"] = {
+        ["Mahogany Town Gym_A"] = {{15, 49, 21, 67}}, -- bottom
+        ["Mahogany Town Gym_B"] = {{12, 32, 22, 46}}, -- middle
+        ["Mahogany Town Gym_C"] = {{13, 12, 21, 29}}, -- top		
+    },
 
 ----------------------
 ------ HOENN ---------
@@ -465,7 +506,7 @@ return {
         ["Route 112_C"] = {{0, 52, 17, 71}, {18, 54, 19, 64}}, -- bottom left enclosed
     },
     ["Jagged Pass"] = {
-        ["Jagged Pass_A"] = {{0, 3, 30, 24}, {9, 25, 31, 32}, {32, 25, 38, 31}}, -- top 
+        ["Jagged Pass_A"] = {{0, 0, 30, 24}, {9, 25, 31, 32}, {32, 25, 38, 31}}, -- top 
         ["Jagged Pass_B"] = {{4, 25, 6, 32}, {1, 33, 43, 84}, {24, 85, 37, 86}}, -- middle
         ["Jagged Pass_C"] = {{4, 85, 22, 110}, {23, 88, 36, 107}}, -- bottom
     },
@@ -526,5 +567,67 @@ return {
         ["Hoenn Safari Zone Area 2_B"] = {{23, 5, 50, 30}}, -- right
         ["Hoenn Safari Zone Area 2_C"] = {{23, 2, 34, 4}}, -- top right
         ["Hoenn Safari Zone Area 2_D"] = {{16, 2, 16, 5}}, -- top left
+    },
+    ["Petalburg City Gym"] = {
+        ["Petalburg City Gym_A"] = {{69, 100, 79, 109}}, -- bottom right
+        ["Petalburg City Gym_B"] = {{36, 81, 47, 90}}, -- bottom middle
+        ["Petalburg City Gym_C"] = {{1, 81, 12, 90}}, -- bottom left
+        ["Petalburg City Gym_D"] = {{64, 54, 75, 63}}, -- middle right
+        ["Petalburg City Gym_E"] = {{35, 54, 46, 63}}, -- middle middle
+        ["Petalburg City Gym_F"] = {{1, 55, 12, 63}}, -- middle left
+        ["Petalburg City Gym_G"] = {{35, 27, 46, 36}}, -- top middle
+        ["Petalburg City Gym_H"] = {{1, 27, 12, 35}}, -- top left
+		["Petalburg City Gym_I"] = {{18, 3, 29, 11}}, -- very top/gym leader(23,4)
+		
+	},	
+    ["Island Cave"] = {
+        ["Island Cave_A"] = {{7, 24, 21, 33}}, -- bottom
+        ["Island Cave_B"] = {{7, 7, 21, 15}}, -- top
+    },
+    ["Granite Cave 1F"] = {
+        ["Granite Cave 1F_A"] = {{16, 8, 37, 14}, {38, 10, 40, 15}}, -- bottom
+        ["Granite Cave 1F_B"] = {{10, 5, 41, 7}, {38, 8, 41, 8}, {5, 8, 15, 16}, {16, 15, 21, 16}}, -- top/left
+    },
+    ["Granite Cave B1F"] = {
+        ["Granite Cave B1F_A"] = {{3, 3, 33, 12}, {4, 13, 26, 23}, {27, 19, 29, 25}, {30, 23, 31, 25}}, -- main
+        ["Granite Cave B1F_B"] = {{27, 13, 32, 17}, {30, 18, 32, 21}}, -- left enclosed
+    },
+    ["Granite Cave B2F"] = {
+        ["Granite Cave B2F_A"] = {{3, 5, 11, 10}, {12, 10, 13, 10}}, -- top left
+        ["Granite Cave B2F_B"] = {{12, 5, 27, 9}, {20, 10, 25, 10}}, -- top middle
+		["Granite Cave B2F_C"] = {{30, 5, 32, 10}}, -- top right
+        ["Granite Cave B2F_D"] = {{4, 16, 31, 27}}, -- bottom
+    },
+    ["Abandoned Ship Exterior"] = {
+        ["Abandoned Ship Exterior_A"] = {{9, 8, 20, 14}}, -- right
+        ["Abandoned Ship Exterior_B"] = {{3, 3, 12, 7}, {0, 8, 8, 11}}, -- left
+    },
+    ["Abandoned Ship 1F"] = {
+        ["Abandoned Ship 1F_A"] = {{12, 3, 24, 12}}, -- right
+        ["Abandoned Ship 1F_B"] = {{1, 3, 9, 13}}, -- left
+    },
+    ["Abandoned Ship 1F Room 2"] = {
+        ["Abandoned Ship 1F Room 2_A"] = {{10, 2, 18, 20}, {1, 12, 9, 20}}, -- main
+        ["Abandoned Ship 1F Room 2_B"] = {{1, 2, 9, 7}}, -- top left
+    },
+    ["Desert Ruins"] = {
+        ["Desert Ruins_A"] = {{4, 56, 14, 66}}, -- bottom
+        ["Desert Ruins_B"] = {{4, 10, 14, 19}}, -- top
+    },
+    ["Ancient Tomb"] = {
+        ["Ancient Tomb_A"] = {{4, 24, 16, 38}}, -- bottom
+        ["Ancient Tomb_B"] = {{4, 4, 16, 17}}, -- top
+    },
+    ["Mossdeep Gym"] = {
+        ["Mossdeep Gym_A"] = {{2, 52, 20, 68}}, -- bottom left
+        ["Mossdeep Gym_B"] = {{29, 58, 35, 68}}, -- bottom middle
+        ["Mossdeep Gym_C"] = {{45, 46, 59, 67}}, -- bottom right
+        ["Mossdeep Gym_D"] = {{2, 27, 17, 36}}, -- middle left
+        ["Mossdeep Gym_E"] = {{2, 3, 18, 15}}, -- top left
+        ["Mossdeep Gym_F"] = {{47, 6, 56, 12}}, -- top right
+    },
+    ["Low Tide Entrance Room"] = {
+        ["Low Tide Entrance Room_A"] = {{3, 2, 18, 26}, {19, 9, 25, 25}}, -- main
+        ["Low Tide Entrance Room_B"] = {{19, 2, 27, 8}, {27, 9, 27, 12}, {26, 13, 27, 13}}, -- top right enclosed
     },
 }
