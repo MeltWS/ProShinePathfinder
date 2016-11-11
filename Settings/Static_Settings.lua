@@ -30,7 +30,7 @@ Settings = {
 
         K_SUBWAY   = 15, -- Weight for using the subway path. Kanto
         J_SUBWAY   = 15, -- Weight for using the subway path. Johto
-        H_SUBWAY   = 15, -- Weight for using the subway path. Hoenn
+        H_SUBWAY   = 999, -- Weight for using the subway path. Hoenn
 
         J_TO_K     = 10, -- Weight of the Subway from Johto to Kanto and reverse.
         H_TO_KJ    = 10 -- Weight of the Subway from Hoenn to Kanto/Johto and reverse.
@@ -65,7 +65,7 @@ Settings = {
 -----------------------
 end
 
-local version = "2.0.0"
+local version = "2.1.0"
 local cpath = select(1, ...) or "" -- callee path
 local function rmlast(str) return str:sub(1, -2):match(".+[%./]") or "" end -- removes last dir / file from the callee path
 local cdpath = rmlast(cpath) -- callee dir path
