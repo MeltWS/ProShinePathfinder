@@ -65,9 +65,7 @@ local function getTargets(opts)
         tKeep[#tKeep + 1] = npcTypes.items
     end
     tKeep = Table.join(tKeep)
-    for k, v in ipairs(npcs) do log("npc -> x: "..v.x..", y: "..v.y .. ", type: "..v.type) end
     npcs = Array.filter(hasKey(tKeep, "type"))(npcs)
-    log("Work: Npcs list -> " .. Table.show(npcs))
     return npcs
 end
 
