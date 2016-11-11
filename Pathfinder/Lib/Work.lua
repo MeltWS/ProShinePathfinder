@@ -1,45 +1,36 @@
-local cdpath = ""
-local cpath = select(1, ...) -- callee path
-if cpath ~= nil then
-    cdpath = cpath:match(".+[/%.]") or cdpath -- callee dir path
-end
+local cpath = select(1, ...) or "" -- callee path
+local function nTimes(n, f, x) for i = 0, n - 1 do x = f(x) end return x end -- calls n times f(x)
+local function rmlast(str) return str:sub(1, -2):match(".+[%./]") or "" end -- removes last dir / file from the callee path
+local cdpath = rmlast(cpath) -- callee dir path
+local cppdpath = nTimes(3, rmlast, cpath) -- callee parent of parent dir path
+
 
 local Array           = require (cdpath .. "Array")
 local Game            = require (cdpath .. "Game")
-local Lib            = require (cdpath .. "Lib")
-
-local discardedNpc = 0
+local Lib             = require (cdpath .. "Lib")
+local Table           = require (cdpath .. "Table")
+local Settings        = require (cppdpath .. "Settings/WorkSettings")
 
 local work = {}
 
 local digIndex           = nil
 local headbuttIndex      = nil
-local currentMap            = nil
+local currentMap         = nil
 local digSpots           = nil
 local headbuttTrees      = nil
 local BerryTrees         = nil
 local discoverItems      = nil
-local targetIndex        = nil
 local targets            = nil
 local selectPokeWithMove = nil
-local currentTarget      = nil
+local npcTypes           = nil
+local npcTypesList       = nil
 local dialogs            = {
-    ["You harvested "] = function() end,      -- berries
-    ["You have harvested "] = function() end, -- berries
-    ["You have looted "] = function() end, -- berries
-    ["You found "] = function() end,          -- loot item
-    ["Obtained "] = function() end,          -- loot item
-    ["You've found "] = function() end,      -- loot item
-    ["You have obtained "] = function() end,       -- loot item
-    ["You have found "] = function() end,      -- loot item
-    ["You obtained "] = function() end,       -- loot TM
-    ["You have received "] = function() end,       -- loot TM
-    ["krrtt..krrt.."] = function() end,       -- fake voltorb item
     ["Select a Pokemon that has Headbutt."] = function() pushDialogAnswer(headbuttIndex) end,
     ["Select a Pokemon that has Dig."] = function() pushDialogAnswer(digIndex) end,
 }
 local uncollectableItems = {
     ["Route 32"] = {{10, 95}},
+    ["Route 104 House"] = true
 }
 
 local function resetData()
@@ -48,32 +39,38 @@ local function resetData()
     BerryTrees    = {}
     discoverItems = {}
     targets       = {}
-    targetIndex   = nil
-    currentTarget = nil
     currentMap    = nil
 end
 
-local function getNpcsData(opts)
-    if opts then
-        if opts.headbutt and headbuttIndex then
-            headbuttTrees = assert(getActiveHeadbuttTrees())
-        end
-        if opts.dig and digIndex then
-            digSpots = assert(getActiveDigSpots())
-        end
-        if opts.harvest then
-            BerryTrees = assert(getActiveBerryTrees())
-        end
-        if opts.discover then
-            discoverItems = assert(getDiscoverableItems())
-        end
+-- true if elem[data] is a key of t
+local function hasKey(t, data)
+    return function(elem)
+        return t[elem[data]] ~= nil
     end
 end
 
-local function initTargets()
-    local NpcTables = {digSpots, headbuttTrees, BerryTrees, discoverItems}
-    targets = Array.join(NpcTables)
+local function getTargets(opts)
+    local npcs = getNpcData()
+    local tKeep = {npcTypes.abandonnedPkm, npcTypes.pokeStop, npcTypes.test}
+    if opts.headbutt and headbuttIndex then
+        tKeep[#tKeep + 1] = npcTypes.headbutt
+    end
+    if opts.dig and digIndex then
+        tKeep[#tKeep + 1] = npcTypes.dig
+    end
+    if opts.harvest then
+        tKeep[#tKeep + 1] = npcTypes.berries
+    end
+    if opts.discover then
+        tKeep[#tKeep + 1] = npcTypes.items
+    end
+    tKeep = Table.join(tKeep)
+    for k, v in ipairs(npcs) do log("npc -> x: "..v.x..", y: "..v.y .. ", type: "..v.type) end
+    npcs = Array.filter(hasKey(tKeep, "type"))(npcs)
+    log("Work: Npcs list -> " .. Table.show(npcs))
+    return npcs
 end
+
 
 local function getClosest(x, y, targets)
     local closest     = nil
@@ -92,7 +89,9 @@ end
 
 -- some items are not collectables.
 local function isBlacklisted(target)
-    if uncollectableItems[currentMap] then
+    if uncollectableItems[currentMap] == true then
+        return true
+    elseif type(uncollectableItems[currentMap]) == "table" then
         for _, loc in ipairs(uncollectableItems[currentMap]) do
             if loc[1] == target.x and loc[2] == target.y then
                 return true
@@ -105,23 +104,19 @@ end
 -- is working expects parameter opts to contain an array with keys : dig, harvest, discover, headbutt, headbuttIndex, digIndex. Bool values.
 -- return true if doing an action, false means it's done it's job.
 function work.isWorking(map, opts)
-    if map ~= currentMap then
+    if map ~= currentMap and opts then
         currentMap = map
         headbuttIndex = Game.getPokemonNumberWithMove("Headbutt", 155)
         digIndex = Game.getPokemonNumberWithMove("Dig")
-        getNpcsData(opts)
-        initTargets()
+        targets = getTargets(opts)
     end
     while targets and #targets ~= 0 do
-        if not currentTarget then
-            targetIndex, currentTarget = getClosest(getPlayerX(), getPlayerY(), targets)
-            assert(targets[targetIndex], "Work --> getClosest returned inexisting target Index:" .. targetIndex)
-        end
-        if not isBlacklisted(currentTarget) and talkToNpcOnCell(currentTarget.x, currentTarget.y) then
-            Lib.log1time("Work: Checking npc index: " .. targetIndex .. " --> x:" .. currentTarget.x .. ", y:" .. currentTarget.y)
+        local targetIndex, currentTarget = getClosest(getPlayerX(), getPlayerY(), targets)
+        assert(targets[targetIndex], "Work --> getClosest returned inexisting target Index:" .. targetIndex)
+        if not isBlacklisted(currentTarget) and isNpcOnCell(currentTarget.x, currentTarget.y) and talkToNpcOnCell(currentTarget.x, currentTarget.y) then
+            Lib.log1time("Work: Checking " .. npcTypesList[currentTarget.type] .. " on cell X: " .. currentTarget.x .. ", Y:" .. currentTarget.y .. ".")
             return true
         end
-        currentTarget = nil
         assert(table.remove(targets, targetIndex), "Work --> Failed to remove index: " .. targetIndex)
     end
     return false
@@ -129,14 +124,15 @@ end
 
 function onWorkStart()
     resetData()
+    npcTypes = Settings.getNpcTypes()
+    assert(type(npcTypes) == "table", "Work --> Failed to npc type list.")
+    npcTypesList = Table.join(npcTypes)
 end
 
 function onWorkDialogMessage(message)
-    if targets and currentTarget then
+    if targets then
         for check, f in pairs(dialogs) do
             if string.find(message, check) then
-                assert(table.remove(targets, targetIndex), "Work --> Failed to remove index: " .. targetIndex)
-                currentTarget = nil
                 f()
             end
         end

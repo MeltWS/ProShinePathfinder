@@ -13,20 +13,35 @@ function Table.clone(t1)
     return t2
 end
 
--- create a new table with both t1 and t2 keys = value pairs
-function Table.merge(t1, t2)
-    local t3 = {}
-    t3 = table.clone(t1)
-    for k, v in pairs(t2) do
-        if t3[k] then
-            t3[k] = Table.merge(t3[k], v)
-        elseif type(v) == "table" then 
-            t3[k] = Table.clone(v)
-        else
-            t3[k] = v
+-- {a} -> (a, a)
+function Table.join(ttx)
+    local ty = {}
+    for kx, tx in pairs(ttx) do
+        for k, v in pairs(tx) do
+            ty[k] = v
         end
     end
-    return t3
+    return ty
+end
+
+function Table.filter(p)
+    return function(tx)
+        local ty = {}
+        for k, v in pairs(tx) do
+            if p(v) then ty[k] = v end
+        end
+        return ty
+    end
+end
+
+--  ((a, b) -> (c, d)) -> [(a, b)] -> [(c, d)]
+function Table.assocMap(t1, f)
+    local t2 = {}
+    for k, v in pairs(t1) do
+        k2, v2 = f(k, v)
+        t2[k2] = v2
+    end
+    return t2
 end
 
 function Table.tablelength(T)
