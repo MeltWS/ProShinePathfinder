@@ -51,7 +51,7 @@ end
 
 local function getTargets(opts)
     local npcs = getNpcData()
-    local tKeep = {npcTypes.abandonnedPkm, npcTypes.pokeStop, npcTypes.test}
+    local tKeep = {npcTypes.abandonnedPkm--[[, npcTypes.pokeStop]], npcTypes.test}
     if opts.headbutt and headbuttIndex then
         tKeep[#tKeep + 1] = npcTypes.headbutt
     end
