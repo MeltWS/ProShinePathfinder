@@ -10,7 +10,7 @@ local ItemList       = require (cppdpath .. "Maps/Items/Items")
 local PokemartList   = require (cppdpath .. "Maps/Pokemarts/Pokemarts")
 
 -- move to npc and use shop
-local function usePokemart(item, amount)
+local function usePokemart(map, item, amount)
     if isShopOpen() then
         assert(buyItem(item, amount), "buyItem("..item..", "..amount..") failed")
         log("buyItem("..item..", "..amount..") success")
@@ -41,7 +41,7 @@ local function useNearestPokemart(map, item, amount)
     if pf.moveTo(map, Table.getKeys(ItemList[item].maps)) then
         return true
     end
-    return usePokemart(item, amount)
+    return usePokemart(map, item, amount)
 end
 
 return { useNearestPokemart = useNearestPokemart }
