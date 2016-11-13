@@ -16,7 +16,7 @@ local function usePokemart(map, item, amount)
         log("buyItem("..item..", "..amount..") success")
         return false -- job done
     else
-        mart = PokemartList[map][ItemList[item]["maps"][map]]
+        local mart = PokemartList[map][ItemList[item]["maps"][map]]
         if mart[3] ~= 0 then
             talkToNpcOnCell(mart[1], mart[2])
             pushDialogAnswer(mart[3])
