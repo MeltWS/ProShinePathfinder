@@ -104,8 +104,8 @@ end
 function work.isWorking(map, opts)
     if map ~= currentMap and opts then
         currentMap = map
-        headbuttIndex = Game.getPokemonNumberWithMove("Headbutt", 155)
-        digIndex = Game.getPokemonNumberWithMove("Dig")
+        headbuttIndex = Game.getPokemonNumberWithMove("Headbutt", 151)
+        digIndex = Game.getPokemonNumberWithMove("Dig", 151)
         targets = getTargets(opts)
     end
     while targets and #targets ~= 0 do

@@ -319,10 +319,10 @@ local function initSettings(ss)
     ["headbutt"] = ss.HEADBUTT,
     ["discover"] = ss.DISCOVER
     }
-    if settings.workOpts.headbutt and not Game.getPokemonNumberWithMove("Headbutt", 155) then
+    if settings.workOpts.headbutt and not Game.getPokemonNumberWithMove("Headbutt", 151) then
         log("Pathfinder: Warning, cannot Headbutt trees.")
     end
-    if settings.workOpts.dig and not Game.getPokemonNumberWithMove("Dig") then
+    if settings.workOpts.dig and not Game.getPokemonNumberWithMove("Dig", 151) then
         log("Pathfinder: Warning, cannot Dig.")
     end
 end
