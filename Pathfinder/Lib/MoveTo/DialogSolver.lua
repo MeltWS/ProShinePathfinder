@@ -5,6 +5,7 @@ local cppdpath = nTimes(3, rmlast, cpath) -- callee parent of parent dir path
 
 local Maybe                 = require (cppdpath .. "Lib/Maybe")
 local Lib                   = require (cppdpath .. "Lib/Lib")
+local Table                 = require (cppdpath .. "Lib/Table")
 local npcExceptions         = require (cppdpath .. "Maps/MapExceptions/NpcExceptions")
 local elevators             = require (cppdpath .. "Maps/MapExceptions/Elevators")
 local digways               = require (cppdpath .. "Maps/MapExceptions/Digways")
@@ -129,9 +130,36 @@ local function isTransmatReached(message, dialogs)
     return false
 end
 
+function print_r ( t ) 
+    local print_r_cache={}
+    local function sub_print_r(t,indent)
+        if (print_r_cache[tostring(t)]) then
+            log(indent.."*"..tostring(t))
+        else
+            print_r_cache[tostring(t)]=true
+            if (type(t)=="table") then
+                for pos,val in pairs(t) do
+                    if (type(val)=="table") then
+                        log(indent.."["..pos.."] => "..tostring(t).." {")
+                        sub_print_r(val,indent..string.rep(" ",string.len(pos)+8))
+                        log(indent..string.rep(" ",string.len(pos)+6).."}")
+                    else
+                        log(indent.."["..pos.."] => "..tostring(val))
+                    end
+                end
+            else
+                log(indent..tostring(t))
+            end
+        end
+    end
+    sub_print_r(t,"  ")
+end
+
 local function solveDialog(message, pf)
     local n1 = pf.from
     local n2 = pf.toMap
+	log("msg: "..message)
+	print_r(useDigway)
     if pf.exceptionExist(npcExceptions, n1, n2) then
         return solveNpc(message, n1, n2)
     elseif Table.inTable(useDigway, message) and pf.exceptionExist(digways, n1, n2) and pf.isDigPathEnabled() then
