@@ -8,6 +8,7 @@ local _KantoMap = require (cdpath .. "Kanto/KantoMap")
 local _JohtoMap = require (cdpath .. "Johto/JohtoMap")
 local _HoennMap = require (cdpath .. "Hoenn/HoennMap")
 local _LinkMap  = require (cdpath .. "LinkMap")
+local _EventMap = require (cdpath .. "Event/EventMap")
 
 return function()
 
@@ -15,6 +16,7 @@ local KantoMap = _KantoMap()
 local JohtoMap = _JohtoMap()
 local HoennMap = _HoennMap()
 local LinkMap  = _LinkMap()
+local EventMap = _EventMap()
 
 local GlobalMap = {}
 
@@ -32,6 +34,7 @@ mergeMap(GlobalMap, KantoMap)
 mergeMap(GlobalMap, JohtoMap)
 mergeMap(GlobalMap, HoennMap)
 mergeMap(GlobalMap, LinkMap)
+mergeMap(GlobalMap, EventMap)
 
 return GlobalMap
 end

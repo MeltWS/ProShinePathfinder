@@ -25,7 +25,7 @@ Settings = {
 
         DISCOVER   = true,  --discover items.
         HARVEST    = true,  -- harvest berries.
-        HEADBUTT   = true, -- headbutt trees.
+        HEADBUTT   = false, -- headbutt trees.
         DIG        = true,  -- dig digSpots.
 
         K_SUBWAY   = 15, -- Weight for using the subway path. Kanto

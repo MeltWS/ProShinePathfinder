@@ -241,6 +241,13 @@ linkExce["Celadon Office Roof Top"] = {
 linkExce["Cinnabar Lab"] = {
 	["Cinnabar Lab Room 2"] = {26, 9},
 }
+linkExce["Diamond Domain 1F_A"] = {
+	["Love Island_A"] = {24, 53},
+}
+linkExce["Diamond Domain 1F_B"] = {
+	["Diamond Domain B1F"] = {37, 39},
+	["Love Island_B"] = {31, 20},
+}
 
 ----------------------
 ------ JOHTO ---------

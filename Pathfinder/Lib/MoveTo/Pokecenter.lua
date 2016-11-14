@@ -5,6 +5,7 @@ local cppdpath = nTimes(3, rmlast, cpath) -- callee parent of parent dir path
 
 
 local pf             = require (cppdpath .. "Lib/MoveTo/MoveTo")
+local Table          = require (cppdpath .. "Lib/Table")
 local PokecenterList = require (cppdpath .. "Maps/Pokecenters/Pokecenters")
 
 -- move to closest PC
@@ -14,16 +15,25 @@ end
 
 -- move to closest PC and use the nurse
 local function useNearestPokecenter(map)
-    if pf.moveTo(map, PokecenterList) then
-        return true
-    end
     if map == "Indigo Plateau Center" then
         return assert(talkToNpcOnCell(4, 22), "Failed to talk to Nurse on Cell 4/22")
     elseif string.find(map, "Seafoam") and getMoney() > 1500 then
-        if moveTo(map, "Seafoam B4F") then
+        if moveTo(map, "Seafoam B4F_D") then
             return true
         end
         return assert(talkToNpcOnCell(59,13), "Failed to talk to Nurse on Cell 59/13")
+    elseif string.find(map, "Rock Tunnel") then
+        if MoveTo(map, "Rock Tunnel 1_C") then
+            return true
+        end
+        return assert(talkToNpcOnCell(32,31), "Failed to talk to Nurse on Cell 32/31")
+	elseif Table.inTable({"Moon","Moon 1F","Moon B1F"}, map) then
+        if MoveTo(map, "Moon") then
+            return true
+        end
+        return assert(talkToNpcOnCell(16,48), "Failed to talk to NPC on Cell 16/48")
+	elseif pf.moveTo(map, PokecenterList) then
+        return true
     end
     return assert(usePokecenter(), "usePokecenter() failed")
 end

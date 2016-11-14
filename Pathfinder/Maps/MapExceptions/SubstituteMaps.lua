@@ -218,6 +218,14 @@ return {
         ["Silph Co 11F_A"] = {{6, 3, 17, 7}, {16, 8, 17, 22}}, -- right side
         ["Silph Co 11F_B"] = {{1, 11, 13, 22}, {1, 6, 3, 10}}, -- left side/boss
     },
+    ["Love Island"] = {
+        ["Love Island_A"] = {{23, 14, 92, 25}, {0, 26, 92, 115}}, -- main part
+        ["Love Island_B"] = {{12, 19, 22, 25}}, -- top left corner/Private Resort entrance
+    },
+    ["Diamond Domain 1F"] = {
+        ["Diamond Domain 1F_A"] = {{22, 50, 25, 52}},
+        ["Diamond Domain 1F_B"] = {{20, 14, 41, 49}},
+    },
 	
 
 ----------------------

@@ -59,6 +59,16 @@ function Table.getKeys(tab)
     return keys
 end
 
+-- CHECK IF IN TABLE --
+function Table.inTable(tab, val)
+   for index, value in ipairs(tab) do
+       if value == val then
+           return true
+       end
+   end
+   return false
+end
+
 function Table.show(tab)
     local start = true
     local ret = "["

@@ -95,8 +95,8 @@ HoennMap["Lavaridge Mart"] = {["Lavaridge Town"] = {1}}
 HoennMap["Lavaridge Town Herb Shop"] = {["Lavaridge Town"] = {1}}
 HoennMap["Lavaridge Town House"] = {["Lavaridge Town"] = {1}}
 HoennMap["Lavaridge Town"] = {["Lavaridge Town House"] = {1}, ["Lavaridge Town Herb Shop"] = {1}, ["Lavaridge Mart"] = {1}, ["Pokecenter Lavaridge Town"] = {1}, ["Route 112_C"] = {1}} -- links
-HoennMap["Lilycove CIty House 3"]--[[Capital I in CIty]] = {["Lilycove City"] = {1}} 
-HoennMap["Lilycove City Harbor"] = {["Lilycove City"] = {0.2}}
+HoennMap["Lilycove CIty House 3"]--[[Capital I in CIty]] = {["Lilycove City"] = {1}}
+HoennMap["Lilycove City Harbor"] = {["Lilycove City"] = {0.2}, ["Leev Town Port"] = {0.2}}
 HoennMap["Lilycove City House 1"] = {["Lilycove City"] = {1}}
 HoennMap["Lilycove City House 2"] = {["Lilycove City"] = {1}}
 HoennMap["Lilycove City House 4"] = {["Lilycove City"] = {1}}
@@ -143,9 +143,12 @@ HoennMap["Meteor falls 1F 1R_D"] = {["Meteor falls B1F 1R_B"] = {0.5}}
 HoennMap["Meteor falls 1F 1R_X"] = {["Meteor falls 1F 1R_A"] = {0.7}, ["Route 115_A"] = {1.5}}
 HoennMap["Meteor falls B1F 1R_A"] = {["Meteor falls 1F 1R_C"] = {1}, ["Meteor Falls 1F 2R_B"] = {1}, ["Meteor Falls 1F 2R_A"] = {1}}
 HoennMap["Meteor falls B1F 1R_B"] = {["Meteor Falls 1F 2R_B"] = {1.5}, ["Meteor Falls B1F 2R"] = {1.5}, ["Meteor falls 1F 1R_D"] = {1.5}}
+HoennMap["Moon"] = {["Moon 1F"] = {1}, ["Mossdeep City Space Center 2F"] = {1}}
+HoennMap["Moon 1F"] = {["Moon"] = {1}, ["Moon B1F"] = {1}}
+HoennMap["Moon B1F"] = {["Moon 1F"] = {1}}
 HoennMap["Mossdeep City House"] = {["Mossdeep City"] = {1}}
 HoennMap["Mossdeep City Space Center 1F"] = {["Mossdeep City Space Center 2F"] = {1}, ["Mossdeep City"] = {1}}
-HoennMap["Mossdeep City Space Center 2F"] = {["Mossdeep City Space Center 1F"] = {1}}
+HoennMap["Mossdeep City Space Center 2F"] = {["Moon"] = {0.2}, ["Mossdeep City Space Center 1F"] = {1}}
 HoennMap["Mossdeep City"] = {["Mossdeep Gym_A"] = {1}, ["Mossdeep City Space Center 1F"] = {1}, ["Stevens House"] = {1}, ["Mossdeep City House"] = {1}, ["Secret Base Boy House"] = {1}, ["Backdoor House 1"] = {1}, ["Pokeblock Enthusiasts House"] = {1}, ["Mossdeep Pokemart"] = {1}, ["Pokecenter Mossdeep City"] = {1}, ["Route 124_A"] = {1.5, {["abilities"] = {"surf"}}}, ["Route 125"] = {1.5, {["abilities"] = {"surf"}}}, ["Route 127_A"] = {1.5, {["abilities"] = {"surf"}}}}
 HoennMap["Mossdeep Gym_A"] = {["Mossdeep City"] = {1}, ["Mossdeep Gym_D"] = {1}, ["Mossdeep Gym_C"] = {1}, ["Mossdeep Gym_B"] = {1}}
 HoennMap["Mossdeep Gym_B"] = {["Mossdeep Gym_A"] = {1}, ["Mossdeep Gym_D"] = {1}, ["Mossdeep Gym_F"] = {1}}
@@ -377,6 +380,13 @@ HoennMap["Victory Road Hoenn B2F_E"] = {["Victory Road Hoenn B2F_F"] = {0.1, {["
 HoennMap["Victory Road Hoenn B2F_F"] = {["Victory Road Hoenn B2F_E"] = {0}}
 HoennMap["Weather Institute 1F"] = {["Weather Institute 2F"] = {1}, ["Route 119A"] = {1}}
 HoennMap["Weather Institute 2F"] = {["Weather Institute 1F"] = {1}}
+
+HoennMap["Leev Town"] = {["Leev Town Entrance"] = {1}, ["Jura Pass"] = {1}, ["Pokecenter Leev Town"] = {1}}
+HoennMap["Leev Town Port"] = {["Leev Town Entrance"] = {1}, ["Lilycove City Harbor"] = {0.2}}
+HoennMap["Leev Town Entrance"] = {["Leev Town Port"] = {1}, ["Leev Town"] = {1}}
+HoennMap["Jura Cave"] = {["Jura Pass"] = {1}}
+HoennMap["Jura Pass"] = {["Leev Town"] = {1}, ["Jura Cave"] = {1}}
+HoennMap["Pokecenter Leev Town"] = {["Leev Town"] = {1}}
 
 -- HoennMap["node"] = {["link"] = {distance, {["restrictionType"] = {"restriction"}}}}
 

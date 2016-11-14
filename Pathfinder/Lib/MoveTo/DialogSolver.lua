@@ -134,9 +134,9 @@ local function solveDialog(message, pf)
     local n2 = pf.toMap
     if pf.exceptionExist(npcExceptions, n1, n2) then
         return solveNpc(message, n1, n2)
-    elseif Lib.inTable(useDigway, message) and pf.exceptionExist(digways, n1, n2) and pf.isDigPathEnabled() then
+    elseif Table.inTable(useDigway, message) and pf.exceptionExist(digways, n1, n2) and pf.isDigPathEnabled() then
         return solveDigway(n1, n2, pf.abilitiesIndex.dig)
-    elseif Lib.inTable(useDive, message) then
+    elseif Table.inTable(useDive, message) then
         return solveDive(pf.abilitiesIndex.dive)
     elseif solveOutlet(message, pf) then
         return

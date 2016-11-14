@@ -14,6 +14,7 @@ local Pokecenters = {
     "Mt. Silver Pokecenter",
     "Indigo Plateau Center Johto",
     "Indigo Plateau Center",
+	"Pokecenter Love Island",
     -- Johto
     "Olivine Pokecenter",
     "Pokecenter Azalea",
@@ -43,7 +44,9 @@ local Pokecenters = {
     "Pokecenter Sootopolis City",
     "Pokecenter Verdanturf",
     "Pokemon League Hoenn",
-    "Pokemon League Hoenn",
+	"Pokecenter Leev Town",
+	-- Event
+	"Pokecenter Vulcanic Town",
 }
 
 return Pokecenters
