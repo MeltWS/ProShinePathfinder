@@ -100,7 +100,7 @@ KantoMap["Lavender Town Volunteer House"] = {["Lavender Town"] = {1}}
 KantoMap["Lavender Town"] = {["Lavender Town House"] = {1}, ["Hall Of Fame"] = {1}, ["Lavender Town Costume Mart"] = {1}, ["Lavender Town Costume Mart 2"] = {1}, ["Lavender Town Volunteer House"] = {1}, ["Lavender Pokemart"] = {1}, ["Route 10_C"] = {1}, ["Route 12"] = {1}, ["Pokecenter Lavender"] = {1}, ["Pokemon Tower 1F"] = {1}, ["Route 8_A"] = {1}}
 KantoMap["Love Island_A"] = {["Diamond Domain 1F_A"] = {1}, ["Love Island_B"] = {1}, ["Love Island Ferry"] = {1}, ["Pokecenter Love Island"] = {1}}
 KantoMap["Love Island_B"] = {["Diamond Domain 1F_B"] = {1}, ["Private Resort"] = {1}}
-KantoMap["Love Island Ferry"] = {["Love Island_A"] = {1}, ["Pokecenter Vermilion"] = {0.2}}
+KantoMap["Love Island Ferry"] = {["Love Island_A"] = {1}, ["Pokecenter Vermilion"] = {999}}
 KantoMap["Move Deleter House"] = {["Fuchsia City"] = {1}}
 KantoMap["Mt. Moon 1F"] = {["Mt. Moon B1F_A"] = {2}, ["Mt. Moon B1F_D"] = {2}, ["Route 3"] = {2}, ["Mt. Moon B1F_C"] = {2}}
 KantoMap["Mt. Moon B1F_A"] = {["Mt. Moon B2F_C"] = {1}, ["Mt. Moon 1F"] = {1}}
