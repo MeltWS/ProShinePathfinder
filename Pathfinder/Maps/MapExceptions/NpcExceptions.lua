@@ -69,7 +69,7 @@ npcExce["Pokecenter Fortree City"] = {
     ["Transmat Station"] = {{8, 4}, "Here you go.", "Can you present to me your registered trainer's ID for authenticatory purposes?"}
 }
 npcExce["Pokecenter Lavaridge Town"] = {
-    ["Transmat Station"] = {{8, 4}, "Here you go.", "Can you present to me your registered trainer's ID for authenticatory purposes?"}
+    ["Transmat Station"] = {{8, 3}, "Here you go.", "Can you present to me your registered trainer's ID for authenticatory purposes?"}
 }
 npcExce["Pokecenter Lilycove City"] = {
     ["Transmat Station"] = {{8, 4}, "Here you go.", "Can you present to me your registered trainer's ID for authenticatory purposes?"}
@@ -102,8 +102,33 @@ npcExce["Pokecenter Verdanturf"] = {
     ["Transmat Station"] = {{8, 4}, "Here you go.", "Can you present to me your registered trainer's ID for authenticatory purposes?"}
 }
 npcExce["Hoenn Safari Zone Lobby"] = {
-    ["Hoenn Safari Zone Area 1"] = {{21, 6}, "Yes", "Would you like to enter the safari zone for $5,000 today?"},
+    ["Hoenn Safari Zone Area 1"] = {{21, 6}, "Yes", "Would you like to enter the safari zone for $5,000 today?"}
 }
+npcExce["Mossdeep City Space Center 2F"] = {
+	["Moon"] = {{15, 9}, "Yes", "So, want to go on the Moon for 15,000 Pokedollars? I'll include the oxygen needed for free."}
+}
+npcExce["Moon B1F_B"] = {
+	["Sootopolis City"] = {{60, 23}, "Yes", "Should I go back to Earth?"}
+}
+npcExce["Rusturf Tunnel_C"] = {
+	["Haunted Site"] = {{26, 15}, "Yes", "Hello my friend "..getAccountName()..", to help preserve this site we need to charge you in 2,500 Pokedollars, you agree to pay this fee and enter?"}
+}
+npcExce["Route 115_A"] = {
+	["Mineral Site_A"] = {{81, 78}, "Yes", "Hello my friend "..getAccountName()..", to help preserve this site we need to charge you in 2,500 Pokedollars, you agree to pay this fee and enter?"}
+}
+npcExce["Fiery Path"] = {
+	["Feral Site_A"] = {{14, 32}, "Yes", "Hello my friend "..getAccountName()..", to help preserve this site we need to charge you in 2,500 Pokedollars, you agree to pay this fee and enter?"}
+}
+npcExce["Route 103_C"] = {
+	["Glacial Site"] = {{55, 4}, "Yes", "Hello my friend "..getAccountName()..", to help preserve this site we need to charge you in 2,500 Pokedollars, you agree to pay this fee and enter?"}
+}
+npcExce["Route 119A"] = {
+	["Natural Site"] = {{16, 68}, "Yes", "Hello my friend "..getAccountName()..", to help preserve this site we need to charge you in 2,500 Pokedollars, you agree to pay this fee and enter?"}
+}
+npcExce["Route 111 Desert"] = {
+	["Historical Site"] = {{34, 21}, "Yes", "Hello my friend "..getAccountName()..", to help preserve this site we need to charge you in 2,500 Pokedollars, you agree to pay this fee and enter?"}
+}
+
 ----------------------
 ---- INTER REGION ----
 ----------------------

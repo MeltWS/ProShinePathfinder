@@ -528,7 +528,7 @@ return {
     },
     ["Route 115"] = {
         ["Route 115_A"] = {{48, 62, 75, 78}, {10, 78, 82, 108}, {36, 77, 36, 77}, {41, 77, 43, 77}, {61, 109, 82, 123}}, -- meteor entrance
-        ["Route 115_B"] = {{12, 109, 55, 111}, {12, 112, 59, 150}, {60, 125, 77, 146}}, -- bottom part
+        ["Route 115_B"] = {{12, 109, 55, 111}, {12, 112, 59, 150}, {60, 125, 77, 146}, {60, 150, 60, 150}},-- bottom part
         ["Route 115_C"] = {{11, 76, 40, 77}, {10, 30, 44, 75}, {45, 1, 57, 28}, {58, 7, 65, 32}}, -- top
         ["Route 115_D"] = {{46, 28, 58, 36}, {59, 33, 60, 36}}, -- top, rock smash part
         ["Route 115_E"] = {{58, 1, 80, 6}, {67, 7, 80, 46}}, -- top, rock climb part
@@ -630,4 +630,100 @@ return {
         ["Low Tide Entrance Room_A"] = {{3, 2, 18, 26}, {19, 9, 25, 25}}, -- main
         ["Low Tide Entrance Room_B"] = {{19, 2, 27, 8}, {27, 9, 27, 12}, {26, 13, 27, 13}}, -- top right enclosed
     },
+	["Moon"] = {
+		["Moon_A"] = {{7, 32, 17, 48}, {18, 34, 26, 48}}, -- bottom left
+		["Moon_B"] = {{7, 10, 23, 31}, {18, 32, 21, 33}, {24, 19, 24, 26}, {25, 19, 26, 21}}, -- top left
+		["Moon_C"] = {{33, 10, 53, 22}, {36, 23, 50, 27}, {37, 28, 48, 29}}, -- top right
+		["Moon_D"] = {{38, 30, 53, 48}, {27, 36, 37, 40}, {36, 34, 37, 35}}, -- bottom right
+		["Moon_E"] = {{27, 18, 33, 35}, {25, 22, 26, 33}, {23, 28, 24, 33}, {34, 23, 35, 34}, {36, 28, 37, 33}} -- middle
+	},
+	["Moon 1F"] = {
+		["Moon 1F_A"] = {{3, 24, 13, 46}}, -- left
+		["Moon 1F_B"] = {{16, 4, 48, 15}}, -- top
+		["Moon 1F_C"] = {{56, 22, 61, 26}}, -- mid-right
+		["Moon 1F_D"] = {{56, 43, 61, 47}}, -- bottom right
+		["Moon 1F_E"] = {{29, 18, 35, 23}}, -- middle
+	},
+	["Moon B1F"] = {
+		["Moon B1F_A"] = {{30, 7, 35, 11}}, -- top
+		["Moon B1F_B"] = {{54, 14, 61, 23}}, -- right
+		["Moon B1F_C"] = {{3, 30, 28, 40}}, -- main-left
+		["Moon B1F_D"] = {{29, 18, 53, 44}, {54, 40, 61, 47}}, -- main-right
+	},
+	["Moon 2F"] = {
+		["Moon 2F_A"] = {{6, 3, 6, 4}},
+		["Moon 2F_B"] = {{3, 3, 5, 8}, {6, 5, 6, 8}, {7, 3, 9, 7}},
+	},
+	["Team Aqua Hideout 1F"] = {
+		["Team Aqua Hideout 1F_A"] = {{55, 4, 60, 31}, {29, 24, 54, 31}, {38, 32, 41, 46}}, -- main
+		["Team Aqua Hideout 1F_B"] = {{37, 5, 52, 19}}, -- top
+		["Team Aqua Hideout 1F_C"] = {{7, 20, 26, 31}}, -- top left
+		["Team Aqua Hideout 1F_D"] = {{1, 37, 26, 46}}, -- bottom left
+		["Team Aqua Hideout 1F_E"] = {{29, 37, 35, 46}}, -- mid bottom-small room
+		["Team Aqua Hideout 1F_F"] = {{44, 36, 55, 39}}, -- bottom right corner-top
+		["Team Aqua Hideout 1F_G"] = {{44, 43, 55, 46}}, -- bottom right corner-bottom
+	},
+	["Team Aqua Hideout B1F"] = {
+		["Team Aqua Hideout B1F_A"] = {{2, 20, 32, 30}, {33, 26, 40, 30}}, -- bottom
+		["Team Aqua Hideout B1F_B"] = {{2, 7, 17, 16}}, -- left
+		["Team Aqua Hideout B1F_C"] = {{19, 13, 30, 19}}, -- middle
+		["Team Aqua Hideout B1F_D"] = {{33, 13, 40, 22}}, -- right
+		["Team Aqua Hideout B1F_E"] = {{19, 3, 30, 9}}, -- top
+		["Team Aqua Hideout B1F_F"] = {{33, 3, 40, 9}}, -- top right
+	},
+	["Team Aqua Hideout B2F"] = {
+		["Team Aqua Hideout B2F_A"] = {{0, 8, 5, 11}}, -- top left
+		["Team Aqua Hideout B2F_B"] = {{7, 3, 14, 11}}, -- top middle
+		["Team Aqua Hideout B2F_C"] = {{16, 3, 40, 11}, {21, 12, 40 ,19}}, -- top right
+		["Team Aqua Hideout B2F_D"] = {{0, 15, 19, 19}}, -- middle left
+		["Team Aqua Hideout B2F_E"] = {{0, 21, 40, 35}}, -- bottom
+	},
+	["Team Aqua Hideout Warp Hallway"] = {
+		["Team Aqua Hideout Warp Hallway_A"] = {{0, 39, 15, 47}}, -- bottom left
+		["Team Aqua Hideout Warp Hallway_B"] = {{23, 39, 40, 47}}, -- bottom right
+		["Team Aqua Hideout Warp Hallway_C"] = {{12, 32, 18, 32}}, -- bottom sliver-left
+		["Team Aqua Hideout Warp Hallway_D"] = {{19, 32, 19, 32}}, -- bottom sliver-middle
+		["Team Aqua Hideout Warp Hallway_E"] = {{20, 32, 26, 32}}, -- bottom sliver-right
+		["Team Aqua Hideout Warp Hallway_F"] = {{12, 24, 18, 24}}, -- middle sliver-left
+		["Team Aqua Hideout Warp Hallway_G"] = {{19, 24, 19, 24}}, -- middle sliver-middle
+		["Team Aqua Hideout Warp Hallway_H"] = {{20, 24, 26, 24}}, -- middle sliver-right
+		["Team Aqua Hideout Warp Hallway_I"] = {{12, 17, 18, 17}}, -- top sliver-left
+		["Team Aqua Hideout Warp Hallway_J"] = {{19, 17, 19, 17}}, -- top sliver-middle
+		["Team Aqua Hideout Warp Hallway_K"] = {{20, 17, 26, 17}}, -- top sliver-right
+		["Team Aqua Hideout Warp Hallway_L"] = {{12, 5, 26, 11}}, -- top
+	},
+	["Lavaridge Town Gym 1F"] = {
+		["Lavaridge Town Gym 1F_A"] = {{21, 25, 24, 40}, {25, 35, 33, 41}}, -- bottom right main
+		["Lavaridge Town Gym 1F_B"] = {{25, 24, 33, 34}}, -- bottom right enclosed
+		["Lavaridge Town Gym 1F_C"] = {{7, 25, 15, 40}, {16, 37, 18, 40}}, -- bottom left main
+		["Lavaridge Town Gym 1F_D"] = {{16, 25, 18, 36}}, -- bottom left enclosed
+		["Lavaridge Town Gym 1F_E"] = {{7, 4, 16, 13}}, -- top left
+		["Lavaridge Town Gym 1F_F"] = {{19, 4, 25, 13}}, -- top middle
+		["Lavaridge Town Gym 1F_G"] = {{28, 4, 33, 13}}, -- top right
+	},
+	["Lavaridge Town Gym B1F"] = {
+		["Lavaridge Town Gym B1F_A"] = {{7, 4, 30, 7}}, -- top
+		["Lavaridge Town Gym B1F_B"] = {{4, 12, 10, 28}, {5, 29, 10, 29}, {4, 30, 10, 30}}, -- bottom left(top left)
+		["Lavaridge Town Gym B1F_C"] = {{12, 11, 16, 30}}, -- bottom left(top middle)
+		["Lavaridge Town Gym B1F_D"] = {{4, 32, 12, 40}, {13, 31, 17, 40}, {18, 26, 18, 39}}, -- bottom left(bottom)
+		["Lavaridge Town Gym B1F_E"] = {{18, 12, 18, 25}}, --
+		["Lavaridge Town Gym B1F_F"] = {{22, 12, 25, 28}}, -- bottom right(top left)
+		["Lavaridge Town Gym B1F_G"] = {{28, 12, 31, 28}}, -- bottom right(top right)
+		["Lavaridge Town Gym B1F_H"] = {{22, 29, 25, 37}}, -- bottom right(middle)
+		["Lavaridge Town Gym B1F_I"] = {{22, 38, 28, 40}, {28, 29, 31, 37}}, -- bottom right(bottom)
+		["Lavaridge Town Gym B1F_J"] = {{4, 29, 4, 29}},
+	},
+	["Mineral Site"] = {
+		["Mineral Site_A"] = {{3, 1, 23, 13}, {3, 14, 4, 16}, {11, 14, 22, 15}}, -- top
+		["Mineral Site_B"] = {{5, 16, 25, 18}, {1, 18, 4, 18}, {23, 14, 25, 15}}, -- bottom
+	},
+	["Feral Site"] = {
+		["Feral Site_A"] = {{2, 1, 17, 15}, {18, 4, 24, 14}, {22, 15, 23, 15}}, -- top
+		["Feral Site_B"] = {{1, 16, 25, 18}, {18, 15, 19, 15}, {25, 13, 25, 15}}, -- bottom
+	},
+	["Historical Site"] = {
+		["Historical Site_A"] = {{1, 1, 23, 12}, {21, 13, 23, 16}, {4, 13, 18, 17}}, -- main
+		["Historical Site_B"] = {{1, 14, 3, 16}}, -- bottom left
+		["Historical Site_C"] = {{20, 15, 20, 17}, {21, 7, 21, 7}}, -- bottom right
+	},
 }

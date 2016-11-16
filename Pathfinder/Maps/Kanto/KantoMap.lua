@@ -87,6 +87,7 @@ KantoMap["Indigo Plateau Center"] = {["Indigo Plateau"] = {0.2}, ["Player Bedroo
 KantoMap["Indigo Plateau"] = {["Indigo Plateau Center Johto"] = {1}, ["Indigo Plateau Center"] = {1}, ["Victory Road Kanto 3F_B"] = {1}}
 KantoMap["Item Maniac House"] = {["Route 25"] = {1}}
 KantoMap["Jail"] = {["Pewter City"] = {1}}
+KantoMap["Kanto Safari Zone Area 1 Building 1"] = {["Safari Entrance_A"] = {1}}
 KantoMap["Know It All Mans Room"] = {["Celadon Office Roof Top"] = {1}}
 KantoMap["Lavender Pokemart"] = {["Lavender Town"] = {1}}
 KantoMap["Lavender Town Costume Mart 2"] = {["Lavender Town"] = {1}}
@@ -258,17 +259,20 @@ KantoMap["Route 8 Stop House"] = {["Route 8_A"] = {0.2}, ["Saffron City"] = {0.2
 KantoMap["Route 8_A"] = {["Lavender Town"] = {1}, ["Route 8_B"] = {1, {["abilities"] = {"cut"}}}, ["Route 8 Stop House"] = {1}, ["Underground House 4"] = {1}}
 KantoMap["Route 8_B"] = {["Route 8_A"] = {1, {["abilities"] = {"cut"}}}}
 KantoMap["Route 9"] = {["Route 10_B"] = {1}, ["Route 10_A"] = {1}, ["Cerulean City_A"] = {1}}
-KantoMap["Safari Area 1"] = {["Safari Entrance_A"] = {1.5}, ["Safari Area 2_A"] = {1.5}}
+KantoMap["Safari Area 1"] = {["Safari Entrance_A"] = {1.5}, ["Safari Area 2_A"] = {1.5}, ["Safari House 2"] = {1}}
 KantoMap["Safari Area 2_A"] = {["Safari Area 3"] = {1}, ["Safari Area 2_B"] = {0, {["abilities"] = {"surf"}}}, ["Safari Area 1"] = {1}}
-KantoMap["Safari Area 2_B"] = {["Safari Area 3"] = {1}, ["Safari Area 2_A"] = {0, {["abilities"] = {"surf"}}}}
-KantoMap["Safari Area 3"] = {["Safari Area 2_A"] = {1}, ["Safari Exclusive"] = {1--[[MS]]}, ["Safari Entrance_B"] = {1}}
+KantoMap["Safari Area 2_B"] = {["Safari House 3"] = {1}, ["Safari Area 3"] = {1}, ["Safari Area 2_A"] = {0, {["abilities"] = {"surf"}}}}
+KantoMap["Safari Area 3"] = {["Safari House 4"] = {1}, ["SecretHouse"] = {1}, ["Safari Area 2_A"] = {1}, ["Safari Exclusive"] = {1--[[MS]]}, ["Safari Entrance_B"] = {1}}
 KantoMap["Safari Effort Wald 1"] = {["Safari Stop"] = {1}, ["Safari Effort Wald 2_A"] = {1}}
 KantoMap["Safari Effort Wald 2_A"] = {["Safari Effort Wald 1"] = {1}, ["Safari Effort Wald 2_B"] = {0, {["abilities"] = {"surf"}}}, ["Safari Stop"] = {1}}
 KantoMap["Safari Effort Wald 2_B"] = {["Safari Effort Wald 2_A"] = {0, {["abilities"] = {"surf"}}}}
-KantoMap["Safari Entrance_A"] = {["Safari Stop"] = {1}, ["Safari Entrance_C"] = {0, {["abilities"] = {"surf"}}}, ["Safari Entrance_B"] = {0, {["abilities"] = {"surf"}}}, ["Safari Area 1"] = {1}}
+KantoMap["Safari Entrance_A"] = {["Kanto Safari Zone Area 1 Building 1"] = {1}, ["Safari Stop"] = {1}, ["Safari Entrance_C"] = {0, {["abilities"] = {"surf"}}}, ["Safari Entrance_B"] = {0, {["abilities"] = {"surf"}}}, ["Safari Area 1"] = {1}}
 KantoMap["Safari Entrance_B"] = {["Safari Area 3"] = {1}, ["Safari Entrance_A"] = {0, {["abilities"] = {"surf"}}}, ["Safari Entrance_C"] = {0, {["abilities"] = {"surf"}}}}
 KantoMap["Safari Entrance_C"] = {["Safari Entrance_B"] = {0, {["abilities"] = {"surf"}}}, ["Safari Entrance_A"] = {0, {["abilities"] = {"surf"}}}}
 KantoMap["Safari Exclusive"] = {["Safari Area 3"] = {1}}
+KantoMap["Safari House 2"] = {["Safari Area 1"] = {1}}
+KantoMap["Safari House 3"] = {["Safari Area 2_B"] = {1}}
+KantoMap["Safari House 4"] = {["Safari Area 3"] = {1}}
 KantoMap["Safari Stop"] = {["Fuchsia City"] = {1}, ["Safari Entrance_A"] = {1}, ["Safari Effort Wald 2_A"] = {1}}
 KantoMap["Saffron City Station Floor 2"] = {["Saffron City Station_B"] = {0.5}}
 KantoMap["Saffron City Station_A"] = {["Saffron City Station_B"] = {0.5}, ["Saffron City"] = {0.5}}
@@ -304,6 +308,7 @@ KantoMap["Seafoam B4F_A"] = {["Seafoam B3F_C"] = {2, {["abilities"] = {"surf"}}}
 KantoMap["Seafoam B4F_B"] = {["Seafoam B3F_E"] = {1}}
 KantoMap["Seafoam B4F_C"] = {["Seafoam B3F_D"] = {1.5, {["abilities"] = {"surf"}}}, ["Seafoam B3F_E"] = {1.5, {["abilities"] = {"surf"}}}}
 KantoMap["Seafoam B4F_D"] = {["Seafoam B3F_E"] = {1}}
+KantoMap["SecretHouse"] = {["Safari Area 3"] = {1}}
 KantoMap["Silph Co 10F"] = {["Silph Co 4F"] = {1}, ["Silph Co 9F"] = {1}, ["Silph Co 11F_A"] = {1}, ["Silph Co Elevator"] = {1}}
 KantoMap["Silph Co 11F_A"] = {["Silph Co 10F"] = {1}, ["Silph Co Elevator"] = {1}}
 KantoMap["Silph Co 11F_B"] = {["Silph Co 7F_B"] = {1}}

@@ -10,7 +10,6 @@ return function()
 local ss = _ss()
 local J_SUBWAY = ss.J_SUBWAY
 
-
 local JohtoMap = {}
 
 JohtoMap["Azalea House1"] = {["Azalea Town"] = {1}}

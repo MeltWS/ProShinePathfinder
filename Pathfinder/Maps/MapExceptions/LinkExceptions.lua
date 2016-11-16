@@ -680,6 +680,194 @@ linkExce["Mossdeep Gym_F"] = {
 	["Mossdeep Gym_B"] = {56, 6},
 	["Mossdeep Gym_D"] = {47, 6},
 }
+linkExce["Moon_B"] = {
+	["Moon 1F_A"] = {7, 19},
+	["Moon 1F_B"] = {15, 10},
+}
+linkExce["Moon_C"] = {
+	["Moon 1F_B"] = {45, 10},
+	["Moon 1F_C"] = {53, 19},
+	["Moon_D"] = {42, 30}
+}
+linkExce["Moon 1F_A"] = {
+	["Moon_A"] = {8, 45},
+	["Moon_B"] = {8, 24},
+}
+linkExce["Moon 1F_B"] = {
+	["Moon_B"] = {17, 15},
+	["Moon_C"] = {47, 15},
+}
+linkExce["Moon 2F_A"] = {
+	["Moon 2F_B"] = {5, 3},
+}
+linkExce["Team Aqua Hideout 1F_A"] = {
+	["Team Aqua Hideout 1F_C"] = {58, 5},
+	["Team Aqua Hideout 1F_E"] = {32, 28},
+}
+
+linkExce["Team Aqua Hideout 1F_C"] = {
+	["Team Aqua Hideout 1F_A"] = {24, 22},
+	["Team Aqua Hideout 1F_D"] = {12, 29},
+}
+linkExce["Team Aqua Hideout 1F_D"] = {
+	["Team Aqua Hideout 1F_C"] = {25, 40},
+}
+linkExce["Team Aqua Hideout 1F_F"] = {
+	["Team Aqua Hideout B1F_B"] = {53, 38},
+	["Team Aqua Hideout B1F_C"] = {46, 38},
+}
+linkExce["Team Aqua Hideout 1F_E"] = {
+	["Team Aqua Hideout 1F_A"] = {34, 42},
+}
+linkExce["Team Aqua Hideout B1F_A"] = {
+	["Team Aqua Hideout B1F_F"] = {3, 29},
+	["Team Aqua Hideout 1F_C"] = {39, 28},
+	["Team Aqua Hideout 1F_G"] = {6, 21},
+}
+linkExce["Team Aqua Hideout B1F_B"] = {
+	["Team Aqua Hideout B1F_E"] = {16, 9},
+}
+linkExce["Team Aqua Hideout B1F_E"] = {
+	["Team Aqua Hideout B1F_B"] = {21, 6},
+	["Team Aqua Hideout B2F_E"] = {28, 8},
+}
+linkExce["Team Aqua Hideout B1F_F"] = {
+	["Team Aqua Hideout B1F_A"] = {38, 4},
+	["Team Aqua Hideout Warp Hallway_E"] = {35, 8},
+}
+linkExce["Team Aqua Hideout B2F_C"] = {
+	["Team Aqua Hideout B2F_E"] = {23, 17},
+}
+linkExce["Team Aqua Hideout B2F_E"] = {
+	["Team Aqua Hideout B2F_C"] = {38, 25},
+}
+linkExce["Team Aqua Hideout Warp Hallway_A"] = {
+	["Team Aqua Hideout 1F_G"] = {14, 41},
+}
+linkExce["Team Aqua Hideout Warp Hallway_B"] = {
+	["Team Aqua Hideout Warp Hallway_F"] = {39, 42},
+	["Team Aqua Hideout B2F_B"] = {24, 41},
+}
+linkExce["Team Aqua Hideout Warp Hallway_C"] = {
+	["Team Aqua Hideout B1F_C"] = {14, 32},
+	["Team Aqua Hideout Warp Hallway_I"] = {19, 32},
+}
+linkExce["Team Aqua Hideout Warp Hallway_D"] = {
+	["Team Aqua Hideout Warp Hallway_C"] = {18, 32},
+	["Team Aqua Hideout Warp Hallway_E"] = {20, 32},
+}
+linkExce["Team Aqua Hideout Warp Hallway_E"] = {
+	["Team Aqua Hideout Warp Hallway_I"] = {19, 32},
+	["Team Aqua Hideout B1F_F"] = {25, 32},
+}
+linkExce["Team Aqua Hideout Warp Hallway_F"] = {
+	["Team Aqua Hideout Warp Hallway_B"] = {14, 24},
+	["Team Aqua Hideout Warp Hallway_J"] = {19, 24},
+}
+linkExce["Team Aqua Hideout Warp Hallway_G"] = {
+	["Team Aqua Hideout Warp Hallway_F"] = {18, 24},
+	["Team Aqua Hideout Warp Hallway_H"] = {20, 24},
+}
+linkExce["Team Aqua Hideout Warp Hallway_H"] = {
+	["Team Aqua Hideout Warp Hallway_J"] = {19, 24},
+	["Team Aqua Hideout Warp Hallway_L"] = {24, 24},
+}
+linkExce["Team Aqua Hideout Warp Hallway_I"] = {
+	["Team Aqua Hideout Warp Hallway_D"] = {14, 17},
+	["Team Aqua Hideout Warp Hallway_G"] = {19, 17},
+}
+linkExce["Team Aqua Hideout Warp Hallway_J"] = {
+	["Team Aqua Hideout Warp Hallway_I"] = {18, 17},
+	["Team Aqua Hideout Warp Hallway_K"] = {20, 17},
+}
+linkExce["Team Aqua Hideout Warp Hallway_K"] = {
+	["Team Aqua Hideout Warp Hallway_G"] = {19, 17},
+	["Team Aqua Hideout Warp Hallway_L"] = {24, 17},
+}
+linkExce["Team Aqua Hideout Warp Hallway_L"] = {
+	["Team Aqua Hideout B2F_C"] = {19, 5},
+	["Team Aqua Hideout Warp Hallway_H"] = {24, 9},
+	["Team Aqua Hideout Warp Hallway_K"] = {14, 9},
+}
+linkExce["Route 125"] = {
+	["Low Tide Entrance Room_A"] = {19, 16},
+}
+linkExce["Lavaridge Town Gym 1F_A"] = {
+	["Lavaridge Town Gym B1F_I"] = {25, 40},
+	["Lavaridge Town Gym B1F_D"] = {21, 26},
+}
+linkExce["Lavaridge Town Gym 1F_B"] = {
+	["Lavaridge Town Gym B1F_H"] = {28, 33},
+}
+linkExce["Lavaridge Town Gym 1F_C"] = {
+	["Lavaridge Town Gym B1F_D"] = {7, 39},
+	["Lavaridge Town Gym B1F_D"] = {9, 35},
+	["Lavaridge Town Gym B1F_B"] = {7, 28},
+}
+linkExce["Lavaridge Town Gym 1F_D"] = {
+	["Lavaridge Town Gym B1F_C"] = {16, 35},
+	["Lavaridge Town Gym 1F_C"] = {16, 26},
+}
+linkExce["Lavaridge Town Gym 1F_E"] = {
+	["Lavaridge Town Gym B1F_B"] = {7, 13},
+	["Lavaridge Town Gym B1F_B"] = {16, 13},
+	["Lavaridge Town Gym B1F_A"] = {11, 7},
+}
+linkExce["Lavaridge Town Gym 1F_F"] = {
+	["Lavaridge Town Gym B1F_E"] = {22, 13},
+	["Lavaridge Town Gym B1F_F"] = {25, 13},
+	["Lavaridge Town Gym B1F_A"] = {19, 5},
+}
+linkExce["Lavaridge Town Gym 1F_G"] = {
+	["Lavaridge Town Gym B1F_G"] = {32, 13},
+	["Lavaridge Town Gym B1F_A"] = {28, 7},
+}
+linkExce["Lavaridge Town Gym B1F_A"] = {
+	["Lavaridge Town Gym 1F_E"] = {8, 7},
+	["Lavaridge Town Gym 1F_F"] = {16, 5},
+	["Lavaridge Town Gym 1F_G"] = {25, 7},
+}
+linkExce["Lavaridge Town Gym B1F_B"] = {
+	["Lavaridge Town Gym 1F_C"] = {4, 28},
+	["Lavaridge Town Gym 1F_E"] = {4, 13},
+}
+linkExce["Lavaridge Town Gym B1F_D"] = {
+	["Lavaridge Town Gym 1F_C"] = {4, 39},
+	["Lavaridge Town Gym 1F_C"] = {6, 35},
+	["Lavaridge Town Gym 1F_D"] = {13, 35},
+	["Lavaridge Town Gym 1F_A"] = {18, 26},
+}
+linkExce["Lavaridge Town Gym B1F_E"] = {
+	["Lavaridge Town Gym 1F_A"] = {18, 26},
+}
+linkExce["Lavaridge Town Gym B1F_I"] = {
+	["Lavaridge Town Gym 1F_A"] = {22, 40},
+}
+linkExce["Lavaridge Town Gym B1F_J"] = {
+	["Lavaridge Town Gym B1F_B"] = {5, 29},
+}
+linkExce["Mineral Site_A"] = {
+	["Mineral Site_B"] = {11, 15},
+}
+linkExce["Mineral Site_B"] = {
+	["Mineral Site_A"] = {11, 17},
+}
+linkExce["Feral Site_A"] = {
+	["Feral Site_B"] = {8, 15},
+}
+linkExce["Feral Site_B"] = {
+	["Feral Site_A"] = {8, 17},
+}
+linkExce["Historical Site_A"] = {
+	["Historical Site_B"] = {2, 12},
+	["Historical Site_C"] = {21, 14},
+}
+linkExce["Historical Site_B"] = {
+	["Historical Site_A"] = {2, 14},
+}
+linkExce["Historical Site_C"] = {
+	["Historical Site_A"] = {20, 15},
+}
 
 
 ----------------------
