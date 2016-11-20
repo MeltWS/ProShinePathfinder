@@ -12,6 +12,9 @@ local J_SUBWAY = ss.J_SUBWAY
 
 local JohtoMap = {}
 
+JohtoMap["Abandoned Desert Village"] = {["Desert Lagoon"] = {1}, ["Desert Cave"] = {1}}
+JohtoMap["Amazon Forest Entrance"] = {["Amazon Forest"] = {1}, ["Dock Island"] = {1}}
+JohtoMap["Amazon Forest"] = {["Desert Cave"] = {1}, ["Amazon Forest Entrance"] = {1}}
 JohtoMap["Azalea House1"] = {["Azalea Town"] = {1}}
 JohtoMap["Azalea Kurts House"] = {["Azalea Town"] = {1}}
 JohtoMap["Azalea Pokemart"] = {["Azalea Town"] = {1}}
@@ -83,6 +86,9 @@ JohtoMap["Dark Cave South_A"] = {["Route 31"] = {1}, ["Dark Cave South_B"] = {1,
 JohtoMap["Dark Cave South_B"] = {["Dark Cave South_A"] = {0.5}, ["Dark Cave South_C"] = {0.5}, ["Dark Cave North_B"] = {0.5}}
 JohtoMap["Dark Cave South_C"] = {["Dark Cave South_B"] = {1.5, {["abilities"] = {"surf"}}}, ["Dark Cave South_A"] = {1.5, {["abilities"] = {"rock smash"}}}, ["Dark Cave South_D"] = {1.5}}
 JohtoMap["Dark Cave South_D"] = {["Dark Cave South_C"] = {0.5, {["abilities"] = {"rock smash"}}}, ["Route 46_A"] = {0.5}}
+JohtoMap["Desert Cave"] = {["Abandoned Desert Village"] = {1}, ["Amazon Forest"] = {1}}
+JohtoMap["Desert Lagoon"] = {["Abandoned Desert Village"] = {1}}
+JohtoMap["Dock Island"] = {["Amazon Forest Entrance"] = {1}, ["Olivine City"] = {1}}
 JohtoMap["Dragons Den B1F"] = {["Dragons Den"] = {1, {["abilities"] = {"surf"}}}}
 JohtoMap["Dragons Den Entrance"] = {["Blackthorn City"] = {1}, ["Dragons Den"] = {1}}
 JohtoMap["Dragons Den"] = {["Dragons Den B1F"] = {1, {["abilities"] = {"surf"}}}, ["Dragons Den Entrance"] = {1}}
@@ -286,12 +292,6 @@ JohtoMap["Whirl Islands B1F_C"] = {["Whirl Islands B1F_B"] = {2}, ["Whirl Island
 JohtoMap["Whirl Islands B2F"] = {["Whirl Islands B1F_A"] = {1}, ["Whirl Islands B1F_C"] = {1}, ["Whirl Islands B3F"] = {1},  ["Whirl Islands B4F"] = {1}}
 JohtoMap["Whirl Islands B3F"] = {["Whirl Islands B2F"] = {1}}
 JohtoMap["Whirl Islands B4F"] = {["Whirl Islands B2F"] = {1}}
-JohtoMap["Dock Island"] = {["Amazon Forest Entrance"] = {1}, ["Olivine City"] = {1}}
-JohtoMap["Amazon Forest Entrance"] = {["Amazon Forest"] = {1}, ["Dock Island"] = {1}}
-JohtoMap["Amazon Forest"] = {["Desert Cave"] = {1}, ["Amazon Forest Entrance"] = {1}}
-JohtoMap["Desert Cave"] = {["Abandoned Desert Village"] = {1}, ["Amazon Forest"] = {1}}
-JohtoMap["Abandoned Desert Village"] = {["Desert Lagoon"] = {1}, ["Desert Cave"] = {1}}
-JohtoMap["Desert Lagoon"] = {["Abandoned Desert Village"] = {1}}
 
 -- JohtoMap["node"] = {["link"] = {distance, {["restrictionType"] = {"restriction"}}}}
 

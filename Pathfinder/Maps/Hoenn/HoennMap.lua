@@ -32,6 +32,10 @@ HoennMap["Berry Masters House"] = {["Route 123_C"] = {1}}
 HoennMap["Cable Car Station 1"] = {["Cable Car Station 2"] = {0.2}, ["Route 112_B"] = {0.2}}
 HoennMap["Cable Car Station 2"] = {["Cable Car Station 1"] = {0.2}, ["Mt. Chimney"] = {0.2}}
 HoennMap["Captains Office"] = {["Abandoned Ship Exterior_B"] = {1}}
+HoennMap["Cave Of Steel 1F_A"] = {["Valley Of Steel_B"] = {1}, ["Cave Of Steel 2F"] = {1}}
+HoennMap["Cave Of Steel 1F_B"] = {["Valley Of Steel_B"] = {1}}
+HoennMap["Cave Of Steel 1F_C"] = {["Valley Of Steel Eastern Peak"] = {1}, ["Valley Of Steel_B"] = {1}}
+HoennMap["Cave Of Steel 2F"] = {["Cave Of Steel 1F_A"] = {1}, ["Valley Of Steel_A"] = {1}}
 HoennMap["Cave of Origin 1F"] = {["Cave of Origin B1F"] = {1}, ["Cave of Origin Entrance"] = {1}}
 HoennMap["Cave of Origin B1F"] = {["Cave of Origin B2F"] = {1}, ["Cave of Origin 1F"] = {1}}
 HoennMap["Cave of Origin B2F"] = {["Cave of Origin B3F"] = {1}, ["Cave of Origin B1F"] = {1}}
@@ -51,6 +55,9 @@ HoennMap["Dewford Town House 1"] = {["Dewford Town"] = {1}}
 HoennMap["Dewford Town House 2"] = {["Dewford Town"] = {1}}
 HoennMap["Dewford Town House 3"] = {["Dewford Town"] = {1}}
 HoennMap["Dewford Town"] = {["Dewford Town Gym"] = {1}, ["Dewford Town House 3"] = {1}, ["Dewford Town House 2"] = {1}, ["Dewford Town House 1"] = {1}, ["Pokecenter Dewford Town"] = {1}, ["Route 106"] = {1}, ["Route 107"] = {1, {["abilities"] = {"surf"}}}}
+HoennMap["Eastern House 1"] = {["Valley Of Steel Eastern Peak"] = {1}}
+HoennMap["Eastern House 2"] = {["Valley Of Steel Eastern Peak"] = {1}}
+HoennMap["Eastern House 3"] = {["Valley Of Steel Eastern Peak"] = {1}}
 HoennMap["Ever Grande City_A"] = {["Pokecenter Ever Grande City"] = {1}, ["Ever Grande City_B"] = {1, {["abilities"] = {"dig"}}}, ["Route 128"] = {1, {["abilities"] = {"surf"}}}, ["Victory Road Hoenn 1F_A"] = {1}}
 HoennMap["Ever Grande City_B"] = {["Ever Grande City_A"] = {1, {["abilities"] = {"dig"}}}, ["Pokemon League Hoenn"] = {1}, ["Victory Road Hoenn 1F_B"] = {1}}
 HoennMap["Fallarbor House"] = {["Fallarbor Town"] = {1}}
@@ -97,6 +104,8 @@ HoennMap["Island Cave_B"] = {["Island Cave_A"] = {1}}
 HoennMap["Jagged Pass_A"] = {["Mt. Chimney"] = {1}, ["Jagged Pass_B"] = {0.5}}
 HoennMap["Jagged Pass_B"] = {["Jagged Pass_C"] = {0.5}}
 HoennMap["Jagged Pass_C"] = {["Route 112_C"] = {0.5}}
+HoennMap["Jura Cave"] = {["Jura Pass"] = {1}}
+HoennMap["Jura Pass"] = {["Jura Cave"] = {1}, ["Leev Town"] = {1}}
 HoennMap["Lab Littleroot Town"] = {["Littleroot Town"] = {1}}
 HoennMap["Lavaridge Mart"] = {["Lavaridge Town"] = {1}}
 HoennMap["Lavaridge Town Gym 1F_A"] = {["Lavaridge Town Gym B1F_I"] = {1}, ["Lavaridge Town Gym B1F_D"] = {1}, ["Lavaridge Town"] = {1}}
@@ -119,6 +128,9 @@ HoennMap["Lavaridge Town Gym B1F_J"] = {["Lavaridge Town Gym B1F_B"] = {1}}
 HoennMap["Lavaridge Town Herb Shop"] = {["Lavaridge Town"] = {1}}
 HoennMap["Lavaridge Town House"] = {["Lavaridge Town"] = {1}}
 HoennMap["Lavaridge Town"] = {["Valley Of Steel Entrance"] = {1}, ["Lavaridge Town Gym 1F_A"] = {1}, ["Lavaridge Town House"] = {1}, ["Lavaridge Town Herb Shop"] = {1}, ["Lavaridge Mart"] = {1}, ["Pokecenter Lavaridge Town"] = {1}, ["Route 112_C"] = {1}} -- links
+HoennMap["Leev Town Entrance"] = {["Leev Town"] = {1}, ["Leev Town Port"] = {1}}
+HoennMap["Leev Town Port"] = {["Leev Town Entrance"] = {1}, ["Lilycove City Harbor"] = {1}}
+HoennMap["Leev Town"] = {["Jura Pass"] = {1}, ["Pokecenter Leev Town"] = {1}, ["Leev Town Entrance"] = {1}}
 HoennMap["Lilycove CIty House 3"]--[[Capital I in CIty]] = {["Lilycove City"] = {1}} 
 HoennMap["Lilycove City Harbor"] = {["Leev Town Port"] = {1}, ["Lilycove City"] = {0.2}}
 HoennMap["Lilycove City House 1"] = {["Lilycove City"] = {1}}
@@ -236,10 +248,12 @@ HoennMap["Player Bedroom Littleroot Town"] = {["Player House Littleroot Town"] =
 HoennMap["Player House Littleroot Town"] = {["Player Bedroom Littleroot Town"] = {1}, ["Littleroot Town"] = {1}}
 HoennMap["Pokeblock Enthusiasts House"] = {["Mossdeep City"] = {1}}
 HoennMap["Pokecenter Dewford Town"] = {["Dewford Town"] = {1}, ["Transmat Station"] = {0.2}}
+HoennMap["Pokecenter Eastern Peak"] = {["Valley Of Steel Eastern Peak"] = {1}}
 HoennMap["Pokecenter Ever Grande City"] = {["Ever Grande City_A"] = {1}, ["Transmat Station"] = {0.2}}
 HoennMap["Pokecenter Fallarbor Town"] = {["Fallarbor Town"] = {1}, ["Transmat Station"] = {0.2}}
 HoennMap["Pokecenter Fortree City"] = {["Fortree City"] = {1}, ["Transmat Station"] = {0.2}}
 HoennMap["Pokecenter Lavaridge Town"] = {["Lavaridge Town"] = {1}, ["Transmat Station"] = {0.2}}
+HoennMap["Pokecenter Leev Town"] = {["Leev Town"] = {1}}
 HoennMap["Pokecenter Lilycove City"] = {["Lilycove City"] = {1}, ["Transmat Station"] = {0.2}}
 HoennMap["Pokecenter Mauville City"] = {["Mauville City"] = {1}, ["Transmat Station"] = {0.2}}
 HoennMap["Pokecenter Mossdeep City"] = {["Mossdeep City"] = {1}, ["Transmat Station"] = {0.2}}
@@ -250,6 +264,7 @@ HoennMap["Pokecenter Rustboro City"] = {["Rustboro City_A"] = {1}, ["Transmat St
 HoennMap["Pokecenter Slateport"] = {["Slateport City"] = {1}, ["Transmat Station"] = {0.2}}
 HoennMap["Pokecenter Sootopolis City"] = {["Sootopolis City"] = {1}, ["Transmat Station"] = {0.2}}
 HoennMap["Pokecenter Verdanturf"] = {["Verdanturf Town"] = {1}, ["Transmat Station"] = {0.2}}
+HoennMap["Pokecenter Western Peak"] = {["Valley Of Steel Western Peak"] = {1}}
 HoennMap["Pokemon League Hoenn"] = {["Ever Grande City_B"] = {1}}
 HoennMap["Pokemon Trainers School"] = {["Rustboro City_A"] = {1}}
 HoennMap["Prof. Birch Bedroom"] = {["Prof. Birch House"] = {1}}
@@ -429,6 +444,11 @@ HoennMap["Terra Cave Entrance"] = {["Terra Cave End"] = {1}--[[need to speak to 
 HoennMap["Transmat Station"] = {["Pokecenter Verdanturf"] = {H_SUBWAY}, ["Pokecenter Sootopolis City"] = {H_SUBWAY}, ["Pokecenter Slateport"] = {H_SUBWAY}, ["Pokecenter Rustboro City"] = {H_SUBWAY}, ["Pokecenter Petalburg City"] = {H_SUBWAY}, ["Pokecenter Pacifidlog Town"] = {H_SUBWAY}, ["Pokecenter Oldale Town"] = {H_SUBWAY}, ["Pokecenter Mossdeep City"] = {H_SUBWAY}, ["Pokecenter Mauville City"] = {H_SUBWAY}, ["Pokecenter Lilycove City"] = {H_SUBWAY}, ["Pokecenter Lavaridge Town"] = {H_SUBWAY}, ["Pokecenter Fortree City"] = {H_SUBWAY}, ["Pokecenter Fallarbor Town"] = {H_SUBWAY}, ["Pokecenter Ever Grande City"] = {H_SUBWAY}, ["Pokecenter Dewford Town"] = {H_SUBWAY}}
 HoennMap["Treasure Hunter House"] = {["Route 124_A"] = {1}}
 HoennMap["Trick House"] = {["Route 110_B"] = {1}}
+HoennMap["Valley Of Steel Eastern Peak"] = {["Pokecenter Eastern Peak"] = {1}, ["Eastern House 1"] = {1}, ["Eastern House 2"] = {1}, ["Eastern House 3"] = {1}, ["Cave Of Steel 1F_C"] = {1}}
+HoennMap["Valley Of Steel Entrance"] = {["Valley Of Steel_A"] = {1}, ["Lavaridge Town"] = {1}}
+HoennMap["Valley Of Steel Western Peak"] = {["Pokecenter Western Peak"] = {1}, ["Western House 1"] = {1}, ["Western House 2"] = {1}, ["Western House 3"] = {1}, ["Western House 4"] = {1}}
+HoennMap["Valley Of Steel_A"] = {["Cave Of Steel 2F"] = {1}, ["Valley Of Steel Entrance"] = {1}}
+HoennMap["Valley Of Steel_B"] = {["Cave Of Steel 1F_A"] = {1}, ["Cave Of Steel 1F_C"] = {1}}
 HoennMap["Verdanturf Battle Tent"] = {["Verdanturf Town"] = {1}}
 HoennMap["Verdanturf House 1"] = {["Verdanturf Town"] = {1}}
 HoennMap["Verdanturf House 2"] = {["Verdanturf Town"] = {1}}
@@ -450,30 +470,10 @@ HoennMap["Victory Road Hoenn B2F_E"] = {["Victory Road Hoenn B2F_F"] = {0.1, {["
 HoennMap["Victory Road Hoenn B2F_F"] = {["Victory Road Hoenn B2F_E"] = {0}}
 HoennMap["Weather Institute 1F"] = {["Weather Institute 2F"] = {1}, ["Route 119A"] = {1}}
 HoennMap["Weather Institute 2F"] = {["Weather Institute 1F"] = {1}}
-HoennMap["Valley Of Steel Entrance"] = {["Valley Of Steel_A"] = {1}, ["Lavaridge Town"] = {1}}
-HoennMap["Valley Of Steel_A"] = {["Cave Of Steel 2F"] = {1}, ["Valley Of Steel Entrance"] = {1}}
-HoennMap["Valley Of Steel_B"] = {["Cave Of Steel 1F_A"] = {1}, ["Cave Of Steel 1F_C"] = {1}}
-HoennMap["Cave Of Steel 2F"] = {["Cave Of Steel 1F_A"] = {1}, ["Valley Of Steel_A"] = {1}}
-HoennMap["Cave Of Steel 1F_A"] = {["Valley Of Steel_B"] = {1}, ["Cave Of Steel 2F"] = {1}}
-HoennMap["Cave Of Steel 1F_B"] = {["Valley Of Steel_B"] = {1}}
-HoennMap["Cave Of Steel 1F_C"] = {["Valley Of Steel Eastern Peak"] = {1}, ["Valley Of Steel_B"] = {1}}
-HoennMap["Valley Of Steel Eastern Peak"] = {["Pokecenter Eastern Peak"] = {1}, ["Eastern House 1"] = {1}, ["Eastern House 2"] = {1}, ["Eastern House 3"] = {1}, ["Cave Of Steel 1F_C"] = {1}}
-HoennMap["Eastern House 1"] = {["Valley Of Steel Eastern Peak"] = {1}}
-HoennMap["Eastern House 2"] = {["Valley Of Steel Eastern Peak"] = {1}}
-HoennMap["Eastern House 3"] = {["Valley Of Steel Eastern Peak"] = {1}}
-HoennMap["Pokecenter Eastern Peak"] = {["Valley Of Steel Eastern Peak"] = {1}}
-HoennMap["Valley Of Steel Western Peak"] = {["Pokecenter Western Peak"] = {1}, ["Western House 1"] = {1}, ["Western House 2"] = {1}, ["Western House 3"] = {1}, ["Western House 4"] = {1}}
 HoennMap["Western House 1"] = {["Valley Of Steel Western Peak"] = {1}}
 HoennMap["Western House 2"] = {["Valley Of Steel Western Peak"] = {1}}
 HoennMap["Western House 3"] = {["Valley Of Steel Western Peak"] = {1}}
 HoennMap["Western House 4"] = {["Valley Of Steel Western Peak"] = {1}}
-HoennMap["Pokecenter Western Peak"] = {["Valley Of Steel Western Peak"] = {1}}
-HoennMap["Leev Town Port"] = {["Leev Town Entrance"] = {1}, ["Lilycove City Harbor"] = {1}}
-HoennMap["Leev Town Entrance"] = {["Leev Town"] = {1}, ["Leev Town Port"] = {1}}
-HoennMap["Leev Town"] = {["Jura Pass"] = {1}, ["Pokecenter Leev Town"] = {1}, ["Leev Town Entrance"] = {1}}
-HoennMap["Pokecenter Leev Town"] = {["Leev Town"] = {1}}
-HoennMap["Jura Pass"] = {["Jura Cave"] = {1}, ["Leev Town"] = {1}}
-HoennMap["Jura Cave"] = {["Jura Pass"] = {1}}
 
 -- HoennMap["node"] = {["link"] = {distance, {["restrictionType"] = {"restriction"}}}}
 
