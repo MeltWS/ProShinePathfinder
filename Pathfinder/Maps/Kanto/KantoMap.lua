@@ -87,6 +87,7 @@ KantoMap["Indigo Plateau Center"] = {["Indigo Plateau"] = {0.2}, ["Player Bedroo
 KantoMap["Indigo Plateau"] = {["Indigo Plateau Center Johto"] = {1}, ["Indigo Plateau Center"] = {1}, ["Victory Road Kanto 3F_B"] = {1}}
 KantoMap["Item Maniac House"] = {["Route 25"] = {1}}
 KantoMap["Jail"] = {["Pewter City"] = {1}}
+KantoMap["Kanto Safari Zone Area 1 Building 1"] = {["Safari Entrance_A"] = {1}}
 KantoMap["Know It All Mans Room"] = {["Celadon Office Roof Top"] = {1}}
 KantoMap["Lavender Pokemart"] = {["Lavender Town"] = {1}}
 KantoMap["Lavender Town Costume Mart 2"] = {["Lavender Town"] = {1}}
@@ -258,17 +259,20 @@ KantoMap["Route 8 Stop House"] = {["Route 8_A"] = {0.2}, ["Saffron City"] = {0.2
 KantoMap["Route 8_A"] = {["Lavender Town"] = {1}, ["Route 8_B"] = {1, {["abilities"] = {"cut"}}}, ["Route 8 Stop House"] = {1}, ["Underground House 4"] = {1}}
 KantoMap["Route 8_B"] = {["Route 8_A"] = {1, {["abilities"] = {"cut"}}}}
 KantoMap["Route 9"] = {["Route 10_B"] = {1}, ["Route 10_A"] = {1}, ["Cerulean City_A"] = {1}}
-KantoMap["Safari Area 1"] = {["Safari Entrance_A"] = {1.5}, ["Safari Area 2_A"] = {1.5}}
+KantoMap["Safari Area 1"] = {["Safari Entrance_A"] = {1.5}, ["Safari Area 2_A"] = {1.5}, ["Safari House 2"] = {1}}
 KantoMap["Safari Area 2_A"] = {["Safari Area 3"] = {1}, ["Safari Area 2_B"] = {0, {["abilities"] = {"surf"}}}, ["Safari Area 1"] = {1}}
-KantoMap["Safari Area 2_B"] = {["Safari Area 3"] = {1}, ["Safari Area 2_A"] = {0, {["abilities"] = {"surf"}}}}
-KantoMap["Safari Area 3"] = {["Safari Area 2_A"] = {1}, ["Safari Exclusive"] = {1--[[MS]]}, ["Safari Entrance_B"] = {1}}
+KantoMap["Safari Area 2_B"] = {["Safari House 3"] = {1}, ["Safari Area 3"] = {1}, ["Safari Area 2_A"] = {0, {["abilities"] = {"surf"}}}}
+KantoMap["Safari Area 3"] = {["Safari House 4"] = {1}, ["SecretHouse"] = {1}, ["Safari Area 2_A"] = {1}, ["Safari Exclusive"] = {1--[[MS]]}, ["Safari Entrance_B"] = {1}}
 KantoMap["Safari Effort Wald 1"] = {["Safari Stop"] = {1}, ["Safari Effort Wald 2_A"] = {1}}
 KantoMap["Safari Effort Wald 2_A"] = {["Safari Effort Wald 1"] = {1}, ["Safari Effort Wald 2_B"] = {0, {["abilities"] = {"surf"}}}, ["Safari Stop"] = {1}}
 KantoMap["Safari Effort Wald 2_B"] = {["Safari Effort Wald 2_A"] = {0, {["abilities"] = {"surf"}}}}
-KantoMap["Safari Entrance_A"] = {["Safari Stop"] = {1}, ["Safari Entrance_C"] = {0, {["abilities"] = {"surf"}}}, ["Safari Entrance_B"] = {0, {["abilities"] = {"surf"}}}, ["Safari Area 1"] = {1}}
+KantoMap["Safari Entrance_A"] = {["Kanto Safari Zone Area 1 Building 1"] = {1}, ["Safari Stop"] = {1}, ["Safari Entrance_C"] = {0, {["abilities"] = {"surf"}}}, ["Safari Entrance_B"] = {0, {["abilities"] = {"surf"}}}, ["Safari Area 1"] = {1}}
 KantoMap["Safari Entrance_B"] = {["Safari Area 3"] = {1}, ["Safari Entrance_A"] = {0, {["abilities"] = {"surf"}}}, ["Safari Entrance_C"] = {0, {["abilities"] = {"surf"}}}}
 KantoMap["Safari Entrance_C"] = {["Safari Entrance_B"] = {0, {["abilities"] = {"surf"}}}, ["Safari Entrance_A"] = {0, {["abilities"] = {"surf"}}}}
 KantoMap["Safari Exclusive"] = {["Safari Area 3"] = {1}}
+KantoMap["Safari House 2"] = {["Safari Area 1"] = {1}}
+KantoMap["Safari House 3"] = {["Safari Area 2_B"] = {1}}
+KantoMap["Safari House 4"] = {["Safari Area 3"] = {1}}
 KantoMap["Safari Stop"] = {["Fuchsia City"] = {1}, ["Safari Entrance_A"] = {1}, ["Safari Effort Wald 2_A"] = {1}}
 KantoMap["Saffron City Station Floor 2"] = {["Saffron City Station_B"] = {0.5}}
 KantoMap["Saffron City Station_A"] = {["Saffron City Station_B"] = {0.5}, ["Saffron City"] = {0.5}}
@@ -304,6 +308,7 @@ KantoMap["Seafoam B4F_A"] = {["Seafoam B3F_C"] = {2, {["abilities"] = {"surf"}}}
 KantoMap["Seafoam B4F_B"] = {["Seafoam B3F_E"] = {1}}
 KantoMap["Seafoam B4F_C"] = {["Seafoam B3F_D"] = {1.5, {["abilities"] = {"surf"}}}, ["Seafoam B3F_E"] = {1.5, {["abilities"] = {"surf"}}}}
 KantoMap["Seafoam B4F_D"] = {["Seafoam B3F_E"] = {1}}
+KantoMap["SecretHouse"] = {["Safari Area 3"] = {1}}
 KantoMap["Silph Co 10F"] = {["Silph Co 4F"] = {1}, ["Silph Co 9F"] = {1}, ["Silph Co 11F_A"] = {1}, ["Silph Co Elevator"] = {1}}
 KantoMap["Silph Co 11F_A"] = {["Silph Co 10F"] = {1}, ["Silph Co Elevator"] = {1}}
 KantoMap["Silph Co 11F_B"] = {["Silph Co 7F_B"] = {1}}
@@ -327,7 +332,7 @@ KantoMap["Underground1"] = {["Underground House 4"] = {1.5}, ["Underground House
 KantoMap["Underground2"] = {["Underground House 2"] = {0.9}, ["Underground House 1"] = {0.9}}
 KantoMap["Vermilion City Subway"] = {["Celadon City Subway"] = {K_SUBWAY}, ["Viridian City Subway"] = {K_SUBWAY}, ["Lavender Town Subway"] = {K_SUBWAY}, ["Fuchsia City Subway"] = {K_SUBWAY}, ["Saffron City Subway"] = {K_SUBWAY}, ["Pewter City Subway"] = {K_SUBWAY}, ["Pokecenter Vermilion"] = {0.2}, ["Cerulean City Subway"] = {K_SUBWAY}}
 KantoMap["Vermilion City_A"] = {["Pokemon Club"] = {1}, ["Vermilion House E"] = {1}, ["Vermilion House D"] = {1}, ["Vermilion House C"] = {1}, ["Vermilion House B"] = {1}, ["Vermilion House A"] = {1}, ["VermilionHouse2Bottom"] = {1}, ["Vermilion House 1"] = {1}, ["Fisherman House - Vermilion"] = {1}, ["Vermilion City_B"] = {0, {["abilities"] = {"cut"}}, {["abilities"] = {"surf"}}}, ["Vermilion Pokemart"] = {1}, ["Route 11"] = {1}, ["Pokecenter Vermilion"] = {1}, ["Route 6"] = {1}}
-KantoMap["Vermilion City_B"] = {["Vermilion Gym"] = {1}, ["Vermilion City_A"] = {0, {["abilities"] = {"cut"}}, {["abilities"] = {"surf"}}}}
+KantoMap["Vermilion City_B"] = {["One Island Ferry"] = {1}, ["Two Island Ferry"] = {1}, ["Three Island Ferry"] = {1}, ["Four Island Ferry"] = {1}, ["Five Island Ferry"] = {1}, ["Vermilion Gym"] = {1}, ["Vermilion City_A"] = {0, {["abilities"] = {"cut"}}, {["abilities"] = {"surf"}}}}
 KantoMap["Vermilion Gym"] = {["Vermilion City_B"] = {1}}
 KantoMap["Vermilion House 1"] = {["Vermilion City_A"] = {1}}
 KantoMap["Vermilion House A"] = {["Vermilion City_A"] = {1}}
@@ -358,6 +363,150 @@ KantoMap["Viridian Forest"] = {["Viridian Maze"] = {1}, ["Route 2 Stop"] = {2}, 
 KantoMap["Viridian Gym 2"] = {["Viridian City"] = {1}}
 KantoMap["Viridian Maze"] = {["Viridian Forest"] = {1}}
 KantoMap["Viridian Pokemart"] = {["Viridian City"] = {1}}
+
+--Sevii Islands
+
+KantoMap["Altering Cave"] = {["Outcast Island"] = {1}}
+KantoMap["Berry Forest"] = {["Bond Bridge"] = {1}}
+KantoMap["Bond Bridge"] = {["Berry Forest"] = {1}, ["Three Island"] = {1}}
+KantoMap["Canyon Entrance"] = {["Sevault Canyon"] = {1}, ["Seven Island"] = {1}}
+KantoMap["Cape Brink Move Tutor House"] = {["Cape Brink"] = {1}}
+KantoMap["Cape Brink"] = {["Two Island"] = {1}, ["Cape Brink Move Tutor House"] = {1}}
+KantoMap["Chrono Cross"] = {["Resort Gorgeous"] = {1}, ["Water Labyrinth"] = {1}, ["Five Island_B"] = {1}}
+KantoMap["Dotted Hole B1F"] = {["Dotted Hole B2F"] = {1}, ["Dotted Hole B3F"] = {1}, ["Dotted Hole B4F"] = {1}}
+KantoMap["Dotted Hole B2F"] = {["Dotted Hole B1F"] = {1}, ["Dotted Hole B3F"] = {1}, ["Dotted Hole B4F"] = {1}}
+KantoMap["Dotted Hole B3F"] = {["Dotted Hole B1F"] = {1}, ["Dotted Hole B2F"] = {1}, ["Dotted Hole B4F"] = {1}, ["Sapphire Room"] = {1}}
+KantoMap["Dotted Hole B4F"] = {["Dotted Hole B1F"] = {1}, ["Dotted Hole B2F"] = {1}, ["Dotted Hole B3F"] = {1}}
+KantoMap["Dotted Hole B5F"] = {["Sapphire Room"] = {1}, ["Dotted Hole Exit"] = {1}}
+KantoMap["Dotted Hole Entrance_A"] = {["Dotted Hole B1F"] = {1}, ["Ruin Valley"] = {1}}
+KantoMap["Dotted Hole Entrance_B"] = {["Sapphire Room"] = {1}, ["Dotted Hole Entrance_A"] = {1}}
+KantoMap["Dotted Hole Exit"] = {["Dotted Hole B5F"] = {1}, ["SpringDell Hideout"] = {1}}
+KantoMap["Ember Spa"] = {["Kindle Road_A"] = {1}}
+KantoMap["Five Island Ferry"] = {["Five Island_A"] = {1}, ["Vermilion City_A"] = {1}, ["One Island Ferry"] = {1}, ["Two Island Ferry"] = {1}, ["Three Island Ferry"] = {1}, ["Four Island Ferry"] = {1}, ["Six Island Ferry"] = {1}, ["Seven Island Ferry"] = {1}}
+KantoMap["Five Island House 1"] = {["Five Island_A"] = {1}}
+KantoMap["Five Island House 2"] = {["Five Isle Meadow"] = {1}}
+KantoMap["Five Island Rocket Hideout"] = {["Five Island_A"] = {1}}
+KantoMap["Five Island_A"] = {["Five Island Rocket Hideout"] = {1}, ["Five Isle Meadow"] = {1}, ["Pokecenter Five Island"] = {1}, ["Five Island House 1"] = {1}, ["Five Island_B"] = {1, {["abilities"] = {"surf"}}}, ["Five Island Ferry"] = {1}}
+KantoMap["Five Island_B"] = {["Chrono Cross"] = {1}, ["Five Island_A"] = {1}}
+KantoMap["Five Isle Meadow"] = {["Memorial Pillar"] = {1}, ["Five Island House 2"] = {1}, ["Five Island_A"] = {1}}
+KantoMap["Four Island Daycare"] = {["Four Island_A"] = {1}}
+KantoMap["Four Island Ferry"] = {["Four Island_A"] = {1}, ["Vermilion City_A"] = {1}, ["One Island Ferry"] = {1}, ["Two Island Ferry"] = {1}, ["Three Island Ferry"] = {1}, ["Five Island Ferry"] = {1}, ["Six Island Ferry"] = {1}, ["Seven Island Ferry"] = {1}}
+KantoMap["Four Island House 1"] = {["Four Island_A"] = {1}}
+KantoMap["Four Island House 2"] = {["Four Island_A"] = {1}}
+KantoMap["Four Island House 3"] = {["Four Island_A"] = {1}}
+KantoMap["Four Island_A"] = {["Four Island House 1"] = {1}, ["Four Island House 2"] = {1}, ["Four Island House 3"] = {1}, ["Mart Four Island"] = {1}, ["Pokecenter Four Island"] = {1}, ["Four Island Daycare"] = {1}, ["Four Island_B"] = {1, {["abilities"] = {"surf"}}}, ["Four Island Ferry"] = {1}}
+KantoMap["Four Island_B"] = {["Icefall Cave Entrance_A"] = {1}, ["Four Island_A"] = {1}}
+KantoMap["Green Path Cave B1F"] = {["Green Path Cave Exit"] = {1}, ["Green Path Cave B2F"] = {1}}
+KantoMap["Green Path Cave B2F"] = {["Green Path Cave B1F"] = {1}, ["Green Path Cave Entrance"] = {1}}
+KantoMap["Green Path Cave Entrance"] = {["Green Path Cave B2F"] = {1}}
+KantoMap["Green Path Cave Exit"] = {["Green Path"] = {1}, ["Green Path Cave B1F"] = {1}}
+KantoMap["Green Path"] = {["Water Path_B"] = {1}, ["Outcast Island"] = {1}, ["Green Path Cave Exit"] = {1}}
+KantoMap["Icefall Back Cave"] = {["Icefall Cave 1F_C"] = {1}}
+KantoMap["Icefall Cave 1F_A"] = {["Icefall Cave B1F_A"] = {1}, ["Icefall Cave Entrance_A"] = {1}}
+KantoMap["Icefall Cave 1F_B"] = {["Icefall Cave 1F_A"] = {1}, ["Icefall Cave B1F_C"] = {1}}
+KantoMap["Icefall Cave 1F_C"] = {["Icefall Back Cave"] = {1}, ["Icefall Cave B1F_B"] = {1}, ["Icefall Cave B1F_A"] = {1}, ["Icefall Cave 1F_A"] = {1}}
+KantoMap["Icefall Cave 1F_D"] = {["Icefall Cave B1F_B"] = {1}, ["Icefall Cave B1F_C"] = {1}}
+KantoMap["Icefall Cave 1F_E"] = {["Icefall Cave 1F_C"] = {1}, ["Icefall Cave B1F_A"] = {1}}
+KantoMap["Icefall Cave B1F_A"] = {["Icefall Cave 1F_E"] = {1}}
+KantoMap["Icefall Cave B1F_B"] = {["Icefall Cave 1F_D"] = {1}}
+KantoMap["Icefall Cave B1F_C"] = {["Icefall Cave 1F_B"] = {1}, ["Icefall Cave B1F_B"] = {1}}
+KantoMap["Icefall Cave Entrance_A"] = {["Icefall Cave 1F_A"] = {1}, ["Four Island_B"] = {1}}
+KantoMap["Joyful Game Corner"] = {["Two Island"] = {1}}
+KantoMap["Kindle Road_A"] = {["Mt. Ember_A"] = {1}, ["Ember Spa"] = {1}, ["One Island_A"] = {1}, ["One Island_B"] = {1}, ["Kindle Road_C"] = {1, {["abilities"] = {"rock smash"}}}}
+KantoMap["Kindle Road_B"] = {["One Island_A"] = {1}}
+KantoMap["Kindle Road_C"] = {["Kindle Road_A"] = {1, {["abilities"] = {"rock smash"}}}}
+KantoMap["Lost Cave 1F1"] = {["Lost Cave 1F2"] = {1}, ["Lost Cave Entrance"] = {1}}
+KantoMap["Lost Cave 1F10"] = {["Lost Cave 1F1"] = {1}}
+KantoMap["Lost Cave 1F11"] = {["Lost Cave 1F4"] = {1}}
+KantoMap["Lost Cave 1F12"] = {["Lost Cave 1F7"] = {1}}
+KantoMap["Lost Cave 1F13"] = {["Lost Cave 1F4"] = {1}}
+KantoMap["Lost Cave 1F14"] = {["Lost Cave 1F1"] = {1}}
+KantoMap["Lost Cave 1F2"] = {["Lost Cave 1F3"] = {1}, ["Lost Cave 1F1"] = {1}, ["Lost Cave 1F10"] = {1}}
+KantoMap["Lost Cave 1F3"] = {["Lost Cave 1F4"] = {1}, ["Lost Cave 1F1"] = {1}}
+KantoMap["Lost Cave 1F4"] = {["Lost Cave 1F13"] = {1}, ["Lost Cave 1F5"] = {1}}
+KantoMap["Lost Cave 1F5"] = {["Lost Cave 1F6"] = {1}, ["Lost Cave 1F4"] = {1}}
+KantoMap["Lost Cave 1F6"] = {["Lost Cave 1F4"] = {1}, ["Lost Cave 1F7"] = {1}, ["Lost Cave 1F11"] = {1}}
+KantoMap["Lost Cave 1F7"] = {["Lost Cave 1F8"] = {1}}
+KantoMap["Lost Cave 1F8"] = {["Lost Cave 1F9"] = {1}, ["Lost Cave 1F12"] = {1}, ["Lost Cave 1F7"] = {1}}
+KantoMap["Lost Cave 1F9"] = {["Lost Cave 1F7"] = {1}, ["Lost Cave 1F14"] = {1}}
+KantoMap["Lost Cave Entrance"] = {["Lost Cave 1F1"] = {1}, ["Lost Cave"] = {1}}
+KantoMap["Lost Cave"] = {["Lost Cave Entrance"] = {1}, ["Resort Gorgeous"] = {1}}
+KantoMap["Mart Four Island"] = {["Four Island_A"] = {1}}
+KantoMap["Mart Seven Island"] = {["Seven Island"] = {1}}
+KantoMap["Mart Three Island"] = {["Three Island"] = {1}}
+KantoMap["Memorial Pillar"] = {["Five Isle Meadow"] = {1}}
+KantoMap["Mt. Ember Ruby Path 1F_A"] = {["Mt. Ember Ruby Path B1F"] = {1}, ["Mt. Ember_A"] = {1}}
+KantoMap["Mt. Ember Ruby Path 1F_B"] = {["Mt. Ember Ruby Path B3F"] = {1}, ["Mt. Ember Ruby Path 1F_A"] = {1}}
+KantoMap["Mt. Ember Ruby Path B1F"] = {["Mt. Ember Ruby Path B2F"] = {1}, ["Mt. Ember Ruby Path 1F_A"] = {1}}
+KantoMap["Mt. Ember Ruby Path B2F"] = {["Mt. Ember Ruby Path B3F"] = {1}, ["Mt. Ember Ruby Path B1F"] = {1}}
+KantoMap["Mt. Ember Ruby Path B3F"] = {["Mt. Ember Ruby Path 1F_B"] = {1}, ["Mt. Ember Ruby Path B4F"] = {1}, ["Mt. Ember Ruby Path B2F"] = {1}}
+KantoMap["Mt. Ember Ruby Path B4F"] = {["Mt. Ember Ruby Path B5F"] = {1}, ["Mt. Ember Ruby Path B3F"] = {1}}
+KantoMap["Mt. Ember Ruby Path B5F"] = {["Mt. Ember Ruby Path B4F"] = {1}}
+KantoMap["Mt. Ember Summit Path 1F"] = {["Mt. Ember Summit Path 2F"] = {1}, ["Mt. Ember_A"] = {1}}
+KantoMap["Mt. Ember Summit Path 2F"] = {["Mt. Ember Summit Path 1F"] = {1}, ["Mt. Ember Summit Path 3F"] = {1}}
+KantoMap["Mt. Ember Summit Path 3F"] = {["Mt. Ember Summit Path 2F"] = {1}, ["Mt. Ember_B"] = {1}} -- npc blocking path (20, 12)
+KantoMap["Mt. Ember_A"] = {["Mt. Ember Ruby Path 1F_A"] = {1}, ["Kindle Road_A"] = {1}, ["Mt. Ember Summit Path 1F"] = {1}}--Jackson on cell (21,67)
+KantoMap["Mt. Ember_B"] = {["Mt. Ember Summit Path 3F"] = {1}, ["Mt. Ember_A"] = {1}}
+KantoMap["One Island Ferry"] = {["One Island_A"] = {1}, ["Vermilion City_A"] = {1}, ["Two Island Ferry"] = {1}, ["Three Island Ferry"] = {1}, ["Four Island Ferry"] = {1}, ["Five Island Ferry"] = {1}, ["Six Island Ferry"] = {1}, ["Seven Island Ferry"] = {1}}
+KantoMap["One Island House 1"] = {["One Island_A"] = {1}}
+KantoMap["One Island House 2"] = {["One Island_A"] = {1}}
+KantoMap["One Island_A"] = {["Kindle Road_B"] = {1, {["abilities"] = {"surf"}}}, ["Kindle Road_A"] = {1, {["abilities"] = {"surf"}}}, ["Treasure Beach"] = {1}, ["Pokecenter One Island"] = {1}, ["One Island House 1"] = {1}, ["One Island House 2"] = {1}, ["One Island Ferry"] = {1}}
+KantoMap["One Island_B"] = {["Kindle Road_A"] = {1}}
+KantoMap["Outcast Island"] = {["Altering Cave"] = {1}, ["Green Path"] = {1}}
+KantoMap["Pokecenter Five Island"] = {["Five Island_A"] = {1}}
+KantoMap["Pokecenter Four Island"] = {["Four Island_A"] = {1}}
+KantoMap["Pokecenter One Island"] = {["One Island_A"] = {1}}
+KantoMap["Pokecenter Seven Island"] = {["Seven Island"] = {1}}
+KantoMap["Pokecenter Six Island"] = {["Six Island"] = {1}}
+KantoMap["Pokecenter Three Island"] = {["Three Island"] = {1}}
+KantoMap["Pokecenter Two Island"] = {["Two Island"] = {1}}
+KantoMap["Pokemart Six Island"] = {["Six Island"] = {1}}
+KantoMap["Resort Gorgeous"] = {["Lost Cave"] = {1}, ["Resort House 1"] = {1}, ["Resort House 2"] = {1}, ["Chrono Cross"] = {1}}
+KantoMap["Resort House 1"] = {["Resort Gorgeous"] = {1}}
+KantoMap["Resort House 2"] = {["Resort Gorgeous"] = {1}}
+KantoMap["Ruin Valley"] = {["Dotted Hole Entrance_A"] = {1}, ["Water Path_A"] = {1}}
+KantoMap["Sapphire Room"] = {["Dotted Hole B5F"] = {1}, ["Dotted Hole Entrance_B"] = {1}}
+KantoMap["Sevault Canyon House 1"] = {["Sevault Canyon"] = {1}}
+KantoMap["Sevault Canyon"] = {["Tanoby Key"] = {1}, ["Tanoby Ruins"] = {1}, ["Sevault Canyon House 1"] = {1}, ["Canyon Entrance"] = {1}}
+KantoMap["Seven Island Ferry"] = {["Seven Island"] = {1}, ["Vermilion City_A"] = {1}, ["One Island Ferry"] = {1}, ["Two Island Ferry"] = {1}, ["Three Island Ferry"] = {1}, ["Four Island Ferry"] = {1}, ["Five Island Ferry"] = {1}, ["Six Island Ferry"] = {1}}
+KantoMap["Seven Island House 1"] = {["Seven Island"] = {1}}
+KantoMap["Seven Island"] = {["Trainer Tower"] = {1}, ["Canyon Entrance"] = {1}, ["Pokecenter Seven Island"] = {1}, ["Mart Seven Island"] = {1}, ["Seven Island House 1"] = {1}, ["Seven Island Ferry"] = {1}}
+KantoMap["Six Island Ferry Reception"] = {["Six Island"] = {1}, ["Six Island Ferry"] = {1}}
+KantoMap["Six Island Ferry"] = {["Six Island Ferry Reception"] = {1}, ["Vermilion City_A"] = {1}, ["One Island Ferry"] = {1}, ["Two Island Ferry"] = {1}, ["Three Island Ferry"] = {1}, ["Four Island Ferry"] = {1}, ["Five Island Ferry"] = {1}, ["Seven Island Ferry"] = {1}}
+KantoMap["Six Island House 1"] = {["Six Island"] = {1}}
+KantoMap["Six Island House 2"] = {["Six Island"] = {1}}
+KantoMap["Six Island"] = {["Water Path_A"] = {1}, ["Pokecenter Six Island"] = {1}, ["Pokemart Six Island"] = {1}, ["Six Island House 1"] = {1}, ["Six Island House 2"] = {1}, ["Six Island Ferry Reception"] = {1}}
+KantoMap["SpringDell Hideout Lab"] = {["SpringDell Hideout"] = {1}}
+KantoMap["SpringDell Hideout"] = {["SpringDell Hideout Lab"] = {1}, ["Dotted Hole Exit"] = {1}}
+KantoMap["Tanoby Key"] = {["Sevault Canyon"] = {1}}
+KantoMap["Tanoby Ruins Dilford Chamber"] = {["Tanoby Ruins"] = {1}}
+KantoMap["Tanoby Ruins Liptoo Chamber"] = {["Tanoby Ruins"] = {1}}
+KantoMap["Tanoby Ruins Monean Chamber"] = {["Tanoby Ruins"] = {1}}
+KantoMap["Tanoby Ruins Scufib Chamber"] = {["Tanoby Ruins"] = {1}}
+KantoMap["Tanoby Ruins Viapois Chamber"] = {["Tanoby Ruins"] = {1}}
+KantoMap["Tanoby Ruins Weepth Chamber"] = {["Tanoby Ruins"] = {1}}
+KantoMap["Tanoby Ruins"] = {["Tanoby Ruins Liptoo Chamber"] = {1}, ["Tanoby Ruins Dilford Chamber"] = {1}, ["Tanoby Ruins Scufib Chamber"] = {1}, ["Tanoby Ruins Viapois Chamber"] = {1}, ["Tanoby Ruins Weepth Chamber"] = {1}, ["Tanoby Ruins Monean Chamber"] = {1}, ["Sevault Canyon"] = {1}}
+KantoMap["Three Island Ferry"] = {["Three Isle Port_A"] = {1}, ["Vermilion City_A"] = {1}, ["One Island Ferry"] = {1}, ["Two Island Ferry"] = {1}, ["Four Island Ferry"] = {1}, ["Five Island Ferry"] = {1}, ["Six Island Ferry"] = {1}, ["Seven Island Ferry"] = {1}}
+KantoMap["Three Island House 1"] = {["Three Island"] = {1}} 
+KantoMap["Three Island House 2"] = {["Three Island"] = {1}} 
+KantoMap["Three Island House 3"] = {["Three Island"] = {1}} 
+KantoMap["Three Island House 4"] = {["Three Island"] = {1}} 
+KantoMap["Three Island House 5"] = {["Three Island"] = {1}} 
+KantoMap["Three Island"] = {["Bond Bridge"] = {1}, ["Mart Three Island"] = {1}, ["Pokecenter Three Island"] = {1}, ["Three Island House 1"] = {1}, ["Three Island House 2"] = {1}, ["Three Island House 3"] = {1}, ["Three Island House 4"] = {1}, ["Three Island House 5"] = {1}, ["Three Isle Port_A"] = {1}}
+KantoMap["Three Isle Path"] = {["Three Isle Port_A"] = {1}, ["Three Isle Port_B"] = {1}}
+KantoMap["Three Isle Port_A"] = {["Three Island"] = {1}, ["Three Isle Path"] = {1}, ["Three Island Ferry"] = {1}}
+KantoMap["Three Isle Port_B"] = {["Three Isle Path"] = {1}}
+KantoMap["Trainer Tower"] = {["Seven Island"] = {1}}
+KantoMap["Treasure Beach"] = {["One Island_A"] = {1}}
+KantoMap["Two Island Ferry"] = {["Two Island"] = {1}, ["Vermilion City_A"] = {1}, ["One Island Ferry"] = {1}, ["Three Island Ferry"] = {1}, ["Four Island Ferry"] = {1}, ["Five Island Ferry"] = {1}, ["Six Island Ferry"] = {1}, ["Seven Island Ferry"] = {1}}
+KantoMap["Two Island House"] = {["Two Island"] = {1}}
+KantoMap["Two Island"] = {["Cape Brink"] = {1}, ["Joyful Game Corner"] = {1}, ["Two Island House"] = {1}, ["Pokecenter Two Island"] = {1}, ["Two Island Ferry"] = {1}}
+KantoMap["Water Labyrinth"] = {["Chrono Cross"] = {1}}
+KantoMap["Water Path House 1"] = {["Water Path_A"] = {1}}
+KantoMap["Water Path House 2"] = {["Water Path_A"] = {1}}
+KantoMap["Water Path House 3"] = {["Water Path_A"] = {1}}
+KantoMap["Water Path_A"] = {["Green Path Cave Entrance"] = {1, {["abilities"] = {"surf"}}}, ["Water Path House 1"] = {1, {["abilities"] = {"surf"}}}, ["Water Path House 2"] = {1, {["abilities"] = {"surf"}}}, ["Water Path House 3"] = {1, {["abilities"] = {"surf"}}}, ["Ruin Valley"] = {1}, ["Six Island"] = {1}}
+KantoMap["Water Path_B"] = {["Water Path_A"] = {1}, ["Green Path"] = {1}}
 
 -- KantoMap["node"] = {["link"] = {distance, {["restrictionType"] = {"restriction"}}}}
 

@@ -31,6 +31,13 @@ npcExce["Safari Effort Wald 1"] = {
     ["Safari Stop"] = {{6, 21}, "I'd like to leave the zones, actually.", "Would you like to be transported to the zone for HP-, Special Attack- and Defense-EV Pokemon?"},
     ["Safari Effort Wald 2_A"] = {{6, 21}, "Yes.", "Would you like to be transported to the zone for HP-, Special Attack- and Defense-EV Pokemon?"}
 }
+npcExce["Vermilion City_B"] = {
+    ["One Island Ferry"] = {{38, 60}, "One Island", "Ahoy there, Where would you like to sail?"},
+    ["Two Island Ferry"] = {{38, 60}, "Two Island", "Ahoy there, Where would you like to sail?"},
+	["Three Island Ferry"] = {{38, 60}, "Three Island", "Ahoy there, Where would you like to sail?"},
+	["Four Island Ferry"] = {{38, 60}, "Four Island", "Ahoy there, Where would you like to sail?"},
+	["Five Island Ferry"] = {{38, 60}, "Five Island", "Ahoy there, Where would you like to sail?"},
+}
 
 ----------------------
 ------ JOHTO ---------
@@ -69,7 +76,7 @@ npcExce["Pokecenter Fortree City"] = {
     ["Transmat Station"] = {{8, 4}, "Here you go.", "Can you present to me your registered trainer's ID for authenticatory purposes?"}
 }
 npcExce["Pokecenter Lavaridge Town"] = {
-    ["Transmat Station"] = {{8, 4}, "Here you go.", "Can you present to me your registered trainer's ID for authenticatory purposes?"}
+    ["Transmat Station"] = {{8, 3}, "Here you go.", "Can you present to me your registered trainer's ID for authenticatory purposes?"}
 }
 npcExce["Pokecenter Lilycove City"] = {
     ["Transmat Station"] = {{8, 4}, "Here you go.", "Can you present to me your registered trainer's ID for authenticatory purposes?"}
@@ -102,8 +109,82 @@ npcExce["Pokecenter Verdanturf"] = {
     ["Transmat Station"] = {{8, 4}, "Here you go.", "Can you present to me your registered trainer's ID for authenticatory purposes?"}
 }
 npcExce["Hoenn Safari Zone Lobby"] = {
-    ["Hoenn Safari Zone Area 1"] = {{21, 6}, "Yes", "Would you like to enter the safari zone for $5,000 today?"},
+    ["Hoenn Safari Zone Area 1"] = {{21, 6}, "Yes", "Would you like to enter the safari zone for $5,000 today?"}
 }
+npcExce["Mossdeep City Space Center 2F"] = {
+	["Moon"] = {{15, 9}, "Yes", "So, want to go on the Moon for 15,000 Pokedollars? I'll include the oxygen needed for free."}
+}
+npcExce["Moon B1F_B"] = {
+	["Sootopolis City"] = {{60, 23}, "Yes", "Should I go back to Earth?"}
+}
+npcExce["Rusturf Tunnel_C"] = {
+	["Haunted Site"] = {{26, 15}, "Yes", "Hello my friend "..getAccountName()..", to help preserve this site we need to charge you in 2,500 Pokedollars, you agree to pay this fee and enter?"}
+}
+npcExce["Route 115_A"] = {
+	["Mineral Site_A"] = {{81, 78}, "Yes", "Hello my friend "..getAccountName()..", to help preserve this site we need to charge you in 2,500 Pokedollars, you agree to pay this fee and enter?"}
+}
+npcExce["Fiery Path"] = {
+	["Feral Site_A"] = {{14, 32}, "Yes", "Hello my friend "..getAccountName()..", to help preserve this site we need to charge you in 2,500 Pokedollars, you agree to pay this fee and enter?"}
+}
+npcExce["Route 103_C"] = {
+	["Glacial Site"] = {{55, 4}, "Yes", "Hello my friend "..getAccountName()..", to help preserve this site we need to charge you in 2,500 Pokedollars, you agree to pay this fee and enter?"}
+}
+npcExce["Route 119A"] = {
+	["Natural Site"] = {{16, 68}, "Yes", "Hello my friend "..getAccountName()..", to help preserve this site we need to charge you in 2,500 Pokedollars, you agree to pay this fee and enter?"}
+}
+npcExce["Route 111 Desert"] = {
+	["Historical Site"] = {{34, 21}, "Yes", "Hello my friend "..getAccountName()..", to help preserve this site we need to charge you in 2,500 Pokedollars, you agree to pay this fee and enter?"}
+}
+npcExce["Lavaridge Town"] = {
+	["Valley Of Steel Entrance"] = {{18, 34}, "Yes.", "So, would you like to go for 5.000 poke-dollars?"}
+}
+npcExce["Valley Of Steel Entrance"] = {
+	["Lavaridge Town"] = {{30, 2}, "Yes.", "Would you like to go back to Lavaridge Town?"}
+}
+npcExce["Dock Island"] = {
+	["Olivine City"] = {{27, 10}, "Yes", "Hey there, wanna go back in Johto?"}
+}
+
+----------------------
+---- Sevii Islands ----
+----------------------
+
+--[[npcExce["One Island Ferry"] = {
+    ["Vermilion City_A"] = {{7, 8}, "Vermilion City", "Ahoy There, Where would you like to sail?"},
+	["Two Island Ferry"] = {{7, 8}, "Two Island", "Ahoy There, Where would you like to sail?"},
+	["Three Island Ferry"] = {{7, 8}, "Three Island", "Ahoy There, Where would you like to sail?"},
+	["Four Island Ferry"] = {{7, 8}, "Four Island", "Ahoy There, Where would you like to sail?"},
+	["Five Island Ferry"] = {{7, 8}, "Five Island", "Ahoy There, Where would you like to sail?"},
+}
+npcExce["Two Island Ferry"] = {
+    ["Vermilion City_A"] = {{7, 8}, "Vermilion City", "Ahoy There, Where would you like to sail?"},
+	["One Island Ferry"] = {{7, 8}, "One Island", "Ahoy There, Where would you like to sail?"},
+	["Three Island Ferry"] = {{7, 8}, "Three Island", "Ahoy There, Where would you like to sail?"},
+	["Four Island Ferry"] = {{7, 8}, "Four Island", "Ahoy There, Where would you like to sail?"},
+	["Five Island Ferry"] = {{7, 8}, "Five Island", "Ahoy There, Where would you like to sail?"},
+}
+npcExce["Three Island Ferry"] = {
+    ["Vermilion City_A"] = {{7, 8}, "Vermilion City", "Ahoy there, Where would you like to sail?"},
+	["One Island Ferry"] = {{7, 8}, "One Island", "Ahoy there, Where would you like to sail?"},
+	["Two Island Ferry"] = {{7, 8}, "Two Island", "Ahoy there, Where would you like to sail?"},
+	["Four Island Ferry"] = {{7, 8}, "Four Island", "Ahoy there, Where would you like to sail?"},
+	["Five Island Ferry"] = {{7, 8}, "Five Island", "Ahoy there, Where would you like to sail?"},
+}
+npcExce["Four Island Ferry"] = {
+    ["Vermilion City_A"] = {{7, 8}, "Vermilion City", "Ahoy there, Where would you like to sail?"},
+	["One Island Ferry"] = {{7, 8}, "One Island", "Ahoy there, Where would you like to sail?"},
+	["Two Island Ferry"] = {{7, 8}, "Two Island", "Ahoy there, Where would you like to sail?"},
+	["Three Island Ferry"] = {{7, 8}, "Three Island", "Ahoy there, Where would you like to sail?"},
+	["Five Island Ferry"] = {{7, 8}, "Five Island", "Ahoy there, Where would you like to sail?"},
+}
+npcExce["Five Island Ferry"] = {
+    ["Vermilion City_A"] = {{7, 8}, "Vermilion City", "Ahoy there, Where would you like to sail?"},
+	["One Island Ferry"] = {{7, 8}, "One Island", "Ahoy there, Where would you like to sail?"},
+	["Two Island Ferry"] = {{7, 8}, "Two Island", "Ahoy there, Where would you like to sail?"},
+	["Three Island Ferry"] = {{7, 8}, "Three Island", "Ahoy there, Where would you like to sail?"},
+	["Four Island Ferry"] = {{7, 8}, "Four Island", "Ahoy there, Where would you like to sail?"},
+}]]
+
 ----------------------
 ---- INTER REGION ----
 ----------------------
@@ -115,12 +196,14 @@ npcExce["Saffron City Station Floor 2"] = {
     ["Goldenrod City Station Floor 2"] = {{14, 10}, "Yes", "Are you sure you would like to travel to Goldenrod City"}
 }
 npcExce["Olivine City"] = {
-    ["Lilycove City Harbor"] = {{17, 47}, "Lilycove City", "Where do you want to go, mate?"}
+    ["Lilycove City Harbor"] = {{17, 47}, "Lilycove City", "Where do you want to go, mate?"},
+	["Dock Island"] = {{17, 47}, "Johto Exclusive Maps", "Where do you want to go, mate"}
 }
 npcExce["Vermilion City_A"] = {
     ["Lilycove City Harbor"] = {{40, 68}, "Yes", "The cost for a cruise to Lilycove City is $5,000. Are you sure you want to go to Lilycove City?"}
 }
 npcExce["Lilycove City Harbor"] = {
+	["Leev Town"] = {{8, 10}, "Leev Town", "Where do you want to go?"},
     ["Vermilion City_A"] = {{8, 10}, "Vermilion City", "Where do you want to go?"},
     ["Olivine City"] = {{8, 10}, "Olivine City", "Where do you want to go?"}
 }

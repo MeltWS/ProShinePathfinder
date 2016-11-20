@@ -43,7 +43,17 @@ local Pokecenters = {
     "Pokecenter Sootopolis City",
     "Pokecenter Verdanturf",
     "Pokemon League Hoenn",
-    "Pokemon League Hoenn",
+	"Pokecenter Eastern Peak",
+	"Pokecenter Western Peak",
+	"Pokecenter Leev Town",
+	-- Sevii Islands
+	"Pokecenter One Island",
+	"Pokecenter Two Island",
+	"Pokecenter Three Island",
+	"Pokecenter Four Island",
+	"Pokecenter Five Island",
+	"Pokecenter Six Island",
+	"Pokecenter Seven Island",
 }
 
 return Pokecenters

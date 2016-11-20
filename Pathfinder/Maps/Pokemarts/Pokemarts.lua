@@ -52,4 +52,11 @@ PokemartList["Sootopolis Mart"] = {[1] = {12,10,0}}
 PokemartList["Verdanturf Mart"] = {[1] = {3,6,0}}
 PokemartList["Mart Fallarbor Town"] = {[1] = {12,10,0}}
 
+--SEVII ISLANDS POKEMARTS
+PokemartList["Two Island"] = {[1] = {64,9,0}}
+PokemartList["Mart Three Island"] = {[1] = {3, 5, 0}}
+PokemartList["Mart Four Island"] = {[1] = {3, 4, 0}}
+PokemartList["Pokemart Six Island"] = {[1] = {3, 5, 0}}
+PokemartList["Mart Seven Island"] = {[1] = {3, 4, 0}}
+
 return PokemartList
