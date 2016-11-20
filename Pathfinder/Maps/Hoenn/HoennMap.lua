@@ -474,6 +474,12 @@ HoennMap["Western House 1"] = {["Valley Of Steel Western Peak"] = {1}}
 HoennMap["Western House 2"] = {["Valley Of Steel Western Peak"] = {1}}
 HoennMap["Western House 3"] = {["Valley Of Steel Western Peak"] = {1}}
 HoennMap["Western House 4"] = {["Valley Of Steel Western Peak"] = {1}}
+HoennMap["Leev Town"] = {["Leev Town Entrance"] = {1}, ["Jura Pass"] = {1}, ["Pokecenter Leev Town"] = {1}}
+HoennMap["Leev Town Port"] = {["Leev Town Entrance"] = {1}, ["Lilycove City Harbor"] = {0.2}}
+HoennMap["Leev Town Entrance"] = {["Leev Town Port"] = {1}, ["Leev Town"] = {1}}
+HoennMap["Jura Cave"] = {["Jura Pass"] = {1}}
+HoennMap["Jura Pass"] = {["Leev Town"] = {1}, ["Jura Cave"] = {1}}
+HoennMap["Pokecenter Leev Town"] = {["Leev Town"] = {1}}
 
 -- HoennMap["node"] = {["link"] = {distance, {["restrictionType"] = {"restriction"}}}}
 
