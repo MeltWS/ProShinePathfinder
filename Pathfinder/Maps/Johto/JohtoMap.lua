@@ -186,7 +186,7 @@ JohtoMap["New Bark Town"] = {["New Bark Town House 2"] = {1}, ["New Bark Town Ho
 JohtoMap["Olivine Cafe"] = {["Olivine City"] = {1}}
 JohtoMap["Olivine City Gym"] = {["Olivine City"] = {1}}
 JohtoMap["Olivine City Subway"] = {["Olivine Pokecenter"] = {0.2}, ["Mahogany Town Subway"] = {J_SUBWAY}, ["Violet City Subway"] = {J_SUBWAY}, ["Azalea Town Subway"] = {J_SUBWAY}, ["Blackthorn City Subway"] = {J_SUBWAY}, ["Cherrygrove City Subway"] = {J_SUBWAY}, ["Ecruteak City Subway"] = {J_SUBWAY}, ["Goldenrod City Subway"] = {J_SUBWAY}}
-JohtoMap["Olivine City"] = {["Dock Island"] = {1}, ["Glitter Lighthouse 1F"] = {1}, ["Olivine Cafe"] = {1}, ["Olivine City Gym"] = {1}, ["Olivine Pokecenter"] = {1}, ["Olivine Pokemart"] = {1}, ["Route 39"] = {1}, ["Route 40"] = {1}, ["Olivine House 1"] = {1}, ["Olivine House 2"] = {1}, ["Olivine House 3"] = {1}}
+JohtoMap["Olivine City"] = {["Glitter Lighthouse 1F"] = {1}, ["Olivine Cafe"] = {1}, ["Olivine City Gym"] = {1}, ["Olivine Pokecenter"] = {1}, ["Olivine Pokemart"] = {1}, ["Route 39"] = {1}, ["Route 40"] = {1}, ["Olivine House 1"] = {1}, ["Olivine House 2"] = {1}, ["Olivine House 3"] = {1}, ["Dock Island"] = {0.2}}
 JohtoMap["Olivine House 1"] = {["Olivine City"] = {1}}
 JohtoMap["Olivine House 2"] = {["Olivine City"] = {1}}
 JohtoMap["Olivine House 3"] = {["Olivine City"] = {1}}
@@ -292,6 +292,10 @@ JohtoMap["Whirl Islands B1F_C"] = {["Whirl Islands B1F_B"] = {2}, ["Whirl Island
 JohtoMap["Whirl Islands B2F"] = {["Whirl Islands B1F_A"] = {1}, ["Whirl Islands B1F_C"] = {1}, ["Whirl Islands B3F"] = {1},  ["Whirl Islands B4F"] = {1}}
 JohtoMap["Whirl Islands B3F"] = {["Whirl Islands B2F"] = {1}}
 JohtoMap["Whirl Islands B4F"] = {["Whirl Islands B2F"] = {1}}
+JohtoMap["Dock Island"] = {["Amazon Forest Entrance"] = {1}, ["Olivine City"] = {0.2}}
+JohtoMap["Amazon Forest Entrance"] = {["Amazon Forest"] = {1}, ["Dock Island"] = {1}}
+JohtoMap["Amazon Forest"] = {["Amazon Forest Entrance"] = {1}}
+
 
 -- JohtoMap["node"] = {["link"] = {distance, {["restrictionType"] = {"restriction"}}}}
 

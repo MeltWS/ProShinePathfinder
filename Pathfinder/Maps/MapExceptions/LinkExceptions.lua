@@ -28,7 +28,7 @@ linkExce["Cerulean City_A"] = {
 linkExce["Route 25"] = {
     ["Route 24_A"] = {9, 30}, -- water side to cerulean cave
     ["Route 24_B"] = {14, 30}, -- bridge to main city
-	["Route 24_C"] = {24, 30} -- right side
+    ["Route 24_C"] = {24, 30} -- right side
 }
 linkExce["Route 9"] = {
     ["Route 10_A"] = {85, 33}, -- pokecenter
@@ -173,73 +173,80 @@ linkExce["Lavender Town"] = {
 }
 linkExce["Saffron City"] = {
     ["Saffron Dojo"] = {42, 13},
-	["Golds Gym"] = {39, 44},
+    ["Golds Gym"] = {39, 44},
 }
 linkExce["Saffron Gym_A"] = {
     ["Saffron Gym_B"] = {6, 3},
-	["Saffron Gym_C"] = {2, 3},
-	["Saffron Gym_D"] = {6, 6},
-	["Saffron Gym_E"] = {2, 6},
+    ["Saffron Gym_C"] = {2, 3},
+    ["Saffron Gym_D"] = {6, 6},
+    ["Saffron Gym_E"] = {2, 6},
 }
 linkExce["Saffron Gym_B"] = {
     ["Saffron Gym_A"] = {14, 3},
-	["Saffron Gym_D"] = {10, 6},
-	["Saffron Gym_F"] = {10, 3},
-	["Saffron Gym_G"] = {14, 6},
+    ["Saffron Gym_D"] = {10, 6},
+    ["Saffron Gym_F"] = {10, 3},
+    ["Saffron Gym_G"] = {14, 6},
 }
 linkExce["Saffron Gym_C"] = {
     ["Saffron Gym_A"] = {18, 6},
-	["Saffron Gym_F"] = {18, 3},
-	["Saffron Gym_G"] = {22, 6},
-	["Saffron Gym_I"] = {22, 3},
+    ["Saffron Gym_F"] = {18, 3},
+    ["Saffron Gym_G"] = {22, 6},
+    ["Saffron Gym_I"] = {22, 3},
 }
 linkExce["Saffron Gym_D"] = {
     ["Saffron Gym_A"] = {2, 13},
-	["Saffron Gym_B"] = {6, 10},
-	["Saffron Gym_F"] = {2, 10},
-	["Saffron Gym_G"] = {6, 13},
+    ["Saffron Gym_B"] = {6, 10},
+    ["Saffron Gym_F"] = {2, 10},
+    ["Saffron Gym_G"] = {6, 13},
 }
 linkExce["Saffron Gym_E"] = {
     ["Saffron Gym_A"] = {14, 13},
-	["Saffron Gym_H"] = {10, 13},
+    ["Saffron Gym_H"] = {10, 13},
 }
 linkExce["Saffron Gym_F"] = {
     ["Saffron Gym_B"] = {18, 13},
-	["Saffron Gym_C"] = {18, 10},
-	["Saffron Gym_D"] = {22, 13},
-	["Saffron Gym_I"] = {22, 10},
+    ["Saffron Gym_C"] = {18, 10},
+    ["Saffron Gym_D"] = {22, 13},
+    ["Saffron Gym_I"] = {22, 10},
 }
 linkExce["Saffron Gym_G"] = {
     ["Saffron Gym_B"] = {2, 20},
-	["Saffron Gym_C"] = {2, 17},
-	["Saffron Gym_D"] = {6, 20},
-	["Saffron Gym_I"] = {6, 17},
+    ["Saffron Gym_C"] = {2, 17},
+    ["Saffron Gym_D"] = {6, 20},
+    ["Saffron Gym_I"] = {6, 17},
 }
 linkExce["Saffron Gym_H"] = {
     ["Saffron Gym_I"] = {15, 17},
 }
 linkExce["Saffron Gym_I"] = {
     ["Saffron Gym_C"] = {18, 17},
-	["Saffron Gym_F"] = {22, 17},
-	["Saffron Gym_G"] = {18, 20},
-	["Saffron Gym_H"] = {22, 20},
+    ["Saffron Gym_F"] = {22, 17},
+    ["Saffron Gym_G"] = {18, 20},
+    ["Saffron Gym_H"] = {22, 20},
 }
 linkExce["Celadon Office 1F"] = {
-	["Celadon Office Elevator 1"] = {4, 2},
+    ["Celadon Office Elevator 1"] = {4, 2},
 }
 linkExce["Celadon Office 2F"] = {
-	["Celadon Office Elevator 1"] = {3, 2},
-	["Celadon Office Elevator 2"] = {8, 2},
+    ["Celadon Office Elevator 1"] = {3, 2},
+    ["Celadon Office Elevator 2"] = {8, 2},
 }
 linkExce["Celadon Office 3F"] = {
-	["Celadon Office Elevator 1"] = {4, 2},
-	["Celadon Office Elevator 2"] = {8, 2},
+    ["Celadon Office Elevator 1"] = {4, 2},
+    ["Celadon Office Elevator 2"] = {8, 2},
 }
 linkExce["Celadon Office Roof Top"] = {
-	["Celadon Office Elevator 2"] = {20, 11},
+    ["Celadon Office Elevator 2"] = {20, 11},
 }
 linkExce["Cinnabar Lab"] = {
-	["Cinnabar Lab Room 2"] = {26, 9},
+    ["Cinnabar Lab Room 2"] = {26, 9},
+}
+linkExce["Diamond Domain 1F_A"] = {
+    ["Love Island_A"] = {24, 53},
+}
+linkExce["Diamond Domain 1F_B"] = {
+    ["Diamond Domain B1F"] = {37, 39},
+    ["Love Island_B"] = {31, 20},
 }
 
 ----------------------
@@ -369,22 +376,22 @@ linkExce["Bell Tower Floor 10"] = {
 }
 linkExce["Glitter Lighthouse 3F_B"] = {
     ["Glitter Lighthouse 2F_A"] = {12, 5},
-	["Glitter Lighthouse 2F_B"] = {9, 12},
+    ["Glitter Lighthouse 2F_B"] = {9, 12},
 }
 linkExce["Glitter Lighthouse 2F_B"] = {
     ["Glitter Lighthouse 3F_A"] = {3, 5},
-	["Glitter Lighthouse 3F_B"] = {9, 12},
+    ["Glitter Lighthouse 3F_B"] = {9, 12},
 }
 linkExce["Battle Road"] = {
     ["Battle Road House_A"] = {12, 28},
-	["Battle Road House_B"] = {16, 28},
+    ["Battle Road House_B"] = {16, 28},
 }
 linkExce["Mahogany Town Gym_A"] = {
     ["Mahogany Town Gym_B"] = {17, 49},
 }
 linkExce["Mahogany Town Gym_B"] = {
     ["Mahogany Town Gym_A"] = {17, 46},
-    ["Mahogany Town Gym_C"] = {17, 32},	
+    ["Mahogany Town Gym_C"] = {17, 32},    
 }
 linkExce["Mahogany Town Gym_C"] = {
     ["Mahogany Town Gym_B"] = {17, 29},
@@ -545,7 +552,7 @@ linkExce["Petalburg City Gym_A"] = {
 linkExce["Petalburg City Gym_B"] = {
     ["Petalburg City Gym_A"] = {38, 90},
     ["Petalburg City Gym_D"] = {45, 81},
-	["Petalburg City Gym_E"] = {38, 81},
+    ["Petalburg City Gym_E"] = {38, 81},
 }
 linkExce["Petalburg City Gym_C"] = {
     ["Petalburg City Gym_A"] = {10, 90},
@@ -553,325 +560,325 @@ linkExce["Petalburg City Gym_C"] = {
     ["Petalburg City Gym_F"] = {3, 81},
 }
 linkExce["Petalburg City Gym_D"] = {
-	["Petalburg City Gym_B"] = {66, 63},
-	["Petalburg City Gym_G"] = {66, 54},
+    ["Petalburg City Gym_B"] = {66, 63},
+    ["Petalburg City Gym_G"] = {66, 54},
 }
 linkExce["Petalburg City Gym_E"] = {
-	["Petalburg City Gym_C"] = {37, 63},
-	["Petalburg City Gym_B"] = {44, 63},
-	["Petalburg City Gym_G"] = {44, 54},
+    ["Petalburg City Gym_C"] = {37, 63},
+    ["Petalburg City Gym_B"] = {44, 63},
+    ["Petalburg City Gym_G"] = {44, 54},
 }
 linkExce["Petalburg City Gym_F"] = {
-	["Petalburg City Gym_C"] = {10, 63},
+    ["Petalburg City Gym_C"] = {10, 63},
 }
 linkExce["Petalburg City Gym_G"] = {
-	["Petalburg City Gym_E"] = {37, 36},
-	["Petalburg City Gym_D"] = {44, 36},
-	["Petalburg City Gym_I"] = {37, 27},
+    ["Petalburg City Gym_E"] = {37, 36},
+    ["Petalburg City Gym_D"] = {44, 36},
+    ["Petalburg City Gym_I"] = {37, 27},
 }
 linkExce["Petalburg City Gym_H"] = {
-	["Petalburg City Gym_I"] = {10, 27},
+    ["Petalburg City Gym_I"] = {10, 27},
 }
 linkExce["Petalburg City Gym_I"] = {
-	["Petalburg City Gym_G"] = {27, 11},
-	["Petalburg City Gym_H"] = {20, 11},	
+    ["Petalburg City Gym_G"] = {27, 11},
+    ["Petalburg City Gym_H"] = {20, 11},    
 }
 linkExce["Island Cave_A"] = {
-	["Island Cave_B"] = {14, 24},
+    ["Island Cave_B"] = {14, 24},
 }
 linkExce["Island Cave_B"] = {
-	["Island Cave_A"] = {14, 15},
+    ["Island Cave_A"] = {14, 15},
 }
 linkExce["Granite Cave 1F_A"] = {
-	["Granite Cave B1F_A"] = {17, 13},
+    ["Granite Cave B1F_A"] = {17, 13},
 }
 linkExce["Granite Cave 1F_B"] = {
-	["Granite Cave B1F_B"] = {38, 6},
-	["Granite Cave 1F2"] = {7, 13},
+    ["Granite Cave B1F_B"] = {38, 6},
+    ["Granite Cave 1F2"] = {7, 13},
 }
 linkExce["Granite Cave B1F_A"] = {
-	["Granite Cave B2F_A"] = {11, 8},
-	["Granite Cave B2F_D"] = {30, 24},
-	["Granite Cave 1F_A"] = {5, 23},
-	["Granite Cave B2F_B"] = {14, 4},
-	["Granite Cave B2F_C"] = {32, 7},
+    ["Granite Cave B2F_A"] = {11, 8},
+    ["Granite Cave B2F_D"] = {30, 24},
+    ["Granite Cave 1F_A"] = {5, 23},
+    ["Granite Cave B2F_B"] = {14, 4},
+    ["Granite Cave B2F_C"] = {32, 7},
 }
 linkExce["Granite Cave B1F_B"] = {
-	["Granite Cave B2F_D"] = {31, 15},
-	["Granite Cave 1F_B"] = {28, 15},
+    ["Granite Cave B2F_D"] = {31, 15},
+    ["Granite Cave 1F_B"] = {28, 15},
 }
 linkExce["Granite Cave B2F_A"] = {
-	["Granite Cave B1F_A"] = {11, 9},
+    ["Granite Cave B1F_A"] = {11, 9},
 }
 linkExce["Granite Cave B2F_B"] = {
-	["Granite Cave B1F_A"] = {14, 6},
+    ["Granite Cave B1F_A"] = {14, 6},
 }
 linkExce["Granite Cave B2F_C"] = {
-	["Granite Cave B1F_A"] = {31, 6},
+    ["Granite Cave B1F_A"] = {31, 6},
 }
 linkExce["Granite Cave B2F_D"] = {
-	["Granite Cave B1F_A"] = {29, 26},
-	["Granite Cave B1F_B"] = {30, 18},
+    ["Granite Cave B1F_A"] = {29, 26},
+    ["Granite Cave B1F_B"] = {30, 18},
 }
 linkExce["Abandoned Ship Exterior_A"] = {
-	["Abandoned Ship 1F_A"] = {11, 8},
+    ["Abandoned Ship 1F_A"] = {11, 8},
 }
 linkExce["Abandoned Ship Exterior_B"] = {
-	["Captains Office"] = {11, 3},
+    ["Captains Office"] = {11, 3},
 }
 linkExce["Abandoned Ship 1F_A"] = {
-	["Abandoned Ship Exterior_A"] = {14, 12},
-	["Abandoned Ship 1F Room 2_A"] = {16, 10},
-	["Abandoned Ship 1F Room 2_B"] = {16, 4},
+    ["Abandoned Ship Exterior_A"] = {14, 12},
+    ["Abandoned Ship 1F Room 2_A"] = {16, 10},
+    ["Abandoned Ship 1F Room 2_B"] = {16, 4},
 }
 linkExce["Abandoned Ship 1F_B"] = {
-	["Abandoned Ship Exterior_B"] = {3, 12},
+    ["Abandoned Ship Exterior_B"] = {3, 12},
 }
 linkExce["Abandoned Ship 1F Room 1"] = {
-	["Abandoned Ship 1F_B"] = {5, 2},	
+    ["Abandoned Ship 1F_B"] = {5, 2},    
 }
 linkExce["Abandoned Ship 1F Room 2_A"] = {
-	["Abandoned Ship 1F_A"] = {6, 20},
+    ["Abandoned Ship 1F_A"] = {6, 20},
 }
 linkExce["Abandoned Ship 1F Room 2_B"] = {
-	["Abandoned Ship 1F_A"] = {5, 2},
+    ["Abandoned Ship 1F_A"] = {5, 2},
 }
 linkExce["Abandoned Ship B1F"] = {
-	["Abandoned Ship 1F_A"] = {20, 3},
-	["Abandoned Ship 1F_B"] = {4, 3},
-	["Storage Unit"] = {23, 4},
+    ["Abandoned Ship 1F_A"] = {20, 3},
+    ["Abandoned Ship 1F_B"] = {4, 3},
+    ["Storage Unit"] = {23, 4},
 }
 linkExce["Desert Ruins_A"] = {
-	["Desert Ruins_B"] = {9, 56},
+    ["Desert Ruins_B"] = {9, 56},
 }
 linkExce["Desert Ruins_B"] = {
-	["Desert Ruins_A"] = {9, 19},
+    ["Desert Ruins_A"] = {9, 19},
 }
 linkExce["Ancient Tomb_A"] = {
-	["Ancient Tomb_B"] = {10, 24},
+    ["Ancient Tomb_B"] = {10, 24},
 }
 linkExce["Ancient Tomb_B"] = {
-	["Ancient Tomb_A"] = {10, 17},
+    ["Ancient Tomb_A"] = {10, 17},
 }
 linkExce["Mossdeep Gym_A"] = {
-	["Mossdeep Gym_D"] = {13, 55},
-	["Mossdeep Gym_C"] = {5, 52},
-	["Mossdeep Gym_B"] = {2, 67},
+    ["Mossdeep Gym_D"] = {13, 55},
+    ["Mossdeep Gym_C"] = {5, 52},
+    ["Mossdeep Gym_B"] = {2, 67},
 }
 linkExce["Mossdeep Gym_B"] = {
-	["Mossdeep Gym_A"] = {29, 60},
-	["Mossdeep Gym_D"] = {35, 58},
-	["Mossdeep Gym_F"] = {34, 68},
+    ["Mossdeep Gym_A"] = {29, 60},
+    ["Mossdeep Gym_D"] = {35, 58},
+    ["Mossdeep Gym_F"] = {34, 68},
 }
 linkExce["Mossdeep Gym_C"] = {
-	["Mossdeep Gym_E"] = {54, 65},
-	["Mossdeep Gym_A"] = {51, 48},
+    ["Mossdeep Gym_E"] = {54, 65},
+    ["Mossdeep Gym_A"] = {51, 48},
 }
 linkExce["Mossdeep Gym_D"] = {
-	["Mossdeep Gym_F"] = {10, 34},
-	["Mossdeep Gym_B"] = {2, 36},
-	["Mossdeep Gym_E"] = {12, 27},
+    ["Mossdeep Gym_F"] = {10, 34},
+    ["Mossdeep Gym_B"] = {2, 36},
+    ["Mossdeep Gym_E"] = {12, 27},
 }
 linkExce["Mossdeep Gym_E"] = {
-	["Mossdeep Gym_D"] = {7, 3},
-	["Mossdeep Gym_C"] = {15, 3},
+    ["Mossdeep Gym_D"] = {7, 3},
+    ["Mossdeep Gym_C"] = {15, 3},
 }
 linkExce["Mossdeep Gym_F"] = {
-	["Mossdeep Gym_B"] = {56, 6},
-	["Mossdeep Gym_D"] = {47, 6},
+    ["Mossdeep Gym_B"] = {56, 6},
+    ["Mossdeep Gym_D"] = {47, 6},
 }
 linkExce["Moon_B"] = {
-	["Moon 1F_A"] = {7, 19},
-	["Moon 1F_B"] = {15, 10},
+    ["Moon 1F_A"] = {7, 19},
+    ["Moon 1F_B"] = {15, 10},
 }
 linkExce["Moon_C"] = {
-	["Moon 1F_B"] = {45, 10},
-	["Moon 1F_C"] = {53, 19},
-	["Moon_D"] = {42, 30}
+    ["Moon 1F_B"] = {45, 10},
+    ["Moon 1F_C"] = {53, 19},
+    ["Moon_D"] = {42, 30}
 }
 linkExce["Moon 1F_A"] = {
-	["Moon_A"] = {8, 45},
-	["Moon_B"] = {8, 24},
+    ["Moon_A"] = {8, 45},
+    ["Moon_B"] = {8, 24},
 }
 linkExce["Moon 1F_B"] = {
-	["Moon_B"] = {17, 15},
-	["Moon_C"] = {47, 15},
+    ["Moon_B"] = {17, 15},
+    ["Moon_C"] = {47, 15},
 }
 linkExce["Moon 2F_A"] = {
-	["Moon 2F_B"] = {5, 3},
+    ["Moon 2F_B"] = {5, 3},
 }
 linkExce["Team Aqua Hideout 1F_A"] = {
-	["Team Aqua Hideout 1F_C"] = {58, 5},
-	["Team Aqua Hideout 1F_E"] = {32, 28},
+    ["Team Aqua Hideout 1F_C"] = {58, 5},
+    ["Team Aqua Hideout 1F_E"] = {32, 28},
 }
 
 linkExce["Team Aqua Hideout 1F_C"] = {
-	["Team Aqua Hideout 1F_A"] = {24, 22},
-	["Team Aqua Hideout 1F_D"] = {12, 29},
+    ["Team Aqua Hideout 1F_A"] = {24, 22},
+    ["Team Aqua Hideout 1F_D"] = {12, 29},
 }
 linkExce["Team Aqua Hideout 1F_D"] = {
-	["Team Aqua Hideout 1F_C"] = {25, 40},
+    ["Team Aqua Hideout 1F_C"] = {25, 40},
 }
 linkExce["Team Aqua Hideout 1F_F"] = {
-	["Team Aqua Hideout B1F_B"] = {53, 38},
-	["Team Aqua Hideout B1F_C"] = {46, 38},
+    ["Team Aqua Hideout B1F_B"] = {53, 38},
+    ["Team Aqua Hideout B1F_C"] = {46, 38},
 }
 linkExce["Team Aqua Hideout 1F_E"] = {
-	["Team Aqua Hideout 1F_A"] = {34, 42},
+    ["Team Aqua Hideout 1F_A"] = {34, 42},
 }
 linkExce["Team Aqua Hideout B1F_A"] = {
-	["Team Aqua Hideout B1F_F"] = {3, 29},
-	["Team Aqua Hideout 1F_C"] = {39, 28},
-	["Team Aqua Hideout 1F_G"] = {6, 21},
+    ["Team Aqua Hideout B1F_F"] = {3, 29},
+    ["Team Aqua Hideout 1F_C"] = {39, 28},
+    ["Team Aqua Hideout 1F_G"] = {6, 21},
 }
 linkExce["Team Aqua Hideout B1F_B"] = {
-	["Team Aqua Hideout B1F_E"] = {16, 9},
+    ["Team Aqua Hideout B1F_E"] = {16, 9},
 }
 linkExce["Team Aqua Hideout B1F_E"] = {
-	["Team Aqua Hideout B1F_B"] = {21, 6},
-	["Team Aqua Hideout B2F_E"] = {28, 8},
+    ["Team Aqua Hideout B1F_B"] = {21, 6},
+    ["Team Aqua Hideout B2F_E"] = {28, 8},
 }
 linkExce["Team Aqua Hideout B1F_F"] = {
-	["Team Aqua Hideout B1F_A"] = {38, 4},
-	["Team Aqua Hideout Warp Hallway_E"] = {35, 8},
+    ["Team Aqua Hideout B1F_A"] = {38, 4},
+    ["Team Aqua Hideout Warp Hallway_E"] = {35, 8},
 }
 linkExce["Team Aqua Hideout B2F_C"] = {
-	["Team Aqua Hideout B2F_E"] = {23, 17},
+    ["Team Aqua Hideout B2F_E"] = {23, 17},
 }
 linkExce["Team Aqua Hideout B2F_E"] = {
-	["Team Aqua Hideout B2F_C"] = {38, 25},
+    ["Team Aqua Hideout B2F_C"] = {38, 25},
 }
 linkExce["Team Aqua Hideout Warp Hallway_A"] = {
-	["Team Aqua Hideout 1F_G"] = {14, 41},
+    ["Team Aqua Hideout 1F_G"] = {14, 41},
 }
 linkExce["Team Aqua Hideout Warp Hallway_B"] = {
-	["Team Aqua Hideout Warp Hallway_F"] = {39, 42},
-	["Team Aqua Hideout B2F_B"] = {24, 41},
+    ["Team Aqua Hideout Warp Hallway_F"] = {39, 42},
+    ["Team Aqua Hideout B2F_B"] = {24, 41},
 }
 linkExce["Team Aqua Hideout Warp Hallway_C"] = {
-	["Team Aqua Hideout B1F_C"] = {14, 32},
-	["Team Aqua Hideout Warp Hallway_I"] = {19, 32},
+    ["Team Aqua Hideout B1F_C"] = {14, 32},
+    ["Team Aqua Hideout Warp Hallway_I"] = {19, 32},
 }
 linkExce["Team Aqua Hideout Warp Hallway_D"] = {
-	["Team Aqua Hideout Warp Hallway_C"] = {18, 32},
-	["Team Aqua Hideout Warp Hallway_E"] = {20, 32},
+    ["Team Aqua Hideout Warp Hallway_C"] = {18, 32},
+    ["Team Aqua Hideout Warp Hallway_E"] = {20, 32},
 }
 linkExce["Team Aqua Hideout Warp Hallway_E"] = {
-	["Team Aqua Hideout Warp Hallway_I"] = {19, 32},
-	["Team Aqua Hideout B1F_F"] = {25, 32},
+    ["Team Aqua Hideout Warp Hallway_I"] = {19, 32},
+    ["Team Aqua Hideout B1F_F"] = {25, 32},
 }
 linkExce["Team Aqua Hideout Warp Hallway_F"] = {
-	["Team Aqua Hideout Warp Hallway_B"] = {14, 24},
-	["Team Aqua Hideout Warp Hallway_J"] = {19, 24},
+    ["Team Aqua Hideout Warp Hallway_B"] = {14, 24},
+    ["Team Aqua Hideout Warp Hallway_J"] = {19, 24},
 }
 linkExce["Team Aqua Hideout Warp Hallway_G"] = {
-	["Team Aqua Hideout Warp Hallway_F"] = {18, 24},
-	["Team Aqua Hideout Warp Hallway_H"] = {20, 24},
+    ["Team Aqua Hideout Warp Hallway_F"] = {18, 24},
+    ["Team Aqua Hideout Warp Hallway_H"] = {20, 24},
 }
 linkExce["Team Aqua Hideout Warp Hallway_H"] = {
-	["Team Aqua Hideout Warp Hallway_J"] = {19, 24},
-	["Team Aqua Hideout Warp Hallway_L"] = {24, 24},
+    ["Team Aqua Hideout Warp Hallway_J"] = {19, 24},
+    ["Team Aqua Hideout Warp Hallway_L"] = {24, 24},
 }
 linkExce["Team Aqua Hideout Warp Hallway_I"] = {
-	["Team Aqua Hideout Warp Hallway_D"] = {14, 17},
-	["Team Aqua Hideout Warp Hallway_G"] = {19, 17},
+    ["Team Aqua Hideout Warp Hallway_D"] = {14, 17},
+    ["Team Aqua Hideout Warp Hallway_G"] = {19, 17},
 }
 linkExce["Team Aqua Hideout Warp Hallway_J"] = {
-	["Team Aqua Hideout Warp Hallway_I"] = {18, 17},
-	["Team Aqua Hideout Warp Hallway_K"] = {20, 17},
+    ["Team Aqua Hideout Warp Hallway_I"] = {18, 17},
+    ["Team Aqua Hideout Warp Hallway_K"] = {20, 17},
 }
 linkExce["Team Aqua Hideout Warp Hallway_K"] = {
-	["Team Aqua Hideout Warp Hallway_G"] = {19, 17},
-	["Team Aqua Hideout Warp Hallway_L"] = {24, 17},
+    ["Team Aqua Hideout Warp Hallway_G"] = {19, 17},
+    ["Team Aqua Hideout Warp Hallway_L"] = {24, 17},
 }
 linkExce["Team Aqua Hideout Warp Hallway_L"] = {
-	["Team Aqua Hideout B2F_C"] = {19, 5},
-	["Team Aqua Hideout Warp Hallway_H"] = {24, 9},
-	["Team Aqua Hideout Warp Hallway_K"] = {14, 9},
+    ["Team Aqua Hideout B2F_C"] = {19, 5},
+    ["Team Aqua Hideout Warp Hallway_H"] = {24, 9},
+    ["Team Aqua Hideout Warp Hallway_K"] = {14, 9},
 }
 linkExce["Route 125"] = {
-	["Low Tide Entrance Room_A"] = {19, 16},
+    ["Low Tide Entrance Room_A"] = {19, 16},
 }
 linkExce["Lavaridge Town Gym 1F_A"] = {
-	["Lavaridge Town Gym B1F_I"] = {25, 40},
-	["Lavaridge Town Gym B1F_D"] = {21, 26},
+    ["Lavaridge Town Gym B1F_I"] = {25, 40},
+    ["Lavaridge Town Gym B1F_D"] = {21, 26},
 }
 linkExce["Lavaridge Town Gym 1F_B"] = {
-	["Lavaridge Town Gym B1F_H"] = {28, 33},
+    ["Lavaridge Town Gym B1F_H"] = {28, 33},
 }
 linkExce["Lavaridge Town Gym 1F_C"] = {
-	["Lavaridge Town Gym B1F_D"] = {7, 39},
-	["Lavaridge Town Gym B1F_D"] = {9, 35},
-	["Lavaridge Town Gym B1F_B"] = {7, 28},
+    ["Lavaridge Town Gym B1F_D"] = {7, 39},
+    ["Lavaridge Town Gym B1F_D"] = {9, 35},
+    ["Lavaridge Town Gym B1F_B"] = {7, 28},
 }
 linkExce["Lavaridge Town Gym 1F_D"] = {
-	["Lavaridge Town Gym B1F_C"] = {16, 35},
-	["Lavaridge Town Gym 1F_C"] = {16, 26},
+    ["Lavaridge Town Gym B1F_C"] = {16, 35},
+    ["Lavaridge Town Gym 1F_C"] = {16, 26},
 }
 linkExce["Lavaridge Town Gym 1F_E"] = {
-	["Lavaridge Town Gym B1F_B"] = {7, 13},
-	["Lavaridge Town Gym B1F_B"] = {16, 13},
-	["Lavaridge Town Gym B1F_A"] = {11, 7},
+    ["Lavaridge Town Gym B1F_B"] = {7, 13},
+    ["Lavaridge Town Gym B1F_B"] = {16, 13},
+    ["Lavaridge Town Gym B1F_A"] = {11, 7},
 }
 linkExce["Lavaridge Town Gym 1F_F"] = {
-	["Lavaridge Town Gym B1F_E"] = {22, 13},
-	["Lavaridge Town Gym B1F_F"] = {25, 13},
-	["Lavaridge Town Gym B1F_A"] = {19, 5},
+    ["Lavaridge Town Gym B1F_E"] = {22, 13},
+    ["Lavaridge Town Gym B1F_F"] = {25, 13},
+    ["Lavaridge Town Gym B1F_A"] = {19, 5},
 }
 linkExce["Lavaridge Town Gym 1F_G"] = {
-	["Lavaridge Town Gym B1F_G"] = {32, 13},
-	["Lavaridge Town Gym B1F_A"] = {28, 7},
+    ["Lavaridge Town Gym B1F_G"] = {32, 13},
+    ["Lavaridge Town Gym B1F_A"] = {28, 7},
 }
 linkExce["Lavaridge Town Gym B1F_A"] = {
-	["Lavaridge Town Gym 1F_E"] = {8, 7},
-	["Lavaridge Town Gym 1F_F"] = {16, 5},
-	["Lavaridge Town Gym 1F_G"] = {25, 7},
+    ["Lavaridge Town Gym 1F_E"] = {8, 7},
+    ["Lavaridge Town Gym 1F_F"] = {16, 5},
+    ["Lavaridge Town Gym 1F_G"] = {25, 7},
 }
 linkExce["Lavaridge Town Gym B1F_B"] = {
-	["Lavaridge Town Gym 1F_C"] = {4, 28},
-	["Lavaridge Town Gym 1F_E"] = {4, 13},
+    ["Lavaridge Town Gym 1F_C"] = {4, 28},
+    ["Lavaridge Town Gym 1F_E"] = {4, 13},
 }
 linkExce["Lavaridge Town Gym B1F_D"] = {
-	["Lavaridge Town Gym 1F_C"] = {4, 39},
-	["Lavaridge Town Gym 1F_C"] = {6, 35},
-	["Lavaridge Town Gym 1F_D"] = {13, 35},
-	["Lavaridge Town Gym 1F_A"] = {18, 26},
+    ["Lavaridge Town Gym 1F_C"] = {4, 39},
+    ["Lavaridge Town Gym 1F_C"] = {6, 35},
+    ["Lavaridge Town Gym 1F_D"] = {13, 35},
+    ["Lavaridge Town Gym 1F_A"] = {18, 26},
 }
 linkExce["Lavaridge Town Gym B1F_E"] = {
-	["Lavaridge Town Gym 1F_A"] = {18, 26},
+    ["Lavaridge Town Gym 1F_A"] = {18, 26},
 }
 linkExce["Lavaridge Town Gym B1F_I"] = {
-	["Lavaridge Town Gym 1F_A"] = {22, 40},
+    ["Lavaridge Town Gym 1F_A"] = {22, 40},
 }
 linkExce["Lavaridge Town Gym B1F_J"] = {
-	["Lavaridge Town Gym B1F_B"] = {5, 29},
+    ["Lavaridge Town Gym B1F_B"] = {5, 29},
 }
 linkExce["Mineral Site_A"] = {
-	["Mineral Site_B"] = {11, 15},
+    ["Mineral Site_B"] = {11, 15},
 }
 linkExce["Mineral Site_B"] = {
-	["Mineral Site_A"] = {11, 17},
+    ["Mineral Site_A"] = {11, 17},
 }
 linkExce["Feral Site_A"] = {
-	["Feral Site_B"] = {8, 15},
+    ["Feral Site_B"] = {8, 15},
 }
 linkExce["Feral Site_B"] = {
-	["Feral Site_A"] = {8, 17},
+    ["Feral Site_A"] = {8, 17},
 }
 linkExce["Historical Site_A"] = {
-	["Historical Site_B"] = {2, 12},
-	["Historical Site_C"] = {21, 14},
+    ["Historical Site_B"] = {2, 12},
+    ["Historical Site_C"] = {21, 14},
 }
 linkExce["Historical Site_B"] = {
-	["Historical Site_A"] = {2, 14},
+    ["Historical Site_A"] = {2, 14},
 }
 linkExce["Historical Site_C"] = {
-	["Historical Site_A"] = {20, 15},
+    ["Historical Site_A"] = {20, 15},
 }
 linkExce["Valley Of Steel_B"] = {
-	["Cave Of Steel 1F_A"] = {30, 59},
-	["Cave Of Steel 1F_B"] = {49, 30},
-	["Cave Of Steel 1F_C"] = {59, 54},
+    ["Cave Of Steel 1F_A"] = {30, 59},
+    ["Cave Of Steel 1F_B"] = {49, 30},
+    ["Cave Of Steel 1F_C"] = {59, 54},
 }
 
 ----------------------
@@ -879,71 +886,71 @@ linkExce["Valley Of Steel_B"] = {
 ----------------------
 
 linkExce["One Island_A"] = {
-	["Kindle Road_A"] = {37, 0},
-	["Kindle Road_B"] = {50, 0},
+    ["Kindle Road_A"] = {37, 0},
+    ["Kindle Road_B"] = {50, 0},
 }
 linkExce["One Island_B"] = {
-	["Kindle Road_A"] = {26, 0},
+    ["Kindle Road_A"] = {26, 0},
 }
 linkExce["Kindle Road_A"] = {
-	["One Island_A"] = {37, 142},
-	["One Island_B"] = {25, 142},
+    ["One Island_A"] = {37, 142},
+    ["One Island_B"] = {25, 142},
 }
 linkExce["Kindle Road_B"] = {
-	["One Island_A"] = {50, 142},
+    ["One Island_A"] = {50, 142},
 }
 linkExce["Three Isle Path"] = {
-	["Three Isle Port_A"] = {4, 8},
-	["Three Isle Port_B"] = {28, 9},
+    ["Three Isle Port_A"] = {4, 8},
+    ["Three Isle Port_B"] = {28, 9},
 }
 linkExce["Icefall Cave 1F_A"] = {
-	["Icefall Cave B1F_A"] = {11, 18}, 
+    ["Icefall Cave B1F_A"] = {11, 18}, 
 }
 linkExce["Icefall Cave 1F_C"] = {
-	["Icefall Cave 1F_A"] = {5, 18},
-	["Icefall Cave B1F_A"] = {13, 8}, 
-	["Icefall Cave B1F_B"] = {11, 6}, 
+    ["Icefall Cave 1F_A"] = {5, 18},
+    ["Icefall Cave B1F_A"] = {13, 8}, 
+    ["Icefall Cave B1F_B"] = {11, 6}, 
 }
 linkExce["Icefall Cave 1F_D"] = {
-	["Icefall Cave B1F_B"] = {16, 6},
-	["Icefall Cave B1F_C"] = {19, 13}, 
+    ["Icefall Cave B1F_B"] = {16, 6},
+    ["Icefall Cave B1F_C"] = {19, 13}, 
 }
 linkExce["Icefall Cave B1F_B"] = { 
-	["Icefall Cave 1F_D"] = {19, 16}, 
+    ["Icefall Cave 1F_D"] = {19, 16}, 
 }
 
 linkExce["Icefall Cave B1F_C"] = { 
-	["Icefall Cave 1F_B"] = {21, 29},
+    ["Icefall Cave 1F_B"] = {21, 29},
 }
 linkExce["Lost Cave 1F2"] = {
-	["Lost Cave 1F1"] = {7, 13},
+    ["Lost Cave 1F1"] = {7, 13},
 }
 linkExce["Lost Cave 1F3"] = {
-	["Lost Cave 1F1"] = {7, 13},
+    ["Lost Cave 1F1"] = {7, 13},
 }
 linkExce["Lost Cave 1F5"] = {
-	["Lost Cave 1F4"] = {15, 6},
+    ["Lost Cave 1F4"] = {15, 6},
 }
 linkExce["Lost Cave 1F6"] = {
-	["Lost Cave 1F4"] = {15, 23},
+    ["Lost Cave 1F4"] = {15, 23},
 }
 linkExce["Lost Cave 1F8"] = {
-	["Lost Cave 1F7"] = {15, 6},
+    ["Lost Cave 1F7"] = {15, 6},
 }
 linkExce["Lost Cave 1F9"] = {
-	["Lost Cave 1F7"] = {7, 13},
+    ["Lost Cave 1F7"] = {7, 13},
 }
 linkExce["Dotted Hole B1F"] = {
-	["Dotted Hole B3F"] = {20, 15},
+    ["Dotted Hole B3F"] = {20, 15},
 }
 linkExce["Dotted Hole B2F"] = {
-	["Dotted Hole B1F"] = {9, 15},
+    ["Dotted Hole B1F"] = {9, 15},
 }
 linkExce["Dotted Hole B4F"] = {
-	["Dotted Hole B2F"] = {20, 15},
+    ["Dotted Hole B2F"] = {20, 15},
 }
 linkExce["Water Path_B"] = {
-	["Water Path_A"] = {7, 29},
+    ["Water Path_A"] = {7, 29},
 }
 
 ----------------------
