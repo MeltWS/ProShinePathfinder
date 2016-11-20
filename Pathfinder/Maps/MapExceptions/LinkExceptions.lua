@@ -20,7 +20,7 @@ linkExce["Mt. Moon 1F"] = {
 linkExce["Route 4"] = {
     ["Cerulean City_A"] = {96, 22}, -- main City
     ["Cerulean City_B"] = {96, 14} -- Cerulean cave
-    }
+}
 linkExce["Cerulean City_A"] = {
     ["Route 5_A"] = {17, 50}, -- daycare
     ["Route 5_B"] = {22, 50} -- fastest path
@@ -868,7 +868,83 @@ linkExce["Historical Site_B"] = {
 linkExce["Historical Site_C"] = {
 	["Historical Site_A"] = {20, 15},
 }
+linkExce["Valley Of Steel_B"] = {
+	["Cave Of Steel 1F_A"] = {30, 59},
+	["Cave Of Steel 1F_B"] = {49, 30},
+	["Cave Of Steel 1F_C"] = {59, 54},
+}
 
+----------------------
+---- SEVII ISLANDS ---
+----------------------
+
+linkExce["One Island_A"] = {
+	["Kindle Road_A"] = {37, 0},
+	["Kindle Road_B"] = {50, 0},
+}
+linkExce["One Island_B"] = {
+	["Kindle Road_A"] = {26, 0},
+}
+linkExce["Kindle Road_A"] = {
+	["One Island_A"] = {37, 142},
+	["One Island_B"] = {25, 142},
+}
+linkExce["Kindle Road_B"] = {
+	["One Island_A"] = {50, 142},
+}
+linkExce["Three Isle Path"] = {
+	["Three Isle Port_A"] = {4, 8},
+	["Three Isle Port_B"] = {28, 9},
+}
+linkExce["Icefall Cave 1F_A"] = {
+	["Icefall Cave B1F_A"] = {11, 18}, 
+}
+linkExce["Icefall Cave 1F_C"] = {
+	["Icefall Cave 1F_A"] = {5, 18},
+	["Icefall Cave B1F_A"] = {13, 8}, 
+	["Icefall Cave B1F_B"] = {11, 6}, 
+}
+linkExce["Icefall Cave 1F_D"] = {
+	["Icefall Cave B1F_B"] = {16, 6},
+	["Icefall Cave B1F_C"] = {19, 13}, 
+}
+linkExce["Icefall Cave B1F_B"] = { 
+	["Icefall Cave 1F_D"] = {19, 16}, 
+}
+
+linkExce["Icefall Cave B1F_C"] = { 
+	["Icefall Cave 1F_B"] = {21, 29},
+}
+linkExce["Lost Cave 1F2"] = {
+	["Lost Cave 1F1"] = {7, 13},
+}
+linkExce["Lost Cave 1F3"] = {
+	["Lost Cave 1F1"] = {7, 13},
+}
+linkExce["Lost Cave 1F5"] = {
+	["Lost Cave 1F4"] = {15, 6},
+}
+linkExce["Lost Cave 1F6"] = {
+	["Lost Cave 1F4"] = {15, 23},
+}
+linkExce["Lost Cave 1F8"] = {
+	["Lost Cave 1F7"] = {15, 6},
+}
+linkExce["Lost Cave 1F9"] = {
+	["Lost Cave 1F7"] = {7, 13},
+}
+linkExce["Dotted Hole B1F"] = {
+	["Dotted Hole B3F"] = {20, 15},
+}
+linkExce["Dotted Hole B2F"] = {
+	["Dotted Hole B1F"] = {9, 15},
+}
+linkExce["Dotted Hole B4F"] = {
+	["Dotted Hole B2F"] = {20, 15},
+}
+linkExce["Water Path_B"] = {
+	["Water Path_A"] = {7, 29},
+}
 
 ----------------------
 ---- INTER MAP -------

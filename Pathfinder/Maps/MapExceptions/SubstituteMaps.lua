@@ -726,4 +726,71 @@ return {
 		["Historical Site_B"] = {{1, 14, 3, 16}}, -- bottom left
 		["Historical Site_C"] = {{20, 15, 20, 17}, {21, 7, 21, 7}}, -- bottom right
 	},
+	["Valley Of Steel"] = {
+		["Valley Of Steel_A"] = {{25, 0, 42, 21}, {25, 22, 29, 33}, {26, 34, 28, 29}, {25, 40, 40, 53}}, -- above bridge area
+		["Valley Of Steel_B"] = {{0, 29, 25, 45}, {0, 46, 24, 64}, {25, 54, 59, 67}, {47, 53, 55, 53}, {25, 34, 58, 39}, {37, 29, 58, 33}}, -- under bridge area
+	},
+	["Cave Of Steel 1F"] = {
+		["Cave Of Steel 1F_A"] = {{4, 4, 12, 11}}, -- left
+		["Cave Of Steel 1F_B"] = {{48, 4, 56, 21}}, -- right
+		["Cave Of Steel 1F_C"] = {{24, 60, 56, 76}}, -- solitary
+	},
+	
+----------------------
+--- SEVII ISLANDS ----
+----------------------
+
+	["One Island"] = {
+		["One Island_A"] = {{4, 6, 54, 39}, {35, 0, 54, 5}}, -- main
+		["One Island_B"] = {{21, 0, 32, 5}}, -- top left enclosed
+	},
+	["Four Island"] = {
+		["Four Island_A"] = {{12, 18, 45, 53}, {46, 34, 52, 53}, {53, 36, 55, 53}}, -- main
+		["Four Island_B"] = {{46, 25, 55, 32}, {53, 33, 55, 35}}, -- top right-surf
+	},
+	["Kindle Road"] = {
+		["Kindle Road_A"] = {{0, 0, 60, 90}, {2, 91, 42, 99}, {2, 100, 52, 128}, {11, 129, 49, 130}, {11, 131, 48, 142}}, -- main
+		["Kindle Road_B"] = {{50, 129, 53, 142}}, -- bottom right enclosed
+		["Kindle Road_C"] = {{43, 91, 46, 99}}, -- rock smash enclosed
+	},
+	["Mt. Ember"] = {
+		["Mt. Ember_A"] = {{0, 60, 100, 110}}, -- bottom
+		["Mt. Ember_B"] = {{0, 0, 100, 59}}, -- top
+	},
+	["Mt. Ember Ruby Path 1F"] = {
+		["Mt. Ember Ruby Path 1F_A"] = {{9, 5, 29, 16}, {30, 13, 32, 23}, {33, 20, 33, 22}}, -- main
+		["Mt. Ember Ruby Path 1F_B"] = {{30, 9, 35, 12}, {33, 13, 35, 15}}, -- enclosed
+	},
+	["Three Isle Port"] = {
+		["Three Isle Port_A"] = {{23, 3, 32, 19}}, -- main
+		["Three Isle Port_B"] = {{46, 2, 56, 8}}, -- enclosed
+	},
+	["Icefall Cave Entrance"] = {
+		["Icefall Cave Entrance_A"] = {{12, 23, 23, 34}}, -- bottom
+		["Icefall Cave Entrance_B"] = {{11, 9, 26, 16}}, -- top
+	},
+	["Icefall Cave 1F"] = {
+		["Icefall Cave 1F_A"] = {{4, 18, 12, 22}}, -- bottom left
+		["Icefall Cave 1F_B"] = {{13, 19, 19, 21}}, -- bottom right
+		["Icefall Cave 1F_C"] = {{4, 5, 13, 17}, {14, 11, 14, 13}, {14, 7, 14, 8}}, -- top left
+		["Icefall Cave 1F_D"] = {{15, 4, 21, 14}}, -- top right
+		["Icefall Cave 1F_E"] = {{14, 15, 15, 17}}, -- middle
+	},
+	["Icefall Cave B1F"] = {
+		["Icefall Cave B1F_A"] = {{14, 20, 14, 27}, {15, 18, 17, 26}, {18, 20, 18, 25}}, -- left
+		["Icefall Cave B1F_B"] = {{14, 16, 21, 17}, {18, 18, 21, 18}, {20, 19, 21, 26}, {22, 20, 27, 20}}, -- right top
+		["Icefall Cave B1F_C"] = {{22, 15, 25, 19}, {22, 21, 27, 30}, {16, 27, 21, 30}}, -- right bottom
+	},
+	["Five Island"] = {
+		["Five Island_A"] = {{10, 9, 85, 59}, {23, 6, 73, 8}}, -- main
+		["Five Island_B"] = {{10, 0, 21, 8}}, -- left side-surf
+	},
+	["Dotted Hole Entrance"] = {
+		["Dotted Hole Entrance_A"] = {{10, 8, 27, 32}, {28, 20, 35, 32}}, -- main
+		["Dotted Hole Entrance_B"] = {{28, 12, 36, 19}}, -- enclosed top right
+	},
+	["Water Path"] = {
+		["Water Path_A"] = {{0, 7, 30, 28}, {7, 29, 27, 32}, {0, 33, 39, 154}}, -- 
+		["Water Path_B"] = {{1, 29, 6, 31}, {0, 29, 0, 29}}, -- 
+	},
 }

@@ -26,7 +26,7 @@ local Pokecenters = {
     "Pokecenter Route 32",
     "Pokecenter Route 48",
     "Pokecenter Violet City",
-    -- Hoen
+    -- Hoenn
     "Pokecenter Dewford Town",
     "Pokecenter Ever Grande City",
     "Pokecenter Fallarbor Town",
@@ -44,6 +44,17 @@ local Pokecenters = {
     "Pokecenter Verdanturf",
     "Pokemon League Hoenn",
     "Pokemon League Hoenn",
+	"Pokecenter Eastern Peak",
+	"Pokecenter Western Peak",
+	"Pokecenter Leev Town",
+	-- Sevii Islands
+	"Pokecenter One Island",
+	"Pokecenter Two Island",
+	"Pokecenter Three Island",
+	"Pokecenter Four Island",
+	"Pokecenter Five Island",
+	"Pokecenter Six Island",
+	"Pokecenter Seven Island",
 }
 
 return Pokecenters
