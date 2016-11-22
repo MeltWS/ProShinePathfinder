@@ -1,3 +1,5 @@
+return function()
+
 local npcExce = {}
 
 ----------------------
@@ -248,3 +250,4 @@ npcExce["Vulcan Island shore"] = {
 --     [""] = {{}, , ""}
 -- }
 return npcExce
+end
