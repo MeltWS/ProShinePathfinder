@@ -5,7 +5,7 @@ local cppdpath = nTimes(3, rmlast, cpath) -- callee parent of parent dir path
 
 local Maybe                 = require (cppdpath .. "Lib/Maybe")
 local Lib                   = require (cppdpath .. "Lib/Lib")
-local npcExceptions         = require (cppdpath .. "Maps/MapExceptions/NpcExceptions")
+local _npcExceptions         = require (cppdpath .. "Maps/MapExceptions/NpcExceptions")
 local elevators             = require (cppdpath .. "Maps/MapExceptions/Elevators")
 local digways               = require (cppdpath .. "Maps/MapExceptions/Digways")
 local transmats             = require (cppdpath .. "Maps/MapExceptions/Transmats")
@@ -150,5 +150,11 @@ local function solveDialog(message, pf)
         return solveTransmatReached(message, n2)
     end
 end
+
+local function onDialogSolverStart()
+    npcExceptions = _npcExceptions()
+end
+
+registerHook("onStart", onDialogSolverStart)
 
 return { solveDialog = solveDialog }

@@ -418,7 +418,6 @@ local function onPathfinderDialogMessage(message)
     pfData.toMap = toMap
     pfData.abilitiesIndex = settings.abilitiesIndex
     dialogSolver.solveDialog(message, pfData)
-    if stringContains(message, "What's up? Do you want to go back to   ") then resetPath() end
 end
 
 local function onPathfinderSystemMessage(message)
