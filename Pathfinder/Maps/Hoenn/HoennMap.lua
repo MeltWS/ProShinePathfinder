@@ -105,7 +105,7 @@ HoennMap["Jagged Pass_A"] = {["Mt. Chimney"] = {1}, ["Jagged Pass_B"] = {0.5}}
 HoennMap["Jagged Pass_B"] = {["Jagged Pass_C"] = {0.5}}
 HoennMap["Jagged Pass_C"] = {["Route 112_C"] = {0.5}}
 HoennMap["Jura Cave"] = {["Jura Pass"] = {1}}
-HoennMap["Jura Pass"] = {["Jura Cave"] = {1}, ["Leev Town"] = {1}}
+HoennMap["Jura Pass"] = {["Leev Town"] = {1}, ["Jura Cave"] = {1}}
 HoennMap["Lab Littleroot Town"] = {["Littleroot Town"] = {1}}
 HoennMap["Lavaridge Mart"] = {["Lavaridge Town"] = {1}}
 HoennMap["Lavaridge Town Gym 1F_A"] = {["Lavaridge Town Gym B1F_I"] = {1}, ["Lavaridge Town Gym B1F_D"] = {1}, ["Lavaridge Town"] = {1}}
@@ -130,7 +130,7 @@ HoennMap["Lavaridge Town House"] = {["Lavaridge Town"] = {1}}
 HoennMap["Lavaridge Town"] = {["Valley Of Steel Entrance"] = {1}, ["Lavaridge Town Gym 1F_A"] = {1}, ["Lavaridge Town House"] = {1}, ["Lavaridge Town Herb Shop"] = {1}, ["Lavaridge Mart"] = {1}, ["Pokecenter Lavaridge Town"] = {1}, ["Route 112_C"] = {1}} -- links
 HoennMap["Leev Town Entrance"] = {["Leev Town"] = {1}, ["Leev Town Port"] = {1}}
 HoennMap["Leev Town Port"] = {["Leev Town Entrance"] = {1}, ["Lilycove City Harbor"] = {1}}
-HoennMap["Leev Town"] = {["Jura Pass"] = {1}, ["Pokecenter Leev Town"] = {1}, ["Leev Town Entrance"] = {1}}
+HoennMap["Leev Town"] = {["Leev Town Entrance"] = {1}, ["Jura Pass"] = {1}, ["Pokecenter Leev Town"] = {1}}
 HoennMap["Lilycove CIty House 3"]--[[Capital I in CIty]] = {["Lilycove City"] = {1}} 
 HoennMap["Lilycove City Harbor"] = {["Leev Town Port"] = {1}, ["Lilycove City"] = {0.2}}
 HoennMap["Lilycove City House 1"] = {["Lilycove City"] = {1}}
@@ -474,12 +474,6 @@ HoennMap["Western House 1"] = {["Valley Of Steel Western Peak"] = {1}}
 HoennMap["Western House 2"] = {["Valley Of Steel Western Peak"] = {1}}
 HoennMap["Western House 3"] = {["Valley Of Steel Western Peak"] = {1}}
 HoennMap["Western House 4"] = {["Valley Of Steel Western Peak"] = {1}}
-HoennMap["Leev Town"] = {["Leev Town Entrance"] = {1}, ["Jura Pass"] = {1}, ["Pokecenter Leev Town"] = {1}}
-HoennMap["Leev Town Port"] = {["Leev Town Entrance"] = {1}, ["Lilycove City Harbor"] = {0.2}}
-HoennMap["Leev Town Entrance"] = {["Leev Town Port"] = {1}, ["Leev Town"] = {1}}
-HoennMap["Jura Cave"] = {["Jura Pass"] = {1}}
-HoennMap["Jura Pass"] = {["Leev Town"] = {1}, ["Jura Cave"] = {1}}
-HoennMap["Pokecenter Leev Town"] = {["Leev Town"] = {1}}
 
 -- HoennMap["node"] = {["link"] = {distance, {["restrictionType"] = {"restriction"}}}}
 

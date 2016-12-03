@@ -800,4 +800,21 @@ return {
         ["Water Path_A"] = {{0, 7, 30, 28}, {7, 29, 27, 32}, {0, 33, 39, 154}}, -- 
         ["Water Path_B"] = {{1, 29, 6, 31}, {0, 29, 0, 29}}, -- 
     },
+    
+----------------------
+--- EVENT ----
+----------------------
+
+    ["Cryofrost Path"] = {
+        ["Cryofrost Path_A"] = {{4, 0, 28, 27}, {29, 0, 54, 34}}, -- main
+        ["Cryofrost Path_B"] = {{4, 28, 28, 60}}, -- left bottom
+    },["Frozen Cave B2F"] = {
+        ["Frozen Cave B2F_A"] = {{3, 2, 10, 27}}, -- left
+        ["Frozen Cave B2F_B"] = {{11, 2, 24, 27}, {25, 2, 31, 20}, {32, 2, 57, 27}}, -- right
+        ["Frozen Cave B2F_C"] = {{25, 21, 31, 25}}, -- santa
+    },["Frozen Cave Entrance"] = {
+        ["Frozen Cave Entrance_A"] = {{4, 4, 12, 5},{4, 6, 7, 8},{9, 6, 12, 7},{4, 8, 12, 10}}, -- main
+        ["Frozen Cave Entrance_B"] = {{8, 5, 8, 7}}, -- ladder
+    },
+
 }

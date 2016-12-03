@@ -117,7 +117,7 @@ JohtoMap["Goldenrod City Game Corner"] = {["Goldenrod City"] = {1}}
 JohtoMap["Goldenrod City Gym"] = {["Goldenrod City"] = {1}}
 JohtoMap["Goldenrod City House 1"] = {["Goldenrod City"] = {1}}
 JohtoMap["Goldenrod City House 2"] = {["Goldenrod City"] = {1}}
-JohtoMap["Goldenrod City Station Floor 2"] = {["Goldenrod City Station_B"] = {0.5}}
+JohtoMap["Goldenrod City Station Floor 2"] = {["Goldenrod City Station_B"] = {0.5}, ["Trainers Valley Station Floor 2"] = {999}}
 JohtoMap["Goldenrod City Station_A"] = {["Goldenrod City Station_B"] = {0.5}, ["Goldenrod City"] = {0.5}}
 JohtoMap["Goldenrod City Station_B"] = {["Goldenrod City Station Floor 2"] = {1}, ["Goldenrod City Station_A"] = {0.5}}
 JohtoMap["Goldenrod City Subway"] = {["Pokecenter Goldenrod"] = {0.2}, ["Olivine City Subway"] = {J_SUBWAY}, ["Violet City Subway"] = {J_SUBWAY}, ["Azalea Town Subway"] = {J_SUBWAY}, ["Blackthorn City Subway"] = {J_SUBWAY}, ["Cherrygrove City Subway"] = {J_SUBWAY}, ["Ecruteak City Subway"] = {J_SUBWAY}, ["Mahogany Town Subway"] = {J_SUBWAY}}
@@ -292,9 +292,6 @@ JohtoMap["Whirl Islands B1F_C"] = {["Whirl Islands B1F_B"] = {2}, ["Whirl Island
 JohtoMap["Whirl Islands B2F"] = {["Whirl Islands B1F_A"] = {1}, ["Whirl Islands B1F_C"] = {1}, ["Whirl Islands B3F"] = {1},  ["Whirl Islands B4F"] = {1}}
 JohtoMap["Whirl Islands B3F"] = {["Whirl Islands B2F"] = {1}}
 JohtoMap["Whirl Islands B4F"] = {["Whirl Islands B2F"] = {1}}
-JohtoMap["Dock Island"] = {["Amazon Forest Entrance"] = {1}, ["Olivine City"] = {0.2}}
-JohtoMap["Amazon Forest Entrance"] = {["Amazon Forest"] = {1}, ["Dock Island"] = {1}}
-JohtoMap["Amazon Forest"] = {["Amazon Forest Entrance"] = {1}}
 
 
 -- JohtoMap["node"] = {["link"] = {distance, {["restrictionType"] = {"restriction"}}}}
