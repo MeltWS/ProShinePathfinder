@@ -84,7 +84,7 @@ npcExce["Moon"] = {
     ["Mossdeep City Space Center 2F"] = {{16, 48}, "Teleport back to Earth", "What should I ask Elgyem to do?"}
 }
 npcExce["Mossdeep City Space Center 2F"] = {
-    ["Moon"] = {{15, 9}, "Yes", "Oh hello there. Wait, you are the kid that went on the Moon instead of Jackson, right? Tell you what. We found this Elgyem on the Moon, and surprisingly, it can teleport anyone back there. And it can heal your Pokemon 4 times per session! But I need special pills to feed it, which costs 15,000 Pokedollars. So, want to go on the Moon for 15,000 Pokedollars? I'll include the oxygen needed for free."}
+    ["Moon_A"] = {{15, 9}, "Yes", "Oh hello there. Wait, you are the kid that went on the Moon instead of Jackson, right? Tell you what. We found this Elgyem on the Moon, and surprisingly, it can teleport anyone back there. And it can heal your Pokemon 4 times per session! But I need special pills to feed it, which costs 15,000 Pokedollars. So, want to go on the Moon for 15,000 Pokedollars? I'll include the oxygen needed for free."}
 }
 npcExce["Pokecenter Dewford Town"] = {
     ["Transmat Station"] = {{8, 4}, "Here you go.", "Can you present to me your registered trainer's ID for authenticatory purposes?"}
