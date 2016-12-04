@@ -65,7 +65,7 @@ Settings = {
 -----------------------
 end
 
-local version = "2.3.1"
+local version = "2.3.2"
 local cpath = select(1, ...) or "" -- callee path
 local function rmlast(str) return str:sub(1, -2):match(".+[%./]") or "" end -- removes last dir / file from the callee path
 local cdpath = rmlast(cpath) -- callee dir path

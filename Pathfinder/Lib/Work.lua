@@ -51,7 +51,12 @@ end
 
 local function getTargets(opts)
     local npcs = getNpcData()
-    local tKeep = {npcTypes.abandonnedPkm--[[, npcTypes.pokeStop]], npcTypes.test}
+    for _, npc in ipairs(npcs) do
+        npc.x = tonumber(npc.x)
+        npc.y = tonumber(npc.y)
+        npc.type = tonumber(npc.type)
+    end
+    local tKeep = {npcTypes.abandonnedPkm, npcTypes.pokeStop, npcTypes.test}
     if opts.headbutt and headbuttIndex then
         tKeep[#tKeep + 1] = npcTypes.headbutt
     end
@@ -66,6 +71,19 @@ local function getTargets(opts)
     end
     tKeep = Table.join(tKeep)
     npcs = Array.filter(hasKey(tKeep, "type"))(npcs)
+    npcs = Array.filter(function(npc) return npc.isBattler == "False" end)(npcs)
+    local message = "Number of npcs found: " ..  #npcs
+    for i, npc in ipairs(npcs) do
+        local j = nil
+        message = message .. "\n" .. i .. "# npc -> : "
+        for k, v in pairs(npc) do
+            j = j or 1
+            if j > 1 then message = message .. ",\t" end
+            message = message .. k .. ": " .. v
+            j = j + 1
+        end
+    end
+    log(message)
     return npcs
 end
 

@@ -19,7 +19,7 @@ Link["Olivine City"] = {["Lilycove City Harbor"] = {H_TO_KJ}}
 Link["Saffron City Station Floor 2"] = {["Goldenrod City Station Floor 2"] = {J_TO_K}}
 Link["Goldenrod City Station Floor 2"] = {["Saffron City Station Floor 2"] = {J_TO_K}}
 
--- Link["test run"] = {} -- load this to check for map errors, you should get "Path Not Found result, otherwise the map is incorrect."
+Link["test run"] = {} -- load this to check for map errors, you should get "Path Not Found result, otherwise the map is incorrect."
 -- Link["node"] = {["link"] = {distance, {["restrictionType"] = {"restriction"}}}}
 
 
