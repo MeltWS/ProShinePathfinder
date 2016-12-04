@@ -80,8 +80,11 @@ npcExce["Cable Car Station 2"] = {
 npcExce["Leev Town Port"] = {
     ["Lilycove City Harbor"] = {{9, 10}, "Yes", "Hey there, wanna go back to Hoenn?"}
 }
-npcExce["Moon"] = {
+npcExce["Moon_A"] = {
     ["Mossdeep City Space Center 2F"] = {{16, 48}, "Teleport back to Earth", "What should I ask Elgyem to do?"}
+}
+npcExce["Moon B1F_B"] = {
+    ["Sootopolis City"] = {{60, 23}, "Yes", "Should I go back to Earth?"}
 }
 npcExce["Mossdeep City Space Center 2F"] = {
     ["Moon_A"] = {{15, 9}, "Yes", "Oh hello there. Wait, you are the kid that went on the Moon instead of Jackson, right? Tell you what. We found this Elgyem on the Moon, and surprisingly, it can teleport anyone back there. And it can heal your Pokemon 4 times per session! But I need special pills to feed it, which costs 15,000 Pokedollars. So, want to go on the Moon for 15,000 Pokedollars? I'll include the oxygen needed for free."}
@@ -133,12 +136,6 @@ npcExce["Pokecenter Verdanturf"] = {
 }
 npcExce["Hoenn Safari Zone Lobby"] = {
     ["Hoenn Safari Zone Area 1"] = {{21, 6}, "Yes", "Would you like to enter the safari zone for $5,000 today?"}
-}
-npcExce["Mossdeep City Space Center 2F"] = {
-    ["Moon"] = {{15, 9}, "Yes", "So, want to go on the Moon for 15,000 Pokedollars? I'll include the oxygen needed for free."}
-}
-npcExce["Moon B1F_B"] = {
-    ["Sootopolis City"] = {{60, 23}, "Yes", "Should I go back to Earth?"}
 }
 npcExce["Rusturf Tunnel_C"] = {
     ["Haunted Site"] = {{26, 15}, "Yes", "Hello my friend "..getAccountName()..", to help preserve this site we need to charge you in 2,500 Pokedollars, you agree to pay this fee and enter?"}
@@ -209,14 +206,25 @@ npcExce["Five Island Ferry"] = {
 }]]
 
 ----------------------
+---- Trainers Valley ----
+----------------------
+
+npcExce["Trainers Valley Station Floor 2"] = {
+    ["Saffron City Station Floor 2"] = {{14, 10}, "Saffron", "Where would you like to go?"},
+	["Goldenrod City Station Floor 2"] = {{14, 10}, "Goldenrod", "Where would you like to go?"}
+}
+
+----------------------
 ---- INTER REGION ----
 ----------------------
 
 npcExce["Goldenrod City Station Floor 2"] = {
-    ["Saffron City Station Floor 2"] = {{14, 10}, "Yes", "Are you sure you would like to board on the ride to Goldenrod City at this moment?"}
+    ["Saffron City Station Floor 2"] = {{14, 10}, {"Yes", "Saffron City"}, {"Are you sure you would like to board on the ride to Goldenrod City at this moment?", "Where do you want to go?"}},
+    ["Trainers Valley Station Floor 2"] = {{14, 10}, "Trainers Valley", "Where do you want to go?"}
 }
 npcExce["Saffron City Station Floor 2"] = {
-    ["Goldenrod City Station Floor 2"] = {{14, 10}, "Yes", "Are you sure you would like to travel to Goldenrod City"}
+    ["Goldenrod City Station Floor 2"] = {{14, 10}, {"Yes", "Goldenrod City"}, {"Are you sure you would like to travel to Goldenrod City", "Where do you want to go?"}},
+    ["Trainers Valley Station Floor 2"] = {{14, 10}, "Trainers Valley", "Where do you want to go?"}
 }
 npcExce["Olivine City"] = {
     ["Lilycove City Harbor"] = {{17, 47}, "Lilycove City", "Where do you want to go, mate?"},

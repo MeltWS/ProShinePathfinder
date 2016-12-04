@@ -960,6 +960,21 @@ linkExce["Water Path_B"] = {
 linkExce["Vermilion City_A"] = {
     ["Lilycove City Harbor"] = {40, 67},
 }
+
+----------------------
+---- EVENT MAP -------
+----------------------
+linkExce["Frozen Cave Entrance_B"] = {
+	["Frozen Cave Entrance_A"] = {9, 6},
+}
+linkExce["Frozen Cave B2F_B"] = {
+    ["Frozen Cave B1F_B"] = {54, 25},
+}
+linkExce["Frozen Cave B1F"] = {
+    ["Frozen Cave B2F_B"] = {54, 24},
+    ["Frozen Cave B2F_C"] = {28, 24},
+}
+
 -- linkExce[""] = {
 --     [""] = {},
 -- }

@@ -5,7 +5,7 @@ local cppdpath = nTimes(3, rmlast, cpath) -- callee parent of parent dir path
 
 local Maybe                 = require (cppdpath .. "Lib/Maybe")
 local Lib                   = require (cppdpath .. "Lib/Lib")
-local _npcExceptions         = require (cppdpath .. "Maps/MapExceptions/NpcExceptions")
+local _npcExceptions        = require (cppdpath .. "Maps/MapExceptions/NpcExceptions")
 local elevators             = require (cppdpath .. "Maps/MapExceptions/Elevators")
 local digways               = require (cppdpath .. "Maps/MapExceptions/Digways")
 local transmats             = require (cppdpath .. "Maps/MapExceptions/Transmats")
